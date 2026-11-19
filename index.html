@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#7A1F2B" />
+  <title>Praise for the Lord — Song Leader</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="brand">
+          <h1 class="brand-title">Praise for the Lord</h1>
+          <span class="brand-subtitle" id="songCountLabel">Loading hymnal…</span>
+        </div>
+        <button type="button" id="quickJumpBtn" class="btn-icon-text" aria-label="Jump to hymn number">
+          <span class="hash-glyph">#</span>
+          <span>Jump</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace (Split-pane on tablet/desktop, stacked on phone) -->
+    <main class="workspace" id="workspace">
+      <!-- LEFT PANE 1: Hymnal Browser -->
+      <section id="view-hymnal" class="pane pane-list active-tab" aria-label="Hymnal directory">
+        <div class="search-controls">
+          <div class="search-input-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+              <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search #, title, alt title, first line, tag…"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+            />
+            <button type="button" id="clearSearchBtn" class="clear-btn hidden" aria-label="Clear search">&times;</button>
+          </div>
+
+          <!-- Compact Filter Row: Topic Group (All / Inv / LS) + Stackable Fav & Scans -->
+          <div class="filter-row">
+            <div class="topic-filter-group" role="tablist" aria-label="Topic filter">
+              <button type="button" class="filter-tab active" data-category="all" role="tab" aria-selected="true">All</button>
+              <button type="button" class="filter-tab" data-category="invitation" role="tab" aria-selected="false" title="Invitation &amp; Gospel">
+                <span class="lbl-short">Inv</span>
+                <span class="lbl-full">Invitation</span>
+              </button>
+              <button type="button" class="filter-tab" data-category="lords-supper" role="tab" aria-selected="false" title="Lord's Supper &amp; Jesus: Death">
+                <span class="lbl-short">LS</span>
+                <span class="lbl-full">Lord's Supper</span>
+              </button>
+            </div>
+            <button type="button" id="favFilterBtn" class="icon-toggle-btn" aria-pressed="false" title="Only show favorites">
+              ★
+            </button>
+            <button type="button" id="scansFilterBtn" class="scans-toggle-btn" aria-pressed="false" title="Only show hymns with sheet music scans">
+              Scans
+            </button>
+          </div>
+
+          <!-- Custom Tag Filter Bar (shown automatically once you have custom tags) -->
+          <div id="tagFilterRow" class="tag-filter-row hidden">
+            <label for="tagFilterSelect" class="tag-filter-label">Tag:</label>
+            <select id="tagFilterSelect" class="tag-filter-select">
+              <option value="">All Custom Tags</option>
+            </select>
+            <button type="button" id="clearTagFilterBtn" class="btn-clear-tag hidden" aria-label="Clear tag filter">&times;</button>
+          </div>
+        </div>
+
+        <!-- Local file load fallback notice (shown only if fetch fails) -->
+        <div id="loadErrorBanner" class="notice-banner notice-error hidden">
+          <p class="notice-title">Could not automatically load <code>pftl_hymns.json</code></p>
+          <p class="notice-body">
+            If you opened <code>index.html</code> directly from your file explorer, run a local server
+            (<code>python -m http.server 8000</code>) or select your <code>pftl_hymns.json</code> file below:
+          </p>
+          <label class="btn-secondary file-picker-label">
+            Choose pftl_hymns.json
+            <input type="file" id="manualJsonInput" accept=".json,application/json" hidden />
+          </label>
+        </div>
+
+        <div id="resultsSummary" class="results-summary" aria-live="polite"></div>
+
+        <ul id="hymnList" class="hymn-list" role="list"></ul>
+
+        <div id="emptyState" class="empty-state hidden">
+          <p class="empty-title">No matching hymns</p>
+          <p class="empty-subtitle">Try clearing a filter or searching by hymn number, alternate title, or first line.</p>
+        </div>
+      </section>
+
+      <!-- LEFT PANE 2: Worship Setlists (Stage 4) -->
+      <section id="view-setlists" class="pane pane-setlists" aria-label="Worship setlists">
+        <!-- Setlists Directory View -->
+        <div id="setlistsHome" class="subpane">
+          <div class="subpane-header">
+            <h2>Worship Setlists</h2>
+            <button type="button" id="newSetlistBtn" class="btn-primary btn-sm">+ New Service</button>
+          </div>
+          <div id="setlistsList" class="setlists-list"></div>
+          <div id="setlistsEmpty" class="empty-state hidden">
+            <p class="empty-title">No setlists yet</p>
+            <p class="empty-subtitle">Create a service plan for Sunday AM, Sunday PM, or Wednesday night.</p>
+          </div>
+        </div>
+
+        <!-- Single Setlist Editor View -->
+        <div id="setlistEditor" class="subpane hidden">
+          <div class="subpane-header">
+            <button type="button" id="backToSetlistsBtn" class="btn-back">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Setlists</span>
+            </button>
+            <div class="subpane-header-actions">
+              <button type="button" id="startPodiumBtn" class="btn-primary btn-sm">Lead Service</button>
+            </div>
+          </div>
+
+          <div class="setlist-editor-scroll">
+            <div class="setlist-meta-card">
+              <div class="setlist-meta-row">
+                <input type="text" id="setlistNameInput" class="setlist-name-input" placeholder="e.g. Sunday AM" autocomplete="off" />
+                <input type="date" id="setlistDateInput" class="setlist-date-input" />
+              </div>
+              <input type="text" id="setlistNotesInput" class="setlist-notes-input" placeholder="Optional service notes (sermon topic, scripture…)" autocomplete="off" />
+            </div>
+
+            <!-- Key Progression Strip -->
+            <div id="keyProgressionBar" class="key-progression-bar hidden">
+              <span class="key-prog-label">Keys:</span>
+              <div id="keyProgressionItems" class="key-prog-items"></div>
+            </div>
+
+            <!-- Setlist Songs -->
+            <div id="setlistSongsList" class="setlist-songs-list"></div>
+
+            <div id="setlistSongsEmpty" class="setlist-songs-empty hidden">
+              <p>No songs in this service yet. Tap <strong>+ Add Song</strong> below or add from any hymn page.</p>
+            </div>
+
+            <div class="setlist-footer-actions">
+              <button type="button" id="addSongToSetlistBtn" class="btn-secondary">+ Add Song</button>
+              <button type="button" id="precacheHighResBtn" class="btn-highres btn-precache" title="Pre-load high-resolution sheet music for all songs in this setlist">Pre-Cache High-Res</button>
+              <button type="button" id="logSetlistSungBtn" class="btn-primary btn-log-full">Log Service as Sung</button>
+            </div>
+
+            <p id="setlistStatusMsg" class="setlist-status-msg hidden" aria-live="polite"></p>
+
+            <div class="setlist-danger-zone">
+              <button type="button" id="deleteSetlistBtn" class="btn-danger-outline">Delete Setlist</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEFT PANE 3: Singing History (Stage 4) -->
+      <section id="view-history" class="pane pane-history" aria-label="Singing history">
+        <div class="subpane-header">
+          <h2>Singing History</h2>
+          <button type="button" id="logSongHistoryBtn" class="btn-primary btn-sm">+ Log Song</button>
+        </div>
+
+        <div class="history-search-wrap">
+          <input
+            type="search"
+            id="historySearchInput"
+            class="search-input history-search-input"
+            placeholder="Filter history by #, title, or service…"
+            autocomplete="off"
+          />
+        </div>
+
+        <div id="historySummary" class="results-summary"></div>
+
+        <div id="historyList" class="history-list"></div>
+
+        <div id="historyEmpty" class="empty-state hidden">
+          <p class="empty-title">No singing history yet</p>
+          <p class="empty-subtitle">Mark hymns as sung from any song page or log an entire service from Setlists.</p>
+        </div>
+      </section>
+
+      <!-- LEFT PANE 4: Settings & Backup -->
+      <section id="view-settings" class="pane pane-placeholder" aria-label="Settings and backup">
+        <div class="placeholder-card">
+          <h2>Settings &amp; Backup</h2>
+
+          <div class="settings-list">
+            <label class="setting-row setting-toggle-row" for="showSupplementToggle">
+              <div class="setting-text">
+                <strong>Show 901+ Supplement Songs</strong>
+                <p class="setting-desc">Include songs #901–#990 from the expanded edition in browse and search results (highlighted in warm tan).</p>
+              </div>
+              <input type="checkbox" id="showSupplementToggle" class="toggle-checkbox" />
+            </label>
+          </div>
+
+          <div class="settings-section">
+            <h3 class="settings-subheading">Your Personal Library</h3>
+            <div class="stats-grid" id="libraryStats">
+              <div class="stat-box">
+                <strong id="statFavCount">0</strong>
+                <span>Favorites</span>
+              </div>
+              <div class="stat-box">
+                <strong id="statTagCount">0</strong>
+                <span>Tags</span>
+              </div>
+              <div class="stat-box">
+                <strong id="statDontSingCount">0</strong>
+                <span>Don't Sing</span>
+              </div>
+              <div class="stat-box">
+                <strong id="statSetlistsCount">0</strong>
+                <span>Setlists</span>
+              </div>
+              <div class="stat-box">
+                <strong id="statHistoryCount">0</strong>
+                <span>Sung Logs</span>
+              </div>
+              <div class="stat-box">
+                <strong id="statNotesCount">0</strong>
+                <span>Notes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h3 class="settings-subheading">Backup &amp; Restore</h3>
+            <p class="setting-desc" style="margin-bottom: 10px;">
+              Your favorites, custom tags, "Don't Sing" flags, notes, transpositions, setlists, and singing history are stored privately on this device. Export a JSON backup anytime to transfer to another device or keep a safe copy.
+            </p>
+            <div class="backup-actions">
+              <button type="button" id="exportBackupBtn" class="btn-primary">Export Backup (.json)</button>
+              <label class="btn-secondary file-picker-label">
+                Import Backup (.json)
+                <input type="file" id="importBackupInput" accept=".json,application/json" hidden />
+              </label>
+            </div>
+            <p id="backupStatusMsg" class="backup-status hidden" aria-live="polite"></p>
+          </div>
+
+          <div class="settings-section settings-danger">
+            <button type="button" id="clearDataBtn" class="btn-danger-outline">Reset All Personal Data</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT PANE (or Mobile Overlay): Song Detail & Sheet Music Viewer -->
+      <section id="songDetailPane" class="pane pane-detail" aria-label="Selected hymn details">
+        <div id="detailEmpty" class="detail-empty">
+          <div class="detail-empty-inner">
+            <div class="ornament-rule"></div>
+            <h2>Select a Hymn</h2>
+            <p>Choose a song from the index or use <strong># Jump</strong> to open sheet music and starting pitch controls.</p>
+          </div>
+        </div>
+
+        <div id="detailContent" class="detail-content hidden">
+          <!-- Sticky Detail Header -->
+          <div class="detail-header">
+            <button type="button" id="backToListBtn" class="btn-back" aria-label="Back to hymn list">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Back</span>
+            </button>
+            <div class="detail-header-title">
+              <span id="detailNumber" class="detail-num">#009</span>
+              <span id="detailKeyBadge" class="detail-key">D</span>
+            </div>
+            <div class="detail-header-actions">
+              <button type="button" id="detailFavBtn" class="btn-fav-header" aria-pressed="false" title="Toggle Favorite">
+                ☆
+              </button>
+              <a id="detailHymnaryLink" class="btn-text-link" href="#" target="_blank" rel="noopener noreferrer">
+                Hymnary ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Podium / Setlist Runner Bar (shown when stepping through a service) -->
+          <div id="setlistRunnerBar" class="runner-bar hidden">
+            <button type="button" id="runnerPrevBtn" class="btn-runner" aria-label="Previous song in setlist">← Prev</button>
+            <div class="runner-center">
+              <strong id="runnerSlotLabel">Opening</strong>
+              <span id="runnerPosLabel">1 of 5 · Sunday AM</span>
+            </div>
+            <button type="button" id="runnerNextBtn" class="btn-runner" aria-label="Next song in setlist">Next →</button>
+            <button type="button" id="runnerCloseBtn" class="btn-runner-close" aria-label="Exit setlist mode" title="Exit setlist mode">&times;</button>
+          </div>
+
+          <!-- Scrollable Song Body -->
+          <div class="detail-scroll" id="detailScroll">
+            <!-- 901+ Supplement Warning Banner -->
+            <div id="supplementBanner" class="notice-banner notice-supplement hidden">
+              <strong>900+ Expanded Supplement</strong> — Not in our church's 1–900 hymnal. Viewable for reference only.
+            </div>
+
+            <!-- "Don't Sing" Warning Banner -->
+            <div id="dontSingBanner" class="notice-banner notice-dontsing hidden">
+              <span class="dontsing-glyph" aria-hidden="true">⊘</span>
+              <div>
+                <strong>Marked "Don't Sing"</strong>
+                <span id="dontSingBannerReason"></span>
+              </div>
+            </div>
+
+            <div class="song-title-block">
+              <div class="song-title-row">
+                <div class="song-title-text">
+                  <h2 id="detailTitle" class="song-title"></h2>
+                  <p id="detailAltTitles" class="song-alt-titles hidden"></p>
+                  <p id="detailFirstLine" class="song-first-line"></p>
+                </div>
+              </div>
+              <div class="song-quick-actions">
+                <button type="button" id="detailAddSetlistBtn" class="btn-quick-action">+ Setlist</button>
+                <button type="button" id="detailMarkSungBtn" class="btn-quick-action">✓ Mark Sung</button>
+                <span id="detailLastSungBadge" class="last-sung-pill hidden"></span>
+              </div>
+            </div>
+
+            <!-- Sheet Music Section -->
+            <div class="sheet-section">
+              <div class="sheet-toolbar">
+                <span class="sheet-toolbar-label" id="scanStatusLabel">Sheet Music</span>
+                <div class="sheet-toolbar-actions">
+                  <button type="button" id="zoomOutBtn" class="btn-tool" aria-label="Zoom out">−</button>
+                  <button type="button" id="zoomResetBtn" class="btn-tool" aria-label="Reset zoom">Fit</button>
+                  <button type="button" id="zoomInBtn" class="btn-tool" aria-label="Zoom in">+</button>
+                  <button type="button" id="loadHighResBtn" class="btn-highres hidden">High-Res</button>
+                  <button type="button" id="fullscreenBtn" class="btn-tool btn-fullscreen hidden" aria-label="View sheet music fullscreen" title="Fullscreen sheet music">
+                    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <polyline points="9 21 3 21 3 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <line x1="21" y1="3" x2="14" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      <line x1="3" y1="21" x2="10" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span>Full</span>
+                  </button>
+                </div>
+              </div>
+
+              <div id="sheetViewport" class="sheet-viewport">
+                <div id="sheetPages" class="sheet-pages"></div>
+                <div id="noScanFallback" class="no-scan-fallback hidden">
+                  <p class="no-scan-title">Sheet music scan not available</p>
+                  <p class="no-scan-desc">This hymn is either copyrighted or text-only on Hymnary.org.</p>
+                  <a id="fallbackHymnaryBtn" class="btn-secondary" href="#" target="_blank" rel="noopener noreferrer">
+                    View Hymn Page on Hymnary.org ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personal Organization Section (Custom Tags, Notes, Don't Sing, Song History) -->
+            <div class="personal-section">
+              <div class="meta-group">
+                <h3 class="meta-heading">Custom Tags</h3>
+                <div id="detailCustomTags" class="meta-tags custom-tags-list"></div>
+                <form id="addTagForm" class="add-tag-form">
+                  <input
+                    type="text"
+                    id="newTagInput"
+                    class="tag-input"
+                    list="existingTagsList"
+                    placeholder="Add tag (e.g. Upbeat, Closing, Men's Lead)…"
+                    autocomplete="off"
+                  />
+                  <datalist id="existingTagsList"></datalist>
+                  <button type="submit" class="btn-secondary btn-sm">Add</button>
+                </form>
+              </div>
+
+              <div class="meta-group">
+                <label for="songNotesInput" class="meta-heading" style="display:block;">Personal Notes</label>
+                <textarea
+                  id="songNotesInput"
+                  class="notes-textarea"
+                  rows="2"
+                  placeholder="Verses to sing, tempo cues, congregation notes…"
+                ></textarea>
+              </div>
+
+              <div class="meta-group dontsing-card">
+                <label class="dontsing-toggle-label" for="dontSingCheckbox">
+                  <input type="checkbox" id="dontSingCheckbox" class="toggle-checkbox" />
+                  <span><strong>Mark as "Don't Sing"</strong> — grays out song in lists with a red ⊘</span>
+                </label>
+                <input
+                  type="text"
+                  id="dontSingReasonInput"
+                  class="dontsing-reason-input hidden"
+                  placeholder="Optional reason (e.g. Too high, unfamiliar tune)…"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="meta-group hidden" id="songHistoryGroup">
+                <h3 class="meta-heading">Singing History for This Hymn</h3>
+                <ul id="detailSongHistoryList" class="song-history-list"></ul>
+              </div>
+            </div>
+
+            <!-- Built-in Hymnary Metadata (Topics & Scriptures) -->
+            <div class="meta-section" id="metaSection">
+              <div class="meta-group" id="topicsGroup">
+                <h3 class="meta-heading">Hymnary Topics</h3>
+                <div id="detailTopics" class="meta-tags"></div>
+              </div>
+              <div class="meta-group" id="scripturesGroup">
+                <h3 class="meta-heading">Scripture References</h3>
+                <div id="detailScriptures" class="meta-tags"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ultra-Condensed Single-Line Bottom Pitch Pipe Bar -->
+          <div class="pitch-bar" id="pitchBar" aria-label="Pitch pipe controls">
+            <div id="manualKeyWrap" class="manual-key-bar hidden">
+              <label for="manualKeySelect" class="manual-key-label">No key listed — pick pitch:</label>
+              <select id="manualKeySelect" class="manual-key-select">
+                <option value="C Major">C</option>
+                <option value="Db Major">D♭</option>
+                <option value="D Major">D</option>
+                <option value="Eb Major">E♭</option>
+                <option value="E Major">E</option>
+                <option value="F Major">F</option>
+                <option value="Gb Major">G♭</option>
+                <option value="G Major">G</option>
+                <option value="Ab Major">A♭</option>
+                <option value="A Major">A</option>
+                <option value="Bb Major">B♭</option>
+                <option value="B Major">B</option>
+              </select>
+            </div>
+
+            <div class="pitch-single-row">
+              <button type="button" id="holdPitchBtn" class="btn-pitch-hold" title="Hold to play starting pitch">
+                <span id="holdPitchKey" class="pitch-btn-key">D</span>
+                <span id="holdPitchSub" class="pitch-btn-sub">Original</span>
+              </button>
+
+              <button type="button" id="arpeggioBtn" class="btn-pitch-arp" title="Play 1-3-5-1 arpeggio">
+                1-3-5-1
+              </button>
+
+              <div class="pitch-transpose-controls" role="group" aria-label="Transpose half steps">
+                <button type="button" class="btn-step" data-shift="-2">-2</button>
+                <button type="button" class="btn-step" data-shift="-1">-1</button>
+                <button type="button" class="btn-step active" data-shift="0">0</button>
+                <button type="button" class="btn-step" data-shift="1">+1</button>
+                <button type="button" class="btn-step" data-shift="2">+2</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button type="button" class="nav-item active" data-tab="hymnal">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+          <line x1="8" y1="7" x2="16" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        <span>Hymnal</span>
+      </button>
+      <button type="button" class="nav-item" data-tab="setlists">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <line x1="8" y1="6" x2="20" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <line x1="8" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <line x1="8" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <circle cx="4.5" cy="6" r="1.2" fill="currentColor" />
+          <circle cx="4.5" cy="12" r="1.2" fill="currentColor" />
+          <circle cx="4.5" cy="18" r="1.2" fill="currentColor" />
+        </svg>
+        <span>Setlists</span>
+      </button>
+      <button type="button" class="nav-item" data-tab="history">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <polyline points="12 7.5 12 12 15 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>History</span>
+      </button>
+      <button type="button" class="nav-item" data-tab="settings">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 .92-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51.92H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+        </svg>
+        <span>Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Fullscreen Sheet Music Overlay -->
+  <div id="fullscreenOverlay" class="fs-overlay hidden" role="dialog" aria-modal="true" aria-label="Fullscreen sheet music">
+    <div class="fs-toolbar">
+      <div class="fs-title-wrap">
+        <span id="fsNumber" class="fs-num">#009</span>
+        <span id="fsTitle" class="fs-title"></span>
+      </div>
+      <div class="fs-actions">
+        <button type="button" id="fsHoldPitchBtn" class="btn-fs-pitch" title="Hold for starting pitch">
+          <span id="fsPitchKey" class="pitch-btn-key">D</span>
+          <span id="fsPitchSub" class="pitch-btn-sub">Orig</span>
+        </button>
+        <button type="button" id="fsArpBtn" class="btn-tool" title="Play 1-3-5-1 arpeggio">1-3-5-1</button>
+        <button type="button" id="fsZoomOutBtn" class="btn-tool" aria-label="Zoom out">−</button>
+        <button type="button" id="fsZoomResetBtn" class="btn-tool" aria-label="Reset zoom">Fit</button>
+        <button type="button" id="fsZoomInBtn" class="btn-tool" aria-label="Zoom in">+</button>
+        <button type="button" id="fsHighResBtn" class="btn-highres">High-Res</button>
+        <button type="button" id="fsCloseBtn" class="btn-fs-close" aria-label="Exit fullscreen">Done</button>
+      </div>
+    </div>
+    <div id="fsViewport" class="fs-viewport">
+      <div id="fsPages" class="fs-pages"></div>
+    </div>
+  </div>
+
+  <!-- Quick-Jump Number Modal -->
+  <div id="quickJumpModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="quickJumpTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 id="quickJumpTitle">Jump to Hymn #</h2>
+        <button type="button" id="closeQuickJumpBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <form id="quickJumpForm" class="quick-jump-form">
+        <input
+          type="text"
+          id="quickJumpInput"
+          class="quick-jump-input"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          placeholder="e.g. 412"
+          autocomplete="off"
+        />
+        <p id="quickJumpError" class="quick-jump-error hidden"></p>
+        <div class="modal-actions">
+          <button type="button" id="cancelQuickJumpBtn" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">Open Hymn</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Current Song to Setlist Modal -->
+  <div id="addToSetlistModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="addToSetlistTitle">
+    <div class="modal-dialog modal-wide">
+      <div class="modal-header">
+        <h2 id="addToSetlistTitle">Add to Setlist</h2>
+        <button type="button" id="closeAddToSetlistBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <form id="addToSetlistForm" class="modal-body-form">
+        <p id="addToSetlistSongLabel" class="modal-song-ref"></p>
+
+        <div class="form-field">
+          <label for="targetSetlistSelect">Service Setlist</label>
+          <select id="targetSetlistSelect" class="form-select"></select>
+        </div>
+
+        <div id="inlineNewSetlistFields" class="inline-new-setlist hidden">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="inlineSetlistName">Service Name</label>
+              <input type="text" id="inlineSetlistName" class="form-input" placeholder="Sunday AM" value="Sunday AM" />
+            </div>
+            <div class="form-field">
+              <label for="inlineSetlistDate">Date</label>
+              <input type="date" id="inlineSetlistDate" class="form-input" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="targetSlotSelect">Service Slot</label>
+          <select id="targetSlotSelect" class="form-select">
+            <option value="Opening">Opening</option>
+            <option value="Second Song">Second Song</option>
+            <option value="Lord's Supper">Lord's Supper</option>
+            <option value="Before Sermon">Before Sermon</option>
+            <option value="Invitation">Invitation</option>
+            <option value="Closing">Closing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelAddToSetlistBtn" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">Add Song</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Song Picker Modal (used for adding a song from inside a Setlist OR logging a song to History) -->
+  <div id="songPickerModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="songPickerTitle">
+    <div class="modal-dialog modal-picker">
+      <div class="modal-header">
+        <h2 id="songPickerTitle">Add Song to Service</h2>
+        <button type="button" id="closeSongPickerBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="picker-controls">
+        <input
+          type="search"
+          id="songPickerInput"
+          class="search-input"
+          placeholder="Search #, title, alt title, or first line…"
+          autocomplete="off"
+        />
+        <div id="pickerSlotRow" class="picker-slot-row">
+          <label for="pickerSlotSelect">Slot:</label>
+          <select id="pickerSlotSelect" class="form-select form-select-sm">
+            <option value="Opening">Opening</option>
+            <option value="Second Song">Second Song</option>
+            <option value="Lord's Supper">Lord's Supper</option>
+            <option value="Before Sermon">Before Sermon</option>
+            <option value="Invitation">Invitation</option>
+            <option value="Closing">Closing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <ul id="songPickerResults" class="picker-results" role="list"></ul>
+    </div>
+  </div>
+
+  <!-- Mark as Sung Modal -->
+  <div id="markSungModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="markSungTitle">
+    <div class="modal-dialog modal-wide">
+      <div class="modal-header">
+        <h2 id="markSungTitle">Log Song as Sung</h2>
+        <button type="button" id="closeMarkSungBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <form id="markSungForm" class="modal-body-form">
+        <p id="markSungSongLabel" class="modal-song-ref"></p>
+        <div class="form-row-2">
+          <div class="form-field">
+            <label for="markSungDateInput">Date Sung</label>
+            <input type="date" id="markSungDateInput" class="form-input" required />
+          </div>
+          <div class="form-field">
+            <label for="markSungServiceInput">Service (optional)</label>
+            <input type="text" id="markSungServiceInput" class="form-input" list="servicePresetsList" placeholder="Sunday AM" />
+            <datalist id="servicePresetsList">
+              <option value="Sunday AM"></option>
+              <option value="Sunday PM"></option>
+              <option value="Wednesday"></option>
+            </datalist>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancelMarkSungBtn" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">Save to History</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
