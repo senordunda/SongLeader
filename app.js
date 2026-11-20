@@ -241,7 +241,6 @@
   // DOM References
   // =========================================================================
   const el = {
-    songCountLabel: document.getElementById("songCountLabel"),
     searchInput: document.getElementById("searchInput"),
     clearSearchBtn: document.getElementById("clearSearchBtn"),
     topicTabs: Array.from(document.querySelectorAll(".filter-tab")),
@@ -691,13 +690,7 @@
   }
 
   function updateHeaderSubtitle() {
-    const bookCount = state.hymns.filter((h) => !isSupplement(h)).length;
-    const suppCount = state.hymns.length - bookCount;
-    if (state.showSupplement) {
-      el.songCountLabel.textContent = `${bookCount} hymns + ${suppCount} in 901+ supp.`;
-    } else {
-      el.songCountLabel.textContent = `${bookCount} hymns (1–900 book)`;
-    }
+    // Header subtitle removed for a cleaner, larger title
   }
 
   function prepareHymns(rawList) {
@@ -3035,7 +3028,6 @@ Add it to this setlist anyway?`
       prepareHymns(data);
     } catch (err) {
       console.error("Failed to fetch pftl_hymns.json:", err);
-      el.songCountLabel.textContent = "Hymnal not loaded";
       el.loadErrorBanner.classList.remove("hidden");
     }
   }

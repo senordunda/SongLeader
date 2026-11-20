@@ -104,10 +104,10 @@ body {
 .brand-title {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.08rem;
+  font-size: 1.32rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  line-height: 1.2;
+  line-height: 1.15;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2071,7 +2071,7 @@ body {
 
 .setlist-footer-actions {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 8px;
 }
 
@@ -2080,6 +2080,11 @@ body {
   padding: 8px 10px;
   font-size: 0.84rem;
   border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.btn-add-song {
+  padding: 8px 18px;
   white-space: nowrap;
 }
 
@@ -3005,9 +3010,13 @@ html[data-readability="large"] .btn-precache {
   white-space: nowrap;
 }
 
-html[data-readability="large"] .setlist-footer-actions .btn-secondary {
-  padding: 9px 11px;
-  font-size: 0.88rem;
+html[data-readability="large"] .brand-title {
+  font-size: 1.42rem;
+}
+
+html[data-readability="large"] .setlist-footer-actions .btn-add-song {
+  padding: 9px 20px;
+  font-size: 0.9rem;
   white-space: nowrap;
 }
 
