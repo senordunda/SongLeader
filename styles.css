@@ -2688,3 +2688,349 @@ html[data-theme="dark"] .sheet-page-img {
   border-color: #342F2B;
   filter: brightness(0.92) contrast(1.04);
 }
+
+
+/* ==========================================================================
+   About This App Section (Settings)
+   ========================================================================== */
+.about-section {
+  padding-bottom: 2px;
+}
+
+.about-text {
+  margin: 0 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.5;
+  color: var(--ink-muted) !important;
+}
+
+/* ==========================================================================
+   Readability: Large Size Mode (Balanced Larger Text & Taller Tap Targets)
+   ========================================================================== */
+html[data-readability="large"] {
+  font-size: 17px;
+  --header-h: 54px;
+  --nav-h: 62px;
+}
+
+/* Search & Filter Buttons (taller & easier to tap) */
+html[data-readability="large"] .search-input {
+  height: 46px;
+  font-size: 1rem;
+}
+
+html[data-readability="large"] .filter-tab {
+  min-height: 38px;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+}
+
+html[data-readability="large"] .icon-toggle-btn {
+  min-height: 38px;
+  padding: 8px 12px;
+  font-size: 1.02rem;
+}
+
+html[data-readability="large"] .scans-toggle-btn {
+  min-height: 38px;
+  padding: 8px 12px;
+  font-size: 0.86rem;
+}
+
+html[data-readability="large"] .tag-filter-select,
+html[data-readability="large"] .btn-clear-tag {
+  height: 36px;
+  font-size: 0.88rem;
+}
+
+html[data-readability="large"] .results-summary {
+  font-size: 0.84rem;
+  padding: 6px 14px;
+}
+
+/* Hymnal List Rows */
+html[data-readability="large"] .hymn-row {
+  grid-template-columns: 54px 1fr auto;
+  padding: 12px 14px;
+}
+
+html[data-readability="large"] .hymn-num {
+  font-size: 1.12rem;
+}
+
+html[data-readability="large"] .hymn-title-line {
+  font-size: 1.04rem;
+}
+
+html[data-readability="large"] .hymn-sub-line,
+html[data-readability="large"] .hymn-dontsing-reason {
+  font-size: 0.86rem;
+}
+
+html[data-readability="large"] .key-tag {
+  font-size: 0.82rem;
+  padding: 3px 7px;
+}
+
+html[data-readability="large"] .hymn-recency,
+html[data-readability="large"] .mini-tag {
+  font-size: 0.76rem;
+}
+
+/* Song Detail Header, Nav Arrows, & Quick Actions */
+html[data-readability="large"] .detail-header {
+  height: 52px;
+}
+
+html[data-readability="large"] .btn-back {
+  font-size: 0.98rem;
+  padding: 8px 8px 8px 0;
+}
+
+html[data-readability="large"] .btn-hymn-nav {
+  width: 34px;
+  height: 34px;
+  font-size: 1.3rem;
+}
+
+html[data-readability="large"] .btn-hymn-nav-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 1.18rem;
+}
+
+html[data-readability="large"] .detail-num {
+  font-size: 1.14rem;
+}
+
+html[data-readability="large"] .detail-key {
+  font-size: 0.84rem;
+  padding: 3px 8px;
+}
+
+html[data-readability="large"] .btn-fav-header {
+  width: 38px;
+  height: 36px;
+  font-size: 1.2rem;
+}
+
+html[data-readability="large"] .btn-text-link {
+  font-size: 0.9rem;
+  padding: 8px 6px;
+}
+
+html[data-readability="large"] .song-title {
+  font-size: 1.34rem;
+}
+
+html[data-readability="large"] .song-alt-titles {
+  font-size: 0.98rem;
+}
+
+html[data-readability="large"] .song-first-line {
+  font-size: 0.88rem;
+}
+
+html[data-readability="large"] .btn-quick-action {
+  min-height: 36px;
+  padding: 7px 13px;
+  font-size: 0.88rem;
+}
+
+html[data-readability="large"] .last-sung-pill {
+  font-size: 0.82rem;
+  padding: 5px 9px;
+}
+
+/* Sheet Music Toolbar & Fullscreen Controls */
+html[data-readability="large"] .sheet-toolbar {
+  padding: 7px 10px;
+}
+
+html[data-readability="large"] .btn-tool {
+  height: 35px;
+  min-width: 35px;
+  padding: 0 10px;
+  font-size: 0.88rem;
+}
+
+html[data-readability="large"] .btn-highres {
+  height: 35px;
+  padding: 0 12px;
+  font-size: 0.85rem;
+}
+
+html[data-readability="large"] .btn-fs-pitch {
+  height: 34px;
+  padding: 0 11px;
+}
+
+html[data-readability="large"] .btn-fs-close {
+  height: 34px;
+  padding: 0 13px;
+  font-size: 0.86rem;
+}
+
+/* Song Page Personalization & Metadata Controls */
+html[data-readability="large"] .tag-input,
+html[data-readability="large"] .dontsing-reason-input,
+html[data-readability="large"] .btn-sm {
+  height: 40px;
+  font-size: 0.92rem;
+}
+
+html[data-readability="large"] .notes-textarea {
+  font-size: 0.94rem;
+  min-height: 68px;
+}
+
+html[data-readability="large"] .meta-tag,
+html[data-readability="large"] .custom-tag-chip {
+  font-size: 0.86rem;
+  padding: 4px 9px;
+}
+
+html[data-readability="large"] .custom-tag-remove {
+  font-size: 1.08rem;
+  padding: 0 3px;
+}
+
+html[data-readability="large"] .toggle-checkbox {
+  width: 23px;
+  height: 23px;
+}
+
+/* Pitch Bar (taller tap height while staying cleanly on one line) */
+html[data-readability="large"] .btn-pitch-hold,
+html[data-readability="large"] .btn-pitch-arp {
+  height: 44px;
+}
+
+html[data-readability="large"] .pitch-btn-key {
+  font-size: 1.32rem;
+}
+
+html[data-readability="large"] .pitch-btn-sub {
+  font-size: 0.86rem;
+}
+
+html[data-readability="large"] .btn-pitch-arp {
+  font-size: 0.84rem;
+  padding: 0 10px;
+}
+
+html[data-readability="large"] .btn-step {
+  height: 42px;
+  padding: 0 8px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 400px) {
+  html[data-readability="large"] .btn-step {
+    padding: 0 5px;
+    font-size: 0.74rem;
+  }
+  html[data-readability="large"] .btn-pitch-arp {
+    padding: 0 7px;
+    font-size: 0.76rem;
+  }
+  html[data-readability="large"] .btn-pitch-hold {
+    padding: 0 6px;
+    gap: 4px;
+  }
+  html[data-readability="large"] .pitch-btn-key {
+    font-size: 1.16rem;
+  }
+  html[data-readability="large"] .pitch-btn-sub {
+    font-size: 0.76rem;
+  }
+}
+
+/* Setlists & Podium Runner Controls */
+html[data-readability="large"] .btn-runner {
+  padding: 8px 12px;
+  font-size: 0.86rem;
+}
+
+html[data-readability="large"] .btn-runner-close {
+  font-size: 1.45rem;
+  padding: 4px 6px;
+}
+
+html[data-readability="large"] .setlist-card {
+  padding: 13px 14px;
+}
+
+html[data-readability="large"] .setlist-name-input,
+html[data-readability="large"] .setlist-date-input {
+  height: 42px;
+}
+
+html[data-readability="large"] .setlist-notes-input {
+  height: 38px;
+  font-size: 0.9rem;
+}
+
+html[data-readability="large"] .slot-select {
+  height: 33px;
+  font-size: 0.8rem;
+  padding: 0 8px;
+}
+
+html[data-readability="large"] .btn-slot-move,
+html[data-readability="large"] .btn-slot-remove {
+  width: 34px;
+  height: 34px;
+  font-size: 0.92rem;
+}
+
+html[data-readability="large"] .btn-slot-remove {
+  font-size: 1.2rem;
+}
+
+html[data-readability="large"] .setlist-song-main {
+  padding: 5px 0;
+}
+
+html[data-readability="large"] .setlist-song-title {
+  font-size: 1.02rem;
+}
+
+html[data-readability="large"] .btn-precache {
+  min-height: 42px;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+}
+
+html[data-readability="large"] .btn-primary,
+html[data-readability="large"] .btn-secondary {
+  min-height: 42px;
+  padding: 10px 16px;
+  font-size: 0.94rem;
+}
+
+html[data-readability="large"] .btn-danger-outline {
+  min-height: 38px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+}
+
+/* History & Bottom Navigation */
+html[data-readability="large"] .btn-history-del {
+  font-size: 1.35rem;
+  padding: 6px 8px;
+}
+
+html[data-readability="large"] .nav-item {
+  font-size: 0.78rem;
+}
+
+html[data-readability="large"] .nav-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Keep About text comfortably small even in Large Size */
+html[data-readability="large"] .about-text {
+  font-size: 0.82rem !important;
+}

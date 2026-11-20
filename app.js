@@ -22,6 +22,7 @@
     HISTORY: "pftl_history_v1",
     DARK_MODE: "pftl_dark_mode_v1",
     BIBLE_VERSION: "pftl_bible_version_v1",
+    READABILITY: "pftl_readability_v1",
   };
 
   const SERVICE_SLOTS = [
@@ -203,7 +204,8 @@
     activeCustomTag: "",
     showSupplement: localStorage.getItem(STORAGE_KEYS.SHOW_SUPPLEMENT) === "true",
     darkMode: localStorage.getItem(STORAGE_KEYS.DARK_MODE) === "true",
-    bibleVersion: localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "NKJV",
+    bibleVersion: normalizeBibleVersion(localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "NKJV"),
+    readability: localStorage.getItem(STORAGE_KEYS.READABILITY) === "large" ? "large" : "small",
     activeTab: "hymnal",
     selectedId: null,
 
@@ -284,6 +286,7 @@
 
     // Settings & Backup
     darkModeToggle: document.getElementById("darkModeToggle"),
+    readabilitySelect: document.getElementById("readabilitySelect"),
     bibleVersionSelect: document.getElementById("bibleVersionSelect"),
     showSupplementToggle: document.getElementById("showSupplementToggle"),
     statFavCount: document.getElementById("statFavCount"),
@@ -426,6 +429,12 @@
   // =========================================================================
   // Helpers & Date Formatting
   // =========================================================================
+  function normalizeBibleVersion(ver) {
+    const v = String(ver || "NKJV").trim().toUpperCase();
+    if (v === "NASV") return "NASB";
+    return ["NKJV", "ESV", "KJV", "NASB", "ASV"].includes(v) ? v : "NKJV";
+  }
+
   function loadJSON(key, fallback) {
     try {
       const raw = localStorage.getItem(key);
@@ -631,6 +640,13 @@
     }
   }
 
+  function applyReadability() {
+    document.documentElement.setAttribute("data-readability", state.readability === "large" ? "large" : "small");
+    if (el.readabilitySelect) {
+      el.readabilitySelect.value = state.readability;
+    }
+  }
+
   function getBrowsableHymns() {
     return state.showSupplement ? state.hymns : state.hymns.filter((h) => !isSupplement(h));
   }
@@ -669,7 +685,7 @@
 
   function buildBibleGatewayUrl(scriptureRef) {
     const query = encodeURIComponent(String(scriptureRef || "").trim());
-    const version = encodeURIComponent(state.bibleVersion || "NKJV");
+    const version = encodeURIComponent(normalizeBibleVersion(state.bibleVersion));
     return `https://www.biblegateway.com/passage/?search=${query}&version=${version}`;
   }
 
@@ -2154,6 +2170,7 @@ Add it to this setlist anyway?`
         history: state.history,
         showSupplement: state.showSupplement,
         darkMode: state.darkMode,
+        readability: state.readability,
         bibleVersion: state.bibleVersion,
       },
     };
@@ -2218,8 +2235,13 @@ Add it to this setlist anyway?`
           localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
           applyTheme();
         }
+        if (d.readability === "large" || d.readability === "small") {
+          state.readability = d.readability;
+          localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
+          applyReadability();
+        }
         if (typeof d.bibleVersion === "string" && d.bibleVersion.trim()) {
-          state.bibleVersion = d.bibleVersion.trim();
+          state.bibleVersion = normalizeBibleVersion(d.bibleVersion);
           el.bibleVersionSelect.value = state.bibleVersion;
           localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
         }
@@ -2628,9 +2650,21 @@ Add it to this setlist anyway?`
       applyTheme();
     });
 
+    el.readabilitySelect.value = state.readability;
+    el.readabilitySelect.addEventListener("change", () => {
+      state.readability = el.readabilitySelect.value === "large" ? "large" : "small";
+      try {
+        localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
+      } catch (_) {}
+      applyReadability();
+      if (state.selectedId && !el.sheetPages.classList.contains("hidden")) {
+        applyCenteredZoom(el.sheetViewport, el.sheetPages, el.zoomResetBtn, state.zoomLevel, false);
+      }
+    });
+
     el.bibleVersionSelect.value = state.bibleVersion;
     el.bibleVersionSelect.addEventListener("change", () => {
-      state.bibleVersion = el.bibleVersionSelect.value;
+      state.bibleVersion = normalizeBibleVersion(el.bibleVersionSelect.value);
       try {
         localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
       } catch (_) {}
@@ -2854,6 +2888,7 @@ Add it to this setlist anyway?`
   // =========================================================================
   async function init() {
     applyTheme();
+    applyReadability();
     bindEvents();
     updatePitchUI();
 
