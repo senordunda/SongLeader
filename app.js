@@ -424,6 +424,7 @@
     markSungSongLabel: document.getElementById("markSungSongLabel"),
     markSungDateInput: document.getElementById("markSungDateInput"),
     markSungServiceInput: document.getElementById("markSungServiceInput"),
+    appToast: document.getElementById("appToast"),
   };
 
   // =========================================================================
@@ -2886,10 +2887,144 @@ Add it to this setlist anyway?`
   // =========================================================================
   // Data Loading & Init
   // =========================================================================
+  // =========================================================================
+  // Native-Style Phone Back Navigation & Double-Back Exit Guard
+  // =========================================================================
+  let backGuardReady = false;
+  let backGuardPushed = false;
+  let exitGuardTimer = null;
+  let toastTimer = null;
+
+  function showToast(msg, durationMs = 2200) {
+    if (!el.appToast) return;
+    el.appToast.textContent = msg;
+    el.appToast.classList.remove("hidden");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      el.appToast.classList.add("hidden");
+    }, durationMs);
+  }
+
+  function hideToast() {
+    if (toastTimer) {
+      clearTimeout(toastTimer);
+      toastTimer = null;
+    }
+    if (el.appToast) el.appToast.classList.add("hidden");
+  }
+
+  function armBackGuard() {
+    if (backGuardPushed) return;
+    try {
+      if (!backGuardReady) {
+        history.replaceState({ pftlRoot: true }, "");
+        backGuardReady = true;
+      }
+      history.pushState({ pftlGuard: true }, "");
+      backGuardPushed = true;
+    } catch (_) {
+      // Ignore if History API is restricted
+    }
+  }
+
+  function cancelExitGuardAndRearm() {
+    if (exitGuardTimer) {
+      clearTimeout(exitGuardTimer);
+      exitGuardTimer = null;
+      hideToast();
+      armBackGuard();
+    }
+  }
+
+  function isMobileViewport() {
+    return window.innerWidth < 860;
+  }
+
+  function setupBackNavigation() {
+    // Arm the history guard on first user interaction (required by mobile browsers)
+    const onFirstInteraction = () => {
+      armBackGuard();
+      window.removeEventListener("pointerdown", onFirstInteraction, true);
+      window.removeEventListener("keydown", onFirstInteraction, true);
+    };
+    window.addEventListener("pointerdown", onFirstInteraction, true);
+    window.addEventListener("keydown", onFirstInteraction, true);
+
+    // If user interacts again while the "Press back again to exit" toast is active, re-arm
+    window.addEventListener("pointerdown", () => {
+      if (exitGuardTimer) cancelExitGuardAndRearm();
+    }, true);
+
+    window.addEventListener("popstate", () => {
+      backGuardPushed = false;
+
+      // 1. Close any open modal first
+      if (!el.quickJumpModal.classList.contains("hidden")) {
+        closeQuickJump();
+        armBackGuard();
+        return;
+      }
+      if (!el.addToSetlistModal.classList.contains("hidden")) {
+        closeAddToSetlistModal();
+        armBackGuard();
+        return;
+      }
+      if (!el.songPickerModal.classList.contains("hidden")) {
+        closeSongPicker();
+        armBackGuard();
+        return;
+      }
+      if (!el.markSungModal.classList.contains("hidden")) {
+        closeMarkSungModal();
+        armBackGuard();
+        return;
+      }
+
+      // 2. Exit Fullscreen sheet music overlay
+      if (state.isFullscreen) {
+        closeFullscreen();
+        armBackGuard();
+        return;
+      }
+
+      // 3. On mobile, close the Song Detail overlay back to the list/setlist
+      if (isMobileViewport() && el.songDetailPane.classList.contains("mobile-open")) {
+        closeSongMobile();
+        armBackGuard();
+        return;
+      }
+
+      // 4. Inside a Setlist Editor -> go back to Setlists directory
+      if (state.activeTab === "setlists" && state.activeSetlistId) {
+        closeSetlistEditor();
+        armBackGuard();
+        return;
+      }
+
+      // 5. On any secondary tab -> return to Hymnal home tab
+      if (state.activeTab !== "hymnal") {
+        switchTab("hymnal");
+        armBackGuard();
+        return;
+      }
+
+      // 6. Already at root Hymnal screen -> double-back to exit guard
+      // Because we do NOT immediately re-push the guard state here,
+      // pressing Back a second time within 2.2s will naturally exit the app.
+      showToast("Press back again to exit", 2200);
+      if (exitGuardTimer) clearTimeout(exitGuardTimer);
+      exitGuardTimer = setTimeout(() => {
+        exitGuardTimer = null;
+        armBackGuard();
+      }, 2200);
+    });
+  }
+
   async function init() {
     applyTheme();
     applyReadability();
     bindEvents();
+    setupBackNavigation();
     updatePitchUI();
 
     try {

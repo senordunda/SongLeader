@@ -2071,7 +2071,7 @@ body {
 
 .setlist-footer-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: 8px;
 }
 
@@ -2080,6 +2080,7 @@ body {
   padding: 8px 10px;
   font-size: 0.84rem;
   border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 
 .btn-log-full {
@@ -2997,9 +2998,17 @@ html[data-readability="large"] .setlist-song-title {
 }
 
 html[data-readability="large"] .btn-precache {
+  height: auto;
   min-height: 42px;
-  padding: 9px 12px;
-  font-size: 0.9rem;
+  padding: 9px 10px;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+html[data-readability="large"] .setlist-footer-actions .btn-secondary {
+  padding: 9px 11px;
+  font-size: 0.88rem;
+  white-space: nowrap;
 }
 
 html[data-readability="large"] .btn-primary,
@@ -3033,4 +3042,35 @@ html[data-readability="large"] .nav-item svg {
 /* Keep About text comfortably small even in Large Size */
 html[data-readability="large"] .about-text {
   font-size: 0.82rem !important;
+}
+
+
+/* ==========================================================================
+   Lightweight Bottom Toast (Back-to-Exit Guard & Quick Feedback)
+   ========================================================================== */
+.app-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-h) + 14px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 95;
+  background: rgba(31, 29, 26, 0.92);
+  color: #FAF7F2;
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .app-toast {
+  background: rgba(239, 236, 230, 0.94);
+  color: #161413;
+}
+
+html[data-readability="large"] .app-toast {
+  font-size: 0.92rem;
+  padding: 10px 18px;
 }
