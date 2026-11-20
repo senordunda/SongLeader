@@ -13,7 +13,7 @@
     <header class="app-header">
       <div class="header-inner">
         <div class="brand">
-          <h1 class="brand-title">Praise for the Lord</h1>
+          <h1 id="brandTitle" class="brand-title">Praise for the Lord</h1>
         </div>
         <button type="button" id="quickJumpBtn" class="btn-icon-text" aria-label="Jump to hymn number">
           <span class="hash-glyph">#</span>
@@ -63,6 +63,14 @@
             <button type="button" id="scansFilterBtn" class="scans-toggle-btn" aria-pressed="false" title="Only show hymns with sheet music scans">
               Scans
             </button>
+          </div>
+
+          <!-- Multi-Book Filter Bar (shown only when Multiple Hymnals is enabled with 2+ books) -->
+          <div id="bookFilterRow" class="tag-filter-row hidden">
+            <label for="bookFilterSelect" class="tag-filter-label">Book:</label>
+            <select id="bookFilterSelect" class="tag-filter-select">
+              <option value="all">All Enabled Books</option>
+            </select>
           </div>
 
           <!-- Custom Tag Filter Bar (shown automatically once you have custom tags) -->
@@ -197,6 +205,46 @@
           <h2>Settings &amp; Backup</h2>
 
           <div class="settings-list">
+            <div class="setting-row" id="primaryHymnalRow">
+              <div class="setting-text">
+                <strong>Hymnal</strong>
+                <p class="setting-desc">Choose which hymn book to browse and search.</p>
+              </div>
+              <select id="primaryHymnalSelect" class="form-select form-select-sm setting-select setting-select-wide" aria-label="Active hymnal">
+                <option value="pftl">Praise for the Lord</option>
+                <option value="sfp">Songs of Faith and Praise</option>
+                <option value="hfw">Hymns for Worship</option>
+                <option value="ss">Sacred Selections</option>
+              </select>
+            </div>
+
+            <label class="setting-row setting-toggle-row" for="multiBookToggle">
+              <div class="setting-text">
+                <strong>Enable Multiple Hymnals</strong>
+                <p class="setting-desc">Search and build setlists across more than one hymn book at the same time.</p>
+              </div>
+              <input type="checkbox" id="multiBookToggle" class="toggle-checkbox" />
+            </label>
+
+            <div id="multiBookList" class="multibook-list hidden" role="group" aria-label="Enabled hymn books">
+              <label class="multibook-item">
+                <input type="checkbox" class="toggle-checkbox multibook-cb" value="pftl" checked />
+                <span><strong>PFTL</strong> — Praise for the Lord</span>
+              </label>
+              <label class="multibook-item">
+                <input type="checkbox" class="toggle-checkbox multibook-cb" value="sfp" />
+                <span><strong>SFP</strong> — Songs of Faith and Praise</span>
+              </label>
+              <label class="multibook-item">
+                <input type="checkbox" class="toggle-checkbox multibook-cb" value="hfw" />
+                <span><strong>HFW</strong> — Hymns for Worship</span>
+              </label>
+              <label class="multibook-item">
+                <input type="checkbox" class="toggle-checkbox multibook-cb" value="ss" />
+                <span><strong>SS</strong> — Sacred Selections</span>
+              </label>
+            </div>
+
             <label class="setting-row setting-toggle-row" for="darkModeToggle">
               <div class="setting-text">
                 <strong>Dark Mode</strong>
@@ -230,7 +278,7 @@
               </select>
             </div>
 
-            <label class="setting-row setting-toggle-row" for="showSupplementToggle">
+            <label id="showSupplementRow" class="setting-row setting-toggle-row" for="showSupplementToggle">
               <div class="setting-text">
                 <strong>Show 901+ Supplement Songs</strong>
                 <p class="setting-desc">Include songs #901–#990 from the expanded edition in browse and search results (highlighted in warm tan).</p>
@@ -318,7 +366,7 @@
             </button>
             <div class="detail-header-title">
               <button type="button" id="prevHymnBtn" class="btn-hymn-nav" aria-label="Previous hymn by number" title="Previous hymn (&lt;)">&lsaquo;</button>
-              <span id="detailNumber" class="detail-num">#009</span>
+              <span id="detailBookBadge" class="book-badge hidden">PFTL</span><span id="detailNumber" class="detail-num">#009</span>
               <span id="detailKeyBadge" class="detail-key">D</span>
               <button type="button" id="nextHymnBtn" class="btn-hymn-nav" aria-label="Next hymn by number" title="Next hymn (&gt;)">&rsaquo;</button>
             </div>
@@ -555,7 +603,7 @@
     <div class="fs-toolbar">
       <div class="fs-title-wrap">
         <button type="button" id="fsPrevHymnBtn" class="btn-hymn-nav btn-hymn-nav-sm" aria-label="Previous hymn" title="Previous hymn">&lsaquo;</button>
-        <span id="fsNumber" class="fs-num">#009</span>
+        <span id="fsBookBadge" class="book-badge hidden">PFTL</span><span id="fsNumber" class="fs-num">#009</span>
         <button type="button" id="fsNextHymnBtn" class="btn-hymn-nav btn-hymn-nav-sm" aria-label="Next hymn" title="Next hymn">&rsaquo;</button>
         <span id="fsTitle" class="fs-title"></span>
       </div>
@@ -595,6 +643,7 @@
           autocomplete="off"
         />
         <p id="quickJumpError" class="quick-jump-error hidden"></p>
+        <div id="quickJumpChoices" class="quick-jump-choices hidden"></div>
         <div class="modal-actions">
           <button type="button" id="cancelQuickJumpBtn" class="btn-secondary">Cancel</button>
           <button type="submit" class="btn-primary">Open Hymn</button>

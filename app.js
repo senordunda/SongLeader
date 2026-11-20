@@ -23,7 +23,18 @@
     DARK_MODE: "pftl_dark_mode_v1",
     BIBLE_VERSION: "pftl_bible_version_v1",
     READABILITY: "pftl_readability_v1",
+    PRIMARY_HYMNAL: "pftl_primary_hymnal_v1",
+    MULTI_BOOK: "pftl_multi_book_v1",
+    ENABLED_HYMNALS: "pftl_enabled_hymnals_v1",
   };
+
+  const HYMNALS = {
+    pftl: { id: "pftl", code: "PFTL", name: "Praise for the Lord", file: "./pftl_hymns.json", hasSupplement: true },
+    sfp:  { id: "sfp",  code: "SFP",  name: "Songs of Faith and Praise", file: "./sfp_hymns.json", hasSupplement: false },
+    hfw:  { id: "hfw",  code: "HFW",  name: "Hymns for Worship", file: "./hfw_hymns.json", hasSupplement: false },
+    ss:   { id: "ss",   code: "SS",   name: "Sacred Selections", file: "./ss_hymns.json", hasSupplement: false },
+  };
+  const HYMNAL_ORDER = ["pftl", "sfp", "hfw", "ss"];
 
   const SERVICE_SLOTS = [
     "Opening",
@@ -195,8 +206,13 @@
   const pitchPipe = new PitchPipe();
 
   const state = {
-    hymns: [],
-    hymnMap: new Map(),
+    bookCache: new Map(), // bookId -> prepared hymn array
+    hymns: [],            // active books' hymns
+    hymnMap: new Map(),   // all loaded hymns by id (including background-loaded for Setlists/History)
+    primaryHymnal: HYMNALS[localStorage.getItem(STORAGE_KEYS.PRIMARY_HYMNAL)] ? localStorage.getItem(STORAGE_KEYS.PRIMARY_HYMNAL) : "pftl",
+    multiBookMode: localStorage.getItem(STORAGE_KEYS.MULTI_BOOK) === "true",
+    enabledHymnals: loadJSON(STORAGE_KEYS.ENABLED_HYMNALS, ["pftl"]),
+    activeBookFilter: "all",
     searchQuery: "",
     topicCategory: "all",
     onlyFavorites: false,
@@ -241,7 +257,10 @@
   // DOM References
   // =========================================================================
   const el = {
+    brandTitle: document.getElementById("brandTitle"),
     searchInput: document.getElementById("searchInput"),
+    bookFilterRow: document.getElementById("bookFilterRow"),
+    bookFilterSelect: document.getElementById("bookFilterSelect"),
     clearSearchBtn: document.getElementById("clearSearchBtn"),
     topicTabs: Array.from(document.querySelectorAll(".filter-tab")),
     favFilterBtn: document.getElementById("favFilterBtn"),
@@ -284,9 +303,15 @@
     historyEmpty: document.getElementById("historyEmpty"),
 
     // Settings & Backup
+    primaryHymnalRow: document.getElementById("primaryHymnalRow"),
+    primaryHymnalSelect: document.getElementById("primaryHymnalSelect"),
+    multiBookToggle: document.getElementById("multiBookToggle"),
+    multiBookList: document.getElementById("multiBookList"),
+    multiBookCheckboxes: Array.from(document.querySelectorAll(".multibook-cb")),
     darkModeToggle: document.getElementById("darkModeToggle"),
     readabilitySelect: document.getElementById("readabilitySelect"),
     bibleVersionSelect: document.getElementById("bibleVersionSelect"),
+    showSupplementRow: document.getElementById("showSupplementRow"),
     showSupplementToggle: document.getElementById("showSupplementToggle"),
     statFavCount: document.getElementById("statFavCount"),
     statTagCount: document.getElementById("statTagCount"),
@@ -315,6 +340,7 @@
     backToListBtn: document.getElementById("backToListBtn"),
     prevHymnBtn: document.getElementById("prevHymnBtn"),
     nextHymnBtn: document.getElementById("nextHymnBtn"),
+    detailBookBadge: document.getElementById("detailBookBadge"),
     detailNumber: document.getElementById("detailNumber"),
     detailKeyBadge: document.getElementById("detailKeyBadge"),
     detailFavBtn: document.getElementById("detailFavBtn"),
@@ -374,6 +400,7 @@
     fsOverlay: document.getElementById("fullscreenOverlay"),
     fsPrevHymnBtn: document.getElementById("fsPrevHymnBtn"),
     fsNextHymnBtn: document.getElementById("fsNextHymnBtn"),
+    fsBookBadge: document.getElementById("fsBookBadge"),
     fsNumber: document.getElementById("fsNumber"),
     fsTitle: document.getElementById("fsTitle"),
     fsHoldPitchBtn: document.getElementById("fsHoldPitchBtn"),
@@ -396,6 +423,7 @@
     quickJumpForm: document.getElementById("quickJumpForm"),
     quickJumpInput: document.getElementById("quickJumpInput"),
     quickJumpError: document.getElementById("quickJumpError"),
+    quickJumpChoices: document.getElementById("quickJumpChoices"),
 
     addToSetlistModal: document.getElementById("addToSetlistModal"),
     closeAddToSetlistBtn: document.getElementById("closeAddToSetlistBtn"),
@@ -563,7 +591,84 @@
   }
 
   function isSupplement(hymn) {
-    return typeof hymn.number === "number" && hymn.number > 900;
+    return hymn && hymn.bookId === "pftl" && typeof hymn.number === "number" && hymn.number > 900;
+  }
+
+  function getActiveBookIds() {
+    if (!state.multiBookMode) {
+      return [state.primaryHymnal];
+    }
+    const valid = (Array.isArray(state.enabledHymnals) ? state.enabledHymnals : []).filter((id) => Boolean(HYMNALS[id]));
+    return valid.length > 0 ? valid : [state.primaryHymnal];
+  }
+
+  function isMultiBookActive() {
+    return state.multiBookMode && getActiveBookIds().length > 1;
+  }
+
+  function getBookIdFromHymnId(hymnId) {
+    const s = String(hymnId || "");
+    const colonIdx = s.indexOf(":");
+    if (colonIdx > 0) {
+      const prefix = s.slice(0, colonIdx).toLowerCase();
+      if (HYMNALS[prefix]) return prefix;
+    }
+    return "pftl";
+  }
+
+  function shouldShowBookBadgeForHymn(hymn) {
+    if (!hymn) return false;
+    if (isMultiBookActive()) return true;
+    return hymn.bookId !== state.primaryHymnal;
+  }
+
+  function updateHymnalSettingsUI() {
+    const activeIds = getActiveBookIds();
+    const multi = isMultiBookActive();
+
+    if (el.primaryHymnalSelect) el.primaryHymnalSelect.value = state.primaryHymnal;
+    if (el.primaryHymnalRow) el.primaryHymnalRow.classList.toggle("hidden", state.multiBookMode);
+    if (el.multiBookToggle) el.multiBookToggle.checked = state.multiBookMode;
+    if (el.multiBookList) el.multiBookList.classList.toggle("hidden", !state.multiBookMode);
+
+    el.multiBookCheckboxes.forEach((cb) => {
+      cb.checked = activeIds.includes(cb.value);
+    });
+
+    // Show 901+ Supplement toggle only when PFTL is active
+    if (el.showSupplementRow) {
+      el.showSupplementRow.classList.toggle("hidden", !activeIds.includes("pftl"));
+    }
+
+    // Update top header title
+    if (el.brandTitle) {
+      if (multi) {
+        el.brandTitle.textContent = "SongLeader";
+      } else {
+        const b = HYMNALS[activeIds[0]] || HYMNALS.pftl;
+        el.brandTitle.textContent = b.name;
+      }
+    }
+    document.title = multi ? "SongLeader" : `${(HYMNALS[activeIds[0]] || HYMNALS.pftl).name} — SongLeader`;
+
+    // Update Book Filter dropdown on home screen
+    if (multi) {
+      el.bookFilterRow.classList.remove("hidden");
+      const prev = state.activeBookFilter;
+      el.bookFilterSelect.innerHTML = '<option value="all">All Enabled Books</option>';
+      activeIds.forEach((id) => {
+        const b = HYMNALS[id];
+        const opt = document.createElement("option");
+        opt.value = id;
+        opt.textContent = `${b.code} — ${b.name}`;
+        el.bookFilterSelect.appendChild(opt);
+      });
+      state.activeBookFilter = (prev !== "all" && activeIds.includes(prev)) ? prev : "all";
+      el.bookFilterSelect.value = state.activeBookFilter;
+    } else {
+      state.activeBookFilter = "all";
+      el.bookFilterRow.classList.add("hidden");
+    }
   }
 
   function normalizeForSearch(str) {
@@ -693,9 +798,12 @@
     // Header subtitle removed for a cleaner, larger title
   }
 
-  function prepareHymns(rawList) {
+  function prepareBookData(bookId, rawList) {
+    const bookMeta = HYMNALS[bookId] || HYMNALS.pftl;
     const cleaned = rawList.map((h) => {
       const num = typeof h.number === "number" ? h.number : parseInt(h.number_str || h.id, 10) || null;
+      const numStr = String(h.number_str || num || h.id);
+      const id = bookId === "pftl" ? String(h.id || numStr) : (String(h.id || "").includes(":") ? String(h.id) : `${bookId}:${numStr}`);
       const altTitles = Array.isArray(h.alt_titles) ? h.alt_titles : [];
       const topics = Array.isArray(h.topics) ? h.topics : [];
       const scriptures = Array.isArray(h.scriptures) ? h.scriptures : [];
@@ -703,10 +811,13 @@
 
       return {
         ...h,
-        id: String(h.id || h.number_str || num),
+        id,
+        bookId,
+        bookCode: bookMeta.code,
+        bookName: bookMeta.name,
         number: num,
-        number_str: String(h.number_str || num || h.id),
-        title: h.title || h.first_line || `Hymn #${h.number_str}`,
+        number_str: numStr,
+        title: h.title || h.first_line || `Hymn #${numStr}`,
         alt_titles: altTitles,
         first_line: h.first_line || "",
         key: h.key || "",
@@ -714,11 +825,11 @@
         scriptures,
         scan_urls: scanUrls,
         has_scan: scanUrls.length > 0,
-        _numStr: String(h.number_str || num || "").toLowerCase(),
+        _numStr: numStr.toLowerCase(),
         _titleNorm: normalizeForSearch(h.title),
         _altNorm: normalizeForSearch(altTitles.join(" ")),
         _firstLineNorm: normalizeForSearch(h.first_line),
-        _metaNorm: normalizeForSearch([...topics, ...scriptures].join(" ")),
+        _metaNorm: normalizeForSearch([...topics, ...scriptures, bookMeta.code, bookMeta.name].join(" ")),
         _topicSet: new Set(topics.map(normalizeTopicKey)),
       };
     });
@@ -730,15 +841,77 @@
       return a.number_str.localeCompare(b.number_str);
     });
 
-    state.hymns = cleaned;
-    state.hymnMap = new Map(cleaned.map((h) => [h.id, h]));
+    state.bookCache.set(bookId, cleaned);
+    cleaned.forEach((h) => state.hymnMap.set(h.id, h));
+    return cleaned;
+  }
+
+  async function loadBook(bookId) {
+    if (state.bookCache.has(bookId)) return state.bookCache.get(bookId);
+    const meta = HYMNALS[bookId];
+    if (!meta) return [];
+    const resp = await fetch(meta.file, { cache: "no-cache" });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} loading ${meta.file}`);
+    const data = await resp.json();
+    if (!Array.isArray(data)) throw new Error(`Expected array in ${meta.file}`);
+    return prepareBookData(bookId, data);
+  }
+
+  function getReferencedExternalBookIds() {
+    const needed = new Set();
+    state.setlists.forEach((sl) => {
+      (sl.items || []).forEach((it) => needed.add(getBookIdFromHymnId(it.hymnId)));
+    });
+    state.history.forEach((entry) => {
+      needed.add(getBookIdFromHymnId(entry.hymnId));
+    });
+    return Array.from(needed).filter((id) => HYMNALS[id] && !state.bookCache.has(id));
+  }
+
+  async function syncActiveBooks() {
+    const activeIds = getActiveBookIds();
+    updateHymnalSettingsUI();
+
+    try {
+      await Promise.all(activeIds.map((id) => loadBook(id)));
+      el.loadErrorBanner.classList.add("hidden");
+    } catch (err) {
+      console.error("Failed to load hymnal data:", err);
+      el.loadErrorBanner.classList.remove("hidden");
+    }
+
+    // Merge active books in consistent book order, sorted by number within each book
+    const combined = [];
+    HYMNAL_ORDER.forEach((id) => {
+      if (activeIds.includes(id) && state.bookCache.has(id)) {
+        combined.push(...state.bookCache.get(id));
+      }
+    });
+    state.hymns = combined;
 
     rebuildLastSungMap();
-    updateHeaderSubtitle();
     refreshTagSelectorsAndStats();
     renderHymnList();
     renderSetlistsHome();
+    if (state.activeSetlistId) renderSetlistEditor();
     renderHistoryTab();
+    updateHymnNavButtons();
+
+    // Background-load any other books referenced in saved Setlists or History
+    const extraIds = getReferencedExternalBookIds();
+    if (extraIds.length > 0) {
+      Promise.allSettled(extraIds.map((id) => loadBook(id))).then(() => {
+        renderSetlistsHome();
+        if (state.activeSetlistId) renderSetlistEditor();
+        renderHistoryTab();
+      });
+    }
+  }
+
+  function prepareHymns(rawList) {
+    // Used by manual local JSON file picker fallback
+    prepareBookData(state.primaryHymnal, rawList);
+    syncActiveBooks();
   }
 
   // =========================================================================
@@ -776,6 +949,7 @@
     const matches = [];
 
     for (const h of state.hymns) {
+      if (isMultiBookActive() && state.activeBookFilter !== "all" && h.bookId !== state.activeBookFilter) continue;
       if (!state.showSupplement && isSupplement(h)) continue;
       if (state.onlyFavorites && !state.favorites.has(h.id)) continue;
       if (state.onlyWithScans && !h.has_scan) continue;
@@ -807,20 +981,27 @@
     const list = getFilteredHymns();
     const parts = [];
 
+    if (isMultiBookActive() && state.activeBookFilter !== "all") {
+      parts.push(HYMNALS[state.activeBookFilter].code);
+    }
     if (state.topicCategory !== "all") parts.push(QUICK_CATEGORIES[state.topicCategory].label);
     if (state.onlyFavorites) parts.push("Favorites");
     if (state.onlyWithScans) parts.push("With Scans");
     if (state.activeCustomTag) parts.push(`Tag: ${state.activeCustomTag}`);
-
-    const rangeLabel = state.showSupplement ? "1–990" : "1–900";
 
     if (state.searchQuery.trim()) {
       const scopeSuffix = parts.length ? ` in ${parts.join(" · ")}` : "";
       el.resultsSummary.textContent = `${list.length} match${list.length === 1 ? "" : "es"} for "${state.searchQuery.trim()}"${scopeSuffix}`;
     } else if (parts.length) {
       el.resultsSummary.textContent = `Showing ${list.length} songs · ${parts.join(" · ")}`;
-    } else {
+    } else if (isMultiBookActive()) {
+      const codes = getActiveBookIds().map((id) => HYMNALS[id].code).join(", ");
+      el.resultsSummary.textContent = `Showing ${list.length} songs (${codes})`;
+    } else if (state.primaryHymnal === "pftl") {
+      const rangeLabel = state.showSupplement ? "1–990" : "1–900";
       el.resultsSummary.textContent = `Showing ${list.length} songs (${rangeLabel})`;
+    } else {
+      el.resultsSummary.textContent = `Showing ${list.length} songs`;
     }
 
     el.hymnList.innerHTML = "";
@@ -849,6 +1030,9 @@
       if (dsEntry) btn.classList.add("is-dontsing");
       if (h.id === state.selectedId) btn.classList.add("selected");
 
+      const numCol = document.createElement("div");
+      numCol.className = "hymn-num-col";
+
       const numWrap = document.createElement("span");
       numWrap.className = "hymn-num-wrap";
 
@@ -864,6 +1048,14 @@
       numSpan.className = "hymn-num";
       numSpan.textContent = h.number_str;
       numWrap.appendChild(numSpan);
+      numCol.appendChild(numWrap);
+
+      if (isMultiBookActive()) {
+        const bBadge = document.createElement("span");
+        bBadge.className = "book-badge";
+        bBadge.textContent = h.bookCode;
+        numCol.appendChild(bBadge);
+      }
 
       const infoDiv = document.createElement("div");
       infoDiv.className = "hymn-info";
@@ -947,7 +1139,7 @@
         rightDiv.appendChild(noScan);
       }
 
-      btn.appendChild(numWrap);
+      btn.appendChild(numCol);
       btn.appendChild(infoDiv);
       btn.appendChild(rightDiv);
       li.appendChild(btn);
@@ -1340,7 +1532,7 @@ Add it to this setlist anyway?`
 
       const numEl = document.createElement("span");
       numEl.className = "setlist-song-num";
-      numEl.textContent = `#${h.number_str}`;
+      numEl.textContent = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
 
       const titleEl = document.createElement("span");
       titleEl.className = "setlist-song-title";
@@ -1524,7 +1716,7 @@ Add it to this setlist anyway?`
 
         const num = document.createElement("span");
         num.className = "history-entry-num";
-        num.textContent = `#${h.number_str}`;
+        num.textContent = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
         num.addEventListener("click", () => openSong(h.id));
 
         const info = document.createElement("div");
@@ -1644,7 +1836,7 @@ Add it to this setlist anyway?`
 
       const num = document.createElement("span");
       num.className = "hymn-num";
-      num.textContent = (state.dontSing[h.id] ? "⊘ " : "") + h.number_str;
+      num.textContent = (state.dontSing[h.id] ? "⊘ " : "") + (isMultiBookActive() ? `${h.bookCode} ${h.number_str}` : h.number_str);
 
       const info = document.createElement("div");
       info.className = "hymn-info";
@@ -1923,6 +2115,9 @@ Add it to this setlist anyway?`
     el.detailContent.classList.remove("hidden");
     el.songDetailPane.classList.add("mobile-open");
 
+    const showDetailBook = shouldShowBookBadgeForHymn(hymn);
+    el.detailBookBadge.textContent = hymn.bookCode || "PFTL";
+    el.detailBookBadge.classList.toggle("hidden", !showDetailBook);
     el.detailNumber.textContent = `#${hymn.number_str}`;
     el.detailKeyBadge.textContent = hymn.key ? formatKeyBadge(hymn.key) : "No Key";
     el.detailHymnaryLink.href = hymn.hymnary_url || "#";
@@ -2075,6 +2270,9 @@ Add it to this setlist anyway?`
     if (!hymn || !hymn.has_scan) return;
 
     state.isFullscreen = true;
+    const showFsBook = shouldShowBookBadgeForHymn(hymn);
+    el.fsBookBadge.textContent = hymn.bookCode || "PFTL";
+    el.fsBookBadge.classList.toggle("hidden", !showFsBook);
     el.fsNumber.textContent = `#${hymn.number_str}`;
     el.fsTitle.textContent = hymn.title;
 
@@ -2166,6 +2364,9 @@ Add it to this setlist anyway?`
         darkMode: state.darkMode,
         readability: state.readability,
         bibleVersion: state.bibleVersion,
+        primaryHymnal: state.primaryHymnal,
+        multiBookMode: state.multiBookMode,
+        enabledHymnals: state.enabledHymnals,
       },
     };
 
@@ -2238,6 +2439,18 @@ Add it to this setlist anyway?`
           state.bibleVersion = normalizeBibleVersion(d.bibleVersion);
           el.bibleVersionSelect.value = state.bibleVersion;
           localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
+        }
+        if (typeof d.primaryHymnal === "string" && HYMNALS[d.primaryHymnal]) {
+          state.primaryHymnal = d.primaryHymnal;
+          localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, state.primaryHymnal);
+        }
+        if (typeof d.multiBookMode === "boolean") {
+          state.multiBookMode = d.multiBookMode;
+          localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, String(state.multiBookMode));
+        }
+        if (Array.isArray(d.enabledHymnals) && d.enabledHymnals.length > 0) {
+          state.enabledHymnals = d.enabledHymnals.filter((id) => Boolean(HYMNALS[id]));
+          saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
         }
 
         rebuildLastSungMap();
@@ -2346,6 +2559,8 @@ Add it to this setlist anyway?`
   // =========================================================================
   function openQuickJump() {
     el.quickJumpError.classList.add("hidden");
+    el.quickJumpChoices.classList.add("hidden");
+    el.quickJumpChoices.innerHTML = "";
     el.quickJumpInput.value = "";
     el.quickJumpModal.classList.remove("hidden");
     setTimeout(() => el.quickJumpInput.focus(), 40);
@@ -2360,18 +2575,57 @@ Add it to this setlist anyway?`
     const raw = el.quickJumpInput.value.trim();
     if (!raw) return;
 
-    const normalized = String(parseInt(raw, 10));
-    const found = state.hymnMap.get(raw) || state.hymnMap.get(normalized);
+    el.quickJumpError.classList.add("hidden");
+    el.quickJumpChoices.classList.add("hidden");
+    el.quickJumpChoices.innerHTML = "";
 
-    if (!found) {
-      el.quickJumpError.textContent = `Hymn #${raw} was not found in Praise for the Lord.`;
+    const rawLower = raw.toLowerCase();
+    const normNum = String(parseInt(raw, 10));
+    const activeIds = getActiveBookIds();
+
+    const matches = state.hymns.filter((h) => {
+      if (!activeIds.includes(h.bookId)) return false;
+      return h._numStr === rawLower || (normNum !== "NaN" && h._numStr === normNum);
+    });
+
+    if (matches.length === 0) {
+      const scopeName = isMultiBookActive() ? "your enabled hymnals" : (HYMNALS[state.primaryHymnal]?.name || "the hymnal");
+      el.quickJumpError.textContent = `Hymn #${raw} was not found in ${scopeName}.`;
       el.quickJumpError.classList.remove("hidden");
       return;
     }
 
-    closeQuickJump();
-    switchTab("hymnal");
-    openSong(found.id);
+    if (matches.length === 1) {
+      closeQuickJump();
+      switchTab("hymnal");
+      openSong(matches[0].id);
+      return;
+    }
+
+    // Multiple books contain this number — show quick picker
+    matches.forEach((h) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "qj-choice-btn";
+
+      const badge = document.createElement("span");
+      badge.className = "book-badge";
+      badge.textContent = h.bookCode;
+
+      const title = document.createElement("span");
+      title.className = "qj-choice-title";
+      title.textContent = `#${h.number_str} · ${h.title}`;
+
+      btn.appendChild(badge);
+      btn.appendChild(title);
+      btn.addEventListener("click", () => {
+        closeQuickJump();
+        switchTab("hymnal");
+        openSong(h.id);
+      });
+      el.quickJumpChoices.appendChild(btn);
+    });
+    el.quickJumpChoices.classList.remove("hidden");
   }
 
   // =========================================================================
@@ -2632,6 +2886,46 @@ Add it to this setlist anyway?`
       if (!markSungTargetId) return;
       logSongSung(markSungTargetId, el.markSungDateInput.value, el.markSungServiceInput.value);
       closeMarkSungModal();
+    });
+
+    // Settings: Hymnal Selection & Multi-Book Mode
+    el.primaryHymnalSelect.addEventListener("change", () => {
+      state.primaryHymnal = el.primaryHymnalSelect.value;
+      try {
+        localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, state.primaryHymnal);
+      } catch (_) {}
+      syncActiveBooks();
+    });
+
+    el.multiBookToggle.addEventListener("change", () => {
+      state.multiBookMode = el.multiBookToggle.checked;
+      if (state.multiBookMode && (!Array.isArray(state.enabledHymnals) || state.enabledHymnals.length === 0)) {
+        state.enabledHymnals = [state.primaryHymnal];
+        saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
+      }
+      try {
+        localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, String(state.multiBookMode));
+      } catch (_) {}
+      syncActiveBooks();
+    });
+
+    el.multiBookCheckboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        const checked = el.multiBookCheckboxes.filter((c) => c.checked).map((c) => c.value);
+        if (checked.length === 0) {
+          // Keep at least one book enabled
+          cb.checked = true;
+          return;
+        }
+        state.enabledHymnals = checked;
+        saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
+        syncActiveBooks();
+      });
+    });
+
+    el.bookFilterSelect.addEventListener("change", () => {
+      state.activeBookFilter = el.bookFilterSelect.value;
+      renderHymnList();
     });
 
     // Settings & Backup
@@ -3020,16 +3314,7 @@ Add it to this setlist anyway?`
     setupBackNavigation();
     updatePitchUI();
 
-    try {
-      const resp = await fetch("./pftl_hymns.json", { cache: "no-cache" });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const data = await resp.json();
-      if (!Array.isArray(data)) throw new Error("Expected an array of hymns");
-      prepareHymns(data);
-    } catch (err) {
-      console.error("Failed to fetch pftl_hymns.json:", err);
-      el.loadErrorBanner.classList.remove("hidden");
-    }
+    await syncActiveBooks();
   }
 
   init();

@@ -3083,3 +3083,107 @@ html[data-readability="large"] .app-toast {
   font-size: 0.92rem;
   padding: 10px 18px;
 }
+
+
+/* ==========================================================================
+   Multi-Hymnal Support (Zero Visual Impact in Single-Book Mode)
+   ========================================================================== */
+.setting-select-wide {
+  max-width: 175px;
+}
+
+.multibook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0 12px 4px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.multibook-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: var(--ink-secondary);
+  cursor: pointer;
+}
+
+.multibook-item strong {
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.multibook-item .toggle-checkbox {
+  margin-top: 0;
+}
+
+/* Subtle Book Code Badge (only rendered in Multi-Book Mode or cross-book Setlist/History) */
+.book-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  padding: 1px 4px;
+  line-height: 1.25;
+  flex-shrink: 0;
+}
+
+.hymn-num-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.quick-jump-choices {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qj-choice-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-primary);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.qj-choice-btn:active {
+  background: var(--bg-subtle);
+}
+
+.qj-choice-title {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+html[data-readability="large"] .book-badge {
+  font-size: 0.7rem;
+  padding: 1px 5px;
+}
+
+html[data-readability="large"] .multibook-item {
+  font-size: 0.94rem;
+}
