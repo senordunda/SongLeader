@@ -8,6 +8,36 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- First-Visit Hymnal Picker Landing Screen -->
+  <div id="landingScreen" class="landing-screen hidden" role="dialog" aria-modal="true" aria-labelledby="landingTitle">
+    <div class="landing-inner">
+      <div class="landing-header">
+        <p class="landing-kicker">SongLeader</p>
+        <h1 id="landingTitle" class="landing-title">Choose Your Hymnal</h1>
+        <p class="landing-subtitle">Select the hymn book your congregation uses to get started.</p>
+      </div>
+      <div class="landing-books" role="list">
+        <button type="button" class="landing-book-btn" data-book="pftl">
+          <span class="landing-book-name">Praise for the Lord</span>
+          <span class="landing-book-code">PFTL</span>
+        </button>
+        <button type="button" class="landing-book-btn" data-book="sfp">
+          <span class="landing-book-name">Songs of Faith and Praise</span>
+          <span class="landing-book-code">SFP</span>
+        </button>
+        <button type="button" class="landing-book-btn" data-book="hfw">
+          <span class="landing-book-name">Hymns for Worship</span>
+          <span class="landing-book-code">HFW</span>
+        </button>
+        <button type="button" class="landing-book-btn" data-book="ss">
+          <span class="landing-book-name">Sacred Selections</span>
+          <span class="landing-book-code">SS</span>
+        </button>
+      </div>
+      <p class="landing-footnote">You can switch hymnals or enable multiple books anytime in Settings.</p>
+    </div>
+  </div>
+
   <div id="app" class="app-shell">
     <!-- Top Header -->
     <header class="app-header">
@@ -36,6 +66,7 @@
               type="search"
               id="searchInput"
               class="search-input"
+              enterkeyhint="search"
               placeholder="Search #, title, alt title, first line, tag…"
               autocomplete="off"
               autocorrect="off"
@@ -184,6 +215,7 @@
             type="search"
             id="historySearchInput"
             class="search-input history-search-input"
+            enterkeyhint="search"
             placeholder="Filter history by #, title, or service…"
             autocomplete="off"
           />
@@ -281,7 +313,7 @@
             <label id="showSupplementRow" class="setting-row setting-toggle-row" for="showSupplementToggle">
               <div class="setting-text">
                 <strong>Show 901+ Supplement Songs</strong>
-                <p class="setting-desc">Include songs #901–#990 from the expanded edition in browse and search results (highlighted in warm tan).</p>
+                <p class="setting-desc">Include songs #901–#990 from the PFTL expanded edition in browse and search results (highlighted in warm tan).</p>
               </div>
               <input type="checkbox" id="showSupplementToggle" class="toggle-checkbox" />
             </label>
@@ -423,7 +455,7 @@
             </div>
 
             <!-- Sheet Music Section -->
-            <div class="sheet-section">
+            <div id="sheetSection" class="sheet-section">
               <div class="sheet-toolbar">
                 <span class="sheet-toolbar-label" id="scanStatusLabel">Sheet Music</span>
                 <div class="sheet-toolbar-actions">
@@ -466,7 +498,7 @@
                     id="newTagInput"
                     class="tag-input"
                     list="existingTagsList"
-                    placeholder="Add tag (e.g. Upbeat, Closing, Men's Lead)…"
+                    placeholder="Add tag (e.g. Closing, Baptism, Upbeat)"
                     autocomplete="off"
                   />
                   <datalist id="existingTagsList"></datalist>
@@ -520,8 +552,9 @@
           <!-- Ultra-Condensed Single-Line Bottom Pitch Pipe Bar -->
           <div class="pitch-bar" id="pitchBar" aria-label="Pitch pipe controls">
             <div id="manualKeyWrap" class="manual-key-bar hidden">
-              <label for="manualKeySelect" class="manual-key-label">No key listed — pick pitch:</label>
+              <label for="manualKeySelect" class="manual-key-label">No key listed — set key:</label>
               <select id="manualKeySelect" class="manual-key-select">
+                <option value="">— (None)</option>
                 <option value="C Major">C</option>
                 <option value="Db Major">D♭</option>
                 <option value="D Major">D</option>
@@ -713,6 +746,7 @@
           type="search"
           id="songPickerInput"
           class="search-input"
+          enterkeyhint="search"
           placeholder="Search #, title, alt title, or first line…"
           autocomplete="off"
         />

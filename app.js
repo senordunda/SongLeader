@@ -26,6 +26,8 @@
     PRIMARY_HYMNAL: "pftl_primary_hymnal_v1",
     MULTI_BOOK: "pftl_multi_book_v1",
     ENABLED_HYMNALS: "pftl_enabled_hymnals_v1",
+    MANUAL_KEYS: "pftl_manual_keys_v1",
+    ONBOARDED: "pftl_onboarded_v1",
   };
 
   const HYMNALS = {
@@ -227,6 +229,7 @@
 
     // Persisted user data
     transpositions: loadJSON(STORAGE_KEYS.TRANSPOSITIONS, {}),
+    manualKeys: loadJSON(STORAGE_KEYS.MANUAL_KEYS, {}),
     favorites: new Set(loadJSON(STORAGE_KEYS.FAVORITES, [])),
     customTags: loadJSON(STORAGE_KEYS.CUSTOM_TAGS, {}),
     dontSing: loadJSON(STORAGE_KEYS.DONT_SING, {}),
@@ -257,6 +260,8 @@
   // DOM References
   // =========================================================================
   const el = {
+    landingScreen: document.getElementById("landingScreen"),
+    landingBookButtons: Array.from(document.querySelectorAll(".landing-book-btn")),
     brandTitle: document.getElementById("brandTitle"),
     searchInput: document.getElementById("searchInput"),
     bookFilterRow: document.getElementById("bookFilterRow"),
@@ -363,6 +368,7 @@
     detailMarkSungBtn: document.getElementById("detailMarkSungBtn"),
     detailLastSungBadge: document.getElementById("detailLastSungBadge"),
 
+    sheetSection: document.getElementById("sheetSection"),
     scanStatusLabel: document.getElementById("scanStatusLabel"),
     zoomOutBtn: document.getElementById("zoomOutBtn"),
     zoomResetBtn: document.getElementById("zoomResetBtn"),
@@ -580,9 +586,23 @@
     return parsed.isMinor ? `${parsed.displayNote} Min` : parsed.displayNote;
   }
 
+  function getSongBaseKey(hymn) {
+    if (!hymn) return "";
+    if (hymn.key && hymn.key.trim()) return hymn.key.trim();
+    const saved = state.manualKeys[hymn.id];
+    return (typeof saved === "string" && saved.trim()) ? saved.trim() : "";
+  }
+
+  function bookHasAnyScans(bookId) {
+    const list = state.bookCache.get(bookId);
+    if (!Array.isArray(list) || list.length === 0) return false;
+    return list.some((h) => h.has_scan);
+  }
+
   function getEffectiveKeyForHymn(hymn) {
     if (!hymn) return "—";
-    const parsed = parseKeyString(hymn.key);
+    const baseKey = getSongBaseKey(hymn);
+    const parsed = parseKeyString(baseKey);
     if (!parsed) return "—";
     const shift = state.transpositions[hymn.id] || 0;
     const semitone = ((parsed.semitone + shift) % 12 + 12) % 12;
@@ -1113,7 +1133,7 @@
 
       const keyTag = document.createElement("span");
       keyTag.className = "key-tag";
-      keyTag.textContent = formatKeyBadge(h.key);
+      keyTag.textContent = formatKeyBadge(getSongBaseKey(h));
       rightTop.appendChild(keyTag);
 
       rightDiv.appendChild(rightTop);
@@ -1132,7 +1152,7 @@
         rightDiv.appendChild(suppTag);
       }
 
-      if (!h.has_scan) {
+      if (!h.has_scan && (isMultiBookActive() || bookHasAnyScans(h.bookId))) {
         const noScan = document.createElement("span");
         noScan.className = "no-scan-dot";
         noScan.textContent = "No scan";
@@ -1856,7 +1876,7 @@ Add it to this setlist anyway?`
 
       const key = document.createElement("span");
       key.className = "key-tag";
-      key.textContent = formatKeyBadge(h.key);
+      key.textContent = formatKeyBadge(getSongBaseKey(h));
 
       btn.appendChild(num);
       btn.appendChild(info);
@@ -2119,7 +2139,8 @@ Add it to this setlist anyway?`
     el.detailBookBadge.textContent = hymn.bookCode || "PFTL";
     el.detailBookBadge.classList.toggle("hidden", !showDetailBook);
     el.detailNumber.textContent = `#${hymn.number_str}`;
-    el.detailKeyBadge.textContent = hymn.key ? formatKeyBadge(hymn.key) : "No Key";
+    const baseKeyStr = getSongBaseKey(hymn);
+    el.detailKeyBadge.textContent = baseKeyStr ? formatKeyBadge(baseKeyStr) : "No Key";
     el.detailHymnaryLink.href = hymn.hymnary_url || "#";
 
     el.supplementBanner.classList.toggle("hidden", !isSupplement(hymn));
@@ -2205,6 +2226,15 @@ Add it to this setlist anyway?`
     el.sheetPages.innerHTML = "";
     el.sheetViewport.scrollLeft = 0;
     el.sheetViewport.scrollTop = 0;
+
+    const bookHasScans = bookHasAnyScans(hymn.bookId);
+    if (!bookHasScans && !hymn.has_scan) {
+      el.sheetSection.classList.add("hidden");
+      el.loadHighResBtn.classList.add("hidden");
+      el.fullscreenBtn.classList.add("hidden");
+      return;
+    }
+    el.sheetSection.classList.remove("hidden");
 
     if (!hymn.has_scan || hymn.scan_urls.length === 0) {
       el.sheetPages.classList.add("hidden");
@@ -2358,6 +2388,7 @@ Add it to this setlist anyway?`
         dontSing: state.dontSing,
         notes: state.notes,
         transpositions: state.transpositions,
+        manualKeys: state.manualKeys,
         setlists: state.setlists,
         history: state.history,
         showSupplement: state.showSupplement,
@@ -2411,6 +2442,10 @@ Add it to this setlist anyway?`
         if (d.transpositions && typeof d.transpositions === "object") {
           state.transpositions = d.transpositions;
           saveJSON(STORAGE_KEYS.TRANSPOSITIONS, state.transpositions);
+        }
+        if (d.manualKeys && typeof d.manualKeys === "object") {
+          state.manualKeys = d.manualKeys;
+          saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
         }
         if (Array.isArray(d.setlists)) {
           state.setlists = d.setlists;
@@ -2484,6 +2519,7 @@ Add it to this setlist anyway?`
     state.dontSing = {};
     state.notes = {};
     state.transpositions = {};
+    state.manualKeys = {};
     state.setlists = [];
     state.history = [];
     state.activeSetlistId = null;
@@ -2494,6 +2530,7 @@ Add it to this setlist anyway?`
     saveJSON(STORAGE_KEYS.DONT_SING, {});
     saveJSON(STORAGE_KEYS.NOTES, {});
     saveJSON(STORAGE_KEYS.TRANSPOSITIONS, {});
+    saveJSON(STORAGE_KEYS.MANUAL_KEYS, {});
     saveJSON(STORAGE_KEYS.SETLISTS, []);
     saveJSON(STORAGE_KEYS.HISTORY, []);
 
@@ -2514,14 +2551,18 @@ Add it to this setlist anyway?`
   // =========================================================================
   function getActivePitchInfo() {
     const hymn = state.hymnMap.get(state.selectedId);
-    const parsed = hymn ? parseKeyString(hymn.key) : null;
-    const base = parsed || parseKeyString(state.manualKey) || { semitone: 0, isMinor: false };
+    const listedParsed = hymn ? parseKeyString(hymn.key) : null;
+    const savedManualStr = hymn ? (state.manualKeys[hymn.id] || "") : "";
+    const savedManualParsed = parseKeyString(savedManualStr);
+    const base = listedParsed || savedManualParsed || parseKeyString(state.manualKey) || { semitone: 0, isMinor: false };
     const shift = hymn ? (state.transpositions[hymn.id] || 0) : 0;
     const transposedSemitone = ((base.semitone + shift) % 12 + 12) % 12;
     const noteName = SEMITONE_TO_NAME[transposedSemitone];
 
     return {
-      hasListedKey: Boolean(parsed),
+      hasListedKey: Boolean(listedParsed),
+      hasSavedManualKey: Boolean(savedManualParsed),
+      savedManualKey: savedManualStr,
       semitone: transposedSemitone,
       noteName,
       isMinor: base.isMinor,
@@ -2534,10 +2575,17 @@ Add it to this setlist anyway?`
     const info = getActivePitchInfo();
 
     el.manualKeyWrap.classList.toggle("hidden", info.hasListedKey);
+    if (!info.hasListedKey && el.manualKeySelect) {
+      el.manualKeySelect.value = info.hasSavedManualKey ? info.savedManualKey : "";
+    }
 
     let subLabel = "Original";
     if (!info.hasListedKey) {
-      subLabel = "Manual";
+      if (info.shift !== 0) {
+        subLabel = info.shift > 0 ? `+${info.shift}` : `${info.shift}`;
+      } else {
+        subLabel = info.hasSavedManualKey ? "Saved" : "Manual";
+      }
     } else if (info.shift !== 0) {
       subLabel = info.shift > 0 ? `+${info.shift}` : `${info.shift}`;
     }
@@ -2682,6 +2730,16 @@ Add it to this setlist anyway?`
       state.searchQuery = el.searchInput.value;
       el.clearSearchBtn.classList.toggle("hidden", !state.searchQuery);
       renderHymnList();
+    });
+
+    [el.searchInput, el.historySearchInput, el.songPickerInput].forEach((inp) => {
+      if (!inp) return;
+      inp.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          inp.blur();
+        }
+      });
     });
 
     el.clearSearchBtn.addEventListener("click", () => {
@@ -3108,7 +3166,25 @@ Add it to this setlist anyway?`
     });
 
     el.manualKeySelect.addEventListener("change", () => {
-      state.manualKey = el.manualKeySelect.value;
+      const val = el.manualKeySelect.value;
+      if (state.selectedId) {
+        if (val) {
+          state.manualKeys[state.selectedId] = val;
+          state.manualKey = val;
+        } else {
+          delete state.manualKeys[state.selectedId];
+        }
+        saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
+        const hymn = state.hymnMap.get(state.selectedId);
+        if (hymn) {
+          const baseKeyStr = getSongBaseKey(hymn);
+          el.detailKeyBadge.textContent = baseKeyStr ? formatKeyBadge(baseKeyStr) : "No Key";
+        }
+        renderHymnList();
+        if (state.activeSetlistId) renderSetlistEditor();
+      } else if (val) {
+        state.manualKey = val;
+      }
       updatePitchUI();
     });
 
@@ -3307,12 +3383,61 @@ Add it to this setlist anyway?`
     });
   }
 
+  function isFirstVisitUser() {
+    try {
+      if (localStorage.getItem(STORAGE_KEYS.ONBOARDED) === "true") return false;
+      // Treat existing returning users (who already have any saved pftl_ settings/data) as onboarded
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith("pftl_")) {
+          localStorage.setItem(STORAGE_KEYS.ONBOARDED, "true");
+          return false;
+        }
+      }
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function showLandingScreenIfNeeded() {
+    if (!el.landingScreen) return false;
+    if (!isFirstVisitUser()) return false;
+    el.landingScreen.classList.remove("hidden");
+    return true;
+  }
+
+  async function selectInitialHymnal(bookId) {
+    if (!HYMNALS[bookId]) return;
+    state.primaryHymnal = bookId;
+    state.multiBookMode = false;
+    state.enabledHymnals = [bookId];
+    try {
+      localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, bookId);
+      localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, "false");
+      saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, [bookId]);
+      localStorage.setItem(STORAGE_KEYS.ONBOARDED, "true");
+    } catch (_) {}
+    if (el.landingScreen) el.landingScreen.classList.add("hidden");
+    await syncActiveBooks();
+  }
+
   async function init() {
     applyTheme();
     applyReadability();
     bindEvents();
     setupBackNavigation();
     updatePitchUI();
+
+    el.landingBookButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        selectInitialHymnal(btn.dataset.book);
+      });
+    });
+
+    if (showLandingScreenIfNeeded()) {
+      return;
+    }
 
     await syncActiveBooks();
   }
