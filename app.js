@@ -668,6 +668,7 @@
         const b = HYMNALS[activeIds[0]] || HYMNALS.pftl;
         el.brandTitle.textContent = b.name;
       }
+      requestAnimationFrame(fitBrandTitle);
     }
     document.title = multi ? "SongLeader" : `${(HYMNALS[activeIds[0]] || HYMNALS.pftl).name} — SongLeader`;
 
@@ -765,11 +766,28 @@
     }
   }
 
+  function fitBrandTitle() {
+    const titleEl = el.brandTitle;
+    if (!titleEl) return;
+    // Reset any previous inline override so we start from the natural CSS size
+    titleEl.style.fontSize = "";
+    const available = titleEl.clientWidth;
+    if (available <= 0) return;
+
+    let sizePx = parseFloat(window.getComputedStyle(titleEl).fontSize) || 21;
+    const minPx = 14;
+    while (titleEl.scrollWidth > titleEl.clientWidth + 1 && sizePx > minPx) {
+      sizePx -= 0.5;
+      titleEl.style.fontSize = `${sizePx}px`;
+    }
+  }
+
   function applyReadability() {
     document.documentElement.setAttribute("data-readability", state.readability === "large" ? "large" : "small");
     if (el.readabilitySelect) {
       el.readabilitySelect.value = state.readability;
     }
+    requestAnimationFrame(fitBrandTitle);
   }
 
   function getBrowsableHymns() {
@@ -3127,6 +3145,7 @@ Add it to this setlist anyway?`
     });
 
     window.addEventListener("resize", () => {
+      fitBrandTitle();
       if (state.selectedId && !el.sheetPages.classList.contains("hidden")) {
         applyCenteredZoom(el.sheetViewport, el.sheetPages, el.zoomResetBtn, state.zoomLevel, false);
       }

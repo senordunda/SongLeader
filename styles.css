@@ -98,6 +98,7 @@ body {
 .brand {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -3250,59 +3251,42 @@ html[data-readability="large"] .multibook-item {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
   padding: 18px 18px;
-  background: var(--bg-surface);
-  color: var(--ink-primary);
-  border: 1px solid var(--border-strong);
-  border-left: 4px solid var(--accent);
+  background: #6B1A24;
+  color: #FAF7F2;
+  border: 1px solid #52121A;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   transition: background-color 0.12s ease, border-color 0.12s ease;
 }
 
 .landing-book-btn:hover {
-  background: var(--accent-tint);
-  border-color: var(--accent);
+  background: #7A1F2B;
+  border-color: #5C151F;
 }
 
 .landing-book-btn:active {
-  background: var(--accent);
+  background: #52121A;
   color: #FFFFFF;
 }
 
-.landing-book-btn:active .landing-book-code {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #FFFFFF;
+html[data-theme="dark"] .landing-book-btn {
+  background: #5E1722;
+  border-color: #7D2432;
+  color: #FAF7F2;
+}
+
+html[data-theme="dark"] .landing-book-btn:hover {
+  background: #721E2B;
 }
 
 .landing-book-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 700;
   line-height: 1.25;
-}
-
-.landing-book-code {
-  font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--accent);
-  background: var(--accent-tint);
-  border: 1px solid #DFB9C0;
-  border-radius: 2px;
-  padding: 3px 7px;
-  flex-shrink: 0;
-}
-
-html[data-theme="dark"] .landing-book-code {
-  color: #F2C9CF;
-  background: #361F23;
-  border-color: #63343C;
 }
 
 .landing-footnote {
