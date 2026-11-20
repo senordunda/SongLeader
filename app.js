@@ -20,6 +20,8 @@
     NOTES: "pftl_notes_v1",
     SETLISTS: "pftl_setlists_v1",
     HISTORY: "pftl_history_v1",
+    DARK_MODE: "pftl_dark_mode_v1",
+    BIBLE_VERSION: "pftl_bible_version_v1",
   };
 
   const SERVICE_SLOTS = [
@@ -200,6 +202,8 @@
     onlyWithScans: false,
     activeCustomTag: "",
     showSupplement: localStorage.getItem(STORAGE_KEYS.SHOW_SUPPLEMENT) === "true",
+    darkMode: localStorage.getItem(STORAGE_KEYS.DARK_MODE) === "true",
+    bibleVersion: localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "NKJV",
     activeTab: "hymnal",
     selectedId: null,
 
@@ -279,6 +283,8 @@
     historyEmpty: document.getElementById("historyEmpty"),
 
     // Settings & Backup
+    darkModeToggle: document.getElementById("darkModeToggle"),
+    bibleVersionSelect: document.getElementById("bibleVersionSelect"),
     showSupplementToggle: document.getElementById("showSupplementToggle"),
     statFavCount: document.getElementById("statFavCount"),
     statTagCount: document.getElementById("statTagCount"),
@@ -305,6 +311,8 @@
     detailContent: document.getElementById("detailContent"),
     detailScroll: document.getElementById("detailScroll"),
     backToListBtn: document.getElementById("backToListBtn"),
+    prevHymnBtn: document.getElementById("prevHymnBtn"),
+    nextHymnBtn: document.getElementById("nextHymnBtn"),
     detailNumber: document.getElementById("detailNumber"),
     detailKeyBadge: document.getElementById("detailKeyBadge"),
     detailFavBtn: document.getElementById("detailFavBtn"),
@@ -362,6 +370,8 @@
     arpeggioBtn: document.getElementById("arpeggioBtn"),
 
     fsOverlay: document.getElementById("fullscreenOverlay"),
+    fsPrevHymnBtn: document.getElementById("fsPrevHymnBtn"),
+    fsNextHymnBtn: document.getElementById("fsNextHymnBtn"),
     fsNumber: document.getElementById("fsNumber"),
     fsTitle: document.getElementById("fsTitle"),
     fsHoldPitchBtn: document.getElementById("fsHoldPitchBtn"),
@@ -608,6 +618,59 @@
     el.statNotesCount.textContent = String(
       Object.values(state.notes).filter((n) => n && n.trim()).length
     );
+  }
+
+  function applyTheme() {
+    document.documentElement.setAttribute("data-theme", state.darkMode ? "dark" : "light");
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute("content", state.darkMode ? "#5E1722" : "#7A1F2B");
+    }
+    if (el.darkModeToggle) {
+      el.darkModeToggle.checked = state.darkMode;
+    }
+  }
+
+  function getBrowsableHymns() {
+    return state.showSupplement ? state.hymns : state.hymns.filter((h) => !isSupplement(h));
+  }
+
+  function updateHymnNavButtons() {
+    if (!state.selectedId) return;
+    const list = getBrowsableHymns();
+    const idx = list.findIndex((h) => h.id === state.selectedId);
+    const hasPrev = idx > 0;
+    const hasNext = idx >= 0 && idx < list.length - 1;
+
+    if (el.prevHymnBtn) el.prevHymnBtn.disabled = !hasPrev;
+    if (el.nextHymnBtn) el.nextHymnBtn.disabled = !hasNext;
+    if (el.fsPrevHymnBtn) el.fsPrevHymnBtn.disabled = !hasPrev;
+    if (el.fsNextHymnBtn) el.fsNextHymnBtn.disabled = !hasNext;
+  }
+
+  function navigateHymnByOffset(delta) {
+    if (!state.selectedId) return;
+    const list = getBrowsableHymns();
+    const idx = list.findIndex((h) => h.id === state.selectedId);
+    if (idx < 0) return;
+    const target = list[idx + delta];
+    if (!target) return;
+
+    const wasFs = state.isFullscreen;
+    openSong(target.id);
+    if (wasFs) {
+      if (target.has_scan) {
+        openFullscreen();
+      } else {
+        closeFullscreen();
+      }
+    }
+  }
+
+  function buildBibleGatewayUrl(scriptureRef) {
+    const query = encodeURIComponent(String(scriptureRef || "").trim());
+    const version = encodeURIComponent(state.bibleVersion || "NKJV");
+    return `https://www.biblegateway.com/passage/?search=${query}&version=${version}`;
   }
 
   function updateHeaderSubtitle() {
@@ -1869,6 +1932,7 @@ Add it to this setlist anyway?`
     renderSheetMusic(hymn, isHymnHighResCached(hymn));
     renderMetadata(hymn);
     updatePitchUI();
+    updateHymnNavButtons();
 
     el.detailScroll.scrollTop = 0;
   }
@@ -2044,10 +2108,23 @@ Add it to this setlist anyway?`
     if (hymn.scriptures.length > 0) {
       el.scripturesGroup.classList.remove("hidden");
       hymn.scriptures.forEach((s) => {
-        const span = document.createElement("span");
-        span.className = "meta-tag";
-        span.textContent = s;
-        el.detailScriptures.appendChild(span);
+        const link = document.createElement("a");
+        link.className = "meta-tag scripture-link";
+        link.href = buildBibleGatewayUrl(s);
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.title = `Read ${s} (${state.bibleVersion}) on BibleGateway`;
+
+        const txt = document.createElement("span");
+        txt.textContent = s;
+        const arr = document.createElement("span");
+        arr.className = "scripture-link-arrow";
+        arr.setAttribute("aria-hidden", "true");
+        arr.textContent = "↗";
+
+        link.appendChild(txt);
+        link.appendChild(arr);
+        el.detailScriptures.appendChild(link);
       });
     } else {
       el.scripturesGroup.classList.add("hidden");
@@ -2076,6 +2153,8 @@ Add it to this setlist anyway?`
         setlists: state.setlists,
         history: state.history,
         showSupplement: state.showSupplement,
+        darkMode: state.darkMode,
+        bibleVersion: state.bibleVersion,
       },
     };
 
@@ -2133,6 +2212,16 @@ Add it to this setlist anyway?`
           state.showSupplement = d.showSupplement;
           el.showSupplementToggle.checked = state.showSupplement;
           localStorage.setItem(STORAGE_KEYS.SHOW_SUPPLEMENT, String(state.showSupplement));
+        }
+        if (typeof d.darkMode === "boolean") {
+          state.darkMode = d.darkMode;
+          localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
+          applyTheme();
+        }
+        if (typeof d.bibleVersion === "string" && d.bibleVersion.trim()) {
+          state.bibleVersion = d.bibleVersion.trim();
+          el.bibleVersionSelect.value = state.bibleVersion;
+          localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
         }
 
         rebuildLastSungMap();
@@ -2530,6 +2619,26 @@ Add it to this setlist anyway?`
     });
 
     // Settings & Backup
+    el.darkModeToggle.checked = state.darkMode;
+    el.darkModeToggle.addEventListener("change", () => {
+      state.darkMode = el.darkModeToggle.checked;
+      try {
+        localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
+      } catch (_) {}
+      applyTheme();
+    });
+
+    el.bibleVersionSelect.value = state.bibleVersion;
+    el.bibleVersionSelect.addEventListener("change", () => {
+      state.bibleVersion = el.bibleVersionSelect.value;
+      try {
+        localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
+      } catch (_) {}
+      if (state.selectedId && state.hymnMap.has(state.selectedId)) {
+        renderMetadata(state.hymnMap.get(state.selectedId));
+      }
+    });
+
     el.showSupplementToggle.checked = state.showSupplement;
     el.showSupplementToggle.addEventListener("change", () => {
       state.showSupplement = el.showSupplementToggle.checked;
@@ -2538,6 +2647,7 @@ Add it to this setlist anyway?`
       } catch (_) {}
       updateHeaderSubtitle();
       renderHymnList();
+      updateHymnNavButtons();
     });
 
     el.exportBackupBtn.addEventListener("click", exportBackup);
@@ -2555,8 +2665,12 @@ Add it to this setlist anyway?`
       openSong(row.dataset.id);
     });
 
-    // Detail Header: Back & Favorite
+    // Detail Header: Back, Prev/Next Hymn, & Favorite
     el.backToListBtn.addEventListener("click", closeSongMobile);
+    el.prevHymnBtn.addEventListener("click", () => navigateHymnByOffset(-1));
+    el.nextHymnBtn.addEventListener("click", () => navigateHymnByOffset(1));
+    el.fsPrevHymnBtn.addEventListener("click", () => navigateHymnByOffset(-1));
+    el.fsNextHymnBtn.addEventListener("click", () => navigateHymnByOffset(1));
     el.detailFavBtn.addEventListener("click", () => {
       if (state.selectedId) toggleFavorite(state.selectedId);
     });
@@ -2739,6 +2853,7 @@ Add it to this setlist anyway?`
   // Data Loading & Init
   // =========================================================================
   async function init() {
+    applyTheme();
     bindEvents();
     updatePitchUI();
 

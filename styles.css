@@ -2473,3 +2473,218 @@ body {
 .picker-row.is-supplement {
   background: var(--bg-supplement);
 }
+
+
+/* ==========================================================================
+   Enhancements: Dark Mode, Prev/Next Hymn Nav, & Clickable Scripture Links
+   ========================================================================== */
+
+.settings-list .setting-row {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.settings-list .setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-select {
+  width: auto;
+  min-width: 88px;
+  flex-shrink: 0;
+}
+
+/* Compact Prev/Next Hymn Arrows in Detail Header & Fullscreen Toolbar */
+.btn-hymn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-paper);
+  color: var(--ink-primary);
+  border-radius: var(--radius-sm);
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-hymn-nav:active {
+  background: var(--bg-subtle);
+}
+
+.btn-hymn-nav:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.btn-hymn-nav-sm {
+  width: 24px;
+  height: 24px;
+  font-size: 1.05rem;
+}
+
+/* Clickable Scripture Reference Badges */
+.scripture-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  color: var(--accent-dark);
+  background: var(--accent-tint);
+  border-color: #DFB9C0;
+  font-weight: 600;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.scripture-link:hover {
+  border-color: var(--accent);
+}
+
+.scripture-link-arrow {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   Dark Mode ("Dimmed Sanctuary" Warm Charcoal & Oxblood Palette)
+   ========================================================================== */
+html[data-theme="dark"] {
+  --bg-paper: #161413;
+  --bg-surface: #1F1C1A;
+  --bg-subtle: #2A2623;
+  --bg-supplement: #26211A;
+
+  --ink-primary: #EFECE6;
+  --ink-secondary: #B9B1A5;
+  --ink-muted: #8E867B;
+
+  --border-hairline: #342F2B;
+  --border-strong: #4A433D;
+
+  --accent: #A93848;
+  --accent-dark: #852836;
+  --accent-tint: #341E22;
+
+  --supp-ink: #D4B483;
+  --supp-border: #594A34;
+  --supp-bg: #2C251B;
+}
+
+html[data-theme="dark"] .app-header {
+  background: #5E1722;
+  border-bottom-color: #461018;
+}
+
+html[data-theme="dark"] .search-input:focus,
+html[data-theme="dark"] .tag-input:focus,
+html[data-theme="dark"] .notes-textarea:focus,
+html[data-theme="dark"] .quick-jump-input:focus {
+  background: #262220;
+}
+
+html[data-theme="dark"] .hymn-row.is-supplement .hymn-title-line {
+  color: #D9CBB6;
+}
+
+html[data-theme="dark"] .hymn-row.is-supplement.selected {
+  background: #3B282A;
+}
+
+html[data-theme="dark"] .hymn-row.is-dontsing,
+html[data-theme="dark"] .picker-row.is-dontsing {
+  background: #1A1816;
+}
+
+html[data-theme="dark"] .hymn-row.is-dontsing .hymn-num,
+html[data-theme="dark"] .hymn-row.is-dontsing .hymn-title-line {
+  color: #777068;
+  text-decoration-color: #5C564F;
+}
+
+html[data-theme="dark"] .hymn-dontsing-reason {
+  color: #E07A82;
+}
+
+html[data-theme="dark"] .mini-tag,
+html[data-theme="dark"] .custom-tag-chip,
+html[data-theme="dark"] .scripture-link {
+  color: #F2C9CF;
+  background: #361F23;
+  border-color: #63343C;
+}
+
+html[data-theme="dark"] .notice-supplement {
+  color: #DEC8A2;
+}
+
+html[data-theme="dark"] .notice-dontsing,
+html[data-theme="dark"] .notice-error {
+  background: #321B1E;
+  border-color: #693138;
+  color: #F2C1C6;
+}
+
+html[data-theme="dark"] .dontsing-reason-input {
+  background: #29181B;
+  border-color: #693138;
+  color: #F2C1C6;
+}
+
+html[data-theme="dark"] .slot-select {
+  color: #F2C9CF;
+  background: #361F23;
+  border-color: #63343C;
+}
+
+html[data-theme="dark"] .runner-bar {
+  background: #321C20;
+  border-bottom-color: #5D2E36;
+}
+
+html[data-theme="dark"] .runner-center strong,
+html[data-theme="dark"] .btn-runner-close {
+  color: #F2C9CF;
+}
+
+html[data-theme="dark"] .btn-runner {
+  background: #241F1D;
+  border-color: #6E3841;
+  color: #F2C9CF;
+}
+
+html[data-theme="dark"] .logged-badge {
+  color: #9ED8B0;
+  background: #1C3124;
+  border-color: #325941;
+}
+
+html[data-theme="dark"] .setlist-status-msg {
+  color: #9ED8B0;
+}
+
+html[data-theme="dark"] .btn-danger-outline {
+  color: #EB868E;
+  border-color: #6E363B;
+}
+
+html[data-theme="dark"] .btn-fs-close {
+  background: #3A3531;
+  border-color: #524B45;
+  color: #FAF7F2;
+}
+
+/* Keep sheet music crisp on a softly dimmed white page so it's readable without glare */
+html[data-theme="dark"] .sheet-viewport,
+html[data-theme="dark"] .fs-overlay,
+html[data-theme="dark"] .fs-viewport {
+  background: #1A1816;
+}
+
+html[data-theme="dark"] .sheet-page-img {
+  border-color: #342F2B;
+  filter: brightness(0.92) contrast(1.04);
+}

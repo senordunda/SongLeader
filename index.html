@@ -198,6 +198,28 @@
           <h2>Settings &amp; Backup</h2>
 
           <div class="settings-list">
+            <label class="setting-row setting-toggle-row" for="darkModeToggle">
+              <div class="setting-text">
+                <strong>Dark Mode</strong>
+                <p class="setting-desc">Low-glare charcoal &amp; burgundy palette for dim sanctuaries and evening services.</p>
+              </div>
+              <input type="checkbox" id="darkModeToggle" class="toggle-checkbox" />
+            </label>
+
+            <div class="setting-row">
+              <div class="setting-text">
+                <strong>Bible Translation</strong>
+                <p class="setting-desc">Used when opening clickable scripture reference links on BibleGateway.</p>
+              </div>
+              <select id="bibleVersionSelect" class="form-select form-select-sm setting-select" aria-label="Bible translation">
+                <option value="NKJV">NKJV</option>
+                <option value="ESV">ESV</option>
+                <option value="KJV">KJV</option>
+                <option value="NASV">NASV</option>
+                <option value="ASV">ASV</option>
+              </select>
+            </div>
+
             <label class="setting-row setting-toggle-row" for="showSupplementToggle">
               <div class="setting-text">
                 <strong>Show 901+ Supplement Songs</strong>
@@ -278,8 +300,10 @@
               <span>Back</span>
             </button>
             <div class="detail-header-title">
+              <button type="button" id="prevHymnBtn" class="btn-hymn-nav" aria-label="Previous hymn by number" title="Previous hymn (&lt;)">&lsaquo;</button>
               <span id="detailNumber" class="detail-num">#009</span>
               <span id="detailKeyBadge" class="detail-key">D</span>
+              <button type="button" id="nextHymnBtn" class="btn-hymn-nav" aria-label="Next hymn by number" title="Next hymn (&gt;)">&rsaquo;</button>
             </div>
             <div class="detail-header-actions">
               <button type="button" id="detailFavBtn" class="btn-fav-header" aria-pressed="false" title="Toggle Favorite">
@@ -513,7 +537,9 @@
   <div id="fullscreenOverlay" class="fs-overlay hidden" role="dialog" aria-modal="true" aria-label="Fullscreen sheet music">
     <div class="fs-toolbar">
       <div class="fs-title-wrap">
+        <button type="button" id="fsPrevHymnBtn" class="btn-hymn-nav btn-hymn-nav-sm" aria-label="Previous hymn" title="Previous hymn">&lsaquo;</button>
         <span id="fsNumber" class="fs-num">#009</span>
+        <button type="button" id="fsNextHymnBtn" class="btn-hymn-nav btn-hymn-nav-sm" aria-label="Next hymn" title="Next hymn">&rsaquo;</button>
         <span id="fsTitle" class="fs-title"></span>
       </div>
       <div class="fs-actions">
