@@ -25,7 +25,9 @@
     "raw_title": "We're Marching to Zion",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Hebrews 12:22-24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -54,8 +56,16 @@
     "alt_titles": [],
     "raw_title": "I Am Thine, O Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "John 12:32",
+      "Romans 14:8",
+      "Hebrews 13:21",
+      "James 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -69,8 +79,12 @@
     "alt_titles": [],
     "raw_title": "Worthy Art Thou",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Revelation 4:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -84,8 +98,13 @@
     "alt_titles": [],
     "raw_title": "We Shall See the King Some Day",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Hope",
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "Revelation 1:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -129,8 +148,14 @@
     "alt_titles": [],
     "raw_title": "True Worship",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance",
+      "Worship"
+    ],
+    "scriptures": [
+      "John 4:24",
+      "1 Corinthians 11:24-29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -144,8 +169,13 @@
     "alt_titles": [],
     "raw_title": "In the Service of My King",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "Psalm 100:2",
+      "John 4:35-38"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -159,8 +189,12 @@
     "alt_titles": [],
     "raw_title": "Praise Him! Praise Him!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Isaiah 40:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -175,7 +209,10 @@
     "raw_title": "Sing On",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Ephesians 5:18-20",
+      "Colossians 3:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -189,8 +226,12 @@
     "alt_titles": [],
     "raw_title": "Wonderful Words of Life",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Bible"
+    ],
+    "scriptures": [
+      "John 6:68"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -204,8 +245,14 @@
     "alt_titles": [],
     "raw_title": "Higher Ground",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Growth & Fruit-Bearing"
+    ],
+    "scriptures": [
+      "Philippians 3:13-14",
+      "Hebrews 12:1-2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -219,8 +266,13 @@
     "alt_titles": [],
     "raw_title": "\"Whosoever\" Meaneth Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy"
+    ],
+    "scriptures": [
+      "Luke 12:8",
+      "Revelation 22:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -250,7 +302,11 @@
     "raw_title": "Revive Us Again",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Isaiah 37:15",
+      "Ezekiel 9:8",
+      "Titus 3:5-6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -264,8 +320,17 @@
     "alt_titles": [],
     "raw_title": "All Hail the Power",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Kingship & Reign",
+      "Jesus: Lord",
+      "Jesus: Name"
+    ],
+    "scriptures": [
+      "Deuteronomy 7:6",
+      "Matthew 28:18",
+      "1 Peter 2:9",
+      "Revelation 19:12-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -279,8 +344,17 @@
     "alt_titles": [],
     "raw_title": "All Hail the Power",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Kingship & Reign",
+      "Jesus: Lord",
+      "Jesus: Name"
+    ],
+    "scriptures": [
+      "Deuteronomy 7:6",
+      "Matthew 28:18",
+      "1 Peter 2:9",
+      "Revelation 19:12-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -294,8 +368,13 @@
     "alt_titles": [],
     "raw_title": "Softly Now the Light of Day",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "Psalm 4:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -324,8 +403,16 @@
     "alt_titles": [],
     "raw_title": "I Will Sing the Wondrous Story",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Savior",
+      "Singing"
+    ],
+    "scriptures": [
+      "Isaiah 53:6",
+      "Matthew 18:12-13",
+      "1 Timothy 1:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -339,8 +426,13 @@
     "alt_titles": [],
     "raw_title": "Sweet Hour of Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Hebrews 4:16",
+      "1 Peter 5:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -354,8 +446,12 @@
     "alt_titles": [],
     "raw_title": "'Tis the Blessed Hour of Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Matthew 21:22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -369,8 +465,12 @@
     "alt_titles": [],
     "raw_title": "The Beautiful Garden of Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "John 18:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -399,8 +499,12 @@
     "alt_titles": [],
     "raw_title": "Be With Me, Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence"
+    ],
+    "scriptures": [
+      "Matthew 28:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -414,8 +518,12 @@
     "alt_titles": [],
     "raw_title": "My Jesus, I Love Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Love: For God & Christ"
+    ],
+    "scriptures": [
+      "1 John 4:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -429,8 +537,12 @@
     "alt_titles": [],
     "raw_title": "Savior, More than Life",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence"
+    ],
+    "scriptures": [
+      "1 John 1:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -444,8 +556,12 @@
     "alt_titles": [],
     "raw_title": "Pray All the Time",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "1 Thessalonians 5:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -459,8 +575,13 @@
     "alt_titles": [],
     "raw_title": "Watch and Pray",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Watchfulness",
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Matthew 26:41"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -474,8 +595,13 @@
     "alt_titles": [],
     "raw_title": "A Beautiful Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Jesus: Life & Ministry"
+    ],
+    "scriptures": [
+      "Matthew 26:38"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -489,8 +615,14 @@
     "alt_titles": [],
     "raw_title": "My Faith Looks Up to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Faith",
+      "Jesus: Lamb"
+    ],
+    "scriptures": [
+      "Romans 5:2",
+      "1 Peter 1:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -504,8 +636,13 @@
     "alt_titles": [],
     "raw_title": "A Blessing in Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Blessings",
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Matthew 7:7-11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -519,8 +656,13 @@
     "alt_titles": [],
     "raw_title": "An Evening Prayer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Forgiveness",
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "Psalm 19:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -534,8 +676,13 @@
     "alt_titles": [],
     "raw_title": "Close to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "Psalm 16:5",
+      "Psalm 73:25-26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -549,8 +696,12 @@
     "alt_titles": [],
     "raw_title": "Closer to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "James 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -564,8 +715,13 @@
     "alt_titles": [],
     "raw_title": "I Would Be True",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Loyalty"
+    ],
+    "scriptures": [
+      "1 Timothy 4:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -579,8 +735,13 @@
     "alt_titles": [],
     "raw_title": "Is Thy Heart Right With God?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Holiness & Purity",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Acts 8:21"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -594,8 +755,17 @@
     "alt_titles": [],
     "raw_title": "Guide Me, O Thou Great Jehovah",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Exodus 13:21-22",
+      "Exodus 16:4-18",
+      "Exodus 17:1-7",
+      "Joshua 3:1-17",
+      "Hebrews 11:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -609,8 +779,13 @@
     "alt_titles": [],
     "raw_title": "What Shall It Profit?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Giving",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Matthew 16:26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -624,8 +799,12 @@
     "alt_titles": [],
     "raw_title": "I Will Pray",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Psalm 55:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -639,8 +818,12 @@
     "alt_titles": [],
     "raw_title": "More About Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing"
+    ],
+    "scriptures": [
+      "Philippians 3:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -654,8 +837,14 @@
     "alt_titles": [],
     "raw_title": "More Holiness Give Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Growth & Fruit-Bearing",
+      "Christians: Holiness & Purity"
+    ],
+    "scriptures": [
+      "Hebrews 12:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -669,8 +858,12 @@
     "alt_titles": [],
     "raw_title": "More Love to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Love: For God & Christ"
+    ],
+    "scriptures": [
+      "Revelation 2:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -684,8 +877,15 @@
     "alt_titles": [],
     "raw_title": "Near the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Jesus: Lamb",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Isaiah 41:18",
+      "Galatians 6:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -699,8 +899,14 @@
     "alt_titles": [],
     "raw_title": "No, Not One",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Proverbs 18:24",
+      "Matthew 11:19",
+      "Matthew 28:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -714,8 +920,15 @@
     "alt_titles": [],
     "raw_title": "Hallelujah! What a Savior!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Jesus: Savior",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Isaiah 53",
+      "1 Peter 2:24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -729,8 +942,13 @@
     "alt_titles": [],
     "raw_title": "Kneel at the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Encouragement",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Romans 8:34"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -744,8 +962,14 @@
     "alt_titles": [],
     "raw_title": "He Leadeth Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 5:8",
+      "Romans 8:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -759,8 +983,13 @@
     "alt_titles": [],
     "raw_title": "Break Thou the Bread of Life",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Bible"
+    ],
+    "scriptures": [
+      "Deuteronomy 8:3",
+      "John 6:22-65"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -774,8 +1003,13 @@
     "alt_titles": [],
     "raw_title": "I Need Thee Every Hour",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "Christians: Temptation"
+    ],
+    "scriptures": [
+      "1 Corinthians 10:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -789,8 +1023,15 @@
     "alt_titles": [],
     "raw_title": "Purer in Heart, O God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Holiness & Purity",
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "1 Samuel 16:7",
+      "Matthew 5:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -804,8 +1045,12 @@
     "alt_titles": [],
     "raw_title": "Did You Think to Pray?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Philippians 4:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -819,8 +1064,16 @@
     "alt_titles": [],
     "raw_title": "Take Time to Be Holy",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Holiness & Purity",
+      "Holy Spirit"
+    ],
+    "scriptures": [
+      "Matthew 4:4",
+      "Matthew 6:6",
+      "Hebrews 12:14",
+      "1 John 5:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -834,8 +1087,15 @@
     "alt_titles": [],
     "raw_title": "Nearer, My God, to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Closing Hymns",
+      "Funeral"
+    ],
+    "scriptures": [
+      "Genesis 28:12",
+      "1 Samuel 14:36"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -849,8 +1109,13 @@
     "alt_titles": [],
     "raw_title": "My Jesus, As Thou Wilt!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Christians: Dependence"
+    ],
+    "scriptures": [
+      "James 4:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -879,8 +1144,16 @@
     "alt_titles": [],
     "raw_title": "Holy, Holy, Holy",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Holiness",
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "1 Samuel 2:2",
+      "Isaiah 6:1-4",
+      "Revelation 1:8",
+      "Revelation 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -924,8 +1197,14 @@
     "alt_titles": [],
     "raw_title": "Take My Hand, Precious Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Funeral"
+    ],
+    "scriptures": [
+      "Psalm 16:11",
+      "Psalm 139:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -939,8 +1218,16 @@
     "alt_titles": [],
     "raw_title": "What a Friend We Have in Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend",
+      "Prayer: Exhortation"
+    ],
+    "scriptures": [
+      "Psalm 27:10",
+      "Psalm 62:8",
+      "Matthew 11:28",
+      "1 Peter 5:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -954,8 +1241,14 @@
     "alt_titles": [],
     "raw_title": "For Me He Careth",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend",
+      "Jesus: Intercessor"
+    ],
+    "scriptures": [
+      "Hebrews 9:24",
+      "1 Peter 5:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -969,8 +1262,14 @@
     "alt_titles": [],
     "raw_title": "Open My Eyes that I May See",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Proverbs 20:12-13",
+      "Isaiah 29:18",
+      "Matthew 13:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -984,8 +1283,12 @@
     "alt_titles": [],
     "raw_title": "All People that on Earth Do Dwell",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Psalm 100"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -999,8 +1302,13 @@
     "alt_titles": [],
     "raw_title": "Praise God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Psalm 150:6",
+      "Ephesians 1:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1015,7 +1323,9 @@
     "raw_title": "Count Your Blessings",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "1 Chronicles 29:12-13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1029,8 +1339,13 @@
     "alt_titles": [],
     "raw_title": "Praise the Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Creator",
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Psalm 148:1-2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1044,8 +1359,14 @@
     "alt_titles": [],
     "raw_title": "Ivory Palaces",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character",
+      "Jesus: Life & Ministry",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "Psalm 45:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1074,8 +1395,13 @@
     "alt_titles": [],
     "raw_title": "The Lord My Shepherd Is",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1089,8 +1415,14 @@
     "alt_titles": [],
     "raw_title": "The Lord's My Shepherd, I'll Not Want",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 23",
+      "Ezekiel 34"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1104,8 +1436,14 @@
     "alt_titles": [],
     "raw_title": "The Lord's My Shepherd",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 23",
+      "Ezekiel 34"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1134,8 +1472,13 @@
     "alt_titles": [],
     "raw_title": "O How Love I Thy Law",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Bible"
+    ],
+    "scriptures": [
+      "Psalm 19:7-10",
+      "Psalm 119"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1149,8 +1492,12 @@
     "alt_titles": [],
     "raw_title": "Hallelujah, Praise Jehovah!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Psalm 148"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1164,8 +1511,13 @@
     "alt_titles": [],
     "raw_title": "Hark, the Gentle Voice",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Teacher"
+    ],
+    "scriptures": [
+      "Matthew 11:28-29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1179,8 +1531,12 @@
     "alt_titles": [],
     "raw_title": "O, the Things We May Do",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "Romans 15:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1209,8 +1565,13 @@
     "alt_titles": [],
     "raw_title": "Lord, Send Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Mission"
+    ],
+    "scriptures": [
+      "Isaiah 6:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1239,8 +1600,12 @@
     "alt_titles": [],
     "raw_title": "Somebody Did a Golden Deed",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Benevolence"
+    ],
+    "scriptures": [
+      "1 Corinthians 4:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1254,8 +1619,18 @@
     "alt_titles": [],
     "raw_title": "Have Thine Own Way, Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism",
+      "Christians: Christlikeness",
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Isaiah 28:16",
+      "Isaiah 64:8",
+      "Jeremiah 18:3-6",
+      "Galatians 2:20",
+      "James 4:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1299,8 +1674,12 @@
     "alt_titles": [],
     "raw_title": "Ye Are the Light of the World",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 5:14-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1329,8 +1708,14 @@
     "alt_titles": [],
     "raw_title": "Will You Not Tell it Today",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Mission"
+    ],
+    "scriptures": [
+      "Psalm 51:12-13",
+      "Luke 14:23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1344,8 +1729,13 @@
     "alt_titles": [],
     "raw_title": "Into Our Hands",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "1 Thessalonians 2:4",
+      "1 Timothy 1:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1374,8 +1764,12 @@
     "alt_titles": [],
     "raw_title": "You Never Mentioned Him to Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "James 5:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1389,8 +1783,12 @@
     "alt_titles": [],
     "raw_title": "A Soul Winner for Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 28:18-20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1419,8 +1817,13 @@
     "alt_titles": [],
     "raw_title": "The Last Mile of the Way",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral",
+      "Heaven: Reward & Crown"
+    ],
+    "scriptures": [
+      "2 Timothy 4:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1434,8 +1837,14 @@
     "alt_titles": [],
     "raw_title": "Make Me a Channel of Blessing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Benevolence",
+      "Mission"
+    ],
+    "scriptures": [
+      "Genesis 12:2-3",
+      "Zechariah 8:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1449,8 +1858,14 @@
     "alt_titles": [],
     "raw_title": "Give of Your Best to the Master",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Christians: Work & Service",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Romans 12:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1464,8 +1879,13 @@
     "alt_titles": [],
     "raw_title": "I Surrender All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Giving",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Romans 6:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1479,8 +1899,16 @@
     "alt_titles": [],
     "raw_title": "I'll Live for Him",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Giving"
+    ],
+    "scriptures": [
+      "Matthew 22:37",
+      "2 Corinthians 5:14-15",
+      "1 John 3:3",
+      "1 John 3:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1495,7 +1923,11 @@
     "raw_title": "Take My Life, and Let It Be",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "1 Chronicles 29:5",
+      "Matthew 22:37",
+      "Romans 12:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1509,8 +1941,13 @@
     "alt_titles": [],
     "raw_title": "Live For Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Titus 2:12-14",
+      "1 John 4:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1524,8 +1961,13 @@
     "alt_titles": [],
     "raw_title": "Living For Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Matthew 16:24",
+      "Titus 2:12-14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1539,8 +1981,12 @@
     "alt_titles": [],
     "raw_title": "A Beautiful Life",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Benevolence"
+    ],
+    "scriptures": [
+      "Matthew 25:34-40"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1554,8 +2000,14 @@
     "alt_titles": [],
     "raw_title": "I Am Praying for You",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Intercessor",
+      "Peace"
+    ],
+    "scriptures": [
+      "Acts 10:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1614,8 +2066,14 @@
     "alt_titles": [],
     "raw_title": "The Call for Reapers",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Psalm 126:6",
+      "Matthew 9:37-38",
+      "John 4:35-36"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1644,8 +2102,13 @@
     "alt_titles": [],
     "raw_title": "Ready",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial"
+    ],
+    "scriptures": [
+      "2 Timothy 2:11",
+      "Titus 3:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1659,8 +2122,14 @@
     "alt_titles": [],
     "raw_title": "Yield Not to Temptation",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial",
+      "Christians: Temptation"
+    ],
+    "scriptures": [
+      "1 Corinthians 10:13",
+      "3 John 1:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1674,8 +2143,16 @@
     "alt_titles": [],
     "raw_title": "Angry Words! O Let Them Never",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Love: brotherly",
+      "Unity & Peace"
+    ],
+    "scriptures": [
+      "Matthew 12:36-37",
+      "John 13:34-35",
+      "Colossians 3:8",
+      "James 3:5-10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1689,8 +2166,12 @@
     "alt_titles": [],
     "raw_title": "To the Work",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "1 Corinthians 15:58"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1704,8 +2185,12 @@
     "alt_titles": [],
     "raw_title": "I Want to Be a Worker",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "Matthew 21:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1719,8 +2204,14 @@
     "alt_titles": [],
     "raw_title": "We'll Work Till Jesus Comes",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Watchfulness",
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "Galatians 6:9",
+      "Hebrews 4:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1734,8 +2225,12 @@
     "alt_titles": [],
     "raw_title": "Work for the Night Is Coming",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "John 9:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1764,8 +2259,14 @@
     "alt_titles": [],
     "raw_title": "A Shelter in the Time of Storm",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Rock",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Psalm 61:3",
+      "Isaiah 25:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1780,7 +2281,10 @@
     "raw_title": "Rock of Ages",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Exodus 33:22",
+      "1 Peter 3:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1794,8 +2298,17 @@
     "alt_titles": [],
     "raw_title": "The Solid Rock",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Hope",
+      "Jesus: Righteousness",
+      "Jesus: Rock"
+    ],
+    "scriptures": [
+      "1 Corinthians 1:30",
+      "2 Corinthians 5:21",
+      "Philippians 3:9",
+      "Hebrews 6:13-20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1809,8 +2322,16 @@
     "alt_titles": [],
     "raw_title": "The Sheltering Rock",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Rock",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Isaiah 32:2",
+      "Ezekiel 18:31",
+      "Ezekiel 33:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1824,8 +2345,12 @@
     "alt_titles": [],
     "raw_title": "There Stands a Rock",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Rock"
+    ],
+    "scriptures": [
+      "Exodus 33:22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1869,8 +2394,14 @@
     "alt_titles": [],
     "raw_title": "Hiding in Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Rock",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Psalm 61:2",
+      "Revelation 21:3-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1884,8 +2415,14 @@
     "alt_titles": [],
     "raw_title": "The Rock that is Higher than I",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Encouragement",
+      "God: Providence",
+      "Jesus: Rock"
+    ],
+    "scriptures": [
+      "Psalm 61:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1899,8 +2436,16 @@
     "alt_titles": [],
     "raw_title": "He Hideth My Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Christians: Thanksgiving",
+      "Jesus: Rock",
+      "Jesus: Savior"
+    ],
+    "scriptures": [
+      "Exodus 33:22",
+      "1 John 4:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1914,8 +2459,12 @@
     "alt_titles": [],
     "raw_title": "What a Savior",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Savior"
+    ],
+    "scriptures": [
+      "2 Corinthians 8:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1929,8 +2478,12 @@
     "alt_titles": [],
     "raw_title": "Wonderful Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Matthew 21:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1944,8 +2497,12 @@
     "alt_titles": [],
     "raw_title": "Wonderful Man of Galilee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character"
+    ],
+    "scriptures": [
+      "Matthew 3:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1959,8 +2516,14 @@
     "alt_titles": [],
     "raw_title": "Jesus, Rose of Sharon",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Christlikeness",
+      "Jesus: Deity & Character"
+    ],
+    "scriptures": [
+      "Song of Solomon 2:1",
+      "2 Corinthians 2:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1974,8 +2537,12 @@
     "alt_titles": [],
     "raw_title": "Jesus, and Shall it Ever Be",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Confession of Sin"
+    ],
+    "scriptures": [
+      "1 Peter 4:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -1989,8 +2556,12 @@
     "alt_titles": [],
     "raw_title": "Jesus, Meek and Gentle",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character"
+    ],
+    "scriptures": [
+      "Matthew 11:29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2004,8 +2575,14 @@
     "alt_titles": [],
     "raw_title": "Blessed Be the Name",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Name",
+      "Praise: God, The Father",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Malachi 1:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2019,8 +2596,13 @@
     "alt_titles": [],
     "raw_title": "So Tender, So Precious",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character",
+      "Love: For God & Christ"
+    ],
+    "scriptures": [
+      "James 5:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2034,8 +2616,13 @@
     "alt_titles": [],
     "raw_title": "He Loves Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Love",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Ephesians 5:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2064,8 +2651,13 @@
     "alt_titles": [],
     "raw_title": "More Like the Master",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Christlikeness"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:1",
+      "Philippians 2:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2109,8 +2701,13 @@
     "alt_titles": [],
     "raw_title": "No One Ever Cared for Me Like Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "1 Peter 1:3-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2124,8 +2721,13 @@
     "alt_titles": [],
     "raw_title": "I'll Put Jesus First",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "2 Corinthians 5:14-15",
+      "1 John 2:15-17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2154,8 +2756,15 @@
     "alt_titles": [],
     "raw_title": "Nearer, Still Nearer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Commitment",
+      "Closing Hymns"
+    ],
+    "scriptures": [
+      "Hebrews 10:22",
+      "James 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2169,8 +2778,13 @@
     "alt_titles": [],
     "raw_title": "Jesus Paid It All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 1:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2184,8 +2798,16 @@
     "alt_titles": [],
     "raw_title": "What Did He Do?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Savior"
+    ],
+    "scriptures": [
+      "Matthew 18:11",
+      "Romans 6:23",
+      "2 Corinthians 5:19",
+      "Hebrews 7:25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2199,8 +2821,14 @@
     "alt_titles": [],
     "raw_title": "Jesus, Hold My Hand",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Fellowship with God",
+      "Guidance",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Isaiah 41:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2214,8 +2842,12 @@
     "alt_titles": [],
     "raw_title": "I Hold His Hand",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 37:23-24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2229,8 +2861,12 @@
     "alt_titles": [],
     "raw_title": "Hand in Hand With Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Isaiah 42:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2244,8 +2880,14 @@
     "alt_titles": [],
     "raw_title": "I'd Rather Have Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Philippians 3:8",
+      "Hebrews 11:25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2259,8 +2901,13 @@
     "alt_titles": [],
     "raw_title": "Sun of My Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Jesus: Light"
+    ],
+    "scriptures": [
+      "Psalm 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2304,8 +2951,14 @@
     "alt_titles": [],
     "raw_title": "He Lives",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy",
+      "Encouragement",
+      "Jesus: Deity & Character"
+    ],
+    "scriptures": [
+      "Matthew 28:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2319,8 +2972,12 @@
     "alt_titles": [],
     "raw_title": "Christ Arose",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Resurrection"
+    ],
+    "scriptures": [
+      "Matthew 28:1-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2349,8 +3006,14 @@
     "alt_titles": [],
     "raw_title": "He Keeps Me Singing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy",
+      "Jesus: Name",
+      "Singing"
+    ],
+    "scriptures": [
+      "Isaiah 12:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2364,8 +3027,15 @@
     "alt_titles": [],
     "raw_title": "He Lifted Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Redeemer"
+    ],
+    "scriptures": [
+      "Matthew 14:30-31",
+      "Matthew 20:28",
+      "1 Peter 2:24-25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2395,7 +3065,12 @@
     "raw_title": "There is a Fountain",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Leviticus 17:11",
+      "Zechariah 13:1",
+      "Hebrews 12:24",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2409,8 +3084,13 @@
     "alt_titles": [],
     "raw_title": "I Am the Vine",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "Christians: Growth & Fruit-Bearing"
+    ],
+    "scriptures": [
+      "John 15:1-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2425,7 +3105,9 @@
     "raw_title": "I Love Thee So",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "1 John 4:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2439,8 +3121,13 @@
     "alt_titles": [],
     "raw_title": "Near to the Heart of God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "James 4:8",
+      "1 John 3:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2454,8 +3141,16 @@
     "alt_titles": [],
     "raw_title": "O Master, Let Me Walk With Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Benevolence",
+      "Christians: Commitment",
+      "Christians: Humility",
+      "Christians: Work & Service",
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "Micah 6:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2469,8 +3164,15 @@
     "alt_titles": [],
     "raw_title": "Savior, Like a Shepherd Lead us",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance",
+      "Jesus: Shepherd"
+    ],
+    "scriptures": [
+      "2 Chronicles 7:14",
+      "Job 10:12",
+      "John 10:14-15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2499,8 +3201,13 @@
     "alt_titles": [],
     "raw_title": "Jesus, the Loving Shepherd",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Shepherd"
+    ],
+    "scriptures": [
+      "John 10:14-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2514,8 +3221,12 @@
     "alt_titles": [],
     "raw_title": "Lead Me Savior, Lest I Stray",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Psalm 91:9-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2529,8 +3240,12 @@
     "alt_titles": [],
     "raw_title": "Jesus Leads",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Shepherd"
+    ],
+    "scriptures": [
+      "John 10:27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2544,8 +3259,13 @@
     "alt_titles": [],
     "raw_title": "All the Way My Savior Leads Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Guidance"
+    ],
+    "scriptures": [
+      "Romans 8:35-39"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2559,8 +3279,14 @@
     "alt_titles": [],
     "raw_title": "Our King Immanuel",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Kingship & Reign",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Matthew 1:23",
+      "Revelation 15:3-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2574,8 +3300,14 @@
     "alt_titles": [],
     "raw_title": "Christ Is Precious",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Guidance",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "1 Peter 1:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2589,8 +3321,13 @@
     "alt_titles": [],
     "raw_title": "He's My King",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Kingship & Reign",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Luke 9:38"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2604,8 +3341,14 @@
     "alt_titles": [],
     "raw_title": "I Walk With the King",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy",
+      "Fellowship with God",
+      "Jesus: Kingship & Reign"
+    ],
+    "scriptures": [
+      "Colossians 2:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2619,8 +3362,15 @@
     "alt_titles": [],
     "raw_title": "The King's Business",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Strangers & Pilgrims",
+      "Gospel"
+    ],
+    "scriptures": [
+      "Acts 17:30",
+      "2 Corinthians 5:20",
+      "1 Peter 2:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2634,8 +3384,14 @@
     "alt_titles": [],
     "raw_title": "Standing On the Promises",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Promises"
+    ],
+    "scriptures": [
+      "Joshua 21:45",
+      "Hebrews 6:12-13",
+      "2 Peter 3:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2649,8 +3405,13 @@
     "alt_titles": [],
     "raw_title": "Just a Closer Walk With Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "2 Corinthians 12:9",
+      "2 Corinthians 13:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2664,8 +3425,17 @@
     "alt_titles": [],
     "raw_title": "O For a Closer Walk With God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Joy",
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "Exodus 20:4",
+      "Joshua 24:14",
+      "1 Kings 15:12",
+      "1 John 1:5-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2679,8 +3449,15 @@
     "alt_titles": [],
     "raw_title": "When I Survey the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Galatians 6:14",
+      "Philippians 3:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2695,7 +3472,10 @@
     "raw_title": "Walk In the Light of God",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Isaiah 2:5",
+      "1 John 1:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2724,8 +3504,13 @@
     "alt_titles": [],
     "raw_title": "Stepping In the Light",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Isaiah 33:17",
+      "1 John 1:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2754,8 +3539,12 @@
     "alt_titles": [],
     "raw_title": "Jesus, Savior, Pilot Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Matthew 8:23-27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2769,8 +3558,12 @@
     "alt_titles": [],
     "raw_title": "Who Will Follow Jesus?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Isaiah 6:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2799,8 +3592,14 @@
     "alt_titles": [],
     "raw_title": "I'll Follow",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 8:19",
+      "Matthew 16:24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2814,8 +3613,14 @@
     "alt_titles": [],
     "raw_title": "Where He Leads I'll Follow",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Promises"
+    ],
+    "scriptures": [
+      "Matthew 8:19",
+      "1 Peter 2:21"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2829,8 +3634,12 @@
     "alt_titles": [],
     "raw_title": "I'm Going That Way",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Matthew 25:21"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2844,8 +3653,16 @@
     "alt_titles": [],
     "raw_title": "Leaning On the Everlasting Arms",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Christians: Dependence",
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "Deuteronomy 33:27",
+      "Proverbs 3:21-26",
+      "1 John 1:6-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2859,8 +3676,12 @@
     "alt_titles": [],
     "raw_title": "I'll Go Where You Want Me to Go",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Jeremiah 1:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2874,8 +3695,13 @@
     "alt_titles": [],
     "raw_title": "Anywhere With Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Guidance"
+    ],
+    "scriptures": [
+      "2 Timothy 4:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2889,8 +3715,12 @@
     "alt_titles": [],
     "raw_title": "If Jesus Goes With Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Revelation 14:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2919,8 +3749,12 @@
     "alt_titles": [],
     "raw_title": "Footsteps of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Matthew 9:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2934,8 +3768,15 @@
     "alt_titles": [],
     "raw_title": "Glory to His Name",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Name",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Zechariah 13:1",
+      "Hebrews 10:22",
+      "1 John 1:8-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2949,8 +3790,19 @@
     "alt_titles": [],
     "raw_title": "Nothing But the Blood",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Atonement",
+      "Baptism",
+      "Forgiveness",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Zechariah 13:1",
+      "Hebrews 9:14",
+      "Hebrews 12:24",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2964,8 +3816,15 @@
     "alt_titles": [],
     "raw_title": "There Is Power in the Blood",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Blood"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Hebrews 9:14",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2979,8 +3838,13 @@
     "alt_titles": [],
     "raw_title": "His Way With Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Romans 6:12-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -2994,8 +3858,12 @@
     "alt_titles": [],
     "raw_title": "When I See the Blood",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Blood"
+    ],
+    "scriptures": [
+      "Exodus 12:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3009,8 +3877,12 @@
     "alt_titles": [],
     "raw_title": "Let Me Live Close to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Fellowship with God"
+    ],
+    "scriptures": [
+      "James 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3024,8 +3896,14 @@
     "alt_titles": [],
     "raw_title": "Anywhere Is \"Home\"",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Christians: Conflict & Trial",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Philippians 4:11-13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3039,8 +3917,13 @@
     "alt_titles": [],
     "raw_title": "I've Found a Friend",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Proverbs 18:24",
+      "1 John 3:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3054,8 +3937,16 @@
     "alt_titles": [],
     "raw_title": "Jesus Is All the World to Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Proverbs 18:24",
+      "Isaiah 40:29",
+      "Philippians 1:21",
+      "Philippians 3:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3084,8 +3975,13 @@
     "alt_titles": [],
     "raw_title": "O Savior Mine",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Giving"
+    ],
+    "scriptures": [
+      "Luke 7:36-42"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3099,8 +3995,16 @@
     "alt_titles": [],
     "raw_title": "The Lily of the Valley",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Proverbs 18:10",
+      "Song of Solomon 2:1",
+      "Song of Solomon 5:10",
+      "Zechariah 2:5",
+      "Revelation 22:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3114,8 +4018,12 @@
     "alt_titles": [],
     "raw_title": "I'll Be a Friend to Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "John 15:13-15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3129,8 +4037,13 @@
     "alt_titles": [],
     "raw_title": "I Love Thy Kingdom, Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Church"
+    ],
+    "scriptures": [
+      "Ephesians 2:19-22",
+      "1 Timothy 3:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3144,8 +4057,13 @@
     "alt_titles": [],
     "raw_title": "One Step at a Time",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Confidence & Trust",
+      "Guidance"
+    ],
+    "scriptures": [
+      "2 Corinthians 5:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3189,8 +4107,15 @@
     "alt_titles": [],
     "raw_title": "The Church's One Foundation",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Church"
+    ],
+    "scriptures": [
+      "Isaiah 28:16",
+      "Matthew 16:15-18",
+      "1 Corinthians 3:11",
+      "Revelation 6:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3204,8 +4129,20 @@
     "alt_titles": [],
     "raw_title": "How Firm a Foundation",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Bible",
+      "Promises"
+    ],
+    "scriptures": [
+      "Deuteronomy 31:6",
+      "2 Samuel 22:17",
+      "Isaiah 1:25",
+      "Isaiah 28:15-16",
+      "Isaiah 41:10",
+      "Isaiah 43:1-2",
+      "Zechariah 13:9",
+      "Hebrews 13:5-6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3219,8 +4156,16 @@
     "alt_titles": [],
     "raw_title": "A Charge to Keep I Have",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Joshua 24:15",
+      "2 Chronicles 13:11",
+      "Matthew 18:23",
+      "Ephesians 4:1",
+      "1 Peter 4:10-11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3234,8 +4179,17 @@
     "alt_titles": [],
     "raw_title": "A Mighty Fortress",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Praise: God, The Father",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "2 Samuel 22:2-3",
+      "2 Chronicles 32:7",
+      "Psalm 144:1-2",
+      "Daniel 4:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3249,8 +4203,13 @@
     "alt_titles": [],
     "raw_title": "How Blest and How Joyous",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Unity & Peace"
+    ],
+    "scriptures": [
+      "John 17:20-26",
+      "1 Corinthians 1:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3279,8 +4238,13 @@
     "alt_titles": [],
     "raw_title": "The Banner of the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Psalm 60:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3294,8 +4258,13 @@
     "alt_titles": [],
     "raw_title": "Onward, Christian Soldiers",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Church",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "2 Timothy 2:3-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3324,8 +4293,12 @@
     "alt_titles": [],
     "raw_title": "Faith of Our Fathers",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Faith"
+    ],
+    "scriptures": [
+      "Hebrews 11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3339,8 +4312,13 @@
     "alt_titles": [],
     "raw_title": "Sound the Battle Cry",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Ephesians 6:11-17",
+      "Hebrews 2:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3354,8 +4332,16 @@
     "alt_titles": [],
     "raw_title": "Am I a Soldier of the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Matthew 10:22",
+      "Ephesians 6:11-12",
+      "1 Peter 5:8-9",
+      "Jude 1:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3369,8 +4355,12 @@
     "alt_titles": [],
     "raw_title": "Soldiers of Christ, Arise!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Ephesians 6:10-18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3399,8 +4389,15 @@
     "alt_titles": [],
     "raw_title": "Stand Up, Stand Up for Jesus!",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Loyalty",
+      "Revival & Awakening",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Ephesians 6:10",
+      "James 1:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3429,8 +4426,14 @@
     "alt_titles": [],
     "raw_title": "Victory in Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Romans 8:37",
+      "1 Corinthians 15:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3444,8 +4447,13 @@
     "alt_titles": [],
     "raw_title": "Let the Beauty of Jesus Be Seen",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Christlikeness",
+      "Christians: Conflict & Trial"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3459,8 +4467,15 @@
     "alt_titles": [],
     "raw_title": "Faith is the Victory",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Faith",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Song of Solomon 2:4",
+      "Hebrews 11",
+      "1 John 5:4-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3474,8 +4489,13 @@
     "alt_titles": [],
     "raw_title": "Take My Hand and Lead Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance",
+      "Holy Spirit"
+    ],
+    "scriptures": [
+      "Psalm 25:4-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3489,8 +4509,13 @@
     "alt_titles": [],
     "raw_title": "I am So Glad",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "1 Corinthians 5:10",
+      "1 Timothy 1:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3579,8 +4604,14 @@
     "alt_titles": [],
     "raw_title": "Peace, Perfect Peace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral",
+      "Peace"
+    ],
+    "scriptures": [
+      "John 14:27",
+      "Philippians 4:6-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3594,8 +4625,13 @@
     "alt_titles": [],
     "raw_title": "Tell It to Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Ephesians 6:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3609,8 +4645,14 @@
     "alt_titles": [],
     "raw_title": "I Must Tell Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "Christians: Temptation",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Hebrews 4:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3624,8 +4666,15 @@
     "alt_titles": [],
     "raw_title": "Moment by Moment",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Romans 6:11",
+      "1 Peter 1:5",
+      "1 Peter 1:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3654,8 +4703,12 @@
     "alt_titles": [],
     "raw_title": "I Choose Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "2 Corinthians 1:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3669,8 +4722,15 @@
     "alt_titles": [],
     "raw_title": "Only in Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism",
+      "Christians: Temptation",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "John 14:27",
+      "Ephesians 1:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3684,8 +4744,15 @@
     "alt_titles": [],
     "raw_title": "My Redeemer",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Redeemer",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Matthew 12:20",
+      "Romans 15:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3699,8 +4766,15 @@
     "alt_titles": [],
     "raw_title": "O Twas Wonderful Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Jesus: Love",
+      "Jesus: Redeemer"
+    ],
+    "scriptures": [
+      "Job 19:25",
+      "John 14:2-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3714,8 +4788,16 @@
     "alt_titles": [],
     "raw_title": "I Know That My Redeemer Lives",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Jesus: Intercessor",
+      "Jesus: Redeemer"
+    ],
+    "scriptures": [
+      "Job 19:25",
+      "John 14:2-3",
+      "Hebrews 7:25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3729,8 +4811,13 @@
     "alt_titles": [],
     "raw_title": "I Know that My Redeemer Liveth",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Job 19:25",
+      "John 14:2-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3744,7 +4831,9 @@
     "alt_titles": [],
     "raw_title": "The Great Redeemer",
     "key": "",
-    "topics": [],
+    "topics": [
+      "Jesus: Redeemer"
+    ],
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false
@@ -3759,8 +4848,13 @@
     "alt_titles": [],
     "raw_title": "I Will Not Forget Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Promises"
+    ],
+    "scriptures": [
+      "Matthew 28:20",
+      "Hebrews 13:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3774,8 +4868,13 @@
     "alt_titles": [],
     "raw_title": "Redeemed",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Redeemer"
+    ],
+    "scriptures": [
+      "Isaiah 33:17",
+      "1 Peter 1:18-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3789,8 +4888,12 @@
     "alt_titles": [],
     "raw_title": "Redeemed",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Redeemer"
+    ],
+    "scriptures": [
+      "1 Peter 1:18-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3819,8 +4922,14 @@
     "alt_titles": [],
     "raw_title": "O to Be Like Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Christlikeness",
+      "Christians: Humility"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:1",
+      "1 John 3:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3834,8 +4943,12 @@
     "alt_titles": [],
     "raw_title": "God is Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Love"
+    ],
+    "scriptures": [
+      "1 John 4:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3849,8 +4962,15 @@
     "alt_titles": [],
     "raw_title": "Amazing Grace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace",
+      "Singing"
+    ],
+    "scriptures": [
+      "Ephesians 2:8-9",
+      "Titus 2:11",
+      "Titus 3:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3864,8 +4984,15 @@
     "alt_titles": [],
     "raw_title": "Jesus, Lover of My Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Matthew 9:6-7",
+      "1 Corinthians 1:30-31",
+      "Revelation 21:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3879,8 +5006,15 @@
     "alt_titles": [],
     "raw_title": "Jesus, Lover of My Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Matthew 9:6-7",
+      "1 Corinthians 1:30-31",
+      "Revelation 21:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3894,8 +5028,16 @@
     "alt_titles": [],
     "raw_title": "Love Divine",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Love",
+      "Holy Spirit",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "2 Corinthians 3:18",
+      "1 Peter 1:23",
+      "2 Peter 3:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3909,8 +5051,13 @@
     "alt_titles": [],
     "raw_title": "Love Lifted Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "Matthew 14:30-31"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3954,8 +5101,13 @@
     "alt_titles": [],
     "raw_title": "Christ's Love Is All I Need",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "Ephesians 3:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3969,8 +5121,17 @@
     "alt_titles": [],
     "raw_title": "O Love That Wilt Not Let Me Go",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Jesus: Light"
+    ],
+    "scriptures": [
+      "2 Samuel 22:29",
+      "Psalm 4:6",
+      "Jeremiah 31:3",
+      "John 3:16",
+      "1 Peter 4:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3984,8 +5145,14 @@
     "alt_titles": [],
     "raw_title": "The Love of God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Love"
+    ],
+    "scriptures": [
+      "John 15:3",
+      "Romans 5:5",
+      "1 John 4:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -3999,8 +5166,14 @@
     "alt_titles": [],
     "raw_title": "The Love of God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Love"
+    ],
+    "scriptures": [
+      "Jeremiah 31:3",
+      "John 15:13",
+      "1 John 4:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4014,8 +5187,14 @@
     "alt_titles": [],
     "raw_title": "Deeper and Deeper",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Joy",
+      "Christians: Obedience"
+    ],
+    "scriptures": [
+      "Philippians 3:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4029,7 +5208,9 @@
     "alt_titles": [],
     "raw_title": "Matchless Love",
     "key": "",
-    "topics": [],
+    "topics": [
+      "Jesus: Love"
+    ],
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false
@@ -4044,8 +5225,15 @@
     "alt_titles": [],
     "raw_title": "Savior, Teach Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Obedience",
+      "Jesus: Teacher",
+      "Love: For God & Christ"
+    ],
+    "scriptures": [
+      "Matthew 5:43-47",
+      "1 John 4:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4059,8 +5247,12 @@
     "alt_titles": [],
     "raw_title": "Wonderful Love of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "Ephesians 3:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4074,8 +5266,14 @@
     "alt_titles": [],
     "raw_title": "How Sweet the Name of Jesus Sounds",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Name"
+    ],
+    "scriptures": [
+      "Matthew 1:21",
+      "Acts 4:12",
+      "1 John 4:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4089,8 +5287,13 @@
     "alt_titles": [],
     "raw_title": "How I Love Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Name",
+      "Love: For God & Christ"
+    ],
+    "scriptures": [
+      "1 John 4:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4104,8 +5307,13 @@
     "alt_titles": [],
     "raw_title": "Jesus Loves Even Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "1 Corinthians 5:10",
+      "1 Timothy 1:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4119,7 +5327,10 @@
     "alt_titles": [],
     "raw_title": "Jesus Loves Me",
     "key": "",
-    "topics": [],
+    "topics": [
+      "Children",
+      "Jesus: Love"
+    ],
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false
@@ -4149,8 +5360,13 @@
     "alt_titles": [],
     "raw_title": "Wonderful Story of Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Invitation"
+    ],
+    "scriptures": [
+      "1 John 3:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4164,8 +5380,12 @@
     "alt_titles": [],
     "raw_title": "I Love to Tell the Story",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel"
+    ],
+    "scriptures": [
+      "Revelation 5:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4179,8 +5399,14 @@
     "alt_titles": [],
     "raw_title": "Tell Me the Story of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Life & Ministry"
+    ],
+    "scriptures": [
+      "Matthew 4:1-11",
+      "1 Corinthians 15:1-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4194,8 +5420,12 @@
     "alt_titles": [],
     "raw_title": "Tell Me the Old, Old Story",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel"
+    ],
+    "scriptures": [
+      "1 Corinthians 15:1-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4254,8 +5484,12 @@
     "alt_titles": [],
     "raw_title": "Savior, Breathe An Evening Blessing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "Psalm 121:3-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4299,8 +5533,13 @@
     "alt_titles": [],
     "raw_title": "Olive's Brow",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 26:30-46"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4314,8 +5553,12 @@
     "alt_titles": [],
     "raw_title": "The Lord's Supper",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:23-26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4329,8 +5572,12 @@
     "alt_titles": [],
     "raw_title": "the Lord's Supper",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:23-26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4375,7 +5622,10 @@
     "raw_title": "Something for Jesus",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Malachi 3:8",
+      "Romans 12:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4389,8 +5639,13 @@
     "alt_titles": [],
     "raw_title": "Till He Come",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:23-26",
+      "Hebrews 10:37"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4404,8 +5659,13 @@
     "alt_titles": [],
     "raw_title": "Night, With Ebon Pinion",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 26:36-46"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4419,8 +5679,12 @@
     "alt_titles": [],
     "raw_title": "By Christ Redeemed",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:23-26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4434,8 +5698,12 @@
     "alt_titles": [],
     "raw_title": "In Remembrance",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Lord's Supper: Observance"
+    ],
+    "scriptures": [
+      "1 Corinthians 11:23-26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4464,8 +5732,13 @@
     "alt_titles": [],
     "raw_title": "When My Love to Christ Grows Weak",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 26:36-44"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4479,8 +5752,15 @@
     "alt_titles": [],
     "raw_title": "Jesus Calls Us",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers"
+    ],
+    "scriptures": [
+      "Exodus 20:3",
+      "Matthew 4:18-22",
+      "Matthew 8:19-22",
+      "Mark 10:49"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4494,8 +5774,17 @@
     "alt_titles": [],
     "raw_title": "Lead Me to Calvary",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Cross",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 16:24",
+      "Matthew 20:22-23",
+      "Matthew 27:1-66",
+      "Matthew 28:1-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4509,8 +5798,16 @@
     "alt_titles": [],
     "raw_title": "Must Jesus Bear the Cross Alone?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment",
+      "Christians: Disciples & Followers",
+      "Cross"
+    ],
+    "scriptures": [
+      "Matthew 10:38",
+      "Matthew 16:24",
+      "Philippians 3:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4524,8 +5821,15 @@
     "alt_titles": [],
     "raw_title": "He Loved Me So",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Jesus: Love",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 26:39",
+      "Ephesians 3:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4539,8 +5843,15 @@
     "alt_titles": [],
     "raw_title": "The Depth of God's Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Love",
+      "Grace",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Ephesians 3:8",
+      "Ephesians 3:18-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4554,8 +5865,15 @@
     "alt_titles": [],
     "raw_title": "My Savior's Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Death",
+      "Jesus: Love",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "1 Peter 2:24",
+      "1 Peter 3:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4569,8 +5887,13 @@
     "alt_titles": [],
     "raw_title": "Why Should He Love Me So?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Ephesians 3:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4599,8 +5922,16 @@
     "alt_titles": [],
     "raw_title": "One Day",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Life & Ministry",
+      "Jesus: Resurrection",
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "Matthew 1:23",
+      "1 Corinthians 15:1-4",
+      "1 Thessalonians 4:16-18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4644,8 +5975,14 @@
     "alt_titles": [],
     "raw_title": "On the Cross of Calvary",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "John 19:30",
+      "Titus 3:3-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4674,8 +6011,13 @@
     "alt_titles": [],
     "raw_title": "In Gethsemane Alone",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 26:36-46"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4704,8 +6046,15 @@
     "alt_titles": [],
     "raw_title": "We Saw Thee Not",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Faith",
+      "Jesus: Life & Ministry",
+      "Jesus: Resurrection"
+    ],
+    "scriptures": [
+      "John 20:29",
+      "Hebrews 11:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4749,8 +6098,15 @@
     "alt_titles": [],
     "raw_title": "Nailed to the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Atonement",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Colossians 2:14",
+      "1 Peter 2:24-25",
+      "1 Peter 3:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4764,8 +6120,13 @@
     "alt_titles": [],
     "raw_title": "The Hand that Was Wounded for Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Jesus: Kingship & Reign"
+    ],
+    "scriptures": [
+      "John 20:25-28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4779,8 +6140,13 @@
     "alt_titles": [],
     "raw_title": "Nearer the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Cross"
+    ],
+    "scriptures": [
+      "James 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4794,8 +6160,13 @@
     "alt_titles": [],
     "raw_title": "In the Cross of Christ",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross"
+    ],
+    "scriptures": [
+      "Matthew 10:33",
+      "Galatians 6:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4824,8 +6195,15 @@
     "alt_titles": [],
     "raw_title": "At the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Atonement",
+      "Cross",
+      "Jesus: Death"
+    ],
+    "scriptures": [
+      "1 Peter 3:18",
+      "1 John 1:8-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4839,8 +6217,14 @@
     "alt_titles": [],
     "raw_title": "The Old Rugged Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Galatians 6:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4914,8 +6298,12 @@
     "alt_titles": [],
     "raw_title": "True-hearted, Whole-hearted",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Loyalty"
+    ],
+    "scriptures": [
+      "2 Corinthians 3:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4929,8 +6317,14 @@
     "alt_titles": [],
     "raw_title": "Beneath the Cross of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Confession of Sin",
+      "Cross",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Galatians 6:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4959,8 +6353,12 @@
     "alt_titles": [],
     "raw_title": "I'll Never Forsake My Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial"
+    ],
+    "scriptures": [
+      "Hebrews 13:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -4989,8 +6387,13 @@
     "alt_titles": [],
     "raw_title": "To Christ Be True",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Loyalty",
+      "Warfare & Victory"
+    ],
+    "scriptures": [
+      "Psalm 31:23-24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5004,8 +6407,14 @@
     "alt_titles": [],
     "raw_title": "The Child of the King",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Sonship"
+    ],
+    "scriptures": [
+      "James 2:5",
+      "1 Peter 1:4",
+      "1 John 3:1-2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5019,8 +6428,13 @@
     "alt_titles": [],
     "raw_title": "Zion's Call",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Obedience",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 2:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5034,8 +6448,14 @@
     "alt_titles": [],
     "raw_title": "Christ Returneth",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "Matthew 25:13",
+      "Mark 13:35",
+      "1 Corinthians 15:51-52"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5049,8 +6469,14 @@
     "alt_titles": [],
     "raw_title": "There's a Great Day Coming",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Judgment"
+    ],
+    "scriptures": [
+      "Matthew 7:23",
+      "Hebrews 12:25-29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5079,8 +6505,15 @@
     "alt_titles": [],
     "raw_title": "I Know Whom I Have Believed",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Faith",
+      "Grace"
+    ],
+    "scriptures": [
+      "2 Timothy 1:12",
+      "Hebrews 11:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5139,8 +6572,12 @@
     "alt_titles": [],
     "raw_title": "When He Comes in Glory By and By",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "1 Thessalonians 4:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5154,8 +6591,13 @@
     "alt_titles": [],
     "raw_title": "It Won't Be Very Long",
     "key": "B♭ Major",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "Matthew 24:42-44",
+      "1 Thessalonians 4:16-17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5184,8 +6626,14 @@
     "alt_titles": [],
     "raw_title": "When the Roll is Called Up Yonder",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Resurrection",
+      "Jesus: Second Coming",
+      "Judgment"
+    ],
+    "scriptures": [
+      "1 Thessalonians 4:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5199,8 +6647,13 @@
     "alt_titles": [],
     "raw_title": "Hold to God's Unchanging Hand",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence",
+      "God: Providence"
+    ],
+    "scriptures": [
+      "James 1:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5229,8 +6682,14 @@
     "alt_titles": [],
     "raw_title": "Hilltops of Glory",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Christians: Disciples & Followers",
+      "Christians: Joy"
+    ],
+    "scriptures": [
+      "Micah 4:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5259,8 +6718,12 @@
     "alt_titles": [],
     "raw_title": "O Come, Angel Band",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "1 Corinthians 15:57"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5274,8 +6737,13 @@
     "alt_titles": [],
     "raw_title": "I'll Live On",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Encouragement",
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Romans 6:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5289,8 +6757,13 @@
     "alt_titles": [],
     "raw_title": "I'll Be List'ning",
     "key": "G Major",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "Job 13:22",
+      "John 10:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5304,8 +6777,13 @@
     "alt_titles": [],
     "raw_title": "In the Morning of Joy",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Resurrection",
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "1 Corinthians 15:52"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5319,8 +6797,12 @@
     "alt_titles": [],
     "raw_title": "Heaven for Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "John 14:1-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5334,8 +6816,12 @@
     "alt_titles": [],
     "raw_title": "Heaven Holds All to Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Hebrews 11:13-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5349,8 +6835,12 @@
     "alt_titles": [],
     "raw_title": "Won't it Be Wonderful There?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5364,8 +6854,12 @@
     "alt_titles": [],
     "raw_title": "How Beautiful Heaven Must Be",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 22:1"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5379,8 +6873,14 @@
     "alt_titles": [],
     "raw_title": "When the Saved Get to Heaven",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home",
+      "Singing"
+    ],
+    "scriptures": [
+      "1 Peter 1:3-5",
+      "Revelation 7:15-17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5394,8 +6894,12 @@
     "alt_titles": [],
     "raw_title": "O Think of the Home Over There",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5426,8 +6930,14 @@
     ],
     "raw_title": "This World is Not My Home (I'm Just a'Passing Thru)",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Matthew 6:20",
+      "Hebrews 11:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5486,8 +6996,12 @@
     "alt_titles": [],
     "raw_title": "Home of the Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Hebrews 4:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5501,8 +7015,14 @@
     "alt_titles": [],
     "raw_title": "Is It for Me, Dear Savior?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Reward & Crown",
+      "Jesus: Savior",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "1 Peter 1:8-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5516,8 +7036,12 @@
     "alt_titles": [],
     "raw_title": "Home of the Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Hebrews 4:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5546,8 +7070,13 @@
     "alt_titles": [],
     "raw_title": "The Christian's Welcome Home",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Matthew 25:23",
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5651,8 +7180,12 @@
     "alt_titles": [],
     "raw_title": "Beautiful Isle",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:22-25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5666,8 +7199,13 @@
     "alt_titles": [],
     "raw_title": "Beautiful",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home",
+      "Heaven: Reward & Crown"
+    ],
+    "scriptures": [
+      "Revelation 21:1-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5681,8 +7219,14 @@
     "alt_titles": [],
     "raw_title": "Trusting Jesus, That Is All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Confidence & Trust",
+      "Faith"
+    ],
+    "scriptures": [
+      "Psalm 5:8",
+      "Romans 12:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5696,8 +7240,14 @@
     "alt_titles": [],
     "raw_title": "Face to Face",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "1 Corinthians 13:9-12",
+      "1 Peter 4:13",
+      "1 John 3:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5726,8 +7276,14 @@
     "alt_titles": [],
     "raw_title": "Wonderful City of God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "John 14:2-3",
+      "2 Corinthians 12:9",
+      "Revelation 21:15-27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5741,8 +7297,13 @@
     "alt_titles": [],
     "raw_title": "The Pearly White City",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:2-4",
+      "Revelation 21:10-11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5771,8 +7332,12 @@
     "alt_titles": [],
     "raw_title": "Where We'll Never Grow Old",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5786,8 +7351,12 @@
     "alt_titles": [],
     "raw_title": "I Have Heard of a Land",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:21"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5816,8 +7385,12 @@
     "alt_titles": [],
     "raw_title": "Beyond This Land of Parting",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5891,8 +7464,12 @@
     "alt_titles": [],
     "raw_title": "An Empty Mansion",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "John 14:2-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5921,8 +7498,12 @@
     "alt_titles": [],
     "raw_title": "Above the Bright Blue",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "John 14:2-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -5996,8 +7577,12 @@
     "alt_titles": [],
     "raw_title": "Sweet By and By",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Hebrews 11:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6026,8 +7611,13 @@
     "alt_titles": [],
     "raw_title": "Here We Are But Straying Pilgrims",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Strangers & Pilgrims",
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "1 Peter 2:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6041,8 +7631,12 @@
     "alt_titles": [],
     "raw_title": "God Shall Wipe Away All Tears",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Isaiah 25:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6056,8 +7650,12 @@
     "alt_titles": [],
     "raw_title": "No Tears in Heaven",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6101,8 +7699,16 @@
     "alt_titles": [],
     "raw_title": "Savior, Grant Me Rest and Peace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Peace",
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "John 14:1",
+      "Philippians 4:7",
+      "2 Peter 3:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6116,8 +7722,14 @@
     "alt_titles": [],
     "raw_title": "No Night There",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral",
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:16",
+      "Revelation 21:25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6131,8 +7743,12 @@
     "alt_titles": [],
     "raw_title": "The Unclouded Day",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6176,8 +7792,14 @@
     "alt_titles": [],
     "raw_title": "When I Get to the End of the Way",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Christians: Strangers & Pilgrims"
+    ],
+    "scriptures": [
+      "Romans 8:18",
+      "Hebrews 11:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6221,8 +7843,12 @@
     "alt_titles": [],
     "raw_title": "Shall We Gather at the River?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 22:1-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6266,8 +7892,16 @@
     "alt_titles": [],
     "raw_title": "From Every Stormy Wind",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Prayer: Exhortation",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Exodus 25:22",
+      "Isaiah 40:31",
+      "Isaiah 61:3",
+      "Hebrews 4:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6326,8 +7960,13 @@
     "alt_titles": [],
     "raw_title": "Where the Gates Swing Outward Never",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home",
+      "Hope"
+    ],
+    "scriptures": [
+      "Revelation 2:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6371,8 +8010,12 @@
     "alt_titles": [],
     "raw_title": "Beyond the Sunset",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "John 14:2-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6386,8 +8029,12 @@
     "alt_titles": [],
     "raw_title": "Beyond the Sunset",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6446,8 +8093,15 @@
     "alt_titles": [],
     "raw_title": "O That Will Be Glory",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace",
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Romans 8:18",
+      "1 Peter 1:3-5",
+      "1 Peter 4:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6461,8 +8115,14 @@
     "alt_titles": [],
     "raw_title": "Only a Shadow Between",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral",
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Psalm 144:4",
+      "Amos 5:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6491,8 +8151,12 @@
     "alt_titles": [],
     "raw_title": "Where the Soul Never Dies",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 21:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6521,8 +8185,12 @@
     "alt_titles": [],
     "raw_title": "Looking to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Confidence & Trust"
+    ],
+    "scriptures": [
+      "Hebrews 12:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6551,8 +8219,14 @@
     "alt_titles": [],
     "raw_title": "Paradise Valley",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Song of Solomon 2:1",
+      "Revelation 2:7",
+      "Revelation 22:1-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6566,8 +8240,13 @@
     "alt_titles": [],
     "raw_title": "Where Could I Go?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial",
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "John 6:68"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6611,8 +8290,13 @@
     "alt_titles": [],
     "raw_title": "The Crown of Righteousness",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Reward & Crown"
+    ],
+    "scriptures": [
+      "1 Thessalonians 2:19",
+      "2 Timothy 4:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6626,8 +8310,12 @@
     "alt_titles": [],
     "raw_title": "Meet Me There",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 22:1-5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6641,8 +8329,12 @@
     "alt_titles": [],
     "raw_title": "Singing Redemption's Song",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Singing"
+    ],
+    "scriptures": [
+      "Ephesians 1:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6656,8 +8348,13 @@
     "alt_titles": [],
     "raw_title": "Take the World, But Give Me Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Dependence"
+    ],
+    "scriptures": [
+      "1 Corinthians 13:9-12",
+      "1 John 2:15-17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6671,8 +8368,13 @@
     "alt_titles": [],
     "raw_title": "Sing to Me of Heaven",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home",
+      "Singing"
+    ],
+    "scriptures": [
+      "Romans 8:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6686,8 +8388,12 @@
     "alt_titles": [],
     "raw_title": "There Is a Habitation",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Jerusalem & Zion"
+    ],
+    "scriptures": [
+      "Hebrews 11:10-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6761,8 +8467,12 @@
     "alt_titles": [],
     "raw_title": "Alone at Eve",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Philippians 3:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6776,8 +8486,13 @@
     "alt_titles": [],
     "raw_title": "There Is a Sea",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Giving"
+    ],
+    "scriptures": [
+      "Mark 4:24-25",
+      "2 Corinthians 9:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6791,8 +8506,13 @@
     "alt_titles": [],
     "raw_title": "Wonderful Grace of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace"
+    ],
+    "scriptures": [
+      "Romans 5:20-21",
+      "Ephesians 2:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6806,8 +8526,13 @@
     "alt_titles": [],
     "raw_title": "Saved By Grace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Grace"
+    ],
+    "scriptures": [
+      "Ephesians 2:8-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6821,8 +8546,15 @@
     "alt_titles": [],
     "raw_title": "Grace Greater than Our Sins",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Grace",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Romans 5:20-21",
+      "Titus 2:11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6836,8 +8568,12 @@
     "alt_titles": [],
     "raw_title": "I'll Live in Glory",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Romans 8:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6866,8 +8602,12 @@
     "alt_titles": [],
     "raw_title": "Just Over in the Glory-Land",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Revelation 7:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6896,8 +8636,14 @@
     "alt_titles": [],
     "raw_title": "The Glory-Land Way",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "Proverbs 8:20",
+      "Ephesians 1:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6911,8 +8657,12 @@
     "alt_titles": [],
     "raw_title": "I Won't Have to Cross Jordan Alone",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral"
+    ],
+    "scriptures": [
+      "Psalm 23:4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6926,8 +8676,13 @@
     "alt_titles": [],
     "raw_title": "On Jordan's Stormy Banks",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Heaven: Eternal Home"
+    ],
+    "scriptures": [
+      "Numbers 14:8",
+      "Hebrews 11:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6941,8 +8696,12 @@
     "alt_titles": [],
     "raw_title": "Lead Me Gently Home, Father",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Guidance"
+    ],
+    "scriptures": [
+      "Jude 1:24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6957,7 +8716,9 @@
     "raw_title": "The New Song",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Revelation 15:3-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -6986,8 +8747,12 @@
     "alt_titles": [],
     "raw_title": "Sweet Peace, the Gift of God's Love",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Peace"
+    ],
+    "scriptures": [
+      "John 14:27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7001,8 +8766,13 @@
     "alt_titles": [],
     "raw_title": "Wonderful Peace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Peace"
+    ],
+    "scriptures": [
+      "Isaiah 26:3",
+      "Philippians 4:6-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7016,8 +8786,13 @@
     "alt_titles": [],
     "raw_title": "Wonderful Peace",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Peace"
+    ],
+    "scriptures": [
+      "Isaiah 26:3",
+      "Philippians 4:6-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7031,8 +8806,12 @@
     "alt_titles": [],
     "raw_title": "He Whispers Sweet Peace to Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Peace"
+    ],
+    "scriptures": [
+      "Psalm 85:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7076,8 +8855,12 @@
     "alt_titles": [],
     "raw_title": "All Things Work Together for Good",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Romans 8:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7091,8 +8874,12 @@
     "alt_titles": [],
     "raw_title": "Sometime We'll Understand",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence"
+    ],
+    "scriptures": [
+      "1 Corinthians 13:9-12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7106,8 +8893,15 @@
     "alt_titles": [],
     "raw_title": "Farther Along",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial",
+      "Christians: Temptation",
+      "Encouragement"
+    ],
+    "scriptures": [
+      "Jeremiah 12:1",
+      "1 Corinthians 13:9-12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7121,8 +8915,13 @@
     "alt_titles": [],
     "raw_title": "His Eye is on the Sparrow",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy",
+      "God: Providence"
+    ],
+    "scriptures": [
+      "Matthew 10:29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7136,8 +8935,12 @@
     "alt_titles": [],
     "raw_title": "Thou Thinkest, Lord, of Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Blessings"
+    ],
+    "scriptures": [
+      "Psalm 40:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7151,8 +8954,15 @@
     "alt_titles": [],
     "raw_title": "Sweeter as the Years Go By",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Life & Ministry",
+      "Jesus: Love"
+    ],
+    "scriptures": [
+      "John 9:7",
+      "Ephesians 3:8",
+      "1 Peter 2:23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7166,8 +8976,14 @@
     "alt_titles": [],
     "raw_title": "Blessed Assurance",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Hebrews 10:22",
+      "Hebrews 11:1",
+      "1 John 2:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7196,8 +9012,12 @@
     "alt_titles": [],
     "raw_title": "I Know God's Promise is True",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Promises"
+    ],
+    "scriptures": [
+      "1 John 2:25"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7211,8 +9031,13 @@
     "alt_titles": [],
     "raw_title": "Have You Counted the Cost?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Luke 14:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7226,8 +9051,13 @@
     "alt_titles": [],
     "raw_title": "It Pays to Serve Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Loyalty",
+      "Encouragement"
+    ],
+    "scriptures": [
+      "John 12:26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7256,8 +9086,13 @@
     "alt_titles": [],
     "raw_title": "After the Shadows",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Funeral"
+    ],
+    "scriptures": [
+      "Psalm 30:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7271,8 +9106,13 @@
     "alt_titles": [],
     "raw_title": "When Morning Comes",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial",
+      "Christians: Temptation"
+    ],
+    "scriptures": [
+      "1 Corinthians 13:9-12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7286,8 +9126,15 @@
     "alt_titles": [],
     "raw_title": "Does Jesus Care?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Temptation",
+      "Encouragement",
+      "Jesus: Friend"
+    ],
+    "scriptures": [
+      "Hebrews 2:17-18",
+      "Hebrews 4:14-16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7361,8 +9208,12 @@
     "alt_titles": [],
     "raw_title": "Under His Wings",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Psalm 91:1-4"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7421,8 +9272,12 @@
     "alt_titles": [],
     "raw_title": "Safe in the Arms of Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral"
+    ],
+    "scriptures": [
+      "Philippians 1:23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7436,8 +9291,12 @@
     "alt_titles": [],
     "raw_title": "We Have an Anchor",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Hebrews 6:18-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7451,8 +9310,12 @@
     "alt_titles": [],
     "raw_title": "The Haven of Rest",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Refuge & Rest"
+    ],
+    "scriptures": [
+      "Hebrews 6:18-19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7466,8 +9329,13 @@
     "alt_titles": [],
     "raw_title": "Rescue the Perishing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Mission"
+    ],
+    "scriptures": [
+      "Jude 1:23"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7481,8 +9349,12 @@
     "alt_titles": [],
     "raw_title": "Throw Out the Life-Line",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 14:30"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7496,8 +9368,14 @@
     "alt_titles": [],
     "raw_title": "He Is Able to Deliver Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Encouragement",
+      "Gospel"
+    ],
+    "scriptures": [
+      "Daniel 6:20",
+      "Acts 4:21"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7526,8 +9404,13 @@
     "alt_titles": [],
     "raw_title": "Give Me the Bible",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Bible"
+    ],
+    "scriptures": [
+      "Psalm 19:7-10",
+      "Psalm 119:105"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7571,8 +9454,13 @@
     "alt_titles": [],
     "raw_title": "Day is Dying in the West",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Holiness",
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Isaiah 6:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7616,8 +9504,13 @@
     "alt_titles": [],
     "raw_title": "Sowing the Seed of the Kingdom",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 13:4-9",
+      "Matthew 13:8-30"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7676,8 +9569,13 @@
     "alt_titles": [],
     "raw_title": "Harvest Time",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Mission"
+    ],
+    "scriptures": [
+      "John 4:35"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7692,7 +9590,9 @@
     "raw_title": "The World's Bible",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "1 Peter 2:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7721,8 +9621,14 @@
     "alt_titles": [],
     "raw_title": "Fairest Lord Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Deity & Character",
+      "Jesus: Lord",
+      "Praise: Jesus Christ"
+    ],
+    "scriptures": [
+      "Song of Solomon 6:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7751,8 +9657,14 @@
     "alt_titles": [],
     "raw_title": "I Bring My Sins to Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Confession of Sin",
+      "Forgiveness",
+      "Invitation"
+    ],
+    "scriptures": [
+      "1 John 1:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7826,8 +9738,13 @@
     "alt_titles": [],
     "raw_title": "I'm Not Ashamed to Own My Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Mark 8:38",
+      "1 Peter 4:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7841,8 +9758,14 @@
     "alt_titles": [],
     "raw_title": "Jesus Saves",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Jesus: Savior"
+    ],
+    "scriptures": [
+      "Isaiah 12:4-6",
+      "Matthew 28:18-20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7916,8 +9839,13 @@
     "alt_titles": [],
     "raw_title": "Let the Lower Lights Be Burning",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service"
+    ],
+    "scriptures": [
+      "Matthew 5:14",
+      "Philippians 2:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7931,8 +9859,12 @@
     "alt_titles": [],
     "raw_title": "Seeking the Lost",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 18:12-13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7946,8 +9878,12 @@
     "alt_titles": [],
     "raw_title": "Bring Them In",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Matthew 18:12-14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7961,8 +9897,13 @@
     "alt_titles": [],
     "raw_title": "Seeking for Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Birth",
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "1 John 5:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -7991,8 +9932,12 @@
     "alt_titles": [],
     "raw_title": "Master, the Tempest Is Raging",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Life & Ministry"
+    ],
+    "scriptures": [
+      "Matthew 8:23-27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8006,8 +9951,12 @@
     "alt_titles": [],
     "raw_title": "The Gate Ajar for Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Blood"
+    ],
+    "scriptures": [
+      "Revelation 3:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8021,8 +9970,13 @@
     "alt_titles": [],
     "raw_title": "Whispering Hope",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Hope"
+    ],
+    "scriptures": [
+      "Romans 8:24",
+      "Romans 15:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8036,8 +9990,13 @@
     "alt_titles": [],
     "raw_title": "Whispering Hope",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Hope"
+    ],
+    "scriptures": [
+      "Romans 8:24",
+      "Romans 15:13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8051,8 +10010,16 @@
     "alt_titles": [],
     "raw_title": "In the Hour of Trial",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Conflict & Trial",
+      "Jesus: Intercessor",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "Matthew 10:33",
+      "Matthew 26:33-35",
+      "James 1:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8126,8 +10093,15 @@
     "alt_titles": [],
     "raw_title": "The Only Way",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Blood"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Hebrews 9:14",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8186,8 +10160,13 @@
     "alt_titles": [],
     "raw_title": "O Thou Fount of Every Blessing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Blessings",
+      "Grace"
+    ],
+    "scriptures": [
+      "1 Samuel 7:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8201,8 +10180,14 @@
     "alt_titles": [],
     "raw_title": "The Way of the Cross Leads Home",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Acts 4:12",
+      "Colossians 1:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8216,8 +10201,14 @@
     "alt_titles": [],
     "raw_title": "Ye Must Be Born Again",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism",
+      "Jesus: Intercessor"
+    ],
+    "scriptures": [
+      "John 3:1-13",
+      "2 Corinthians 5:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8246,8 +10237,12 @@
     "alt_titles": [],
     "raw_title": "Sweet Will of God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Obedience"
+    ],
+    "scriptures": [
+      "Romans 12:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8261,8 +10256,14 @@
     "alt_titles": [],
     "raw_title": "Fear Not, Little Flock",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Shepherd"
+    ],
+    "scriptures": [
+      "Psalm 51:7",
+      "Isaiah 1:18",
+      "Luke 12:32"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8276,8 +10277,12 @@
     "alt_titles": [],
     "raw_title": "Do All in the Name of the Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Obedience"
+    ],
+    "scriptures": [
+      "Colossians 3:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8291,8 +10296,12 @@
     "alt_titles": [],
     "raw_title": "Once for All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel"
+    ],
+    "scriptures": [
+      "Hebrews 10:9-14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8306,8 +10315,12 @@
     "alt_titles": [],
     "raw_title": "Sweeter than All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Blessings"
+    ],
+    "scriptures": [
+      "Philippians 3:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8321,8 +10334,13 @@
     "alt_titles": [],
     "raw_title": "Down in the Valley",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Encouragement"
+    ],
+    "scriptures": [
+      "Galatians 6:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8336,8 +10354,13 @@
     "alt_titles": [],
     "raw_title": "The Gospel Is for All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Gospel",
+      "Mission"
+    ],
+    "scriptures": [
+      "Romans 1:16-17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8351,8 +10374,13 @@
     "alt_titles": [],
     "raw_title": "As the Life of a Flower",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Funeral"
+    ],
+    "scriptures": [
+      "Psalm 103:15-16",
+      "James 4:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8366,8 +10394,13 @@
     "alt_titles": [],
     "raw_title": "What Will Your Answer Be?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Judgment"
+    ],
+    "scriptures": [
+      "Romans 14:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8396,8 +10429,14 @@
     "alt_titles": [],
     "raw_title": "'Tis So Sweet to Trust in Jesus",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism",
+      "Christians: Confidence & Trust",
+      "Faith"
+    ],
+    "scriptures": [
+      "Proverbs 16:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8411,8 +10450,12 @@
     "alt_titles": [],
     "raw_title": "The Ninety and Nine",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Shepherd"
+    ],
+    "scriptures": [
+      "Matthew 18:12-13"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8426,8 +10469,16 @@
     "alt_titles": [],
     "raw_title": "It is Well With My Soul",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance",
+      "Hope",
+      "Peace"
+    ],
+    "scriptures": [
+      "Ecclesiastes 8:12-13",
+      "Isaiah 34:4",
+      "Isaiah 48:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8456,8 +10507,12 @@
     "alt_titles": [],
     "raw_title": "Send the light",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission"
+    ],
+    "scriptures": [
+      "Acts 16:19"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8471,8 +10526,12 @@
     "alt_titles": [],
     "raw_title": "Watching You",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Providence"
+    ],
+    "scriptures": [
+      "2 Chronicles 16:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8516,8 +10575,14 @@
     "alt_titles": [],
     "raw_title": "Is My Name Written There?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Confession of Sin",
+      "Materialism / Priorities"
+    ],
+    "scriptures": [
+      "Revelation 3:5",
+      "Revelation 20:15"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8576,8 +10641,14 @@
     "alt_titles": [],
     "raw_title": "Bringing in the Sheaves",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Work & Service",
+      "Mission"
+    ],
+    "scriptures": [
+      "Psalm 126:6",
+      "Galatians 6:7-10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8591,8 +10662,13 @@
     "alt_titles": [],
     "raw_title": "Christ for the World We Sing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Mission",
+      "Singing"
+    ],
+    "scriptures": [
+      "Matthew 28:18-20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8606,8 +10682,13 @@
     "alt_titles": [],
     "raw_title": "I shall Not Be Moved",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Commitment"
+    ],
+    "scriptures": [
+      "Psalm 1:3",
+      "Psalm 112:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8621,8 +10702,16 @@
     "alt_titles": [],
     "raw_title": "At Calvary",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Atonement",
+      "Cross",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Titus 3:3-7",
+      "1 Peter 2:9-10",
+      "1 John 4:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8637,7 +10726,9 @@
     "raw_title": "Sunshine in the Soul",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Galatians 5:22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8651,8 +10742,13 @@
     "alt_titles": [],
     "raw_title": "Sunlight",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Light"
+    ],
+    "scriptures": [
+      "Colossians 1:13",
+      "1 John 1:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8666,8 +10762,13 @@
     "alt_titles": [],
     "raw_title": "Heavenly Sunlight",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy",
+      "Promises"
+    ],
+    "scriptures": [
+      "1 John 1:5-7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8681,8 +10782,16 @@
     "alt_titles": [],
     "raw_title": "This Is My Father's World",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "God: Creator",
+      "Praise: God, The Father"
+    ],
+    "scriptures": [
+      "Deuteronomy 10:14",
+      "1 Chronicles 16:31",
+      "Job 38:4-7",
+      "1 John 3:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8696,8 +10805,13 @@
     "alt_titles": [],
     "raw_title": "Give Me Thy Heart",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Giving",
+      "Invitation"
+    ],
+    "scriptures": [
+      "1 Samuel 7:3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8711,8 +10825,12 @@
     "alt_titles": [],
     "raw_title": "Come Unto Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 11:28-29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8846,8 +10964,14 @@
     "alt_titles": [],
     "raw_title": "In the Desert of Sorrow and Sin",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Assurance"
+    ],
+    "scriptures": [
+      "Exodus 17:1-7",
+      "John 4:14",
+      "John 7:37-39"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8861,8 +10985,12 @@
     "alt_titles": [],
     "raw_title": "A New Creature",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism"
+    ],
+    "scriptures": [
+      "Romans 6:1-11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8876,8 +11004,12 @@
     "alt_titles": [],
     "raw_title": "Buried With Christ",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism"
+    ],
+    "scriptures": [
+      "Romans 6:1-11"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8891,8 +11023,13 @@
     "alt_titles": [],
     "raw_title": "O Happy Day",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism"
+    ],
+    "scriptures": [
+      "1 Kings 18:21",
+      "Acts 8:39"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8906,8 +11043,12 @@
     "alt_titles": [],
     "raw_title": "Free Waters",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Revelation 21:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8921,8 +11062,13 @@
     "alt_titles": [],
     "raw_title": "Jesus Will Give You Rest",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 11:28",
+      "Hebrews 4:8-9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8951,8 +11097,13 @@
     "alt_titles": [],
     "raw_title": "God Is Calling the Prodigal",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Jeremiah 3:12-14",
+      "Luke 15:11-32"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8981,8 +11132,12 @@
     "alt_titles": [],
     "raw_title": "Lord, I'm Coming Home",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Luke 15:11-24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -8996,8 +11151,13 @@
     "alt_titles": [],
     "raw_title": "Come to Jesus Today",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "2 Corinthians 6:12",
+      "Hebrews 3:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9011,8 +11171,12 @@
     "alt_titles": [],
     "raw_title": "Jesus is Calling",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Psalm 89:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9026,8 +11190,12 @@
     "alt_titles": [],
     "raw_title": "Jesus is Calling Today, Calling, Calling",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Psalm 89:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9041,8 +11209,13 @@
     "alt_titles": [],
     "raw_title": "Whosoever Will",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Luke 12:8",
+      "Revelation 22:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9056,8 +11229,13 @@
     "alt_titles": [],
     "raw_title": "Jesus, I Come",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 61:1",
+      "John 8:36"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9071,8 +11249,15 @@
     "alt_titles": [],
     "raw_title": "I Am Coming, Lord",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Atonement",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Zechariah 13:1",
+      "Revelation 1:5-6",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9086,8 +11271,14 @@
     "alt_titles": [],
     "raw_title": "Just As I Am",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Lamb"
+    ],
+    "scriptures": [
+      "Matthew 11:5",
+      "John 6:37"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9101,8 +11292,15 @@
     "alt_titles": [],
     "raw_title": "Jesus Paid It All",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Zechariah 13:1",
+      "Matthew 8:2-3",
+      "1 Timothy 2:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9116,8 +11314,14 @@
     "alt_titles": [],
     "raw_title": "All Things Are Ready",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 22:4",
+      "Matthew 22:9",
+      "Luke 14:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9161,8 +11365,12 @@
     "alt_titles": [],
     "raw_title": "Shall I Crucify Him?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Cross"
+    ],
+    "scriptures": [
+      "Hebrews 6:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9176,8 +11384,14 @@
     "alt_titles": [],
     "raw_title": "Though Your Sins Be as Scarlet",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Baptism",
+      "Forgiveness",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 1:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9191,8 +11405,16 @@
     "alt_titles": [],
     "raw_title": "Whiter Than Snow",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Aspiration & Longing",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Psalm 51",
+      "Isaiah 1:18",
+      "Ezekiel 11:19",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9206,8 +11428,17 @@
     "alt_titles": [],
     "raw_title": "Are You Washed in the Blood?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Blood",
+      "Jesus: Lamb"
+    ],
+    "scriptures": [
+      "Isaiah 1:18",
+      "Zechariah 13:1",
+      "Matthew 25:1-13",
+      "Revelation 7:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9221,8 +11452,12 @@
     "alt_titles": [],
     "raw_title": "Who at My Door Is Standing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Revelation 3:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9236,8 +11471,16 @@
     "alt_titles": [],
     "raw_title": "The Great Physician",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Name"
+    ],
+    "scriptures": [
+      "Matthew 4:23",
+      "Matthew 8:16-17",
+      "Luke 5:31",
+      "1 John 2:12"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9251,8 +11494,12 @@
     "alt_titles": [],
     "raw_title": "Let Him in",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Revelation 3:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9281,8 +11528,14 @@
     "alt_titles": [],
     "raw_title": "Let Jesus Come Into Your Heart",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Hebrews 3:7-8",
+      "Hebrews 3:15",
+      "Revelation 3:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9296,8 +11549,13 @@
     "alt_titles": [],
     "raw_title": "Since Jesus Came Into My Heart",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Joy"
+    ],
+    "scriptures": [
+      "Isaiah 65:14",
+      "2 Corinthians 4:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9326,8 +11584,12 @@
     "alt_titles": [],
     "raw_title": "Have You Any Room for Jesus?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Revelation 3:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9341,8 +11603,12 @@
     "alt_titles": [],
     "raw_title": "Soul, a Savior Thou Art Needing",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 11:28-29"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9356,8 +11622,12 @@
     "alt_titles": [],
     "raw_title": "Why Do You Wait?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Acts 22:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9371,8 +11641,12 @@
     "alt_titles": [],
     "raw_title": "Why Keep Jesus Waiting?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "2 Corinthians 6:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9386,8 +11660,12 @@
     "alt_titles": [],
     "raw_title": "Why Not Now?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "2 Corinthians 6:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9401,8 +11679,12 @@
     "alt_titles": [],
     "raw_title": "O What Will You Do With Jesus?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 27:15-22"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9431,8 +11713,12 @@
     "alt_titles": [],
     "raw_title": "Are You Coming to Jesus Tonight?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Revelation 22:17"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9446,8 +11732,12 @@
     "alt_titles": [],
     "raw_title": "Oh, Why Not To-night?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Acts 22:16"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9476,8 +11766,16 @@
     "alt_titles": [],
     "raw_title": "I Heard the Voice of Jesus Say",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Jesus: Deity & Character"
+    ],
+    "scriptures": [
+      "Matthew 5:6",
+      "Matthew 11:28",
+      "John 8:12",
+      "1 John 2:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9506,8 +11804,14 @@
     "alt_titles": [],
     "raw_title": "Prepare to Meet Thy God",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation",
+      "Judgment"
+    ],
+    "scriptures": [
+      "Amos 4:12",
+      "Hebrews 9:27"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9536,8 +11840,15 @@
     "alt_titles": [],
     "raw_title": "I Am Coming to the Cross",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Isaiah 25:9",
+      "Matthew 22:39",
+      "John 3:36",
+      "1 John 1:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9551,8 +11862,12 @@
     "alt_titles": [],
     "raw_title": "Only a Step",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "John 14:6"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9566,8 +11881,14 @@
     "alt_titles": [],
     "raw_title": "Will Jesus Find Us Watching?",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Watchfulness",
+      "Jesus: Second Coming",
+      "Judgment"
+    ],
+    "scriptures": [
+      "Luke 12:37"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9596,8 +11917,14 @@
     "alt_titles": [],
     "raw_title": "Where He Leads Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Disciples & Followers",
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 8:19",
+      "Matthew 16:24"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9611,8 +11938,13 @@
     "alt_titles": [],
     "raw_title": "Softly and Tenderly",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "2 Chronicles 30:9",
+      "Luke 15:18"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9626,8 +11958,12 @@
     "alt_titles": [],
     "raw_title": "Come, Sinner, Come",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Matthew 11:28"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9641,8 +11977,13 @@
     "alt_titles": [],
     "raw_title": "I Am Resolved",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Luke 15:18",
+      "John 6:68"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9657,7 +11998,9 @@
     "raw_title": "Christ Receiveth Sinful Men",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Luke 15:2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9672,7 +12015,10 @@
     "raw_title": "Trust and Obey",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "1 Samuel 15:22",
+      "Hebrews 5:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9716,8 +12062,14 @@
     "alt_titles": [],
     "raw_title": "Almost Persuaded",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Invitation"
+    ],
+    "scriptures": [
+      "Acts 24:25",
+      "Acts 26:28",
+      "1 Timothy 2:5"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9746,8 +12098,16 @@
     "alt_titles": [],
     "raw_title": "I Gave My Life for Thee",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Giving",
+      "Jesus: Death",
+      "Lord's Supper: Remembrance"
+    ],
+    "scriptures": [
+      "John 10:11-18",
+      "2 Corinthians 7:14-15",
+      "2 Corinthians 8:9"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9791,8 +12151,14 @@
     "alt_titles": [],
     "raw_title": "How Sweet, How Heavenly, Is the Sight",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Love: brotherly",
+      "Unity & Peace"
+    ],
+    "scriptures": [
+      "Psalm 133",
+      "1 John 4:7-8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9821,8 +12187,13 @@
     "alt_titles": [],
     "raw_title": "Abide With Me",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Funeral"
+    ],
+    "scriptures": [
+      "Matthew 28:20"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9836,8 +12207,13 @@
     "alt_titles": [],
     "raw_title": "God Be With You",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns"
+    ],
+    "scriptures": [
+      "Song of Solomon 2:4",
+      "Acts 20:32"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9851,8 +12227,16 @@
     "alt_titles": [],
     "raw_title": "Blest Be the Tie",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Love: brotherly",
+      "Unity & Peace"
+    ],
+    "scriptures": [
+      "Colossians 2:2",
+      "Hebrews 13:1",
+      "1 Peter 3:8"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9866,8 +12250,19 @@
     "alt_titles": [],
     "raw_title": "God Will Take Care of You",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Christians: Confidence & Trust",
+      "Closing Hymns",
+      "Encouragement",
+      "God: Providence"
+    ],
+    "scriptures": [
+      "Genesis 28:15",
+      "Deuteronomy 31:8",
+      "Joshua 1:9",
+      "Matthew 6:25-34",
+      "1 Peter 5:7"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9882,7 +12277,9 @@
     "raw_title": "Jesus Is Mine",
     "key": "",
     "topics": [],
-    "scriptures": [],
+    "scriptures": [
+      "Matthew 16:26"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9896,8 +12293,13 @@
     "alt_titles": [],
     "raw_title": "Now the Day is Over",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Prayer: Petitions"
+    ],
+    "scriptures": [
+      "Psalm 127:1-2"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9911,7 +12313,10 @@
     "alt_titles": [],
     "raw_title": "Tarry With Me",
     "key": "",
-    "topics": [],
+    "topics": [
+      "Closing Hymns",
+      "Funeral"
+    ],
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false
@@ -9926,8 +12331,13 @@
     "alt_titles": [],
     "raw_title": "Take the Name of Jesus With You",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "Jesus: Name"
+    ],
+    "scriptures": [
+      "Philippians 2:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9971,8 +12381,13 @@
     "alt_titles": [],
     "raw_title": "On Zion's Glorious Summit",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Worship"
+    ],
+    "scriptures": [
+      "Revelation 4:8",
+      "Revelation 14:1-3"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -9986,7 +12401,9 @@
     "alt_titles": [],
     "raw_title": "If We Never Meet Again",
     "key": "",
-    "topics": [],
+    "topics": [
+      "Closing Hymns"
+    ],
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false
@@ -10001,8 +12418,13 @@
     "alt_titles": [],
     "raw_title": "Jesus Is Coming Soon",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Jesus: Second Coming"
+    ],
+    "scriptures": [
+      "1 Thessalonians 4:16",
+      "Jude 1:14"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -10016,8 +12438,14 @@
     "alt_titles": [],
     "raw_title": "Lord, I Believe",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Faith",
+      "God: Creator",
+      "God: Providence"
+    ],
+    "scriptures": [
+      "Job 12:9-10"
+    ],
     "scan_urls": [],
     "has_scan": false
   },
@@ -10031,8 +12459,14 @@
     "alt_titles": [],
     "raw_title": "Our God, He Is Alive",
     "key": "",
-    "topics": [],
-    "scriptures": [],
+    "topics": [
+      "Closing Hymns",
+      "God: Creator"
+    ],
+    "scriptures": [
+      "Exodus 3:14",
+      "Jeremiah 10:10"
+    ],
     "scan_urls": [],
     "has_scan": false
   }
