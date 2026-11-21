@@ -660,9 +660,7 @@
     listenModal: document.getElementById("listenModal"),
     listenModalTitle: document.getElementById("listenModalTitle"),
     closeListenModalBtn: document.getElementById("closeListenModalBtn"),
-    doneListenModalBtn: document.getElementById("doneListenModalBtn"),
     listenVideoFrame: document.getElementById("listenVideoFrame"),
-    listenExternalLink: document.getElementById("listenExternalLink"),
     appToast: document.getElementById("appToast"),
   };
 
@@ -1105,7 +1103,6 @@
     pitchPipe.stopSustained();
     pitchPipe.stopArpeggio();
     el.listenModalTitle.textContent = `#${hymn.number_str} · ${hymn.title}`;
-    el.listenExternalLink.href = hymn.youtube_url;
     el.listenVideoFrame.src = `https://www.youtube-nocookie.com/embed/${vid}?rel=0`;
     el.listenModal.classList.remove("hidden");
   }
@@ -4161,7 +4158,6 @@ Add it to this setlist anyway?`
       });
     }
     if (el.closeListenModalBtn) el.closeListenModalBtn.addEventListener("click", closeListenModal);
-    if (el.doneListenModalBtn) el.doneListenModalBtn.addEventListener("click", closeListenModal);
     if (el.listenModal) {
       el.listenModal.addEventListener("click", (e) => {
         if (e.target === el.listenModal) closeListenModal();

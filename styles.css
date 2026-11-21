@@ -4008,15 +4008,38 @@ html[data-readability="large"] .element-picker-row {
 
 
 /* ==========================================================================
-   Inline YouTube Listen Modal & Quick-Action Button
+   Quick-Action Button Colors & Inline YouTube Listen Modal
    ========================================================================== */
-.btn-quick-listen {
+.song-quick-actions .btn-quick-action {
+  font-family: var(--font-sans);
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+html[data-readability="large"] .song-quick-actions .btn-quick-action {
+  font-size: 0.88rem;
+}
+
+.btn-quick-setlist {
+  color: #2A5B3C;
+  background: #EBF5EE;
+  border-color: #BCDCC6;
+}
+
+html[data-theme="dark"] .btn-quick-setlist {
+  color: #9ED8B0;
+  background: #1C3124;
+  border-color: #325941;
+}
+
+.btn-quick-sung {
   color: var(--accent-dark);
   border-color: #DFB9C0;
   background: var(--accent-tint);
 }
 
-html[data-theme="dark"] .btn-quick-listen {
+html[data-theme="dark"] .btn-quick-sung {
   color: #F2C9CF;
   background: #361F23;
   border-color: #63343C;
