@@ -4,7 +4,7 @@
    - "Don't Sing" Flag + Reason, Personal Notes, 901+ Supplement Toggle
    - Worship Setlist Planner, Key Progression Strip, & Sunday Podium Runner Mode
    - Singing History Log & Automatic "Last Sung" Recency Indicators
-   - Top-Center Anchored Zoom (50%–240%), Drag Pan, Fullscreen, Treble Pitch Pipe
+   - Top-Center Anchored Zoom (50%–250%), Drag Pan, Fullscreen, Treble Pitch Pipe
    - Complete LocalStorage Persistence + One-Tap JSON Backup / Restore
    ========================================================================== */
 
@@ -49,7 +49,7 @@
   ];
 
   const TREBLE_OCTAVE = 4;
-  const ZOOM_STOPS = [0.5, 0.65, 0.8, 1.0, 1.25, 1.5, 1.75, 2.0, 2.4];
+  const ZOOM_STOPS = [0.5, 0.65, 0.8, 1.0, 1.15, 1.3, 1.45, 1.6, 1.75, 1.9, 2.05, 2.2, 2.35, 2.5];
 
   const QUICK_CATEGORIES = {
     invitation: {
@@ -3285,7 +3285,7 @@ Add it to this setlist anyway?`
       renderHymnList();
     });
 
-    // Sheet music zoom (50%..240% top-center anchored)
+    // Sheet music zoom (50%..250% top-center anchored)
     el.zoomInBtn.addEventListener("click", () => {
       const next = getNextZoomStop(state.zoomLevel, 1);
       applyCenteredZoom(el.sheetViewport, el.sheetPages, el.zoomResetBtn, next, false);
