@@ -3384,3 +3384,10 @@ html[data-readability="large"] #fsZoomResetBtn {
   width: 58px;
   padding: 0 4px;
 }
+
+.btn-quick-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--accent);
+}

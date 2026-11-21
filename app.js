@@ -427,6 +427,7 @@
     detailFirstLine: document.getElementById("detailFirstLine"),
     detailAddSetlistBtn: document.getElementById("detailAddSetlistBtn"),
     detailMarkSungBtn: document.getElementById("detailMarkSungBtn"),
+    detailHymnStudyLink: document.getElementById("detailHymnStudyLink"),
     detailLastSungBadge: document.getElementById("detailLastSungBadge"),
 
     sheetSection: document.getElementById("sheetSection"),
@@ -2313,6 +2314,16 @@ Add it to this setlist anyway?`
     const baseKeyStr = getSongBaseKey(hymn);
     el.detailKeyBadge.textContent = baseKeyStr ? formatKeyBadge(baseKeyStr) : "No Key";
     el.detailHymnaryLink.href = hymn.hymnary_url || "#";
+
+    if (el.detailHymnStudyLink) {
+      if (hymn.hymnstudies_url) {
+        el.detailHymnStudyLink.href = hymn.hymnstudies_url;
+        el.detailHymnStudyLink.classList.remove("hidden");
+      } else {
+        el.detailHymnStudyLink.href = "#";
+        el.detailHymnStudyLink.classList.add("hidden");
+      }
+    }
 
     el.supplementBanner.classList.toggle("hidden", !isSupplement(hymn));
 
