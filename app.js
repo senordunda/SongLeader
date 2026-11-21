@@ -83,17 +83,13 @@
 
   const BIBLE_TRANSLATIONS = {
     // Inline via bible-api.com (public domain, CORS enabled, no API key)
-    KJV:  { label: "King James Version",       mode: "inline", apiId: "kjv", versionId: 1 },
+    KJV:  { label: "King James Version",        mode: "inline", apiId: "kjv", versionId: 1 },
     ASV:  { label: "American Standard Version", mode: "inline", apiId: "asv", versionId: 12 },
-    WEB:  { label: "World English Bible",       mode: "inline", apiId: "web", versionId: 206 },
 
     // External clean links via Bible.com (YouVersion)
-    NKJV: { label: "New King James Version",       mode: "link", versionId: 114 },
-    ESV:  { label: "English Standard Version",     mode: "link", versionId: 59 },
-    NASB: { label: "New American Standard Bible",  mode: "link", versionId: 100 },
-    NIV:  { label: "New International Version",    mode: "link", versionId: 111 },
-    CSB:  { label: "Christian Standard Bible",     mode: "link", versionId: 1713 },
-    NLT:  { label: "New Living Translation",       mode: "link", versionId: 116 },
+    NKJV: { label: "New King James Version",      mode: "link", versionId: 114 },
+    ESV:  { label: "English Standard Version",    mode: "link", versionId: 59 },
+    NASB: { label: "New American Standard Bible", mode: "link", versionId: 100 },
   };
 
   const USFM_BOOKS = {
