@@ -31,6 +31,9 @@
     START_NOTE_DISPLAY: "pftl_start_note_display_v1",
     WAKE_LOCK: "pftl_wake_lock_v1",
     ONBOARDED: "pftl_onboarded_v1",
+    WORSHIP_ELEMENTS_ENABLED: "pftl_worship_elements_v1",
+    CUSTOM_SONG_ROLES: "pftl_custom_song_roles_v1",
+    HIDDEN_DEFAULT_ROLES: "pftl_hidden_default_roles_v1",
   };
 
   const START_NOTE_DEFS = {
@@ -70,13 +73,27 @@
 
   const SERVICE_SLOTS = [
     "Opening",
-    "Second Song",
+    "Song 2",
+    "Song 3",
     "Lord's Supper",
+    "Offering",
     "Before Sermon",
     "Invitation",
     "Closing",
     "Other",
   ];
+
+  const WORSHIP_ELEMENTS = [
+    "Announcements",
+    "Prayer",
+    "Scripture",
+    "Lesson",
+    "Lord's Supper",
+    "Offering",
+    "Other",
+  ];
+
+  const MAX_CUSTOM_ROLES = 6;
 
   const TREBLE_OCTAVE = 4;
   const ZOOM_STOPS = [0.5, 0.65, 0.8, 1.0, 1.15, 1.3, 1.45, 1.6, 1.75, 1.9, 2.05, 2.2, 2.35, 2.5];
@@ -372,6 +389,11 @@
 
     // Setlist UI state
     activeSetlistId: null,
+    setlistSettingsOpen: false,
+    editingCustomRoleIndex: -1,
+    worshipElementsEnabled: localStorage.getItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED) === "true",
+    customSongRoles: loadJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, []).filter((r) => typeof r === "string" && r.trim()).slice(0, MAX_CUSTOM_ROLES),
+    hiddenDefaultRoles: loadJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, []).filter((r) => typeof r === "string"),
     runner: null, // { setlistId, index }
     pickerMode: "setlist", // 'setlist' | 'history'
     historyQuery: "",
@@ -421,6 +443,7 @@
 
     // Setlists tab
     setlistsHome: document.getElementById("setlistsHome"),
+    setlistSettingsBtn: document.getElementById("setlistSettingsBtn"),
     newSetlistBtn: document.getElementById("newSetlistBtn"),
     setlistsList: document.getElementById("setlistsList"),
     setlistsEmpty: document.getElementById("setlistsEmpty"),
@@ -435,11 +458,23 @@
     keyProgressionItems: document.getElementById("keyProgressionItems"),
     setlistSongsList: document.getElementById("setlistSongsList"),
     setlistSongsEmpty: document.getElementById("setlistSongsEmpty"),
+    setlistFooterActions: document.getElementById("setlistFooterActions"),
     addSongToSetlistBtn: document.getElementById("addSongToSetlistBtn"),
+    addElementToSetlistBtn: document.getElementById("addElementToSetlistBtn"),
     precacheHighResBtn: document.getElementById("precacheHighResBtn"),
     logSetlistSungBtn: document.getElementById("logSetlistSungBtn"),
     setlistStatusMsg: document.getElementById("setlistStatusMsg"),
     deleteSetlistBtn: document.getElementById("deleteSetlistBtn"),
+    setlistSettings: document.getElementById("setlistSettings"),
+    backFromSetlistSettingsBtn: document.getElementById("backFromSetlistSettingsBtn"),
+    enableWorshipElementsToggle: document.getElementById("enableWorshipElementsToggle"),
+    customRolesCount: document.getElementById("customRolesCount"),
+    addCustomRoleForm: document.getElementById("addCustomRoleForm"),
+    newCustomRoleInput: document.getElementById("newCustomRoleInput"),
+    addCustomRoleBtn: document.getElementById("addCustomRoleBtn"),
+    customRoleError: document.getElementById("customRoleError"),
+    customRolesList: document.getElementById("customRolesList"),
+    defaultRolesToggleList: document.getElementById("defaultRolesToggleList"),
 
     // History tab
     logSongHistoryBtn: document.getElementById("logSongHistoryBtn"),
@@ -484,7 +519,12 @@
     songDetailPane: document.getElementById("songDetailPane"),
     detailEmpty: document.getElementById("detailEmpty"),
     detailContent: document.getElementById("detailContent"),
+    detailHeader: document.getElementById("detailHeader"),
     detailScroll: document.getElementById("detailScroll"),
+    elementRunnerView: document.getElementById("elementRunnerView"),
+    elementRunnerTitle: document.getElementById("elementRunnerTitle"),
+    elementRunnerCue: document.getElementById("elementRunnerCue"),
+    elementRunnerUpNext: document.getElementById("elementRunnerUpNext"),
     backToListBtn: document.getElementById("backToListBtn"),
     prevHymnBtn: document.getElementById("prevHymnBtn"),
     nextHymnBtn: document.getElementById("nextHymnBtn"),
@@ -613,6 +653,9 @@
     doneScriptureModalBtn: document.getElementById("doneScriptureModalBtn"),
     scriptureModalBody: document.getElementById("scriptureModalBody"),
     scriptureModalExternalLink: document.getElementById("scriptureModalExternalLink"),
+    elementPickerModal: document.getElementById("elementPickerModal"),
+    closeElementPickerBtn: document.getElementById("closeElementPickerBtn"),
+    elementPickerList: document.getElementById("elementPickerList"),
     appToast: document.getElementById("appToast"),
   };
 
@@ -1176,7 +1219,7 @@
   function getReferencedExternalBookIds() {
     const needed = new Set();
     state.setlists.forEach((sl) => {
-      (sl.items || []).forEach((it) => needed.add(getBookIdFromHymnId(it.hymnId)));
+      (sl.items || []).forEach((it) => { if (it && it.type !== "element" && it.hymnId) needed.add(getBookIdFromHymnId(it.hymnId)); });
     });
     state.history.forEach((entry) => {
       needed.add(getBookIdFromHymnId(entry.hymnId));
@@ -1552,6 +1595,7 @@ Add it to this setlist anyway?`
     if (!sl || !Array.isArray(sl.items)) return [];
     const urls = [];
     sl.items.forEach((it) => {
+      if (isWorshipElementItem(it)) return;
       const h = state.hymnMap.get(String(it.hymnId));
       if (h && h.has_scan && Array.isArray(h.scan_urls)) {
         h.scan_urls.forEach((u) => {
@@ -1664,6 +1708,336 @@ Add it to this setlist anyway?`
     });
   }
 
+  function isWorshipElementItem(it) {
+    return Boolean(it && it.type === "element");
+  }
+
+  function getAvailableSongRoles(includeCurrent) {
+    const visibleDefaults = SERVICE_SLOTS.filter((r) => !state.hiddenDefaultRoles.includes(r));
+    const list = [...visibleDefaults, ...state.customSongRoles];
+    if (list.length === 0) list.push("Other");
+    if (includeCurrent && !list.includes(includeCurrent)) {
+      list.push(includeCurrent);
+    }
+    return list;
+  }
+
+  function populateSlotSelect(selectEl, selectedValue) {
+    if (!selectEl) return;
+    const prev = selectedValue !== undefined ? selectedValue : selectEl.value;
+    const roles = getAvailableSongRoles(selectedValue !== undefined ? selectedValue : null);
+    selectEl.innerHTML = "";
+    roles.forEach((roleName) => {
+      const opt = document.createElement("option");
+      opt.value = roleName;
+      opt.textContent = roleName;
+      if (prev === roleName) opt.selected = true;
+      selectEl.appendChild(opt);
+    });
+    if (!roles.includes(selectEl.value) && roles.length > 0) {
+      selectEl.value = roles[0];
+    }
+  }
+
+  function syncRoleDropdowns() {
+    populateSlotSelect(el.targetSlotSelect);
+    populateSlotSelect(el.pickerSlotSelect);
+  }
+
+  function syncSetlistFooterElementsUI() {
+    if (el.addElementToSetlistBtn) {
+      el.addElementToSetlistBtn.classList.toggle("hidden", !state.worshipElementsEnabled);
+    }
+    if (el.setlistFooterActions) {
+      el.setlistFooterActions.classList.toggle("has-elements", state.worshipElementsEnabled);
+    }
+  }
+
+  function saveSetlistSettings() {
+    localStorage.setItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED, String(state.worshipElementsEnabled));
+    saveJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, state.customSongRoles);
+    saveJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, state.hiddenDefaultRoles);
+    syncRoleDropdowns();
+    syncSetlistFooterElementsUI();
+    if (state.activeSetlistId) renderSetlistEditor();
+  }
+
+  function openSetlistSettings() {
+    state.setlistSettingsOpen = true;
+    state.editingCustomRoleIndex = -1;
+    el.setlistsHome.classList.add("hidden");
+    el.setlistEditor.classList.add("hidden");
+    if (el.setlistSettings) el.setlistSettings.classList.remove("hidden");
+    if (el.customRoleError) el.customRoleError.classList.add("hidden");
+    renderSetlistSettings();
+  }
+
+  function closeSetlistSettings() {
+    state.setlistSettingsOpen = false;
+    state.editingCustomRoleIndex = -1;
+    if (el.setlistSettings) el.setlistSettings.classList.add("hidden");
+    el.setlistsHome.classList.remove("hidden");
+    renderSetlistsHome();
+  }
+
+  function showCustomRoleError(msg) {
+    if (!el.customRoleError) return;
+    if (!msg) {
+      el.customRoleError.textContent = "";
+      el.customRoleError.classList.add("hidden");
+    } else {
+      el.customRoleError.textContent = msg;
+      el.customRoleError.classList.remove("hidden");
+    }
+  }
+
+  function validateCustomRoleName(raw, ignoreIndex = -1) {
+    const clean = String(raw || "").trim().replace(/\s+/g, " ");
+    if (!clean) return { ok: false, error: "Please enter a role name." };
+    const lower = clean.toLowerCase();
+    if (SERVICE_SLOTS.some((r) => r.toLowerCase() === lower)) {
+      return { ok: false, error: `"${clean}" is already a built-in role.` };
+    }
+    if (state.customSongRoles.some((r, idx) => idx !== ignoreIndex && r.toLowerCase() === lower)) {
+      return { ok: false, error: `"${clean}" already exists.` };
+    }
+    return { ok: true, value: clean };
+  }
+
+  function renderSetlistSettings() {
+    if (!el.setlistSettings) return;
+    if (el.enableWorshipElementsToggle) {
+      el.enableWorshipElementsToggle.checked = state.worshipElementsEnabled;
+    }
+
+    // Custom Song Roles
+    const count = state.customSongRoles.length;
+    if (el.customRolesCount) {
+      el.customRolesCount.textContent = `${count} / ${MAX_CUSTOM_ROLES}`;
+    }
+    const atLimit = count >= MAX_CUSTOM_ROLES;
+    if (el.newCustomRoleInput) {
+      el.newCustomRoleInput.disabled = atLimit;
+      el.newCustomRoleInput.placeholder = atLimit
+        ? "Maximum 6 custom roles reached"
+        : "New role (e.g. Song 4, Devotional)";
+    }
+    if (el.addCustomRoleBtn) el.addCustomRoleBtn.disabled = atLimit;
+
+    if (el.customRolesList) {
+      el.customRolesList.innerHTML = "";
+      state.customSongRoles.forEach((roleName, idx) => {
+        const li = document.createElement("li");
+        li.className = "custom-role-item";
+
+        if (state.editingCustomRoleIndex === idx) {
+          const input = document.createElement("input");
+          input.type = "text";
+          input.className = "custom-role-edit-input";
+          input.maxLength = 32;
+          input.value = roleName;
+
+          const actions = document.createElement("div");
+          actions.className = "custom-role-actions";
+
+          const commitEdit = () => {
+            const check = validateCustomRoleName(input.value, idx);
+            if (!check.ok) {
+              showCustomRoleError(check.error);
+              input.focus();
+              return;
+            }
+            const oldName = state.customSongRoles[idx];
+            state.customSongRoles[idx] = check.value;
+            if (oldName !== check.value) {
+              let touched = false;
+              state.setlists.forEach((sl) => {
+                (sl.items || []).forEach((it) => {
+                  if (!isWorshipElementItem(it) && it.slot === oldName) {
+                    it.slot = check.value;
+                    touched = true;
+                  }
+                });
+              });
+              if (touched) saveSetlists();
+            }
+            state.editingCustomRoleIndex = -1;
+            showCustomRoleError("");
+            saveSetlistSettings();
+            renderSetlistSettings();
+          };
+
+          const saveBtn = document.createElement("button");
+          saveBtn.type = "button";
+          saveBtn.className = "btn-role-action is-save";
+          saveBtn.textContent = "Save";
+          saveBtn.addEventListener("click", commitEdit);
+
+          const cancelBtn = document.createElement("button");
+          cancelBtn.type = "button";
+          cancelBtn.className = "btn-role-action";
+          cancelBtn.textContent = "Cancel";
+          cancelBtn.addEventListener("click", () => {
+            state.editingCustomRoleIndex = -1;
+            showCustomRoleError("");
+            renderSetlistSettings();
+          });
+
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              commitEdit();
+            } else if (e.key === "Escape") {
+              e.preventDefault();
+              state.editingCustomRoleIndex = -1;
+              showCustomRoleError("");
+              renderSetlistSettings();
+            }
+          });
+
+          actions.appendChild(saveBtn);
+          actions.appendChild(cancelBtn);
+          li.appendChild(input);
+          li.appendChild(actions);
+          setTimeout(() => {
+            input.focus();
+            input.select();
+          }, 20);
+        } else {
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "custom-role-name";
+          nameSpan.textContent = roleName;
+
+          const actions = document.createElement("div");
+          actions.className = "custom-role-actions";
+
+          const editBtn = document.createElement("button");
+          editBtn.type = "button";
+          editBtn.className = "btn-role-action";
+          editBtn.textContent = "Edit";
+          editBtn.addEventListener("click", () => {
+            state.editingCustomRoleIndex = idx;
+            showCustomRoleError("");
+            renderSetlistSettings();
+          });
+
+          const delBtn = document.createElement("button");
+          delBtn.type = "button";
+          delBtn.className = "btn-role-action is-delete";
+          delBtn.textContent = "×";
+          delBtn.title = `Delete "${roleName}"`;
+          delBtn.addEventListener("click", () => {
+            state.customSongRoles.splice(idx, 1);
+            if (state.editingCustomRoleIndex === idx) state.editingCustomRoleIndex = -1;
+            showCustomRoleError("");
+            saveSetlistSettings();
+            renderSetlistSettings();
+          });
+
+          actions.appendChild(editBtn);
+          actions.appendChild(delBtn);
+          li.appendChild(nameSpan);
+          li.appendChild(actions);
+        }
+
+        el.customRolesList.appendChild(li);
+      });
+    }
+
+    // Hide Default Song Roles
+    if (el.defaultRolesToggleList) {
+      el.defaultRolesToggleList.innerHTML = "";
+      SERVICE_SLOTS.forEach((roleName) => {
+        const isHidden = state.hiddenDefaultRoles.includes(roleName);
+        const row = document.createElement("label");
+        row.className = "default-role-row" + (isHidden ? " is-hidden-role" : "");
+
+        const left = document.createElement("span");
+        left.className = "default-role-left";
+
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.className = "toggle-checkbox";
+        cb.checked = isHidden;
+        cb.addEventListener("change", () => {
+          if (cb.checked) {
+            if (!state.hiddenDefaultRoles.includes(roleName)) {
+              state.hiddenDefaultRoles.push(roleName);
+            }
+          } else {
+            state.hiddenDefaultRoles = state.hiddenDefaultRoles.filter((r) => r !== roleName);
+          }
+          saveSetlistSettings();
+          renderSetlistSettings();
+        });
+
+        const lbl = document.createElement("span");
+        lbl.className = "default-role-label";
+        lbl.textContent = roleName;
+
+        left.appendChild(cb);
+        left.appendChild(lbl);
+        row.appendChild(left);
+
+        if (isHidden) {
+          const status = document.createElement("span");
+          status.className = "default-role-status";
+          status.textContent = "Hidden";
+          row.appendChild(status);
+        }
+
+        el.defaultRolesToggleList.appendChild(row);
+      });
+    }
+  }
+
+  function addElementToSetlist(setlistId, elementName) {
+    const sl = getSetlistById(setlistId);
+    if (!sl) return false;
+    sl.items.push({ type: "element", element: elementName || "Other", cue: "" });
+    saveSetlists();
+    renderSetlistsHome();
+    if (state.activeSetlistId === sl.id) {
+      renderSetlistEditor();
+    }
+    return true;
+  }
+
+  function openElementPickerModal() {
+    if (!el.elementPickerModal || !el.elementPickerList) return;
+    el.elementPickerList.innerHTML = "";
+    WORSHIP_ELEMENTS.forEach((elemName) => {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "element-picker-row";
+
+      const title = document.createElement("span");
+      title.textContent = elemName;
+
+      const badge = document.createElement("span");
+      badge.className = "element-picker-badge";
+      badge.textContent = "Element";
+
+      btn.appendChild(title);
+      btn.appendChild(badge);
+      btn.addEventListener("click", () => {
+        if (state.activeSetlistId) {
+          addElementToSetlist(state.activeSetlistId, elemName);
+        }
+        closeElementPickerModal();
+      });
+
+      li.appendChild(btn);
+      el.elementPickerList.appendChild(li);
+    });
+    el.elementPickerModal.classList.remove("hidden");
+  }
+
+  function closeElementPickerModal() {
+    if (el.elementPickerModal) el.elementPickerModal.classList.add("hidden");
+  }
+
   function renderSetlistsHome() {
     const sorted = [...state.setlists].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
     el.setlistsList.innerHTML = "";
@@ -1699,16 +2073,23 @@ Add it to this setlist anyway?`
       meta.className = "setlist-card-meta";
 
       const countTxt = document.createElement("span");
-      const songNums = sl.items
+      const songItems = (sl.items || []).filter((it) => !isWorshipElementItem(it));
+      const elemCount = (sl.items || []).length - songItems.length;
+      const songNums = songItems
         .map((it) => {
           const h = state.hymnMap.get(String(it.hymnId));
           return h ? `#${h.number_str}` : "";
         })
         .filter(Boolean)
         .join(", ");
-      countTxt.textContent = sl.items.length
-        ? `${sl.items.length} song${sl.items.length === 1 ? "" : "s"} · ${songNums}`
-        : "No songs yet";
+      const countParts = [];
+      if (songItems.length > 0) countParts.push(`${songItems.length} song${songItems.length === 1 ? "" : "s"}`);
+      if (elemCount > 0) countParts.push(`${elemCount} element${elemCount === 1 ? "" : "s"}`);
+      if (countParts.length === 0) {
+        countTxt.textContent = "No songs yet";
+      } else {
+        countTxt.textContent = songNums ? `${countParts.join(", ")} · ${songNums}` : countParts.join(", ");
+      }
       meta.appendChild(countTxt);
 
       if (sl.loggedAt) {
@@ -1730,15 +2111,20 @@ Add it to this setlist anyway?`
     const sl = getSetlistById(setlistId);
     if (!sl) return;
     state.activeSetlistId = sl.id;
+    state.setlistSettingsOpen = false;
     el.setlistsHome.classList.add("hidden");
+    if (el.setlistSettings) el.setlistSettings.classList.add("hidden");
     el.setlistEditor.classList.remove("hidden");
     el.setlistStatusMsg.classList.add("hidden");
+    syncSetlistFooterElementsUI();
     renderSetlistEditor();
   }
 
   function closeSetlistEditor() {
     state.activeSetlistId = null;
+    state.setlistSettingsOpen = false;
     el.setlistEditor.classList.add("hidden");
+    if (el.setlistSettings) el.setlistSettings.classList.add("hidden");
     el.setlistsHome.classList.remove("hidden");
     renderSetlistsHome();
   }
@@ -1754,22 +2140,24 @@ Add it to this setlist anyway?`
     el.setlistDateInput.value = sl.date || "";
     el.setlistNotesInput.value = sl.notes || "";
 
+    const songItems = (sl.items || []).filter((it) => !isWorshipElementItem(it));
     el.startPodiumBtn.disabled = sl.items.length === 0;
-    el.logSetlistSungBtn.disabled = sl.items.length === 0;
+    el.logSetlistSungBtn.disabled = songItems.length === 0;
     el.logSetlistSungBtn.textContent = sl.loggedAt ? "Log Service Again" : "Log Service as Sung";
+    syncSetlistFooterElementsUI();
     updatePrecacheButtonUI(sl);
 
-    // Key progression strip
+    // Key progression strip (songs only)
     el.keyProgressionItems.innerHTML = "";
-    if (sl.items.length > 0) {
+    if (songItems.length > 0) {
       el.keyProgressionBar.classList.remove("hidden");
-      sl.items.forEach((it, idx) => {
+      songItems.forEach((it, idx) => {
         const h = state.hymnMap.get(String(it.hymnId));
         const keyTxt = getEffectiveKeyForHymn(h);
         const span = document.createElement("span");
         span.textContent = keyTxt;
         el.keyProgressionItems.appendChild(span);
-        if (idx < sl.items.length - 1) {
+        if (idx < songItems.length - 1) {
           const arr = document.createElement("span");
           arr.className = "key-prog-arrow";
           arr.textContent = "→";
@@ -1780,7 +2168,7 @@ Add it to this setlist anyway?`
       el.keyProgressionBar.classList.add("hidden");
     }
 
-    // Song rows
+    // Song & Worship Element rows
     el.setlistSongsList.innerHTML = "";
     if (sl.items.length === 0) {
       el.setlistSongsEmpty.classList.remove("hidden");
@@ -1790,29 +2178,40 @@ Add it to this setlist anyway?`
 
     const frag = document.createDocumentFragment();
     sl.items.forEach((it, idx) => {
-      const h = state.hymnMap.get(String(it.hymnId));
-      if (!h) return;
+      const isElem = isWorshipElementItem(it);
+      const h = isElem ? null : state.hymnMap.get(String(it.hymnId));
+      if (!isElem && !h) return;
 
       const card = document.createElement("div");
-      card.className = "setlist-song-item";
+      card.className = isElem ? "setlist-song-item setlist-element-item" : "setlist-song-item";
 
       const top = document.createElement("div");
       top.className = "setlist-song-top";
 
       const slotSelect = document.createElement("select");
-      slotSelect.className = "slot-select";
-      SERVICE_SLOTS.forEach((slotName) => {
-        const opt = document.createElement("option");
-        opt.value = slotName;
-        opt.textContent = slotName;
-        if (it.slot === slotName) opt.selected = true;
-        slotSelect.appendChild(opt);
-      });
-      slotSelect.addEventListener("change", () => {
-        it.slot = slotSelect.value;
-        saveSetlists();
-        updateRunnerBar();
-      });
+      slotSelect.className = isElem ? "slot-select slot-select-element" : "slot-select";
+      if (isElem) {
+        WORSHIP_ELEMENTS.forEach((elemName) => {
+          const opt = document.createElement("option");
+          opt.value = elemName;
+          opt.textContent = elemName;
+          if ((it.element || "Other") === elemName) opt.selected = true;
+          slotSelect.appendChild(opt);
+        });
+        slotSelect.addEventListener("change", () => {
+          it.element = slotSelect.value;
+          saveSetlists();
+          renderSetlistEditor();
+          updateRunnerBar();
+        });
+      } else {
+        populateSlotSelect(slotSelect, it.slot || "Other");
+        slotSelect.addEventListener("change", () => {
+          it.slot = slotSelect.value;
+          saveSetlists();
+          updateRunnerBar();
+        });
+      }
 
       const controls = document.createElement("div");
       controls.className = "slot-item-controls";
@@ -1861,42 +2260,71 @@ Add it to this setlist anyway?`
       const cueInput = document.createElement("input");
       cueInput.type = "text";
       cueInput.className = "slot-cue-input";
-      cueInput.placeholder = "v. 1, 2, 4…";
+      cueInput.placeholder = isElem ? "Details (e.g. leader, passage)…" : "v. 1, 2, 4…";
       cueInput.value = it.cue || "";
-      cueInput.title = "Verse selection or leader cue";
-      cueInput.addEventListener("input", () => {
-        it.cue = cueInput.value;
-        saveSetlists();
-        updateRunnerBar();
-      });
+      cueInput.title = isElem ? "Worship element details" : "Verse selection or leader cue";
 
       top.appendChild(slotSelect);
       top.appendChild(cueInput);
       top.appendChild(controls);
 
-      const mainBtn = document.createElement("button");
-      mainBtn.type = "button";
-      mainBtn.className = "setlist-song-main";
-      mainBtn.addEventListener("click", () => startPodiumAt(sl.id, idx));
+      if (isElem) {
+        const mainBtn = document.createElement("button");
+        mainBtn.type = "button";
+        mainBtn.className = "setlist-element-main";
+        mainBtn.addEventListener("click", () => startPodiumAt(sl.id, idx));
 
-      const numEl = document.createElement("span");
-      numEl.className = "setlist-song-num";
-      numEl.textContent = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
+        const titleEl = document.createElement("span");
+        titleEl.className = "setlist-element-title";
+        titleEl.textContent = it.element || "Worship Element";
 
-      const titleEl = document.createElement("span");
-      titleEl.className = "setlist-song-title";
-      titleEl.textContent = h.title;
+        const detailEl = document.createElement("span");
+        detailEl.className = "setlist-element-detail";
+        detailEl.textContent = (it.cue || "").trim();
 
-      const keyEl = document.createElement("span");
-      keyEl.className = "key-tag";
-      keyEl.textContent = getEffectiveKeyForHymn(h);
+        cueInput.addEventListener("input", () => {
+          it.cue = cueInput.value;
+          detailEl.textContent = it.cue.trim();
+          saveSetlists();
+          updateRunnerBar();
+        });
 
-      mainBtn.appendChild(numEl);
-      mainBtn.appendChild(titleEl);
-      mainBtn.appendChild(keyEl);
+        mainBtn.appendChild(titleEl);
+        mainBtn.appendChild(detailEl);
+        card.appendChild(top);
+        card.appendChild(mainBtn);
+      } else {
+        cueInput.addEventListener("input", () => {
+          it.cue = cueInput.value;
+          saveSetlists();
+          updateRunnerBar();
+        });
 
-      card.appendChild(top);
-      card.appendChild(mainBtn);
+        const mainBtn = document.createElement("button");
+        mainBtn.type = "button";
+        mainBtn.className = "setlist-song-main";
+        mainBtn.addEventListener("click", () => startPodiumAt(sl.id, idx));
+
+        const numEl = document.createElement("span");
+        numEl.className = "setlist-song-num";
+        numEl.textContent = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
+
+        const titleEl = document.createElement("span");
+        titleEl.className = "setlist-song-title";
+        titleEl.textContent = h.title;
+
+        const keyEl = document.createElement("span");
+        keyEl.className = "key-tag";
+        keyEl.textContent = getEffectiveKeyForHymn(h);
+
+        mainBtn.appendChild(numEl);
+        mainBtn.appendChild(titleEl);
+        mainBtn.appendChild(keyEl);
+
+        card.appendChild(top);
+        card.appendChild(mainBtn);
+      }
+
       frag.appendChild(card);
     });
 
@@ -1906,11 +2334,66 @@ Add it to this setlist anyway?`
   // =========================================================================
   // Podium / Setlist Runner Mode
   // =========================================================================
+  function setElementRunnerMode(active) {
+    if (el.detailHeader) el.detailHeader.classList.toggle("hidden", active);
+    if (el.detailScroll) el.detailScroll.classList.toggle("hidden", active);
+    if (el.pitchBar) el.pitchBar.classList.toggle("hidden", active);
+    if (el.elementRunnerView) el.elementRunnerView.classList.toggle("hidden", !active);
+  }
+
+  function renderElementRunnerCard(sl, index) {
+    const item = sl.items[index];
+    if (!item || !el.elementRunnerView) return;
+    el.elementRunnerTitle.textContent = item.element || "Worship Element";
+    const cueTxt = (item.cue || "").trim();
+    if (cueTxt) {
+      el.elementRunnerCue.textContent = cueTxt;
+      el.elementRunnerCue.classList.remove("hidden");
+    } else {
+      el.elementRunnerCue.textContent = "";
+      el.elementRunnerCue.classList.add("hidden");
+    }
+
+    const nextItem = sl.items[index + 1];
+    if (nextItem) {
+      let nextLabel = "";
+      if (isWorshipElementItem(nextItem)) {
+        nextLabel = nextItem.element || "Worship Element";
+      } else {
+        const nh = state.hymnMap.get(String(nextItem.hymnId));
+        nextLabel = nh ? `#${nh.number_str} ${nh.title}` : (nextItem.slot || "Song");
+      }
+      el.elementRunnerUpNext.innerHTML = "";
+      const prefix = document.createTextNode("Up next: ");
+      const strong = document.createElement("strong");
+      strong.textContent = nextLabel;
+      el.elementRunnerUpNext.appendChild(prefix);
+      el.elementRunnerUpNext.appendChild(strong);
+      el.elementRunnerUpNext.classList.remove("hidden");
+    } else {
+      el.elementRunnerUpNext.textContent = "";
+      el.elementRunnerUpNext.classList.add("hidden");
+    }
+  }
+
   function startPodiumAt(setlistId, index) {
     const sl = getSetlistById(setlistId);
     if (!sl || !sl.items[index]) return;
     state.runner = { setlistId, index };
-    openSong(sl.items[index].hymnId, { keepRunner: true });
+    const item = sl.items[index];
+    if (isWorshipElementItem(item)) {
+      pitchPipe.stopSustained();
+      pitchPipe.stopArpeggio();
+      closeFullscreen();
+      el.detailEmpty.classList.add("hidden");
+      el.detailContent.classList.remove("hidden");
+      el.songDetailPane.classList.add("mobile-open");
+      setElementRunnerMode(true);
+      renderElementRunnerCard(sl, index);
+    } else {
+      setElementRunnerMode(false);
+      openSong(item.hymnId, { keepRunner: true });
+    }
     updateRunnerBar();
     syncWakeLock();
   }
@@ -1918,26 +2401,46 @@ Add it to this setlist anyway?`
   function updateRunnerBar() {
     if (!state.runner) {
       el.setlistRunnerBar.classList.add("hidden");
+      el.setlistRunnerBar.classList.remove("is-element");
       return;
     }
     const sl = getSetlistById(state.runner.setlistId);
     if (!sl || !sl.items[state.runner.index]) {
       state.runner = null;
       el.setlistRunnerBar.classList.add("hidden");
+      el.setlistRunnerBar.classList.remove("is-element");
+      setElementRunnerMode(false);
       return;
     }
     const item = sl.items[state.runner.index];
+    const isElem = isWorshipElementItem(item);
     el.setlistRunnerBar.classList.remove("hidden");
+    el.setlistRunnerBar.classList.toggle("is-element", isElem);
     const cueTxt = (item.cue || "").trim();
-    el.runnerSlotLabel.textContent = cueTxt ? `${item.slot || "Song"} · ${cueTxt}` : (item.slot || "Song");
+    if (isElem) {
+      el.runnerSlotLabel.textContent = item.element || "Worship Element";
+      renderElementRunnerCard(sl, state.runner.index);
+    } else {
+      el.runnerSlotLabel.textContent = cueTxt ? `${item.slot || "Song"} · ${cueTxt}` : (item.slot || "Song");
+    }
     el.runnerPosLabel.textContent = `${state.runner.index + 1} of ${sl.items.length} · ${sl.name || "Service"}`;
     el.runnerPrevBtn.disabled = state.runner.index <= 0;
     el.runnerNextBtn.disabled = state.runner.index >= sl.items.length - 1;
   }
 
   function exitRunner() {
+    const wasElementView = el.elementRunnerView && !el.elementRunnerView.classList.contains("hidden");
     state.runner = null;
     el.setlistRunnerBar.classList.add("hidden");
+    el.setlistRunnerBar.classList.remove("is-element");
+    setElementRunnerMode(false);
+    if (wasElementView) {
+      if (!state.selectedId) {
+        el.detailContent.classList.add("hidden");
+        el.detailEmpty.classList.remove("hidden");
+      }
+      el.songDetailPane.classList.remove("mobile-open");
+    }
     syncWakeLock();
   }
 
@@ -1952,6 +2455,11 @@ Add it to this setlist anyway?`
     lines.push("");
 
     sl.items.forEach((it) => {
+      if (isWorshipElementItem(it)) {
+        const cuePart = it.cue && it.cue.trim() ? ` — ${it.cue.trim()}` : "";
+        lines.push(`[${it.element || "Element"}]${cuePart}`);
+        return;
+      }
       const h = state.hymnMap.get(String(it.hymnId));
       if (!h) return;
       const numLabel = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
@@ -2337,6 +2845,7 @@ Add it to this setlist anyway?`
       el.inlineNewSetlistFields.classList.add("hidden");
     }
 
+    populateSlotSelect(el.targetSlotSelect);
     el.inlineSetlistName.value = "Sunday AM";
     el.inlineSetlistDate.value = getNextSundayISO();
     el.addToSetlistModal.classList.remove("hidden");
@@ -2350,6 +2859,7 @@ Add it to this setlist anyway?`
     state.pickerMode = mode; // 'setlist' | 'history'
     el.songPickerTitle.textContent = mode === "setlist" ? "Add Song to Service" : "Log Song to History";
     el.pickerSlotRow.classList.toggle("hidden", mode !== "setlist");
+    if (mode === "setlist") populateSlotSelect(el.pickerSlotSelect);
     el.songPickerInput.value = "";
     renderSongPickerResults();
     el.songPickerModal.classList.remove("hidden");
@@ -2651,6 +3161,7 @@ Add it to this setlist anyway?`
     if (!options.keepRunner) {
       exitRunner();
     }
+    setElementRunnerMode(false);
 
     pitchPipe.stopSustained();
     pitchPipe.stopArpeggio();
@@ -2980,6 +3491,9 @@ Add it to this setlist anyway?`
         primaryHymnal: state.primaryHymnal,
         multiBookMode: state.multiBookMode,
         enabledHymnals: state.enabledHymnals,
+        worshipElementsEnabled: state.worshipElementsEnabled,
+        customSongRoles: state.customSongRoles,
+        hiddenDefaultRoles: state.hiddenDefaultRoles,
       },
     };
 
@@ -3083,6 +3597,20 @@ Add it to this setlist anyway?`
           state.enabledHymnals = d.enabledHymnals.filter((id) => Boolean(HYMNALS[id]));
           saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
         }
+        if (typeof d.worshipElementsEnabled === "boolean") {
+          state.worshipElementsEnabled = d.worshipElementsEnabled;
+          localStorage.setItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED, String(state.worshipElementsEnabled));
+        }
+        if (Array.isArray(d.customSongRoles)) {
+          state.customSongRoles = d.customSongRoles.filter((r) => typeof r === "string" && r.trim()).slice(0, MAX_CUSTOM_ROLES);
+          saveJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, state.customSongRoles);
+        }
+        if (Array.isArray(d.hiddenDefaultRoles)) {
+          state.hiddenDefaultRoles = d.hiddenDefaultRoles.filter((r) => typeof r === "string");
+          saveJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, state.hiddenDefaultRoles);
+        }
+        syncRoleDropdowns();
+        syncSetlistFooterElementsUI();
 
         rebuildLastSungMap();
         updateHeaderSubtitle();
@@ -3120,6 +3648,9 @@ Add it to this setlist anyway?`
     state.setlists = [];
     state.history = [];
     state.activeSetlistId = null;
+    state.worshipElementsEnabled = false;
+    state.customSongRoles = [];
+    state.hiddenDefaultRoles = [];
     exitRunner();
 
     saveJSON(STORAGE_KEYS.FAVORITES, []);
@@ -3131,6 +3662,11 @@ Add it to this setlist anyway?`
     saveJSON(STORAGE_KEYS.START_NOTES, {});
     saveJSON(STORAGE_KEYS.SETLISTS, []);
     saveJSON(STORAGE_KEYS.HISTORY, []);
+    localStorage.setItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED, "false");
+    saveJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, []);
+    saveJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, []);
+    syncRoleDropdowns();
+    syncSetlistFooterElementsUI();
 
     rebuildLastSungMap();
     refreshTagSelectorsAndStats();
@@ -3417,6 +3953,49 @@ Add it to this setlist anyway?`
     });
 
     // Setlists Tab Events
+    if (el.setlistSettingsBtn) {
+      el.setlistSettingsBtn.addEventListener("click", openSetlistSettings);
+    }
+    if (el.backFromSetlistSettingsBtn) {
+      el.backFromSetlistSettingsBtn.addEventListener("click", closeSetlistSettings);
+    }
+    if (el.enableWorshipElementsToggle) {
+      el.enableWorshipElementsToggle.addEventListener("change", () => {
+        state.worshipElementsEnabled = el.enableWorshipElementsToggle.checked;
+        saveSetlistSettings();
+      });
+    }
+    if (el.addCustomRoleForm) {
+      el.addCustomRoleForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (state.customSongRoles.length >= MAX_CUSTOM_ROLES) {
+          showCustomRoleError(`You can create up to ${MAX_CUSTOM_ROLES} custom song roles.`);
+          return;
+        }
+        const check = validateCustomRoleName(el.newCustomRoleInput.value);
+        if (!check.ok) {
+          showCustomRoleError(check.error);
+          return;
+        }
+        state.customSongRoles.push(check.value);
+        el.newCustomRoleInput.value = "";
+        showCustomRoleError("");
+        saveSetlistSettings();
+        renderSetlistSettings();
+      });
+    }
+    if (el.addElementToSetlistBtn) {
+      el.addElementToSetlistBtn.addEventListener("click", openElementPickerModal);
+    }
+    if (el.closeElementPickerBtn) {
+      el.closeElementPickerBtn.addEventListener("click", closeElementPickerModal);
+    }
+    if (el.elementPickerModal) {
+      el.elementPickerModal.addEventListener("click", (e) => {
+        if (e.target === el.elementPickerModal) closeElementPickerModal();
+      });
+    }
+
     el.newSetlistBtn.addEventListener("click", () => {
       const sl = createSetlist("Sunday AM", getNextSundayISO());
       openSetlistEditor(sl.id);
@@ -3466,7 +4045,9 @@ Add it to this setlist anyway?`
 
     el.logSetlistSungBtn.addEventListener("click", () => {
       const sl = getSetlistById(state.activeSetlistId);
-      if (!sl || sl.items.length === 0) return;
+      if (!sl) return;
+      const songItems = (sl.items || []).filter((it) => !isWorshipElementItem(it) && it.hymnId);
+      if (songItems.length === 0) return;
 
       if (sl.loggedAt) {
         const ok = window.confirm("This service was already logged to history. Log all songs again?");
@@ -3475,7 +4056,7 @@ Add it to this setlist anyway?`
 
       const dateISO = sl.date || getTodayISO();
       const serviceLabel = sl.name || "Worship Service";
-      sl.items.forEach((it) => {
+      songItems.forEach((it) => {
         state.history.unshift({
           id: makeId("hist"),
           hymnId: String(it.hymnId),
@@ -3489,7 +4070,7 @@ Add it to this setlist anyway?`
       saveHistory();
       renderSetlistEditor();
 
-      el.setlistStatusMsg.textContent = `Logged ${sl.items.length} song${sl.items.length === 1 ? "" : "s"} to History (${formatDisplayDate(dateISO)}).`;
+      el.setlistStatusMsg.textContent = `Logged ${songItems.length} song${songItems.length === 1 ? "" : "s"} to History (${formatDisplayDate(dateISO)}).`;
       el.setlistStatusMsg.classList.remove("hidden");
     });
 
@@ -3910,6 +4491,7 @@ Add it to this setlist anyway?`
         else if (!el.addToSetlistModal.classList.contains("hidden")) closeAddToSetlistModal();
         else if (!el.songPickerModal.classList.contains("hidden")) closeSongPicker();
         else if (!el.markSungModal.classList.contains("hidden")) closeMarkSungModal();
+        else if (el.elementPickerModal && !el.elementPickerModal.classList.contains("hidden")) closeElementPickerModal();
         else if (state.isFullscreen) closeFullscreen();
       }
     });
@@ -4038,6 +4620,11 @@ Add it to this setlist anyway?`
         armBackGuard();
         return;
       }
+      if (el.elementPickerModal && !el.elementPickerModal.classList.contains("hidden")) {
+        closeElementPickerModal();
+        armBackGuard();
+        return;
+      }
 
       // 2. Exit Fullscreen sheet music overlay
       if (state.isFullscreen) {
@@ -4053,7 +4640,12 @@ Add it to this setlist anyway?`
         return;
       }
 
-      // 4. Inside a Setlist Editor -> go back to Setlists directory
+      // 4. Inside Setlist Settings or Setlist Editor -> go back to Setlists directory
+      if (state.activeTab === "setlists" && state.setlistSettingsOpen) {
+        closeSetlistSettings();
+        armBackGuard();
+        return;
+      }
       if (state.activeTab === "setlists" && state.activeSetlistId) {
         closeSetlistEditor();
         armBackGuard();
@@ -4121,6 +4713,8 @@ Add it to this setlist anyway?`
   async function init() {
     applyTheme();
     applyReadability();
+    syncRoleDropdowns();
+    syncSetlistFooterElementsUI();
     bindEvents();
     setupBackNavigation();
     updatePitchUI();

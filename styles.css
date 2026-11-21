@@ -3573,3 +3573,435 @@ html[data-theme="dark"] .active-browse-label {
   align-items: center;
   padding: 16px;
 }
+
+
+/* ==========================================================================
+   Setlist Settings, Custom Song Roles, & Worship Elements
+   ========================================================================== */
+:root {
+  --elem-accent: #2B5B6C;
+  --elem-ink: #1E4452;
+  --elem-bg: #EBF3F6;
+  --elem-border: #B6CED7;
+}
+
+html[data-theme="dark"] {
+  --elem-accent: #5C9DB3;
+  --elem-ink: #C4E2EC;
+  --elem-bg: #1B2D34;
+  --elem-border: #365764;
+}
+
+.btn-icon-subtle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-paper);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-icon-subtle:active {
+  background: var(--bg-subtle);
+  color: var(--accent);
+}
+
+html[data-readability="large"] .btn-icon-subtle {
+  width: 40px;
+  height: 40px;
+}
+
+/* Setlist Footer Equal-Width + Add Song & + Add Element */
+.setlist-footer-actions.has-elements .btn-log-full {
+  grid-column: auto;
+}
+
+.btn-add-song,
+.btn-add-element {
+  width: 100%;
+  padding: 8px 14px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+html[data-readability="large"] .setlist-footer-actions .btn-add-song,
+html[data-readability="large"] .setlist-footer-actions .btn-add-element {
+  width: 100%;
+  padding: 9px 14px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Setlist Settings Subpane Cards */
+.setlist-settings-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.setlist-settings-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.custom-roles-count {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.custom-roles-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.custom-roles-list:empty {
+  margin-top: 0;
+}
+
+.custom-role-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 8px;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.custom-role-name {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+html[data-theme="dark"] .custom-role-name {
+  color: #F2C9CF;
+}
+
+.custom-role-edit-input {
+  flex: 1;
+  min-width: 0;
+  height: 30px;
+  padding: 3px 8px;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  outline: none;
+}
+
+.custom-role-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.btn-role-action {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  border-radius: 2px;
+  height: 28px;
+  padding: 0 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-role-action.is-save {
+  background: var(--accent);
+  border-color: var(--accent-dark);
+  color: #FFFFFF;
+}
+
+.btn-role-action.is-delete {
+  color: #9E262E;
+  padding: 0 7px;
+  font-size: 0.95rem;
+}
+
+html[data-theme="dark"] .btn-role-action.is-delete {
+  color: #EB868E;
+}
+
+.default-roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.default-role-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 9px;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.default-role-left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.default-role-left .toggle-checkbox {
+  margin-top: 0;
+}
+
+.default-role-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.default-role-row.is-hidden-role .default-role-label {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+
+.default-role-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: 2px;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+/* Worship Element Items inside Setlist Editor */
+.setlist-element-item {
+  border-left: 3px solid var(--elem-accent);
+}
+
+.slot-select.slot-select-element {
+  color: var(--elem-ink);
+  background: var(--elem-bg);
+  border-color: var(--elem-border);
+}
+
+html[data-theme="dark"] .slot-select.slot-select-element {
+  color: var(--elem-ink);
+  background: var(--elem-bg);
+  border-color: var(--elem-border);
+}
+
+.setlist-element-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.setlist-element-title {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--elem-ink);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.setlist-element-detail {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Worship Element Banner in Lead Service Mode */
+.runner-bar.is-element {
+  background: var(--elem-bg);
+  border-bottom-color: var(--elem-border);
+}
+
+.runner-bar.is-element .runner-center strong,
+.runner-bar.is-element .btn-runner-close {
+  color: var(--elem-ink);
+}
+
+.runner-bar.is-element .btn-runner {
+  border-color: var(--elem-border);
+  color: var(--elem-ink);
+}
+
+html[data-theme="dark"] .runner-bar.is-element .btn-runner {
+  background: #16242A;
+  border-color: var(--elem-border);
+  color: var(--elem-ink);
+}
+
+/* Worship Element Podium Card View */
+.element-runner-view {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px;
+  background: var(--bg-paper);
+}
+
+.element-runner-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--bg-surface);
+  border: 1px solid var(--elem-border);
+  border-top: 4px solid var(--elem-accent);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  text-align: center;
+}
+
+.element-runner-kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--elem-ink);
+  background: var(--elem-bg);
+  border: 1px solid var(--elem-border);
+  border-radius: 2px;
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+
+.element-runner-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.25;
+}
+
+.element-runner-cue {
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  color: var(--ink-secondary);
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+.element-runner-upnext {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-hairline);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+.element-runner-upnext strong {
+  color: var(--ink-secondary);
+}
+
+/* Add Worship Element Modal */
+#elementPickerModal.modal-backdrop {
+  align-items: center;
+  padding: 16px;
+}
+
+.element-picker-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.element-picker-row {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.element-picker-row:last-child {
+  border-bottom: none;
+}
+
+.element-picker-row:active {
+  background: var(--elem-bg);
+}
+
+.element-picker-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--elem-ink);
+  background: var(--elem-bg);
+  border: 1px solid var(--elem-border);
+  border-radius: 2px;
+  padding: 2px 7px;
+}
+
+html[data-readability="large"] .element-runner-title {
+  font-size: 1.85rem;
+}
+
+html[data-readability="large"] .element-runner-cue {
+  font-size: 1.14rem;
+}
+
+html[data-readability="large"] .element-picker-row {
+  padding: 14px 16px;
+  font-size: 1.02rem;
+}

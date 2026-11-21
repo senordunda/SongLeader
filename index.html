@@ -16,20 +16,20 @@
         <h1 id="landingTitle" class="landing-title">Choose Your Hymnal</h1>
       </div>
       <div class="landing-books" role="list">
+        <button type="button" class="landing-book-btn" data-book="hfw">
+          <span class="landing-book-name">Hymns for Worship</span>
+        </button>
         <button type="button" class="landing-book-btn" data-book="pftl">
           <span class="landing-book-name">Praise for the Lord</span>
         </button>
-        <button type="button" class="landing-book-btn" data-book="sfp">
-          <span class="landing-book-name">Songs of Faith and Praise</span>
-        </button>
-        <button type="button" class="landing-book-btn" data-book="hfw">
-          <span class="landing-book-name">Hymns for Worship</span>
+        <button type="button" class="landing-book-btn" data-book="phss">
+          <span class="landing-book-name">Psalms, Hymns, and Spiritual Songs</span>
         </button>
         <button type="button" class="landing-book-btn" data-book="ss">
           <span class="landing-book-name">Sacred Selections</span>
         </button>
-        <button type="button" class="landing-book-btn" data-book="phss">
-          <span class="landing-book-name">Psalms, Hymns, and Spiritual Songs</span>
+        <button type="button" class="landing-book-btn" data-book="sfp">
+          <span class="landing-book-name">Songs of Faith and Praise</span>
         </button>
         <button type="button" class="landing-book-btn" data-book="sotc">
           <span class="landing-book-name">Songs of the Church</span>
@@ -153,7 +153,15 @@
         <div id="setlistsHome" class="subpane">
           <div class="subpane-header">
             <h2>Worship Setlists</h2>
-            <button type="button" id="newSetlistBtn" class="btn-primary btn-sm">+ New Service</button>
+            <div class="subpane-header-actions">
+              <button type="button" id="setlistSettingsBtn" class="btn-icon-subtle" aria-label="Setlist Settings" title="Setlist Settings">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 .92-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51.92H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button type="button" id="newSetlistBtn" class="btn-primary btn-sm">+ New Service</button>
+            </div>
           </div>
           <div id="setlistsList" class="setlists-list"></div>
           <div id="setlistsEmpty" class="empty-state hidden">
@@ -199,16 +207,70 @@
               <p>No songs in this service yet. Tap <strong>+ Add Song</strong> below or add from any hymn page.</p>
             </div>
 
-            <div class="setlist-footer-actions">
+            <div id="setlistFooterActions" class="setlist-footer-actions">
               <button type="button" id="precacheHighResBtn" class="btn-highres btn-precache" title="Pre-load high-resolution sheet music for all songs in this setlist">Pre-Cache High-Res</button>
               <button type="button" id="addSongToSetlistBtn" class="btn-secondary btn-add-song">+ Add Song</button>
               <button type="button" id="logSetlistSungBtn" class="btn-primary btn-log-full">Log Service as Sung</button>
+              <button type="button" id="addElementToSetlistBtn" class="btn-secondary btn-add-element hidden">+ Add Element</button>
             </div>
 
             <p id="setlistStatusMsg" class="setlist-status-msg hidden" aria-live="polite"></p>
 
             <div class="setlist-danger-zone">
               <button type="button" id="deleteSetlistBtn" class="btn-danger-outline">Delete Setlist</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Setlist Settings Subpane -->
+        <div id="setlistSettings" class="subpane hidden" aria-label="Setlist Settings">
+          <div class="subpane-header">
+            <button type="button" id="backFromSetlistSettingsBtn" class="btn-back">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Setlists</span>
+            </button>
+            <h2>Setlist Settings</h2>
+            <div style="width: 48px;" aria-hidden="true"></div>
+          </div>
+
+          <div class="setlist-editor-scroll">
+            <div class="setlist-settings-card">
+              <label class="setting-row setting-toggle-row" for="enableWorshipElementsToggle" style="padding: 2px 0;">
+                <div class="setting-text">
+                  <strong>Enable Worship Elements</strong>
+                  <p class="setting-desc">Show the <strong>+ Add Element</strong> button in setlists to include Announcements, Prayer, Scripture, Lesson, Lord's Supper, Offering, and Other.</p>
+                </div>
+                <input type="checkbox" id="enableWorshipElementsToggle" class="toggle-checkbox" />
+              </label>
+            </div>
+
+            <div class="setlist-settings-card">
+              <div class="setlist-settings-heading-row">
+                <h3 class="settings-subheading" style="margin: 0;">Custom Song Roles</h3>
+                <span id="customRolesCount" class="custom-roles-count">0 / 6</span>
+              </div>
+              <p class="setting-desc" style="margin: 4px 0 10px;">Create up to 6 custom song roles to appear in your setlist role menus.</p>
+              <form id="addCustomRoleForm" class="add-tag-form">
+                <input
+                  type="text"
+                  id="newCustomRoleInput"
+                  class="tag-input"
+                  maxlength="32"
+                  placeholder="New role (e.g. Song 4, Devotional)"
+                  autocomplete="off"
+                />
+                <button type="submit" id="addCustomRoleBtn" class="btn-primary btn-sm">Add</button>
+              </form>
+              <p id="customRoleError" class="quick-jump-error hidden" style="text-align: left;"></p>
+              <ul id="customRolesList" class="custom-roles-list" role="list"></ul>
+            </div>
+
+            <div class="setlist-settings-card">
+              <h3 class="settings-subheading" style="margin: 0 0 4px;">Hide Default Song Roles</h3>
+              <p class="setting-desc" style="margin: 0 0 10px;">Select any built-in role below to hide it from the setlist role selection list.</p>
+              <div id="defaultRolesToggleList" class="default-roles-list" role="group" aria-label="Hide default song roles"></div>
             </div>
           </div>
         </div>
@@ -429,7 +491,7 @@
 
         <div id="detailContent" class="detail-content hidden">
           <!-- Sticky Detail Header -->
-          <div class="detail-header">
+          <div id="detailHeader" class="detail-header">
             <button type="button" id="backToListBtn" class="btn-back" aria-label="Back to hymn list">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -454,13 +516,23 @@
 
           <!-- Podium / Setlist Runner Bar (shown when stepping through a service) -->
           <div id="setlistRunnerBar" class="runner-bar hidden">
-            <button type="button" id="runnerPrevBtn" class="btn-runner" aria-label="Previous song in setlist">← Prev</button>
+            <button type="button" id="runnerPrevBtn" class="btn-runner" aria-label="Previous item in setlist">← Prev</button>
             <div class="runner-center">
               <strong id="runnerSlotLabel">Opening</strong>
               <span id="runnerPosLabel">1 of 5 · Sunday AM</span>
             </div>
-            <button type="button" id="runnerNextBtn" class="btn-runner" aria-label="Next song in setlist">Next →</button>
+            <button type="button" id="runnerNextBtn" class="btn-runner" aria-label="Next item in setlist">Next →</button>
             <button type="button" id="runnerCloseBtn" class="btn-runner-close" aria-label="Exit setlist mode" title="Exit setlist mode">&times;</button>
+          </div>
+
+          <!-- Worship Element Podium View (shown in Lead Service mode when stepping onto a non-song element) -->
+          <div id="elementRunnerView" class="element-runner-view hidden">
+            <div class="element-runner-card">
+              <span class="element-runner-kicker">Worship Element</span>
+              <h2 id="elementRunnerTitle" class="element-runner-title">Prayer</h2>
+              <p id="elementRunnerCue" class="element-runner-cue hidden"></p>
+              <div id="elementRunnerUpNext" class="element-runner-upnext hidden"></div>
+            </div>
           </div>
 
           <!-- Scrollable Song Body -->
@@ -787,8 +859,10 @@
           <label for="targetSlotSelect">Service Slot</label>
           <select id="targetSlotSelect" class="form-select">
             <option value="Opening">Opening</option>
-            <option value="Second Song">Second Song</option>
+            <option value="Song 2">Song 2</option>
+            <option value="Song 3">Song 3</option>
             <option value="Lord's Supper">Lord's Supper</option>
+            <option value="Offering">Offering</option>
             <option value="Before Sermon">Before Sermon</option>
             <option value="Invitation">Invitation</option>
             <option value="Closing">Closing</option>
@@ -824,8 +898,10 @@
           <label for="pickerSlotSelect">Slot:</label>
           <select id="pickerSlotSelect" class="form-select form-select-sm">
             <option value="Opening">Opening</option>
-            <option value="Second Song">Second Song</option>
+            <option value="Song 2">Song 2</option>
+            <option value="Song 3">Song 3</option>
             <option value="Lord's Supper">Lord's Supper</option>
+            <option value="Offering">Offering</option>
             <option value="Before Sermon">Before Sermon</option>
             <option value="Invitation">Invitation</option>
             <option value="Closing">Closing</option>
@@ -905,6 +981,17 @@
         <input type="search" id="browseSearchInput" class="search-input" placeholder="Filter list…" autocomplete="off" />
       </div>
       <ul id="browseResultsList" class="picker-results" role="list"></ul>
+    </div>
+  </div>
+
+  <!-- Add Worship Element Modal -->
+  <div id="elementPickerModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="elementPickerTitle">
+    <div class="modal-dialog modal-wide">
+      <div class="modal-header">
+        <h2 id="elementPickerTitle">Add Worship Element</h2>
+        <button type="button" id="closeElementPickerBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <ul id="elementPickerList" class="element-picker-list" role="list"></ul>
     </div>
   </div>
 
