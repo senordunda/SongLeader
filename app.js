@@ -27,8 +27,35 @@
     MULTI_BOOK: "pftl_multi_book_v1",
     ENABLED_HYMNALS: "pftl_enabled_hymnals_v1",
     MANUAL_KEYS: "pftl_manual_keys_v1",
+    START_NOTES: "pftl_start_notes_v1",
+    WAKE_LOCK: "pftl_wake_lock_v1",
     ONBOARDED: "pftl_onboarded_v1",
   };
+
+  const START_NOTE_DEFS = {
+    "low-5": { label: "Sol,", majorOffset: -5, minorOffset: -5 },
+    "low-6": { label: "La,",  majorOffset: -3, minorOffset: -4 },
+    "low-7": { label: "Ti,",  majorOffset: -1, minorOffset: -2 },
+    "1":     { label: "Do",   majorOffset: 0,  minorOffset: 0 },
+    "2":     { label: "Re",   majorOffset: 2,  minorOffset: 2 },
+    "3":     { label: "Mi",   majorOffset: 4,  minorOffset: 3 },
+    "4":     { label: "Fa",   majorOffset: 5,  minorOffset: 5 },
+    "5":     { label: "Sol",  majorOffset: 7,  minorOffset: 7 },
+    "6":     { label: "La",   majorOffset: 9,  minorOffset: 8 },
+    "7":     { label: "Ti",   majorOffset: 11, minorOffset: 10 },
+    "8":     { label: "Do'",  majorOffset: 12, minorOffset: 12 },
+  };
+
+  const BIBLE_BOOK_ORDER = [
+    "Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth",
+    "1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther",
+    "Job","Psalm","Psalms","Proverbs","Ecclesiastes","Song of Solomon",
+    "Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah",
+    "Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi",
+    "Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians",
+    "Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy",
+    "Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"
+  ];
 
   const HYMNALS = {
     pftl: { id: "pftl", code: "PFTL", name: "Praise for the Lord", file: "./pftl_hymns.json", hasSupplement: true },
@@ -261,6 +288,37 @@
       }, totalMs);
       this.arpTimers.push(timerId);
     }
+
+    playStartNote(semitone, offsetSemitones, onFinish) {
+      this.stopSustained();
+      this.stopArpeggio();
+
+      const ctx = this.ensureContext();
+      const baseMidi = this.semitoneToMidi(semitone);
+      const now = ctx.currentTime + 0.02;
+
+      // Brief tonic reference (0.36s), then sustained starting melody note (0.85s)
+      const tonicDur = 0.36;
+      const startNoteBegin = now + 0.40;
+      const startNoteDur = 0.85;
+
+      const v1 = this.createVoice(ctx, this.midiToFreq(baseMidi), now, 0.21);
+      v1.masterGain.gain.setValueAtTime(0.21, now + tonicDur - 0.06);
+      v1.masterGain.gain.linearRampToValueAtTime(0.0001, now + tonicDur);
+      v1.osc1.stop(now + tonicDur + 0.02);
+      v1.osc2.stop(now + tonicDur + 0.02);
+
+      const v2 = this.createVoice(ctx, this.midiToFreq(baseMidi + offsetSemitones), startNoteBegin, 0.25);
+      v2.masterGain.gain.setValueAtTime(0.25, startNoteBegin + startNoteDur - 0.08);
+      v2.masterGain.gain.linearRampToValueAtTime(0.0001, startNoteBegin + startNoteDur);
+      v2.osc1.stop(startNoteBegin + startNoteDur + 0.02);
+      v2.osc2.stop(startNoteBegin + startNoteDur + 0.02);
+
+      const timerId = setTimeout(() => {
+        if (typeof onFinish === "function") onFinish();
+      }, 1300);
+      this.arpTimers.push(timerId);
+    }
   }
 
   // =========================================================================
@@ -281,8 +339,14 @@
     onlyFavorites: false,
     onlyWithScans: false,
     activeCustomTag: "",
+    activeTopicBrowse: "",
+    activeBibleBook: "",
+    activeRotationFilter: "", // "", "due90", "due60", "never"
+    browseTab: "topics",
     showSupplement: localStorage.getItem(STORAGE_KEYS.SHOW_SUPPLEMENT) === "true",
     darkMode: localStorage.getItem(STORAGE_KEYS.DARK_MODE) === "true",
+    keepAwake: localStorage.getItem(STORAGE_KEYS.WAKE_LOCK) !== "false",
+    wakeLockSentinel: null,
     bibleVersion: normalizeBibleVersion(localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "KJV"),
     readability: localStorage.getItem(STORAGE_KEYS.READABILITY) === "large" ? "large" : "small",
     activeTab: "hymnal",
@@ -291,6 +355,7 @@
     // Persisted user data
     transpositions: loadJSON(STORAGE_KEYS.TRANSPOSITIONS, {}),
     manualKeys: loadJSON(STORAGE_KEYS.MANUAL_KEYS, {}),
+    startNotes: loadJSON(STORAGE_KEYS.START_NOTES, {}),
     favorites: new Set(loadJSON(STORAGE_KEYS.FAVORITES, [])),
     customTags: loadJSON(STORAGE_KEYS.CUSTOM_TAGS, {}),
     dontSing: loadJSON(STORAGE_KEYS.DONT_SING, {}),
@@ -331,6 +396,16 @@
     topicTabs: Array.from(document.querySelectorAll(".filter-tab")),
     favFilterBtn: document.getElementById("favFilterBtn"),
     scansFilterBtn: document.getElementById("scansFilterBtn"),
+    browseFiltersBtn: document.getElementById("browseFiltersBtn"),
+    activeBrowseBar: document.getElementById("activeBrowseBar"),
+    activeBrowseLabel: document.getElementById("activeBrowseLabel"),
+    clearBrowseFilterBtn: document.getElementById("clearBrowseFilterBtn"),
+    browseModal: document.getElementById("browseModal"),
+    closeBrowseModalBtn: document.getElementById("closeBrowseModalBtn"),
+    browseTabs: Array.from(document.querySelectorAll(".browse-tab")),
+    browseSearchWrap: document.getElementById("browseSearchWrap"),
+    browseSearchInput: document.getElementById("browseSearchInput"),
+    browseResultsList: document.getElementById("browseResultsList"),
     tagFilterRow: document.getElementById("tagFilterRow"),
     tagFilterSelect: document.getElementById("tagFilterSelect"),
     clearTagFilterBtn: document.getElementById("clearTagFilterBtn"),
@@ -347,6 +422,7 @@
     setlistsEmpty: document.getElementById("setlistsEmpty"),
     setlistEditor: document.getElementById("setlistEditor"),
     backToSetlistsBtn: document.getElementById("backToSetlistsBtn"),
+    copySetlistBtn: document.getElementById("copySetlistBtn"),
     startPodiumBtn: document.getElementById("startPodiumBtn"),
     setlistNameInput: document.getElementById("setlistNameInput"),
     setlistDateInput: document.getElementById("setlistDateInput"),
@@ -375,6 +451,7 @@
     multiBookList: document.getElementById("multiBookList"),
     multiBookCheckboxes: Array.from(document.querySelectorAll(".multibook-cb")),
     darkModeToggle: document.getElementById("darkModeToggle"),
+    wakeLockToggle: document.getElementById("wakeLockToggle"),
     readabilitySelect: document.getElementById("readabilitySelect"),
     bibleVersionSelect: document.getElementById("bibleVersionSelect"),
     showSupplementRow: document.getElementById("showSupplementRow"),
@@ -446,12 +523,15 @@
     addTagForm: document.getElementById("addTagForm"),
     newTagInput: document.getElementById("newTagInput"),
     existingTagsList: document.getElementById("existingTagsList"),
+    startNoteSelect: document.getElementById("startNoteSelect"),
     songNotesInput: document.getElementById("songNotesInput"),
     dontSingCheckbox: document.getElementById("dontSingCheckbox"),
     dontSingReasonInput: document.getElementById("dontSingReasonInput"),
     songHistoryGroup: document.getElementById("songHistoryGroup"),
     detailSongHistoryList: document.getElementById("detailSongHistoryList"),
 
+    alsoInGroup: document.getElementById("alsoInGroup"),
+    detailAlsoIn: document.getElementById("detailAlsoIn"),
     topicsGroup: document.getElementById("topicsGroup"),
     detailTopics: document.getElementById("detailTopics"),
     scripturesGroup: document.getElementById("scripturesGroup"),
@@ -463,6 +543,7 @@
     holdPitchBtn: document.getElementById("holdPitchBtn"),
     holdPitchKey: document.getElementById("holdPitchKey"),
     holdPitchSub: document.getElementById("holdPitchSub"),
+    startNoteBtn: document.getElementById("startNoteBtn"),
     arpeggioBtn: document.getElementById("arpeggioBtn"),
 
     fsOverlay: document.getElementById("fullscreenOverlay"),
@@ -474,6 +555,7 @@
     fsHoldPitchBtn: document.getElementById("fsHoldPitchBtn"),
     fsPitchKey: document.getElementById("fsPitchKey"),
     fsPitchSub: document.getElementById("fsPitchSub"),
+    fsStartNoteBtn: document.getElementById("fsStartNoteBtn"),
     fsArpBtn: document.getElementById("fsArpBtn"),
     fsZoomOutBtn: document.getElementById("fsZoomOutBtn"),
     fsZoomResetBtn: document.getElementById("fsZoomResetBtn"),
@@ -835,6 +917,43 @@
     }
   }
 
+  async function syncWakeLock() {
+    const shouldHold = state.keepAwake && (Boolean(state.runner) || state.isFullscreen);
+    if (!("wakeLock" in navigator)) return;
+
+    if (shouldHold && document.visibilityState === "visible") {
+      if (!state.wakeLockSentinel) {
+        try {
+          state.wakeLockSentinel = await navigator.wakeLock.request("screen");
+          state.wakeLockSentinel.addEventListener("release", () => {
+            state.wakeLockSentinel = null;
+          });
+        } catch (_) {}
+      }
+    } else if (!shouldHold && state.wakeLockSentinel) {
+      try {
+        await state.wakeLockSentinel.release();
+      } catch (_) {}
+      state.wakeLockSentinel = null;
+    }
+  }
+
+  function extractBibleBook(ref) {
+    const m = String(ref || "").trim().match(/^([1-3]?\s*[a-zA-Z.\s]+?)\s+\d/);
+    if (!m) return "";
+    let bk = m[1].replace(/\./g, "").replace(/\s+/g, " ").trim();
+    if (/^psalm$/i.test(bk)) bk = "Psalms";
+    return bk;
+  }
+
+  function daysSinceISO(iso) {
+    const dt = parseISODateLocal(iso);
+    if (!dt) return Infinity;
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.round((today - dt) / 86400000);
+  }
+
   function fitBrandTitle() {
     const titleEl = el.brandTitle;
     if (!titleEl) return;
@@ -1149,6 +1268,21 @@
 
       const songTags = state.customTags[h.id] || [];
       if (state.activeCustomTag && !songTags.includes(state.activeCustomTag)) continue;
+      if (state.activeTopicBrowse && !h.topics.includes(state.activeTopicBrowse)) continue;
+      if (state.activeBibleBook) {
+        const hasBook = h.scriptures.some((s) => extractBibleBook(s).toLowerCase() === state.activeBibleBook.toLowerCase());
+        if (!hasBook) continue;
+      }
+      if (state.activeRotationFilter) {
+        const lastDate = state.lastSungMap.get(h.id);
+        if (state.activeRotationFilter === "never") {
+          if (lastDate) continue;
+        } else if (state.activeRotationFilter === "due90") {
+          if (lastDate && daysSinceISO(lastDate) < 90) continue;
+        } else if (state.activeRotationFilter === "due60") {
+          if (lastDate && daysSinceISO(lastDate) < 60) continue;
+        }
+      }
 
       if (!hasQuery) {
         matches.push({ hymn: h, score: 0 });
@@ -1180,6 +1314,11 @@
     if (state.onlyFavorites) parts.push("Favorites");
     if (state.onlyWithScans) parts.push("With Scans");
     if (state.activeCustomTag) parts.push(`Tag: ${state.activeCustomTag}`);
+    if (state.activeTopicBrowse) parts.push(`Topic: ${state.activeTopicBrowse}`);
+    if (state.activeBibleBook) parts.push(`Bible: ${state.activeBibleBook}`);
+    if (state.activeRotationFilter === "due90") parts.push("Due 90d+");
+    else if (state.activeRotationFilter === "due60") parts.push("Due 60d+");
+    else if (state.activeRotationFilter === "never") parts.push("Never Sung");
 
     if (state.searchQuery.trim()) {
       const scopeSuffix = parts.length ? ` in ${parts.join(" · ")}` : "";
@@ -1714,7 +1853,20 @@ Add it to this setlist anyway?`
       controls.appendChild(downBtn);
       controls.appendChild(rmBtn);
 
+      const cueInput = document.createElement("input");
+      cueInput.type = "text";
+      cueInput.className = "slot-cue-input";
+      cueInput.placeholder = "v. 1, 2, 4…";
+      cueInput.value = it.cue || "";
+      cueInput.title = "Verse selection or leader cue";
+      cueInput.addEventListener("input", () => {
+        it.cue = cueInput.value;
+        saveSetlists();
+        updateRunnerBar();
+      });
+
       top.appendChild(slotSelect);
+      top.appendChild(cueInput);
       top.appendChild(controls);
 
       const mainBtn = document.createElement("button");
@@ -1755,6 +1907,7 @@ Add it to this setlist anyway?`
     state.runner = { setlistId, index };
     openSong(sl.items[index].hymnId, { keepRunner: true });
     updateRunnerBar();
+    syncWakeLock();
   }
 
   function updateRunnerBar() {
@@ -1770,7 +1923,8 @@ Add it to this setlist anyway?`
     }
     const item = sl.items[state.runner.index];
     el.setlistRunnerBar.classList.remove("hidden");
-    el.runnerSlotLabel.textContent = item.slot || "Song";
+    const cueTxt = (item.cue || "").trim();
+    el.runnerSlotLabel.textContent = cueTxt ? `${item.slot || "Song"} · ${cueTxt}` : (item.slot || "Song");
     el.runnerPosLabel.textContent = `${state.runner.index + 1} of ${sl.items.length} · ${sl.name || "Service"}`;
     el.runnerPrevBtn.disabled = state.runner.index <= 0;
     el.runnerNextBtn.disabled = state.runner.index >= sl.items.length - 1;
@@ -1779,6 +1933,207 @@ Add it to this setlist anyway?`
   function exitRunner() {
     state.runner = null;
     el.setlistRunnerBar.classList.add("hidden");
+    syncWakeLock();
+  }
+
+
+  function copySetlistToClipboard(setlistId) {
+    const sl = getSetlistById(setlistId);
+    if (!sl) return;
+    const lines = [];
+    const header = sl.date ? `${sl.name || "Worship Service"} — ${formatDisplayDate(sl.date)}` : (sl.name || "Worship Service");
+    lines.push(header);
+    if (sl.notes && sl.notes.trim()) lines.push(sl.notes.trim());
+    lines.push("");
+
+    sl.items.forEach((it) => {
+      const h = state.hymnMap.get(String(it.hymnId));
+      if (!h) return;
+      const numLabel = shouldShowBookBadgeForHymn(h) ? `${h.bookCode} #${h.number_str}` : `#${h.number_str}`;
+      const keyTxt = getEffectiveKeyForHymn(h);
+      const keyPart = keyTxt && keyTxt !== "—" ? ` (${keyTxt})` : "";
+      const cuePart = it.cue && it.cue.trim() ? ` — ${it.cue.trim()}` : "";
+      lines.push(`${it.slot || "Song"}: ${numLabel} ${h.title}${keyPart}${cuePart}`);
+    });
+
+    const text = lines.join("\n");
+    const done = () => showToast("Setlist copied to clipboard!", 2000);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => {
+        fallbackCopyText(text);
+        done();
+      });
+    } else {
+      fallbackCopyText(text);
+      done();
+    }
+  }
+
+  function fallbackCopyText(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (_) {}
+    ta.remove();
+  }
+
+  function updateBrowseFilterUI() {
+    let label = "";
+    if (state.activeTopicBrowse) label = `Topic: ${state.activeTopicBrowse}`;
+    else if (state.activeBibleBook) label = `Bible: ${state.activeBibleBook}`;
+    else if (state.activeRotationFilter === "due90") label = "Rotation: Not sung in 90+ days";
+    else if (state.activeRotationFilter === "due60") label = "Rotation: Not sung in 60+ days";
+    else if (state.activeRotationFilter === "never") label = "Rotation: Never sung";
+
+    const hasActive = Boolean(label);
+    el.activeBrowseLabel.textContent = label;
+    el.activeBrowseBar.classList.toggle("hidden", !hasActive);
+    el.browseFiltersBtn.classList.toggle("active", hasActive);
+    el.browseFiltersBtn.setAttribute("aria-pressed", String(hasActive));
+  }
+
+  function clearBrowseFilters() {
+    state.activeTopicBrowse = "";
+    state.activeBibleBook = "";
+    state.activeRotationFilter = "";
+    updateBrowseFilterUI();
+    renderHymnList();
+  }
+
+  function openBrowseModal() {
+    el.browseSearchInput.value = "";
+    renderBrowseModalContent();
+    el.browseModal.classList.remove("hidden");
+  }
+
+  function closeBrowseModal() {
+    el.browseModal.classList.add("hidden");
+  }
+
+  function renderBrowseModalContent() {
+    el.browseTabs.forEach((t) => {
+      const act = t.dataset.browseTab === state.browseTab;
+      t.classList.toggle("active", act);
+      t.setAttribute("aria-selected", String(act));
+    });
+
+    const isRotation = state.browseTab === "rotation";
+    el.browseSearchWrap.classList.toggle("hidden", isRotation);
+    el.browseResultsList.innerHTML = "";
+
+    const pool = getBrowsableHymns();
+    const q = normalizeForSearch(el.browseSearchInput.value);
+    const frag = document.createDocumentFragment();
+
+    if (state.browseTab === "topics") {
+      const counts = new Map();
+      pool.forEach((h) => {
+        h.topics.forEach((t) => counts.set(t, (counts.get(t) || 0) + 1));
+      });
+      const items = Array.from(counts.entries())
+        .filter(([t]) => !q || normalizeForSearch(t).includes(q))
+        .sort((a, b) => a[0].localeCompare(b[0]));
+
+      items.forEach(([topic, cnt]) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "browse-item-row";
+        btn.innerHTML = `<span>${topic}</span><span class="browse-count">${cnt}</span>`;
+        btn.addEventListener("click", () => {
+          state.activeTopicBrowse = topic;
+          state.activeBibleBook = "";
+          state.activeRotationFilter = "";
+          updateBrowseFilterUI();
+          renderHymnList();
+          closeBrowseModal();
+        });
+        li.appendChild(btn);
+        frag.appendChild(li);
+      });
+    } else if (state.browseTab === "bible") {
+      const counts = new Map();
+      pool.forEach((h) => {
+        const seen = new Set();
+        h.scriptures.forEach((s) => {
+          const bk = extractBibleBook(s);
+          if (bk && !seen.has(bk)) {
+            seen.add(bk);
+            counts.set(bk, (counts.get(bk) || 0) + 1);
+          }
+        });
+      });
+      const items = Array.from(counts.entries())
+        .filter(([bk]) => !q || normalizeForSearch(bk).includes(q))
+        .sort((a, b) => {
+          const ia = BIBLE_BOOK_ORDER.indexOf(a[0]);
+          const ib = BIBLE_BOOK_ORDER.indexOf(b[0]);
+          if (ia !== -1 && ib !== -1) return ia - ib;
+          if (ia !== -1) return -1;
+          if (ib !== -1) return 1;
+          return a[0].localeCompare(b[0]);
+        });
+
+      items.forEach(([bk, cnt]) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "browse-item-row";
+        btn.innerHTML = `<span>${bk}</span><span class="browse-count">${cnt}</span>`;
+        btn.addEventListener("click", () => {
+          state.activeBibleBook = bk;
+          state.activeTopicBrowse = "";
+          state.activeRotationFilter = "";
+          updateBrowseFilterUI();
+          renderHymnList();
+          closeBrowseModal();
+        });
+        li.appendChild(btn);
+        frag.appendChild(li);
+      });
+    } else {
+      const due90 = pool.filter((h) => { const d = state.lastSungMap.get(h.id); return !d || daysSinceISO(d) >= 90; }).length;
+      const due60 = pool.filter((h) => { const d = state.lastSungMap.get(h.id); return !d || daysSinceISO(d) >= 60; }).length;
+      const never = pool.filter((h) => !state.lastSungMap.get(h.id)).length;
+      const favDue90 = pool.filter((h) => state.favorites.has(h.id) && (!state.lastSungMap.get(h.id) || daysSinceISO(state.lastSungMap.get(h.id)) >= 90)).length;
+
+      const options = [
+        { key: "fav90", title: "Favorites Due for Rotation (90+ days)", sub: "Turns on ★ Favorites + Not sung in 90+ days", count: favDue90 },
+        { key: "due90", title: "Not Sung in 90+ Days", sub: "Includes songs never logged", count: due90 },
+        { key: "due60", title: "Not Sung in 60+ Days", sub: "Includes songs never logged", count: due60 },
+        { key: "never", title: "Never Sung", sub: "Songs with no singing history yet", count: never },
+      ];
+
+      options.forEach((opt) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "browse-item-row";
+        btn.innerHTML = `<span>${opt.title}<span class="browse-item-sub">${opt.sub}</span></span><span class="browse-count">${opt.count}</span>`;
+        btn.addEventListener("click", () => {
+          state.activeTopicBrowse = "";
+          state.activeBibleBook = "";
+          if (opt.key === "fav90") {
+            state.onlyFavorites = true;
+            el.favFilterBtn.classList.add("active");
+            el.favFilterBtn.setAttribute("aria-pressed", "true");
+            state.activeRotationFilter = "due90";
+          } else {
+            state.activeRotationFilter = opt.key;
+          }
+          updateBrowseFilterUI();
+          renderHymnList();
+          closeBrowseModal();
+        });
+        li.appendChild(btn);
+        frag.appendChild(li);
+      });
+    }
+
+    el.browseResultsList.appendChild(frag);
   }
 
   // =========================================================================
@@ -2203,6 +2558,7 @@ Add it to this setlist anyway?`
     el.dontSingBannerReason.textContent =
       isDS && dsEntry.reason ? ` — ${dsEntry.reason}` : "";
 
+    if (el.startNoteSelect) el.startNoteSelect.value = state.startNotes[hymn.id] || "";
     el.songNotesInput.value = state.notes[hymn.id] || "";
 
     el.detailCustomTags.innerHTML = "";
@@ -2499,6 +2855,7 @@ Add it to this setlist anyway?`
     requestAnimationFrame(() => {
       applyCenteredZoom(el.fsViewport, el.fsPages, el.fsZoomResetBtn, 1.0, true);
     });
+    syncWakeLock();
   }
 
   function closeFullscreen() {
@@ -2507,9 +2864,31 @@ Add it to this setlist anyway?`
     pitchPipe.stopSustained();
     pitchPipe.stopArpeggio();
     el.fsOverlay.classList.add("hidden");
+    syncWakeLock();
   }
 
   function renderMetadata(hymn) {
+    el.detailAlsoIn.innerHTML = "";
+    if (Array.isArray(hymn.also_in) && hymn.also_in.length > 0) {
+      el.alsoInGroup.classList.remove("hidden");
+      hymn.also_in.forEach((ref) => {
+        const meta = HYMNALS[ref.book];
+        if (!meta) return;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "meta-tag also-in-btn";
+        btn.title = `Open #${ref.num} in ${meta.name}`;
+        btn.textContent = `${meta.code} #${ref.num}`;
+        btn.addEventListener("click", async () => {
+          await loadBook(ref.book);
+          openSong(ref.id);
+        });
+        el.detailAlsoIn.appendChild(btn);
+      });
+    } else {
+      el.alsoInGroup.classList.add("hidden");
+    }
+
     el.detailTopics.innerHTML = "";
     el.detailScriptures.innerHTML = "";
 
@@ -2584,6 +2963,8 @@ Add it to this setlist anyway?`
         notes: state.notes,
         transpositions: state.transpositions,
         manualKeys: state.manualKeys,
+        startNotes: state.startNotes,
+        keepAwake: state.keepAwake,
         setlists: state.setlists,
         history: state.history,
         showSupplement: state.showSupplement,
@@ -2641,6 +3022,15 @@ Add it to this setlist anyway?`
         if (d.manualKeys && typeof d.manualKeys === "object") {
           state.manualKeys = d.manualKeys;
           saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
+        }
+        if (d.startNotes && typeof d.startNotes === "object") {
+          state.startNotes = d.startNotes;
+          saveJSON(STORAGE_KEYS.START_NOTES, state.startNotes);
+        }
+        if (typeof d.keepAwake === "boolean") {
+          state.keepAwake = d.keepAwake;
+          if (el.wakeLockToggle) el.wakeLockToggle.checked = state.keepAwake;
+          localStorage.setItem(STORAGE_KEYS.WAKE_LOCK, String(state.keepAwake));
         }
         if (Array.isArray(d.setlists)) {
           state.setlists = d.setlists;
@@ -2715,6 +3105,7 @@ Add it to this setlist anyway?`
     state.notes = {};
     state.transpositions = {};
     state.manualKeys = {};
+    state.startNotes = {};
     state.setlists = [];
     state.history = [];
     state.activeSetlistId = null;
@@ -2726,6 +3117,7 @@ Add it to this setlist anyway?`
     saveJSON(STORAGE_KEYS.NOTES, {});
     saveJSON(STORAGE_KEYS.TRANSPOSITIONS, {});
     saveJSON(STORAGE_KEYS.MANUAL_KEYS, {});
+    saveJSON(STORAGE_KEYS.START_NOTES, {});
     saveJSON(STORAGE_KEYS.SETLISTS, []);
     saveJSON(STORAGE_KEYS.HISTORY, []);
 
@@ -2794,6 +3186,18 @@ Add it to this setlist anyway?`
     el.stepButtons.forEach((btn) => {
       const val = Number(btn.dataset.shift);
       btn.classList.toggle("active", val === info.shift);
+    });
+
+    const snKey = state.selectedId ? (state.startNotes[state.selectedId] || "") : "";
+    const snDef = START_NOTE_DEFS[snKey];
+    [el.startNoteBtn, el.fsStartNoteBtn].forEach((btn) => {
+      if (!btn) return;
+      if (snDef) {
+        btn.textContent = `♪ ${snDef.label}`;
+        btn.classList.remove("hidden");
+      } else {
+        btn.classList.add("hidden");
+      }
     });
   }
 
@@ -2972,6 +3376,21 @@ Add it to this setlist anyway?`
       renderHymnList();
     });
 
+    el.browseFiltersBtn.addEventListener("click", openBrowseModal);
+    el.clearBrowseFilterBtn.addEventListener("click", clearBrowseFilters);
+    el.closeBrowseModalBtn.addEventListener("click", closeBrowseModal);
+    el.browseModal.addEventListener("click", (e) => {
+      if (e.target === el.browseModal) closeBrowseModal();
+    });
+    el.browseTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        state.browseTab = tab.dataset.browseTab;
+        el.browseSearchInput.value = "";
+        renderBrowseModalContent();
+      });
+    });
+    el.browseSearchInput.addEventListener("input", renderBrowseModalContent);
+
     el.tagFilterSelect.addEventListener("change", () => {
       state.activeCustomTag = el.tagFilterSelect.value;
       el.clearTagFilterBtn.classList.toggle("hidden", !state.activeCustomTag);
@@ -3026,6 +3445,9 @@ Add it to this setlist anyway?`
       if (state.activeSetlistId) precacheSetlistHighRes(state.activeSetlistId);
     });
 
+    el.copySetlistBtn.addEventListener("click", () => {
+      if (state.activeSetlistId) copySetlistToClipboard(state.activeSetlistId);
+    });
     el.startPodiumBtn.addEventListener("click", () => {
       if (state.activeSetlistId) startPodiumAt(state.activeSetlistId, 0);
     });
@@ -3191,6 +3613,18 @@ Add it to this setlist anyway?`
       applyTheme();
     });
 
+    if (el.wakeLockToggle) {
+      el.wakeLockToggle.checked = state.keepAwake;
+      el.wakeLockToggle.addEventListener("change", () => {
+        state.keepAwake = el.wakeLockToggle.checked;
+        try {
+          localStorage.setItem(STORAGE_KEYS.WAKE_LOCK, String(state.keepAwake));
+        } catch (_) {}
+        syncWakeLock();
+      });
+    }
+    document.addEventListener("visibilitychange", syncWakeLock);
+
     el.readabilitySelect.value = state.readability;
     el.readabilitySelect.addEventListener("change", () => {
       state.readability = el.readabilitySelect.value === "large" ? "large" : "small";
@@ -3256,6 +3690,15 @@ Add it to this setlist anyway?`
       if (!state.selectedId) return;
       addCustomTag(state.selectedId, el.newTagInput.value);
       el.newTagInput.value = "";
+    });
+
+    el.startNoteSelect.addEventListener("change", () => {
+      if (!state.selectedId) return;
+      const val = el.startNoteSelect.value;
+      if (val) state.startNotes[state.selectedId] = val;
+      else delete state.startNotes[state.selectedId];
+      saveJSON(STORAGE_KEYS.START_NOTES, state.startNotes);
+      updatePitchUI();
     });
 
     el.songNotesInput.addEventListener("input", () => {
@@ -3397,6 +3840,21 @@ Add it to this setlist anyway?`
     el.arpeggioBtn.addEventListener("click", () => triggerArp(el.arpeggioBtn));
     el.fsArpBtn.addEventListener("click", () => triggerArp(el.fsArpBtn));
 
+    const triggerStartNote = (btn) => {
+      if (!state.selectedId) return;
+      const snKey = state.startNotes[state.selectedId];
+      const def = START_NOTE_DEFS[snKey];
+      if (!def) return;
+      const info = getActivePitchInfo();
+      const offset = info.isMinor ? def.minorOffset : def.majorOffset;
+      btn.classList.add("playing");
+      pitchPipe.playStartNote(info.semitone, offset, () => {
+        btn.classList.remove("playing");
+      });
+    };
+    el.startNoteBtn.addEventListener("click", () => triggerStartNote(el.startNoteBtn));
+    el.fsStartNoteBtn.addEventListener("click", () => triggerStartNote(el.fsStartNoteBtn));
+
     // Bottom Navigation
     el.navItems.forEach((item) => {
       item.addEventListener("click", () => {
@@ -3423,7 +3881,8 @@ Add it to this setlist anyway?`
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        if (!el.scriptureModal.classList.contains("hidden")) closeScriptureModal();
+        if (!el.browseModal.classList.contains("hidden")) closeBrowseModal();
+        else if (!el.scriptureModal.classList.contains("hidden")) closeScriptureModal();
         else if (!el.quickJumpModal.classList.contains("hidden")) closeQuickJump();
         else if (!el.addToSetlistModal.classList.contains("hidden")) closeAddToSetlistModal();
         else if (!el.songPickerModal.classList.contains("hidden")) closeSongPicker();
@@ -3526,6 +3985,11 @@ Add it to this setlist anyway?`
       backGuardPushed = false;
 
       // 1. Close any open modal first
+      if (!el.browseModal.classList.contains("hidden")) {
+        closeBrowseModal();
+        armBackGuard();
+        return;
+      }
       if (!el.scriptureModal.classList.contains("hidden")) {
         closeScriptureModal();
         armBackGuard();

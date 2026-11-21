@@ -89,6 +89,15 @@
             <button type="button" id="scansFilterBtn" class="scans-toggle-btn" aria-pressed="false" title="Only show hymns with sheet music scans">
               Scans
             </button>
+            <button type="button" id="browseFiltersBtn" class="scans-toggle-btn" aria-pressed="false" title="Browse by Topic, Bible Book, or Due for Rotation">
+              Browse
+            </button>
+          </div>
+
+          <!-- Active Browse / Rotation Filter Pill Bar -->
+          <div id="activeBrowseBar" class="active-browse-bar hidden">
+            <span id="activeBrowseLabel" class="active-browse-label"></span>
+            <button type="button" id="clearBrowseFilterBtn" class="btn-clear-tag" aria-label="Clear browse filter">&times;</button>
           </div>
 
           <!-- Multi-Book Filter Bar (shown only when Multiple Hymnals is enabled with 2+ books) -->
@@ -157,6 +166,7 @@
               <span>Setlists</span>
             </button>
             <div class="subpane-header-actions">
+              <button type="button" id="copySetlistBtn" class="btn-secondary btn-sm" title="Copy formatted setlist for slides or bulletin">Copy</button>
               <button type="button" id="startPodiumBtn" class="btn-primary btn-sm">Lead Service</button>
             </div>
           </div>
@@ -278,6 +288,14 @@
                 <p class="setting-desc">Low-glare charcoal &amp; burgundy palette.</p>
               </div>
               <input type="checkbox" id="darkModeToggle" class="toggle-checkbox" />
+            </label>
+
+            <label class="setting-row setting-toggle-row" for="wakeLockToggle">
+              <div class="setting-text">
+                <strong>Keep Screen Awake</strong>
+                <p class="setting-desc">Prevent screen sleep while in Podium Mode or Fullscreen sheet music.</p>
+              </div>
+              <input type="checkbox" id="wakeLockToggle" class="toggle-checkbox" checked />
             </label>
 
             <div class="setting-row">
@@ -502,6 +520,26 @@
                 </form>
               </div>
 
+              <div class="meta-group start-note-group">
+                <div class="start-note-row">
+                  <label for="startNoteSelect" class="meta-heading" style="margin:0;">Starting Melody Note</label>
+                  <select id="startNoteSelect" class="form-select form-select-sm start-note-select">
+                    <option value="">— (None)</option>
+                    <option value="low-5">Low Sol (5,)</option>
+                    <option value="low-6">Low La (6,)</option>
+                    <option value="low-7">Low Ti (7,)</option>
+                    <option value="1">Do (1)</option>
+                    <option value="2">Re (2)</option>
+                    <option value="3">Mi (3)</option>
+                    <option value="4">Fa (4)</option>
+                    <option value="5">Sol (5)</option>
+                    <option value="6">La (6)</option>
+                    <option value="7">Ti (7)</option>
+                    <option value="8">High Do (8)</option>
+                  </select>
+                </div>
+              </div>
+
               <div class="meta-group">
                 <label for="songNotesInput" class="meta-heading" style="display:block;">Personal Notes</label>
                 <textarea
@@ -532,8 +570,12 @@
               </div>
             </div>
 
-            <!-- Built-in Hymnary Metadata (Topics & Scriptures) -->
+            <!-- Built-in Hymnary Metadata (Also In, Topics & Scriptures) -->
             <div class="meta-section" id="metaSection">
+              <div class="meta-group hidden" id="alsoInGroup">
+                <h3 class="meta-heading">Also in Other Hymnals</h3>
+                <div id="detailAlsoIn" class="meta-tags"></div>
+              </div>
               <div class="meta-group" id="topicsGroup">
                 <h3 class="meta-heading">Hymnary Topics</h3>
                 <div id="detailTopics" class="meta-tags"></div>
@@ -570,6 +612,10 @@
               <button type="button" id="holdPitchBtn" class="btn-pitch-hold" title="Hold to play starting pitch">
                 <span id="holdPitchKey" class="pitch-btn-key">D</span>
                 <span id="holdPitchSub" class="pitch-btn-sub">Original</span>
+              </button>
+
+              <button type="button" id="startNoteBtn" class="btn-pitch-arp btn-pitch-start hidden" title="Play tonic then starting melody note">
+                ♪ Sol
               </button>
 
               <button type="button" id="arpeggioBtn" class="btn-pitch-arp" title="Play 1-3-5-1 arpeggio">
@@ -641,6 +687,7 @@
           <span id="fsPitchKey" class="pitch-btn-key">D</span>
           <span id="fsPitchSub" class="pitch-btn-sub">Orig</span>
         </button>
+        <button type="button" id="fsStartNoteBtn" class="btn-tool btn-pitch-start hidden" title="Play tonic then starting melody note">♪ Sol</button>
         <button type="button" id="fsArpBtn" class="btn-tool" title="Play 1-3-5-1 arpeggio">1-3-5-1</button>
         <button type="button" id="fsZoomOutBtn" class="btn-tool" aria-label="Zoom out">−</button>
         <button type="button" id="fsZoomResetBtn" class="btn-tool" aria-label="Reset zoom">Fit</button>
@@ -812,6 +859,25 @@
         <a id="scriptureModalExternalLink" class="btn-text-link" href="#" target="_blank" rel="noopener noreferrer">Open on Bible.com ↗</a>
         <button type="button" id="doneScriptureModalBtn" class="btn-secondary btn-sm">Close</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Browse by Topic, Bible Book, or Due for Rotation Modal -->
+  <div id="browseModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="browseModalTitle">
+    <div class="modal-dialog modal-picker">
+      <div class="modal-header">
+        <h2 id="browseModalTitle">Browse &amp; Rotation</h2>
+        <button type="button" id="closeBrowseModalBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="browse-tabs" role="tablist">
+        <button type="button" class="browse-tab active" data-browse-tab="topics" role="tab" aria-selected="true">Topics</button>
+        <button type="button" class="browse-tab" data-browse-tab="bible" role="tab" aria-selected="false">Bible Books</button>
+        <button type="button" class="browse-tab" data-browse-tab="rotation" role="tab" aria-selected="false">Rotation</button>
+      </div>
+      <div id="browseSearchWrap" class="picker-controls">
+        <input type="search" id="browseSearchInput" class="search-input" placeholder="Filter list…" autocomplete="off" />
+      </div>
+      <ul id="browseResultsList" class="picker-results" role="list"></ul>
     </div>
   </div>
 
