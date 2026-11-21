@@ -294,14 +294,18 @@
             <div class="setting-row">
               <div class="setting-text">
                 <strong>Bible Translation</strong>
-                <p class="setting-desc">Used when opening clickable scripture reference links on BibleGateway.</p>
+                <p class="setting-desc">KJV, ASV, and WEB open inline; other translations open on Bible.com.</p>
               </div>
               <select id="bibleVersionSelect" class="form-select form-select-sm setting-select" aria-label="Bible translation">
-                <option value="NKJV">NKJV</option>
-                <option value="ESV">ESV</option>
-                <option value="KJV">KJV</option>
-                <option value="NASB">NASB</option>
-                <option value="ASV">ASV</option>
+                <option value="NKJV">NKJV (Bible.com)</option>
+                <option value="ESV">ESV (Bible.com)</option>
+                <option value="KJV">KJV (Inline)</option>
+                <option value="NASB">NASB (Bible.com)</option>
+                <option value="ASV">ASV (Inline)</option>
+                <option value="WEB">WEB (Inline)</option>
+                <option value="NIV">NIV (Bible.com)</option>
+                <option value="CSB">CSB (Bible.com)</option>
+                <option value="NLT">NLT (Bible.com)</option>
               </select>
             </div>
 
@@ -791,6 +795,26 @@
           <button type="submit" class="btn-primary">Save to History</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Inline Scripture Reader Modal -->
+  <div id="scriptureModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="scriptureModalTitle">
+    <div class="modal-dialog modal-wide modal-scripture">
+      <div class="modal-header">
+        <div class="scripture-modal-heading">
+          <h2 id="scriptureModalTitle">Scripture</h2>
+          <span id="scriptureModalVersion" class="scripture-modal-version"></span>
+        </div>
+        <button type="button" id="closeScriptureModalBtn" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div id="scriptureModalBody" class="scripture-modal-body">
+        <p class="scripture-loading">Loading passage…</p>
+      </div>
+      <div class="scripture-modal-footer">
+        <a id="scriptureModalExternalLink" class="btn-text-link" href="#" target="_blank" rel="noopener noreferrer">Open on Bible.com ↗</a>
+        <button type="button" id="doneScriptureModalBtn" class="btn-secondary btn-sm">Close</button>
+      </div>
     </div>
   </div>
 

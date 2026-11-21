@@ -81,6 +81,71 @@
     "C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B"
   ];
 
+  const BIBLE_TRANSLATIONS = {
+    // Inline via bible-api.com (public domain, CORS enabled, no API key)
+    KJV:  { label: "King James Version",       mode: "inline", apiId: "kjv", versionId: 1 },
+    ASV:  { label: "American Standard Version", mode: "inline", apiId: "asv", versionId: 12 },
+    WEB:  { label: "World English Bible",       mode: "inline", apiId: "web", versionId: 206 },
+
+    // External clean links via Bible.com (YouVersion)
+    NKJV: { label: "New King James Version",       mode: "link", versionId: 114 },
+    ESV:  { label: "English Standard Version",     mode: "link", versionId: 59 },
+    NASB: { label: "New American Standard Bible",  mode: "link", versionId: 100 },
+    NIV:  { label: "New International Version",    mode: "link", versionId: 111 },
+    CSB:  { label: "Christian Standard Bible",     mode: "link", versionId: 1713 },
+    NLT:  { label: "New Living Translation",       mode: "link", versionId: 116 },
+  };
+
+  const USFM_BOOKS = {
+    genesis: "GEN", gen: "GEN", ge: "GEN",
+    exodus: "EXO", exod: "EXO", ex: "EXO",
+    leviticus: "LEV", lev: "LEV", le: "LEV",
+    numbers: "NUM", num: "NUM", nu: "NUM",
+    deuteronomy: "DEU", deut: "DEU", dt: "DEU",
+    joshua: "JOS", josh: "JOS",
+    judges: "JDG", judg: "JDG", jdg: "JDG",
+    ruth: "RUT",
+    "1 samuel": "1SA", "1 sam": "1SA", "1sa": "1SA",
+    "2 samuel": "2SA", "2 sam": "2SA", "2sa": "2SA",
+    "1 kings": "1KI", "1 kgs": "1KI", "1ki": "1KI",
+    "2 kings": "2KI", "2 kgs": "2KI", "2ki": "2KI",
+    "1 chronicles": "1CH", "1 chron": "1CH", "1 chr": "1CH", "1ch": "1CH",
+    "2 chronicles": "2CH", "2 chron": "2CH", "2 chr": "2CH", "2ch": "2CH",
+    ezra: "EZR", nehemiah: "NEH", neh: "NEH", esther: "EST", est: "EST", job: "JOB",
+    psalms: "PSA", psalm: "PSA", ps: "PSA", psa: "PSA",
+    proverbs: "PRO", prov: "PRO", pr: "PRO",
+    ecclesiastes: "ECC", eccl: "ECC", ecc: "ECC",
+    "song of solomon": "SNG", "song of songs": "SNG", song: "SNG", sos: "SNG",
+    isaiah: "ISA", isa: "ISA", jeremiah: "JER", jer: "JER",
+    lamentations: "LAM", lam: "LAM", ezekiel: "EZK", ezek: "EZK", eze: "EZK",
+    daniel: "DAN", dan: "DAN", hosea: "HOS", hos: "HOS", joel: "JOL",
+    amos: "AMO", obadiah: "OBA", obad: "OBA", jonah: "JON", micah: "MIC", mic: "MIC",
+    nahum: "NAM", nah: "NAM", habakkuk: "HAB", hab: "HAB",
+    zephaniah: "ZEP", zeph: "ZEP", haggai: "HAG", hag: "HAG",
+    zechariah: "ZEC", zech: "ZEC", malachi: "MAL", mal: "MAL",
+    matthew: "MAT", matt: "MAT", mt: "MAT", mark: "MRK", mk: "MRK",
+    luke: "LUK", lk: "LUK", john: "JHN", jn: "JHN", acts: "ACT",
+    romans: "ROM", rom: "ROM",
+    "1 corinthians": "1CO", "1 cor": "1CO", "1co": "1CO",
+    "2 corinthians": "2CO", "2 cor": "2CO", "2co": "2CO",
+    galatians: "GAL", gal: "GAL", ephesians: "EPH", eph: "EPH",
+    philippians: "PHP", phil: "PHP", php: "PHP", colossians: "COL", col: "COL",
+    "1 thessalonians": "1TH", "1 thess": "1TH", "1th": "1TH",
+    "2 thessalonians": "2TH", "2 thess": "2TH", "2th": "2TH",
+    "1 timothy": "1TI", "1 tim": "1TI", "1ti": "1TI",
+    "2 timothy": "2TI", "2 tim": "2TI", "2ti": "2TI",
+    titus: "TIT", philemon: "PHM", phlm: "PHM",
+    hebrews: "HEB", heb: "HEB", james: "JAS", jas: "JAS",
+    "1 peter": "1PE", "1 pet": "1PE", "1pe": "1PE",
+    "2 peter": "2PE", "2 pet": "2PE", "2pe": "2PE",
+    "1 john": "1JN", "1 jn": "1JN", "1jn": "1JN",
+    "2 john": "2JN", "2 jn": "2JN", "2jn": "2JN",
+    "3 john": "3JN", "3 jn": "3JN", "3jn": "3JN",
+    jude: "JUD", revelation: "REV", rev: "REV",
+  };
+
+  const scriptureCache = new Map();
+
   // =========================================================================
   // Web Audio Pitch Pipe Engine (Treble Range, Sustained Hold + 1-3-5-1 Arpeggio)
   // =========================================================================
@@ -457,6 +522,13 @@
     markSungSongLabel: document.getElementById("markSungSongLabel"),
     markSungDateInput: document.getElementById("markSungDateInput"),
     markSungServiceInput: document.getElementById("markSungServiceInput"),
+    scriptureModal: document.getElementById("scriptureModal"),
+    scriptureModalTitle: document.getElementById("scriptureModalTitle"),
+    scriptureModalVersion: document.getElementById("scriptureModalVersion"),
+    closeScriptureModalBtn: document.getElementById("closeScriptureModalBtn"),
+    doneScriptureModalBtn: document.getElementById("doneScriptureModalBtn"),
+    scriptureModalBody: document.getElementById("scriptureModalBody"),
+    scriptureModalExternalLink: document.getElementById("scriptureModalExternalLink"),
     appToast: document.getElementById("appToast"),
   };
 
@@ -466,7 +538,7 @@
   function normalizeBibleVersion(ver) {
     const v = String(ver || "NKJV").trim().toUpperCase();
     if (v === "NASV") return "NASB";
-    return ["NKJV", "ESV", "KJV", "NASB", "ASV"].includes(v) ? v : "NKJV";
+    return Object.prototype.hasOwnProperty.call(BIBLE_TRANSLATIONS, v) ? v : "NKJV";
   }
 
   function loadJSON(key, fallback) {
@@ -826,10 +898,95 @@
     }
   }
 
-  function buildBibleGatewayUrl(scriptureRef) {
-    const query = encodeURIComponent(String(scriptureRef || "").trim());
-    const version = encodeURIComponent(normalizeBibleVersion(state.bibleVersion));
-    return `https://www.biblegateway.com/passage/?search=${query}&version=${version}`;
+  function buildBibleComUrl(scriptureRef, versionKey = state.bibleVersion) {
+    const ref = String(scriptureRef || "").trim();
+    const ver = normalizeBibleVersion(versionKey);
+    const cfg = BIBLE_TRANSLATIONS[ver] || BIBLE_TRANSLATIONS.NKJV;
+    const match = ref.match(/^([1-3]?\s*[a-zA-Z.\s]+?)\s+(\d+)(?::([\d\-,\s]+))?$/);
+    if (!match) {
+      return `https://www.bible.com/search/bible?q=${encodeURIComponent(ref)}`;
+    }
+
+    const bookKey = match[1].toLowerCase().replace(/\./g, "").replace(/\s+/g, " ").trim();
+    const bookCode = USFM_BOOKS[bookKey];
+    const chapter = match[2];
+    const verses = match[3] ? `.${match[3].replace(/\s+/g, "")}` : "";
+
+    if (!bookCode) {
+      return `https://www.bible.com/search/bible?q=${encodeURIComponent(ref)}`;
+    }
+    return `https://www.bible.com/bible/${cfg.versionId}/${bookCode}.${chapter}${verses}.${ver}`;
+  }
+
+  function closeScriptureModal() {
+    if (el.scriptureModal) el.scriptureModal.classList.add("hidden");
+  }
+
+  function renderScripturePayload(payload) {
+    el.scriptureModalTitle.textContent = payload.reference;
+    el.scriptureModalVersion.textContent = payload.translation;
+    el.scriptureModalBody.innerHTML = "";
+
+    const p = document.createElement("p");
+    p.className = "scripture-verse-text";
+
+    if (Array.isArray(payload.verses) && payload.verses.length > 0) {
+      payload.verses.forEach((v, idx) => {
+        if (idx > 0) p.appendChild(document.createTextNode(" "));
+        const num = document.createElement("span");
+        num.className = "scripture-verse-num";
+        num.textContent = String(v.verse);
+        p.appendChild(num);
+        const clean = String(v.text || "").replace(/\n+/g, " ").replace(/\s{2,}/g, " ").trim();
+        p.appendChild(document.createTextNode(clean));
+      });
+    } else {
+      p.textContent = payload.text || "";
+    }
+
+    el.scriptureModalBody.appendChild(p);
+  }
+
+  async function openScriptureInline(scriptureRef, versionKey) {
+    const ver = normalizeBibleVersion(versionKey);
+    const cfg = BIBLE_TRANSLATIONS[ver];
+    const fallbackUrl = buildBibleComUrl(scriptureRef, ver);
+
+    if (!cfg || cfg.mode !== "inline") {
+      window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    el.scriptureModalTitle.textContent = scriptureRef;
+    el.scriptureModalVersion.textContent = cfg.label;
+    el.scriptureModalExternalLink.href = fallbackUrl;
+    el.scriptureModalBody.innerHTML = '<p class="scripture-loading">Loading passage…</p>';
+    el.scriptureModal.classList.remove("hidden");
+
+    const cacheKey = `${cfg.apiId}:${String(scriptureRef).trim().toLowerCase()}`;
+    if (scriptureCache.has(cacheKey)) {
+      renderScripturePayload(scriptureCache.get(cacheKey));
+      return;
+    }
+
+    try {
+      const apiUrl = `https://bible-api.com/${encodeURIComponent(scriptureRef)}?translation=${cfg.apiId}`;
+      const res = await fetch(apiUrl);
+      if (!res.ok) throw new Error("Passage not found");
+      const data = await res.json();
+
+      const payload = {
+        reference: data.reference || scriptureRef,
+        translation: data.translation_name || cfg.label,
+        verses: Array.isArray(data.verses) ? data.verses : [],
+        text: String(data.text || "").replace(/\n+/g, " ").replace(/\s{2,}/g, " ").trim(),
+      };
+      scriptureCache.set(cacheKey, payload);
+      renderScripturePayload(payload);
+    } catch (_) {
+      el.scriptureModalBody.innerHTML =
+        '<p class="scripture-error">Could not load this passage inline. Use the link below to read it on Bible.com.</p>';
+    }
   }
 
   function updateHeaderSubtitle() {
@@ -2363,24 +2520,37 @@ Add it to this setlist anyway?`
 
     if (hymn.scriptures.length > 0) {
       el.scripturesGroup.classList.remove("hidden");
+      const verCfg = BIBLE_TRANSLATIONS[normalizeBibleVersion(state.bibleVersion)] || BIBLE_TRANSLATIONS.NKJV;
+      const isInline = verCfg.mode === "inline";
+
       hymn.scriptures.forEach((s) => {
-        const link = document.createElement("a");
-        link.className = "meta-tag scripture-link";
-        link.href = buildBibleGatewayUrl(s);
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.title = `Read ${s} (${state.bibleVersion}) on BibleGateway`;
+        if (isInline) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "meta-tag scripture-link";
+          btn.title = `Read ${s} (${state.bibleVersion}) inline`;
+          btn.textContent = s;
+          btn.addEventListener("click", () => openScriptureInline(s, state.bibleVersion));
+          el.detailScriptures.appendChild(btn);
+        } else {
+          const link = document.createElement("a");
+          link.className = "meta-tag scripture-link";
+          link.href = buildBibleComUrl(s, state.bibleVersion);
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.title = `Read ${s} (${state.bibleVersion}) on Bible.com`;
 
-        const txt = document.createElement("span");
-        txt.textContent = s;
-        const arr = document.createElement("span");
-        arr.className = "scripture-link-arrow";
-        arr.setAttribute("aria-hidden", "true");
-        arr.textContent = "↗";
+          const txt = document.createElement("span");
+          txt.textContent = s;
+          const arr = document.createElement("span");
+          arr.className = "scripture-link-arrow";
+          arr.setAttribute("aria-hidden", "true");
+          arr.textContent = "↗";
 
-        link.appendChild(txt);
-        link.appendChild(arr);
-        el.detailScriptures.appendChild(link);
+          link.appendChild(txt);
+          link.appendChild(arr);
+          el.detailScriptures.appendChild(link);
+        }
       });
     } else {
       el.scripturesGroup.classList.add("hidden");
@@ -3237,9 +3407,17 @@ Add it to this setlist anyway?`
       if (e.target === el.quickJumpModal) closeQuickJump();
     });
 
+    // Scripture Reader Modal
+    el.closeScriptureModalBtn.addEventListener("click", closeScriptureModal);
+    el.doneScriptureModalBtn.addEventListener("click", closeScriptureModal);
+    el.scriptureModal.addEventListener("click", (e) => {
+      if (e.target === el.scriptureModal) closeScriptureModal();
+    });
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        if (!el.quickJumpModal.classList.contains("hidden")) closeQuickJump();
+        if (!el.scriptureModal.classList.contains("hidden")) closeScriptureModal();
+        else if (!el.quickJumpModal.classList.contains("hidden")) closeQuickJump();
         else if (!el.addToSetlistModal.classList.contains("hidden")) closeAddToSetlistModal();
         else if (!el.songPickerModal.classList.contains("hidden")) closeSongPicker();
         else if (!el.markSungModal.classList.contains("hidden")) closeMarkSungModal();
@@ -3341,6 +3519,11 @@ Add it to this setlist anyway?`
       backGuardPushed = false;
 
       // 1. Close any open modal first
+      if (!el.scriptureModal.classList.contains("hidden")) {
+        closeScriptureModal();
+        armBackGuard();
+        return;
+      }
       if (!el.quickJumpModal.classList.contains("hidden")) {
         closeQuickJump();
         armBackGuard();
