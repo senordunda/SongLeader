@@ -63,8 +63,10 @@
     sfp:  { id: "sfp",  code: "SFP",  name: "Songs of Faith and Praise", file: "./sfp_hymns.json", hasSupplement: false },
     hfw:  { id: "hfw",  code: "HFW",  name: "Hymns for Worship", file: "./hfw_hymns.json", hasSupplement: false },
     ss:   { id: "ss",   code: "SS",   name: "Sacred Selections", file: "./ss_hymns.json", hasSupplement: false },
+    phss: { id: "phss", code: "PHSS", name: "Psalms, Hymns, and Spiritual Songs", file: "./phss_hymns.json", hasSupplement: false },
+    sotc: { id: "sotc", code: "SOTC", name: "Songs of the Church", file: "./sotc_hymns.json", hasSupplement: false },
   };
-  const HYMNAL_ORDER = ["pftl", "sfp", "hfw", "ss"];
+  const HYMNAL_ORDER = ["pftl", "sfp", "hfw", "ss", "phss", "sotc"];
 
   const SERVICE_SLOTS = [
     "Opening",

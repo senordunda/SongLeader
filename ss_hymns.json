@@ -47,6 +47,16 @@
         "book": "hfw",
         "id": "hfw:190",
         "num": "190"
+      },
+      {
+        "book": "phss",
+        "id": "phss:703",
+        "num": "703"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:619",
+        "num": "619"
       }
     ]
   },
@@ -111,6 +121,16 @@
         "book": "hfw",
         "id": "hfw:105",
         "num": "105"
+      },
+      {
+        "book": "phss",
+        "id": "phss:310",
+        "num": "310"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:203",
+        "num": "203"
       }
     ]
   },
@@ -148,6 +168,16 @@
         "book": "hfw",
         "id": "hfw:34",
         "num": "34"
+      },
+      {
+        "book": "phss",
+        "id": "phss:77",
+        "num": "77"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:656",
+        "num": "656"
       }
     ]
   },
@@ -181,6 +211,16 @@
         "book": "hfw",
         "id": "hfw:532",
         "num": "532"
+      },
+      {
+        "book": "phss",
+        "id": "phss:750",
+        "num": "750"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:617",
+        "num": "617"
       }
     ]
   },
@@ -203,6 +243,11 @@
       {
         "book": "hfw",
         "id": "hfw:624",
+        "num": "624"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:624",
         "num": "624"
       }
     ]
@@ -254,6 +299,16 @@
         "book": "hfw",
         "id": "hfw:178",
         "num": "178"
+      },
+      {
+        "book": "phss",
+        "id": "phss:347",
+        "num": "347"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:383",
+        "num": "383"
       }
     ]
   },
@@ -287,6 +342,11 @@
         "book": "hfw",
         "id": "hfw:622",
         "num": "622"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:694",
+        "num": "694"
       }
     ]
   },
@@ -324,6 +384,16 @@
         "book": "hfw",
         "id": "hfw:54",
         "num": "54"
+      },
+      {
+        "book": "phss",
+        "id": "phss:184",
+        "num": "184"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:426",
+        "num": "426"
       }
     ]
   },
@@ -360,6 +430,16 @@
         "book": "hfw",
         "id": "hfw:389",
         "num": "389"
+      },
+      {
+        "book": "phss",
+        "id": "phss:677",
+        "num": "677"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:464",
+        "num": "464"
       }
     ]
   },
@@ -397,6 +477,16 @@
         "book": "hfw",
         "id": "hfw:405",
         "num": "405"
+      },
+      {
+        "book": "phss",
+        "id": "phss:273",
+        "num": "273"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:723",
+        "num": "723"
       }
     ]
   },
@@ -436,6 +526,16 @@
         "book": "hfw",
         "id": "hfw:109",
         "num": "109"
+      },
+      {
+        "book": "phss",
+        "id": "phss:622",
+        "num": "622"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:255",
+        "num": "255"
       }
     ]
   },
@@ -464,6 +564,11 @@
         "book": "pftl",
         "id": "778",
         "num": "778"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:647",
+        "num": "647"
       }
     ]
   },
@@ -512,6 +617,16 @@
         "book": "hfw",
         "id": "hfw:37",
         "num": "37"
+      },
+      {
+        "book": "phss",
+        "id": "phss:133",
+        "num": "133"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:446",
+        "num": "446"
       }
     ]
   },
@@ -553,6 +668,16 @@
         "book": "hfw",
         "id": "hfw:434",
         "num": "434"
+      },
+      {
+        "book": "phss",
+        "id": "phss:120",
+        "num": "120"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:7",
+        "num": "7"
       }
     ]
   },
@@ -594,6 +719,16 @@
         "book": "hfw",
         "id": "hfw:434",
         "num": "434"
+      },
+      {
+        "book": "phss",
+        "id": "phss:120",
+        "num": "120"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:7",
+        "num": "7"
       }
     ]
   },
@@ -622,6 +757,11 @@
         "book": "pftl",
         "id": "586",
         "num": "586"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:468",
+        "num": "468"
       }
     ]
   },
@@ -639,7 +779,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/05/13/quotsafely-through-another-weekquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/05/13/quotsafely-through-another-weekquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:453",
+        "num": "453"
+      }
+    ]
   },
   {
     "id": "ss:22",
@@ -679,6 +826,16 @@
         "book": "hfw",
         "id": "hfw:149",
         "num": "149"
+      },
+      {
+        "book": "phss",
+        "id": "phss:178",
+        "num": "178"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:145",
+        "num": "145"
       }
     ]
   },
@@ -717,6 +874,16 @@
         "book": "hfw",
         "id": "hfw:73",
         "num": "73"
+      },
+      {
+        "book": "phss",
+        "id": "phss:562",
+        "num": "562"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:485",
+        "num": "485"
       }
     ]
   },
@@ -754,6 +921,16 @@
         "book": "hfw",
         "id": "hfw:95",
         "num": "95"
+      },
+      {
+        "book": "phss",
+        "id": "phss:567",
+        "num": "567"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:590",
+        "num": "590"
       }
     ]
   },
@@ -791,6 +968,16 @@
         "book": "hfw",
         "id": "hfw:79",
         "num": "79"
+      },
+      {
+        "book": "phss",
+        "id": "phss:574",
+        "num": "574"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:567",
+        "num": "567"
       }
     ]
   },
@@ -824,6 +1011,16 @@
         "book": "hfw",
         "id": "hfw:458",
         "num": "458"
+      },
+      {
+        "book": "phss",
+        "id": "phss:262",
+        "num": "262"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:210",
+        "num": "210"
       }
     ]
   },
@@ -861,6 +1058,16 @@
         "book": "hfw",
         "id": "hfw:72",
         "num": "72"
+      },
+      {
+        "book": "phss",
+        "id": "phss:307",
+        "num": "307"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:32",
+        "num": "32"
       }
     ]
   },
@@ -898,6 +1105,16 @@
         "book": "hfw",
         "id": "hfw:110",
         "num": "110"
+      },
+      {
+        "book": "phss",
+        "id": "phss:159",
+        "num": "159"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:142",
+        "num": "142"
       }
     ]
   },
@@ -930,6 +1147,11 @@
         "book": "sfp",
         "id": "sfp:862",
         "num": "862"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:458",
+        "num": "458"
       }
     ]
   },
@@ -962,6 +1184,16 @@
         "book": "sfp",
         "id": "sfp:821",
         "num": "821"
+      },
+      {
+        "book": "phss",
+        "id": "phss:577",
+        "num": "577"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:422",
+        "num": "422"
       }
     ]
   },
@@ -995,6 +1227,16 @@
         "book": "hfw",
         "id": "hfw:630",
         "num": "630"
+      },
+      {
+        "book": "phss",
+        "id": "phss:510",
+        "num": "510"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:703",
+        "num": "703"
       }
     ]
   },
@@ -1028,6 +1270,11 @@
         "book": "hfw",
         "id": "hfw:635",
         "num": "635"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:11",
+        "num": "11"
       }
     ]
   },
@@ -1067,6 +1314,16 @@
         "book": "hfw",
         "id": "hfw:144",
         "num": "144"
+      },
+      {
+        "book": "phss",
+        "id": "phss:401",
+        "num": "401"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:353",
+        "num": "353"
       }
     ]
   },
@@ -1095,6 +1352,16 @@
         "book": "pftl",
         "id": "659",
         "num": "659"
+      },
+      {
+        "book": "phss",
+        "id": "phss:575",
+        "num": "575"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:13",
+        "num": "13"
       }
     ]
   },
@@ -1128,6 +1395,11 @@
         "book": "hfw",
         "id": "hfw:106",
         "num": "106"
+      },
+      {
+        "book": "phss",
+        "id": "phss:578",
+        "num": "578"
       }
     ]
   },
@@ -1166,6 +1438,16 @@
         "book": "hfw",
         "id": "hfw:114",
         "num": "114"
+      },
+      {
+        "book": "phss",
+        "id": "phss:676",
+        "num": "676"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:579",
+        "num": "579"
       }
     ]
   },
@@ -1198,6 +1480,16 @@
         "book": "hfw",
         "id": "hfw:76",
         "num": "76"
+      },
+      {
+        "book": "phss",
+        "id": "phss:309",
+        "num": "309"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:92",
+        "num": "92"
       }
     ]
   },
@@ -1259,6 +1551,16 @@
         "book": "hfw",
         "id": "hfw:263",
         "num": "263"
+      },
+      {
+        "book": "phss",
+        "id": "phss:585",
+        "num": "585"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:226",
+        "num": "226"
       }
     ]
   },
@@ -1301,6 +1603,16 @@
         "book": "hfw",
         "id": "hfw:117",
         "num": "117"
+      },
+      {
+        "book": "phss",
+        "id": "phss:655",
+        "num": "655"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:141",
+        "num": "141"
       }
     ]
   },
@@ -1334,6 +1646,11 @@
         "book": "hfw",
         "id": "hfw:486",
         "num": "486"
+      },
+      {
+        "book": "phss",
+        "id": "phss:611",
+        "num": "611"
       }
     ]
   },
@@ -1371,6 +1688,16 @@
         "book": "hfw",
         "id": "hfw:59",
         "num": "59"
+      },
+      {
+        "book": "phss",
+        "id": "phss:572",
+        "num": "572"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:717",
+        "num": "717"
       }
     ]
   },
@@ -1408,6 +1735,16 @@
         "book": "hfw",
         "id": "hfw:406",
         "num": "406"
+      },
+      {
+        "book": "phss",
+        "id": "phss:271",
+        "num": "271"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:339",
+        "num": "339"
       }
     ]
   },
@@ -1447,6 +1784,16 @@
         "book": "hfw",
         "id": "hfw:352",
         "num": "352"
+      },
+      {
+        "book": "phss",
+        "id": "phss:599",
+        "num": "599"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:109",
+        "num": "109"
       }
     ]
   },
@@ -1484,6 +1831,16 @@
         "book": "hfw",
         "id": "hfw:142",
         "num": "142"
+      },
+      {
+        "book": "phss",
+        "id": "phss:542",
+        "num": "542"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:725",
+        "num": "725"
       }
     ]
   },
@@ -1524,6 +1881,16 @@
         "book": "hfw",
         "id": "hfw:154",
         "num": "154"
+      },
+      {
+        "book": "phss",
+        "id": "phss:484",
+        "num": "484"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:283",
+        "num": "283"
       }
     ]
   },
@@ -1563,6 +1930,16 @@
         "book": "hfw",
         "id": "hfw:229",
         "num": "229"
+      },
+      {
+        "book": "phss",
+        "id": "phss:189",
+        "num": "189"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:578",
+        "num": "578"
       }
     ]
   },
@@ -1603,6 +1980,16 @@
         "book": "hfw",
         "id": "hfw:161",
         "num": "161"
+      },
+      {
+        "book": "phss",
+        "id": "phss:201",
+        "num": "201"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:449",
+        "num": "449"
       }
     ]
   },
@@ -1641,6 +2028,16 @@
         "book": "hfw",
         "id": "hfw:331",
         "num": "331"
+      },
+      {
+        "book": "phss",
+        "id": "phss:489",
+        "num": "489"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:308",
+        "num": "308"
       }
     ]
   },
@@ -1680,6 +2077,16 @@
         "book": "hfw",
         "id": "hfw:407",
         "num": "407"
+      },
+      {
+        "book": "phss",
+        "id": "phss:664",
+        "num": "664"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:157",
+        "num": "157"
       }
     ]
   },
@@ -1718,6 +2125,16 @@
         "book": "hfw",
         "id": "hfw:355",
         "num": "355"
+      },
+      {
+        "book": "phss",
+        "id": "phss:282",
+        "num": "282"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:51",
+        "num": "51"
       }
     ]
   },
@@ -1756,6 +2173,16 @@
         "book": "hfw",
         "id": "hfw:63",
         "num": "63"
+      },
+      {
+        "book": "phss",
+        "id": "phss:314",
+        "num": "314"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:257",
+        "num": "257"
       }
     ]
   },
@@ -1796,6 +2223,16 @@
         "book": "hfw",
         "id": "hfw:150",
         "num": "150"
+      },
+      {
+        "book": "phss",
+        "id": "phss:580",
+        "num": "580"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:433",
+        "num": "433"
       }
     ]
   },
@@ -1833,6 +2270,16 @@
         "book": "hfw",
         "id": "hfw:62",
         "num": "62"
+      },
+      {
+        "book": "phss",
+        "id": "phss:563",
+        "num": "563"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:100",
+        "num": "100"
       }
     ]
   },
@@ -1874,6 +2321,16 @@
         "book": "hfw",
         "id": "hfw:118",
         "num": "118"
+      },
+      {
+        "book": "phss",
+        "id": "phss:598",
+        "num": "598"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:343",
+        "num": "343"
       }
     ]
   },
@@ -1914,6 +2371,16 @@
         "book": "hfw",
         "id": "hfw:124",
         "num": "124"
+      },
+      {
+        "book": "phss",
+        "id": "phss:328",
+        "num": "328"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:364",
+        "num": "364"
       }
     ]
   },
@@ -1947,6 +2414,16 @@
         "book": "sfp",
         "id": "sfp:698",
         "num": "698"
+      },
+      {
+        "book": "phss",
+        "id": "phss:428",
+        "num": "428"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:354",
+        "num": "354"
       }
     ]
   },
@@ -1998,6 +2475,16 @@
         "book": "sfp",
         "id": "sfp:47",
         "num": "47"
+      },
+      {
+        "book": "phss",
+        "id": "phss:73",
+        "num": "73"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:186",
+        "num": "186"
       }
     ]
   },
@@ -2021,6 +2508,11 @@
         "book": "hfw",
         "id": "hfw:373",
         "num": "373"
+      },
+      {
+        "book": "phss",
+        "id": "phss:672",
+        "num": "672"
       }
     ]
   },
@@ -2071,6 +2563,11 @@
         "book": "hfw",
         "id": "hfw:104",
         "num": "104"
+      },
+      {
+        "book": "phss",
+        "id": "phss:685",
+        "num": "685"
       }
     ]
   },
@@ -2112,6 +2609,16 @@
         "book": "hfw",
         "id": "hfw:69",
         "num": "69"
+      },
+      {
+        "book": "phss",
+        "id": "phss:565",
+        "num": "565"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:623",
+        "num": "623"
       }
     ]
   },
@@ -2146,6 +2653,16 @@
         "book": "hfw",
         "id": "hfw:450",
         "num": "450"
+      },
+      {
+        "book": "phss",
+        "id": "phss:377",
+        "num": "377"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:664",
+        "num": "664"
       }
     ]
   },
@@ -2185,6 +2702,16 @@
         "book": "hfw",
         "id": "hfw:126",
         "num": "126"
+      },
+      {
+        "book": "phss",
+        "id": "phss:480",
+        "num": "480"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:495",
+        "num": "495"
       }
     ]
   },
@@ -2222,6 +2749,16 @@
         "book": "hfw",
         "id": "hfw:57",
         "num": "57"
+      },
+      {
+        "book": "phss",
+        "id": "phss:60",
+        "num": "60"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:35",
+        "num": "35"
       }
     ]
   },
@@ -2259,6 +2796,16 @@
         "book": "hfw",
         "id": "hfw:561",
         "num": "561"
+      },
+      {
+        "book": "phss",
+        "id": "phss:68",
+        "num": "68"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:392",
+        "num": "392"
       }
     ]
   },
@@ -2294,6 +2841,16 @@
         "book": "hfw",
         "id": "hfw:392",
         "num": "392"
+      },
+      {
+        "book": "phss",
+        "id": "phss:384",
+        "num": "384"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:643",
+        "num": "643"
       }
     ]
   },
@@ -2332,6 +2889,16 @@
         "book": "hfw",
         "id": "hfw:21",
         "num": "21"
+      },
+      {
+        "book": "phss",
+        "id": "phss:62",
+        "num": "62"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:427",
+        "num": "427"
       }
     ]
   },
@@ -2371,6 +2938,16 @@
         "book": "hfw",
         "id": "hfw:447",
         "num": "447"
+      },
+      {
+        "book": "phss",
+        "id": "phss:245",
+        "num": "245"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:356",
+        "num": "356"
       }
     ]
   },
@@ -2388,7 +2965,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/11/08/quotthe-lord-is-my-shepherdquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/11/08/quotthe-lord-is-my-shepherdquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:535",
+        "num": "535"
+      }
+    ]
   },
   {
     "id": "ss:72",
@@ -2425,6 +3009,16 @@
         "book": "hfw",
         "id": "hfw:364",
         "num": "364"
+      },
+      {
+        "book": "phss",
+        "id": "phss:14",
+        "num": "14"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:529",
+        "num": "529"
       }
     ]
   },
@@ -2463,6 +3057,16 @@
         "book": "hfw",
         "id": "hfw:292",
         "num": "292"
+      },
+      {
+        "book": "phss",
+        "id": "phss:1",
+        "num": "1"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:530",
+        "num": "530"
       }
     ]
   },
@@ -2502,6 +3106,16 @@
         "book": "hfw",
         "id": "hfw:292",
         "num": "292"
+      },
+      {
+        "book": "phss",
+        "id": "phss:1",
+        "num": "1"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:530",
+        "num": "530"
       }
     ]
   },
@@ -2519,7 +3133,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/17/quotthe-law-of-the-lordquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/17/quotthe-law-of-the-lordquot/",
+    "also_in": [
+      {
+        "book": "phss",
+        "id": "phss:10",
+        "num": "10"
+      }
+    ]
   },
   {
     "id": "ss:76",
@@ -2588,6 +3209,16 @@
         "book": "hfw",
         "id": "hfw:2",
         "num": "2"
+      },
+      {
+        "book": "phss",
+        "id": "phss:9",
+        "num": "9"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:148",
+        "num": "148"
       }
     ]
   },
@@ -2626,6 +3257,16 @@
         "book": "hfw",
         "id": "hfw:268",
         "num": "268"
+      },
+      {
+        "book": "phss",
+        "id": "phss:840",
+        "num": "840"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:149",
+        "num": "149"
       }
     ]
   },
@@ -2658,6 +3299,16 @@
         "book": "hfw",
         "id": "hfw:536",
         "num": "536"
+      },
+      {
+        "book": "phss",
+        "id": "phss:629",
+        "num": "629"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:410",
+        "num": "410"
       }
     ]
   },
@@ -2681,6 +3332,11 @@
         "book": "hfw",
         "id": "hfw:620",
         "num": "620"
+      },
+      {
+        "book": "phss",
+        "id": "phss:587",
+        "num": "587"
       }
     ]
   },
@@ -2703,7 +3359,19 @@
     ],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/09/13/quotlord-send-mequot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/09/13/quotlord-send-mequot/",
+    "also_in": [
+      {
+        "book": "phss",
+        "id": "phss:781",
+        "num": "781"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:693",
+        "num": "693"
+      }
+    ]
   },
   {
     "id": "ss:82",
@@ -2788,6 +3456,16 @@
         "book": "hfw",
         "id": "hfw:146",
         "num": "146"
+      },
+      {
+        "book": "phss",
+        "id": "phss:488",
+        "num": "488"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:169",
+        "num": "169"
       }
     ]
   },
@@ -2852,6 +3530,16 @@
         "book": "hfw",
         "id": "hfw:453",
         "num": "453"
+      },
+      {
+        "book": "phss",
+        "id": "phss:614",
+        "num": "614"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:661",
+        "num": "661"
       }
     ]
   },
@@ -2907,6 +3595,16 @@
         "book": "hfw",
         "id": "hfw:351",
         "num": "351"
+      },
+      {
+        "book": "phss",
+        "id": "phss:794",
+        "num": "794"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:659",
+        "num": "659"
       }
     ]
   },
@@ -2940,6 +3638,16 @@
         "book": "hfw",
         "id": "hfw:616",
         "num": "616"
+      },
+      {
+        "book": "phss",
+        "id": "phss:779",
+        "num": "779"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:503",
+        "num": "503"
       }
     ]
   },
@@ -2987,6 +3695,16 @@
         "book": "hfw",
         "id": "hfw:598",
         "num": "598"
+      },
+      {
+        "book": "phss",
+        "id": "phss:792",
+        "num": "792"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:663",
+        "num": "663"
       }
     ]
   },
@@ -3019,6 +3737,16 @@
         "book": "hfw",
         "id": "hfw:568",
         "num": "568"
+      },
+      {
+        "book": "phss",
+        "id": "phss:784",
+        "num": "784"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:18",
+        "num": "18"
       }
     ]
   },
@@ -3068,6 +3796,16 @@
         "book": "hfw",
         "id": "hfw:457",
         "num": "457"
+      },
+      {
+        "book": "phss",
+        "id": "phss:714",
+        "num": "714"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:525",
+        "num": "525"
       }
     ]
   },
@@ -3097,6 +3835,11 @@
         "book": "pftl",
         "id": "341",
         "num": "341"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:344",
+        "num": "344"
       }
     ]
   },
@@ -3169,6 +3912,16 @@
         "book": "hfw",
         "id": "hfw:332",
         "num": "332"
+      },
+      {
+        "book": "phss",
+        "id": "phss:493",
+        "num": "493"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:10",
+        "num": "10"
       }
     ]
   },
@@ -3205,6 +3958,11 @@
         "book": "sfp",
         "id": "sfp:553",
         "num": "553"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:215",
+        "num": "215"
       }
     ]
   },
@@ -3242,6 +4000,16 @@
         "book": "hfw",
         "id": "hfw:98",
         "num": "98"
+      },
+      {
+        "book": "phss",
+        "id": "phss:472",
+        "num": "472"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:111",
+        "num": "111"
       }
     ]
   },
@@ -3280,6 +4048,16 @@
         "book": "hfw",
         "id": "hfw:335",
         "num": "335"
+      },
+      {
+        "book": "phss",
+        "id": "phss:613",
+        "num": "613"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:318",
+        "num": "318"
       }
     ]
   },
@@ -3318,6 +4096,16 @@
         "book": "hfw",
         "id": "hfw:552",
         "num": "552"
+      },
+      {
+        "book": "phss",
+        "id": "phss:623",
+        "num": "623"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:332",
+        "num": "332"
       }
     ]
   },
@@ -3355,6 +4143,16 @@
         "book": "hfw",
         "id": "hfw:395",
         "num": "395"
+      },
+      {
+        "book": "phss",
+        "id": "phss:624",
+        "num": "624"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:9",
+        "num": "9"
       }
     ]
   },
@@ -3389,6 +4187,16 @@
         "book": "hfw",
         "id": "hfw:309",
         "num": "309"
+      },
+      {
+        "book": "phss",
+        "id": "phss:802",
+        "num": "802"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:204",
+        "num": "204"
       }
     ]
   },
@@ -3444,6 +4252,11 @@
         "book": "pftl",
         "id": "816",
         "num": "816"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:128",
+        "num": "128"
       }
     ]
   },
@@ -3478,6 +4291,16 @@
         "book": "sfp",
         "id": "sfp:784",
         "num": "784"
+      },
+      {
+        "book": "phss",
+        "id": "phss:789",
+        "num": "789"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:302",
+        "num": "302"
       }
     ]
   },
@@ -3522,6 +4345,11 @@
         "book": "pftl",
         "id": "546",
         "num": "546"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:429",
+        "num": "429"
       }
     ]
   },
@@ -3561,6 +4389,16 @@
         "book": "hfw",
         "id": "hfw:442",
         "num": "442"
+      },
+      {
+        "book": "phss",
+        "id": "phss:606",
+        "num": "606"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:724",
+        "num": "724"
       }
     ]
   },
@@ -3601,6 +4439,16 @@
         "book": "hfw",
         "id": "hfw:394",
         "num": "394"
+      },
+      {
+        "book": "phss",
+        "id": "phss:600",
+        "num": "600"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:23",
+        "num": "23"
       }
     ]
   },
@@ -3633,6 +4481,16 @@
         "book": "hfw",
         "id": "hfw:508",
         "num": "508"
+      },
+      {
+        "book": "phss",
+        "id": "phss:588",
+        "num": "588"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:593",
+        "num": "593"
       }
     ]
   },
@@ -3665,6 +4523,16 @@
         "book": "hfw",
         "id": "hfw:504",
         "num": "504"
+      },
+      {
+        "book": "phss",
+        "id": "phss:589",
+        "num": "589"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:230",
+        "num": "230"
       }
     ]
   },
@@ -3704,6 +4572,16 @@
         "book": "hfw",
         "id": "hfw:396",
         "num": "396"
+      },
+      {
+        "book": "phss",
+        "id": "phss:590",
+        "num": "590"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:482",
+        "num": "482"
       }
     ]
   },
@@ -3736,6 +4614,16 @@
         "book": "hfw",
         "id": "hfw:381",
         "num": "381"
+      },
+      {
+        "book": "phss",
+        "id": "phss:592",
+        "num": "592"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:722",
+        "num": "722"
       }
     ]
   },
@@ -3791,6 +4679,16 @@
         "book": "hfw",
         "id": "hfw:384",
         "num": "384"
+      },
+      {
+        "book": "phss",
+        "id": "phss:131",
+        "num": "131"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:477",
+        "num": "477"
       }
     ]
   },
@@ -3827,6 +4725,16 @@
         "book": "hfw",
         "id": "hfw:368",
         "num": "368"
+      },
+      {
+        "book": "phss",
+        "id": "phss:289",
+        "num": "289"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:445",
+        "num": "445"
       }
     ]
   },
@@ -3869,6 +4777,16 @@
         "book": "hfw",
         "id": "hfw:378",
         "num": "378"
+      },
+      {
+        "book": "phss",
+        "id": "phss:412",
+        "num": "412"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:475",
+        "num": "475"
       }
     ]
   },
@@ -3937,6 +4855,16 @@
         "book": "hfw",
         "id": "hfw:188",
         "num": "188"
+      },
+      {
+        "book": "phss",
+        "id": "phss:539",
+        "num": "539"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:701",
+        "num": "701"
       }
     ]
   },
@@ -3976,6 +4904,11 @@
         "book": "sfp",
         "id": "sfp:971",
         "num": "971"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:170",
+        "num": "170"
       }
     ]
   },
@@ -4010,6 +4943,11 @@
         "book": "hfw",
         "id": "hfw:379",
         "num": "379"
+      },
+      {
+        "book": "phss",
+        "id": "phss:394",
+        "num": "394"
       }
     ]
   },
@@ -4044,6 +4982,16 @@
         "book": "hfw",
         "id": "hfw:367",
         "num": "367"
+      },
+      {
+        "book": "phss",
+        "id": "phss:692",
+        "num": "692"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:401",
+        "num": "401"
       }
     ]
   },
@@ -4085,6 +5033,16 @@
         "book": "hfw",
         "id": "hfw:363",
         "num": "363"
+      },
+      {
+        "book": "phss",
+        "id": "phss:385",
+        "num": "385"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:2",
+        "num": "2"
       }
     ]
   },
@@ -4122,6 +5080,16 @@
         "book": "hfw",
         "id": "hfw:31",
         "num": "31"
+      },
+      {
+        "book": "phss",
+        "id": "phss:182",
+        "num": "182"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:627",
+        "num": "627"
       }
     ]
   },
@@ -4154,6 +5122,11 @@
         "book": "hfw",
         "id": "hfw:25",
         "num": "25"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:653",
+        "num": "653"
       }
     ]
   },
@@ -4181,6 +5154,11 @@
         "book": "pftl",
         "id": "795",
         "num": "795"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:654",
+        "num": "654"
       }
     ]
   },
@@ -4220,6 +5198,11 @@
         "book": "hfw",
         "id": "hfw:445",
         "num": "445"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:293",
+        "num": "293"
       }
     ]
   },
@@ -4252,6 +5235,16 @@
         "book": "sfp",
         "id": "sfp:526",
         "num": "526"
+      },
+      {
+        "book": "phss",
+        "id": "phss:300",
+        "num": "300"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:274",
+        "num": "274"
       }
     ]
   },
@@ -4289,6 +5282,16 @@
         "book": "hfw",
         "id": "hfw:211",
         "num": "211"
+      },
+      {
+        "book": "phss",
+        "id": "phss:405",
+        "num": "405"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:368",
+        "num": "368"
       }
     ]
   },
@@ -4323,6 +5326,11 @@
         "book": "sfp",
         "id": "sfp:224",
         "num": "224"
+      },
+      {
+        "book": "phss",
+        "id": "phss:150",
+        "num": "150"
       }
     ]
   },
@@ -4389,6 +5397,16 @@
         "book": "hfw",
         "id": "hfw:157",
         "num": "157"
+      },
+      {
+        "book": "phss",
+        "id": "phss:227",
+        "num": "227"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:6",
+        "num": "6"
       }
     ]
   },
@@ -4515,6 +5533,11 @@
         "book": "hfw",
         "id": "hfw:562",
         "num": "562"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:371",
+        "num": "371"
       }
     ]
   },
@@ -4598,6 +5621,16 @@
         "book": "hfw",
         "id": "hfw:125",
         "num": "125"
+      },
+      {
+        "book": "phss",
+        "id": "phss:325",
+        "num": "325"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:365",
+        "num": "365"
       }
     ]
   },
@@ -4636,6 +5669,11 @@
         "book": "hfw",
         "id": "hfw:677",
         "num": "677"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:288",
+        "num": "288"
       }
     ]
   },
@@ -4677,6 +5715,16 @@
         "book": "hfw",
         "id": "hfw:385",
         "num": "385"
+      },
+      {
+        "book": "phss",
+        "id": "phss:252",
+        "num": "252"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:394",
+        "num": "394"
       }
     ]
   },
@@ -4716,6 +5764,16 @@
         "book": "hfw",
         "id": "hfw:679",
         "num": "679"
+      },
+      {
+        "book": "phss",
+        "id": "phss:662",
+        "num": "662"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:277",
+        "num": "277"
       }
     ]
   },
@@ -4753,6 +5811,11 @@
         "book": "hfw",
         "id": "hfw:667",
         "num": "667"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:212",
+        "num": "212"
       }
     ]
   },
@@ -4785,6 +5848,16 @@
         "book": "hfw",
         "id": "hfw:260",
         "num": "260"
+      },
+      {
+        "book": "phss",
+        "id": "phss:661",
+        "num": "661"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:336",
+        "num": "336"
       }
     ]
   },
@@ -4845,6 +5918,16 @@
         "book": "hfw",
         "id": "hfw:17",
         "num": "17"
+      },
+      {
+        "book": "phss",
+        "id": "phss:406",
+        "num": "406"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:484",
+        "num": "484"
       }
     ]
   },
@@ -4878,7 +5961,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/04/18/quotnobody-knows-but-jesusquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/04/18/quotnobody-knows-but-jesusquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:641",
+        "num": "641"
+      }
+    ]
   },
   {
     "id": "ss:154",
@@ -4916,6 +6006,11 @@
         "book": "hfw",
         "id": "hfw:353",
         "num": "353"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:166",
+        "num": "166"
       }
     ]
   },
@@ -4948,6 +6043,16 @@
         "book": "hfw",
         "id": "hfw:174",
         "num": "174"
+      },
+      {
+        "book": "phss",
+        "id": "phss:248",
+        "num": "248"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:337",
+        "num": "337"
       }
     ]
   },
@@ -5003,6 +6108,16 @@
         "book": "hfw",
         "id": "hfw:452",
         "num": "452"
+      },
+      {
+        "book": "phss",
+        "id": "phss:391",
+        "num": "391"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:163",
+        "num": "163"
       }
     ]
   },
@@ -5043,6 +6158,16 @@
         "book": "hfw",
         "id": "hfw:542",
         "num": "542"
+      },
+      {
+        "book": "phss",
+        "id": "phss:288",
+        "num": "288"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:382",
+        "num": "382"
       }
     ]
   },
@@ -5071,6 +6196,11 @@
         "book": "hfw",
         "id": "hfw:639",
         "num": "639"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:173",
+        "num": "173"
       }
     ]
   },
@@ -5109,6 +6239,16 @@
         "book": "hfw",
         "id": "hfw:314",
         "num": "314"
+      },
+      {
+        "book": "phss",
+        "id": "phss:286",
+        "num": "286"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:557",
+        "num": "557"
       }
     ]
   },
@@ -5142,6 +6282,16 @@
         "book": "hfw",
         "id": "hfw:75",
         "num": "75"
+      },
+      {
+        "book": "phss",
+        "id": "phss:605",
+        "num": "605"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:292",
+        "num": "292"
       }
     ]
   },
@@ -5205,6 +6355,16 @@
         "book": "hfw",
         "id": "hfw:271",
         "num": "271"
+      },
+      {
+        "book": "phss",
+        "id": "phss:324",
+        "num": "324"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:366",
+        "num": "366"
       }
     ]
   },
@@ -5246,6 +6406,16 @@
         "book": "hfw",
         "id": "hfw:65",
         "num": "65"
+      },
+      {
+        "book": "phss",
+        "id": "phss:584",
+        "num": "584"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:396",
+        "num": "396"
       }
     ]
   },
@@ -5286,6 +6456,16 @@
         "book": "hfw",
         "id": "hfw:391",
         "num": "391"
+      },
+      {
+        "book": "phss",
+        "id": "phss:418",
+        "num": "418"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:459",
+        "num": "459"
       }
     ]
   },
@@ -5340,6 +6520,16 @@
         "book": "hfw",
         "id": "hfw:272",
         "num": "272"
+      },
+      {
+        "book": "phss",
+        "id": "phss:828",
+        "num": "828"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:294",
+        "num": "294"
       }
     ]
   },
@@ -5377,6 +6567,16 @@
         "book": "hfw",
         "id": "hfw:99",
         "num": "99"
+      },
+      {
+        "book": "phss",
+        "id": "phss:684",
+        "num": "684"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:447",
+        "num": "447"
       }
     ]
   },
@@ -5437,6 +6637,16 @@
         "book": "hfw",
         "id": "hfw:129",
         "num": "129"
+      },
+      {
+        "book": "phss",
+        "id": "phss:658",
+        "num": "658"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:26",
+        "num": "26"
       }
     ]
   },
@@ -5471,6 +6681,11 @@
         "book": "hfw",
         "id": "hfw:11",
         "num": "11"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:420",
+        "num": "420"
       }
     ]
   },
@@ -5505,6 +6720,11 @@
         "book": "sfp",
         "id": "sfp:498",
         "num": "498"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:421",
+        "num": "421"
       }
     ]
   },
@@ -5543,6 +6763,16 @@
         "book": "hfw",
         "id": "hfw:12",
         "num": "12"
+      },
+      {
+        "book": "phss",
+        "id": "phss:176",
+        "num": "176"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:175",
+        "num": "175"
       }
     ]
   },
@@ -5582,6 +6812,11 @@
         "book": "hfw",
         "id": "hfw:546",
         "num": "546"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:352",
+        "num": "352"
       }
     ]
   },
@@ -5622,6 +6857,11 @@
         "book": "hfw",
         "id": "hfw:554",
         "num": "554"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:197",
+        "num": "197"
       }
     ]
   },
@@ -5661,6 +6901,16 @@
         "book": "hfw",
         "id": "hfw:360",
         "num": "360"
+      },
+      {
+        "book": "phss",
+        "id": "phss:459",
+        "num": "459"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:488",
+        "num": "488"
       }
     ]
   },
@@ -5699,6 +6949,16 @@
         "book": "hfw",
         "id": "hfw:482",
         "num": "482"
+      },
+      {
+        "book": "phss",
+        "id": "phss:416",
+        "num": "416"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:678",
+        "num": "678"
       }
     ]
   },
@@ -5741,6 +7001,16 @@
         "book": "hfw",
         "id": "hfw:597",
         "num": "597"
+      },
+      {
+        "book": "phss",
+        "id": "phss:631",
+        "num": "631"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:378",
+        "num": "378"
       }
     ]
   },
@@ -5781,6 +7051,16 @@
         "book": "hfw",
         "id": "hfw:189",
         "num": "189"
+      },
+      {
+        "book": "phss",
+        "id": "phss:230",
+        "num": "230"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:633",
+        "num": "633"
       }
     ]
   },
@@ -5807,6 +7087,11 @@
         "book": "pftl",
         "id": "840",
         "num": "840"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:600",
+        "num": "600"
       }
     ]
   },
@@ -5830,6 +7115,11 @@
         "book": "hfw",
         "id": "hfw:551",
         "num": "551"
+      },
+      {
+        "book": "phss",
+        "id": "phss:482",
+        "num": "482"
       }
     ]
   },
@@ -5863,6 +7153,16 @@
         "book": "hfw",
         "id": "hfw:518",
         "num": "518"
+      },
+      {
+        "book": "phss",
+        "id": "phss:638",
+        "num": "638"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:489",
+        "num": "489"
       }
     ]
   },
@@ -5916,6 +7216,16 @@
         "book": "hfw",
         "id": "hfw:89",
         "num": "89"
+      },
+      {
+        "book": "phss",
+        "id": "phss:426",
+        "num": "426"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:290",
+        "num": "290"
       }
     ]
   },
@@ -5948,6 +7258,16 @@
         "book": "hfw",
         "id": "hfw:347",
         "num": "347"
+      },
+      {
+        "book": "phss",
+        "id": "phss:641",
+        "num": "641"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:705",
+        "num": "705"
       }
     ]
   },
@@ -6025,6 +7345,16 @@
         "book": "hfw",
         "id": "hfw:498",
         "num": "498"
+      },
+      {
+        "book": "phss",
+        "id": "phss:643",
+        "num": "643"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:642",
+        "num": "642"
       }
     ]
   },
@@ -6093,6 +7423,16 @@
         "book": "hfw",
         "id": "hfw:402",
         "num": "402"
+      },
+      {
+        "book": "phss",
+        "id": "phss:424",
+        "num": "424"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:316",
+        "num": "316"
       }
     ]
   },
@@ -6120,6 +7460,11 @@
         "book": "pftl",
         "id": "314",
         "num": "314"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:247",
+        "num": "247"
       }
     ]
   },
@@ -6158,6 +7503,16 @@
         "book": "hfw",
         "id": "hfw:390",
         "num": "390"
+      },
+      {
+        "book": "phss",
+        "id": "phss:660",
+        "num": "660"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:25",
+        "num": "25"
       }
     ]
   },
@@ -6195,6 +7550,16 @@
         "book": "hfw",
         "id": "hfw:356",
         "num": "356"
+      },
+      {
+        "book": "phss",
+        "id": "phss:657",
+        "num": "657"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:254",
+        "num": "254"
       }
     ]
   },
@@ -6248,6 +7613,16 @@
         "book": "hfw",
         "id": "hfw:239",
         "num": "239"
+      },
+      {
+        "book": "phss",
+        "id": "phss:665",
+        "num": "665"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:113",
+        "num": "113"
       }
     ]
   },
@@ -6288,6 +7663,16 @@
         "book": "hfw",
         "id": "hfw:8",
         "num": "8"
+      },
+      {
+        "book": "phss",
+        "id": "phss:305",
+        "num": "305"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:387",
+        "num": "387"
       }
     ]
   },
@@ -6331,6 +7716,16 @@
         "book": "hfw",
         "id": "hfw:269",
         "num": "269"
+      },
+      {
+        "book": "phss",
+        "id": "phss:291",
+        "num": "291"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:376",
+        "num": "376"
       }
     ]
   },
@@ -6371,6 +7766,16 @@
         "book": "hfw",
         "id": "hfw:276",
         "num": "276"
+      },
+      {
+        "book": "phss",
+        "id": "phss:834",
+        "num": "834"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:563",
+        "num": "563"
       }
     ]
   },
@@ -6403,6 +7808,16 @@
         "book": "hfw",
         "id": "hfw:343",
         "num": "343"
+      },
+      {
+        "book": "phss",
+        "id": "phss:620",
+        "num": "620"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:683",
+        "num": "683"
       }
     ]
   },
@@ -6435,6 +7850,16 @@
         "book": "hfw",
         "id": "hfw:289",
         "num": "289"
+      },
+      {
+        "book": "phss",
+        "id": "phss:838",
+        "num": "838"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:631",
+        "num": "631"
       }
     ]
   },
@@ -6472,6 +7897,11 @@
         "book": "hfw",
         "id": "hfw:618",
         "num": "618"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:322",
+        "num": "322"
       }
     ]
   },
@@ -6506,6 +7936,16 @@
         "book": "hfw",
         "id": "hfw:680",
         "num": "680"
+      },
+      {
+        "book": "phss",
+        "id": "phss:666",
+        "num": "666"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:24",
+        "num": "24"
       }
     ]
   },
@@ -6539,6 +7979,11 @@
         "book": "hfw",
         "id": "hfw:403",
         "num": "403"
+      },
+      {
+        "book": "phss",
+        "id": "phss:319",
+        "num": "319"
       }
     ]
   },
@@ -6580,6 +8025,16 @@
         "book": "hfw",
         "id": "hfw:451",
         "num": "451"
+      },
+      {
+        "book": "phss",
+        "id": "phss:117",
+        "num": "117"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:276",
+        "num": "276"
       }
     ]
   },
@@ -6660,6 +8115,16 @@
         "book": "hfw",
         "id": "hfw:594",
         "num": "594"
+      },
+      {
+        "book": "phss",
+        "id": "phss:408",
+        "num": "408"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:528",
+        "num": "528"
       }
     ]
   },
@@ -6697,6 +8162,16 @@
         "book": "hfw",
         "id": "hfw:121",
         "num": "121"
+      },
+      {
+        "book": "phss",
+        "id": "phss:546",
+        "num": "546"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:246",
+        "num": "246"
       }
     ]
   },
@@ -6730,6 +8205,16 @@
         "book": "hfw",
         "id": "hfw:433",
         "num": "433"
+      },
+      {
+        "book": "phss",
+        "id": "phss:369",
+        "num": "369"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:224",
+        "num": "224"
       }
     ]
   },
@@ -6763,6 +8248,16 @@
         "book": "hfw",
         "id": "hfw:70",
         "num": "70"
+      },
+      {
+        "book": "phss",
+        "id": "phss:423",
+        "num": "423"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:388",
+        "num": "388"
       }
     ]
   },
@@ -6835,6 +8330,16 @@
         "book": "hfw",
         "id": "hfw:409",
         "num": "409"
+      },
+      {
+        "book": "phss",
+        "id": "phss:366",
+        "num": "366"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:517",
+        "num": "517"
       }
     ]
   },
@@ -6880,6 +8385,16 @@
         "book": "hfw",
         "id": "hfw:296",
         "num": "296"
+      },
+      {
+        "book": "phss",
+        "id": "phss:400",
+        "num": "400"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:178",
+        "num": "178"
       }
     ]
   },
@@ -6921,6 +8436,16 @@
         "book": "hfw",
         "id": "hfw:201",
         "num": "201"
+      },
+      {
+        "book": "phss",
+        "id": "phss:511",
+        "num": "511"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:8",
+        "num": "8"
       }
     ]
   },
@@ -6963,6 +8488,16 @@
         "book": "hfw",
         "id": "hfw:16",
         "num": "16"
+      },
+      {
+        "book": "phss",
+        "id": "phss:7",
+        "num": "7"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:3",
+        "num": "3"
       }
     ]
   },
@@ -7012,6 +8547,11 @@
         "book": "hfw",
         "id": "hfw:506",
         "num": "506"
+      },
+      {
+        "book": "phss",
+        "id": "phss:372",
+        "num": "372"
       }
     ]
   },
@@ -7050,6 +8590,16 @@
         "book": "hfw",
         "id": "hfw:133",
         "num": "133"
+      },
+      {
+        "book": "phss",
+        "id": "phss:522",
+        "num": "522"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:577",
+        "num": "577"
       }
     ]
   },
@@ -7088,6 +8638,16 @@
         "book": "hfw",
         "id": "hfw:376",
         "num": "376"
+      },
+      {
+        "book": "phss",
+        "id": "phss:525",
+        "num": "525"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:418",
+        "num": "418"
       }
     ]
   },
@@ -7105,7 +8665,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/10/quotthe-fight-is-onquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/10/quotthe-fight-is-onquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:511",
+        "num": "511"
+      }
+    ]
   },
   {
     "id": "ss:222",
@@ -7141,6 +8708,16 @@
         "book": "hfw",
         "id": "hfw:265",
         "num": "265"
+      },
+      {
+        "book": "phss",
+        "id": "phss:531",
+        "num": "531"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:512",
+        "num": "512"
       }
     ]
   },
@@ -7174,6 +8751,11 @@
         "book": "sfp",
         "id": "sfp:651",
         "num": "651"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:508",
+        "num": "508"
       }
     ]
   },
@@ -7209,6 +8791,16 @@
         "book": "hfw",
         "id": "hfw:275",
         "num": "275"
+      },
+      {
+        "book": "phss",
+        "id": "phss:513",
+        "num": "513"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:481",
+        "num": "481"
       }
     ]
   },
@@ -7246,6 +8838,16 @@
         "book": "hfw",
         "id": "hfw:231",
         "num": "231"
+      },
+      {
+        "book": "phss",
+        "id": "phss:527",
+        "num": "527"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:480",
+        "num": "480"
       }
     ]
   },
@@ -7300,6 +8902,16 @@
         "book": "hfw",
         "id": "hfw:397",
         "num": "397"
+      },
+      {
+        "book": "phss",
+        "id": "phss:535",
+        "num": "535"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:483",
+        "num": "483"
       }
     ]
   },
@@ -7355,6 +8967,16 @@
         "book": "hfw",
         "id": "hfw:359",
         "num": "359"
+      },
+      {
+        "book": "phss",
+        "id": "phss:293",
+        "num": "293"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:596",
+        "num": "596"
       }
     ]
   },
@@ -7393,6 +9015,16 @@
         "book": "hfw",
         "id": "hfw:454",
         "num": "454"
+      },
+      {
+        "book": "phss",
+        "id": "phss:619",
+        "num": "619"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:597",
+        "num": "597"
       }
     ]
   },
@@ -7433,6 +9065,16 @@
         "book": "hfw",
         "id": "hfw:576",
         "num": "576"
+      },
+      {
+        "book": "phss",
+        "id": "phss:515",
+        "num": "515"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:97",
+        "num": "97"
       }
     ]
   },
@@ -7466,6 +9108,16 @@
         "book": "hfw",
         "id": "hfw:455",
         "num": "455"
+      },
+      {
+        "book": "phss",
+        "id": "phss:690",
+        "num": "690"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:504",
+        "num": "504"
       }
     ]
   },
@@ -7616,6 +9268,16 @@
         "book": "hfw",
         "id": "hfw:223",
         "num": "223"
+      },
+      {
+        "book": "phss",
+        "id": "phss:464",
+        "num": "464"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:123",
+        "num": "123"
       }
     ]
   },
@@ -7649,6 +9311,16 @@
         "book": "sfp",
         "id": "sfp:542",
         "num": "542"
+      },
+      {
+        "book": "phss",
+        "id": "phss:571",
+        "num": "571"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:502",
+        "num": "502"
       }
     ]
   },
@@ -7688,6 +9360,16 @@
         "book": "hfw",
         "id": "hfw:77",
         "num": "77"
+      },
+      {
+        "book": "phss",
+        "id": "phss:569",
+        "num": "569"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:229",
+        "num": "229"
       }
     ]
   },
@@ -7723,6 +9405,11 @@
         "book": "sfp",
         "id": "sfp:614",
         "num": "614"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:55",
+        "num": "55"
       }
     ]
   },
@@ -7770,6 +9457,11 @@
         "book": "hfw",
         "id": "hfw:584",
         "num": "584"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:211",
+        "num": "211"
       }
     ]
   },
@@ -7810,6 +9502,16 @@
         "book": "hfw",
         "id": "hfw:119",
         "num": "119"
+      },
+      {
+        "book": "phss",
+        "id": "phss:420",
+        "num": "420"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:419",
+        "num": "419"
       }
     ]
   },
@@ -7850,6 +9552,16 @@
         "book": "hfw",
         "id": "hfw:398",
         "num": "398"
+      },
+      {
+        "book": "phss",
+        "id": "phss:156",
+        "num": "156"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:232",
+        "num": "232"
       }
     ]
   },
@@ -7890,6 +9602,16 @@
         "book": "hfw",
         "id": "hfw:479",
         "num": "479"
+      },
+      {
+        "book": "phss",
+        "id": "phss:497",
+        "num": "497"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:217",
+        "num": "217"
       }
     ]
   },
@@ -7930,6 +9652,16 @@
         "book": "hfw",
         "id": "hfw:479",
         "num": "479"
+      },
+      {
+        "book": "phss",
+        "id": "phss:497",
+        "num": "497"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:217",
+        "num": "217"
       }
     ]
   },
@@ -7968,6 +9700,16 @@
         "book": "hfw",
         "id": "hfw:401",
         "num": "401"
+      },
+      {
+        "book": "phss",
+        "id": "phss:498",
+        "num": "498"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:222",
+        "num": "222"
       }
     ]
   },
@@ -8003,6 +9745,11 @@
         "book": "hfw",
         "id": "hfw:18",
         "num": "18"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:519",
+        "num": "519"
       }
     ]
   },
@@ -8036,6 +9783,16 @@
         "book": "hfw",
         "id": "hfw:510",
         "num": "510"
+      },
+      {
+        "book": "phss",
+        "id": "phss:433",
+        "num": "433"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:491",
+        "num": "491"
       }
     ]
   },
@@ -8074,6 +9831,16 @@
         "book": "hfw",
         "id": "hfw:411",
         "num": "411"
+      },
+      {
+        "book": "phss",
+        "id": "phss:301",
+        "num": "301"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:438",
+        "num": "438"
       }
     ]
   },
@@ -8110,6 +9877,16 @@
         "book": "hfw",
         "id": "hfw:362",
         "num": "362"
+      },
+      {
+        "book": "phss",
+        "id": "phss:299",
+        "num": "299"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:436",
+        "num": "436"
       }
     ]
   },
@@ -8132,6 +9909,11 @@
         "book": "sfp",
         "id": "sfp:489",
         "num": "489"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:437",
+        "num": "437"
       }
     ]
   },
@@ -8171,6 +9953,16 @@
         "book": "hfw",
         "id": "hfw:97",
         "num": "97"
+      },
+      {
+        "book": "phss",
+        "id": "phss:602",
+        "num": "602"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:408",
+        "num": "408"
       }
     ]
   },
@@ -8208,6 +10000,16 @@
         "book": "hfw",
         "id": "hfw:412",
         "num": "412"
+      },
+      {
+        "book": "phss",
+        "id": "phss:109",
+        "num": "109"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:72",
+        "num": "72"
       }
     ]
   },
@@ -8248,6 +10050,16 @@
         "book": "hfw",
         "id": "hfw:205",
         "num": "205"
+      },
+      {
+        "book": "phss",
+        "id": "phss:444",
+        "num": "444"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:12",
+        "num": "12"
       }
     ]
   },
@@ -8288,6 +10100,16 @@
         "book": "hfw",
         "id": "hfw:81",
         "num": "81"
+      },
+      {
+        "book": "phss",
+        "id": "phss:397",
+        "num": "397"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:284",
+        "num": "284"
       }
     ]
   },
@@ -8328,6 +10150,16 @@
         "book": "hfw",
         "id": "hfw:81",
         "num": "81"
+      },
+      {
+        "book": "phss",
+        "id": "phss:397",
+        "num": "397"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:284",
+        "num": "284"
       }
     ]
   },
@@ -8369,6 +10201,11 @@
         "book": "hfw",
         "id": "hfw:393",
         "num": "393"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:331",
+        "num": "331"
       }
     ]
   },
@@ -8407,6 +10244,16 @@
         "book": "hfw",
         "id": "hfw:612",
         "num": "612"
+      },
+      {
+        "book": "phss",
+        "id": "phss:298",
+        "num": "298"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:345",
+        "num": "345"
       }
     ]
   },
@@ -8435,6 +10282,11 @@
         "book": "sfp",
         "id": "sfp:610",
         "num": "610"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:234",
+        "num": "234"
       }
     ]
   },
@@ -8489,6 +10341,11 @@
         "book": "hfw",
         "id": "hfw:371",
         "num": "371"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:65",
+        "num": "65"
       }
     ]
   },
@@ -8559,6 +10416,16 @@
         "book": "hfw",
         "id": "hfw:636",
         "num": "636"
+      },
+      {
+        "book": "phss",
+        "id": "phss:453",
+        "num": "453"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:576",
+        "num": "576"
       }
     ]
   },
@@ -8598,6 +10465,16 @@
         "book": "hfw",
         "id": "hfw:608",
         "num": "608"
+      },
+      {
+        "book": "phss",
+        "id": "phss:170",
+        "num": "170"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:713",
+        "num": "713"
       }
     ]
   },
@@ -8632,6 +10509,16 @@
         "book": "hfw",
         "id": "hfw:139",
         "num": "139"
+      },
+      {
+        "book": "phss",
+        "id": "phss:649",
+        "num": "649"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:258",
+        "num": "258"
       }
     ]
   },
@@ -8662,6 +10549,11 @@
         "book": "hfw",
         "id": "hfw:690",
         "num": "690"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:347",
+        "num": "347"
       }
     ]
   },
@@ -8697,6 +10589,16 @@
         "book": "hfw",
         "id": "hfw:694",
         "num": "694"
+      },
+      {
+        "book": "phss",
+        "id": "phss:554",
+        "num": "554"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:348",
+        "num": "348"
       }
     ]
   },
@@ -8734,6 +10636,16 @@
         "book": "hfw",
         "id": "hfw:155",
         "num": "155"
+      },
+      {
+        "book": "phss",
+        "id": "phss:449",
+        "num": "449"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:287",
+        "num": "287"
       }
     ]
   },
@@ -8773,6 +10685,16 @@
         "book": "hfw",
         "id": "hfw:257",
         "num": "257"
+      },
+      {
+        "book": "phss",
+        "id": "phss:431",
+        "num": "431"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:196",
+        "num": "196"
       }
     ]
   },
@@ -8810,6 +10732,16 @@
         "book": "hfw",
         "id": "hfw:414",
         "num": "414"
+      },
+      {
+        "book": "phss",
+        "id": "phss:145",
+        "num": "145"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:380",
+        "num": "380"
       }
     ]
   },
@@ -8874,6 +10806,16 @@
         "book": "hfw",
         "id": "hfw:267",
         "num": "267"
+      },
+      {
+        "book": "phss",
+        "id": "phss:452",
+        "num": "452"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:108",
+        "num": "108"
       }
     ]
   },
@@ -8927,6 +10869,16 @@
         "book": "hfw",
         "id": "hfw:180",
         "num": "180"
+      },
+      {
+        "book": "phss",
+        "id": "phss:848",
+        "num": "848"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:655",
+        "num": "655"
       }
     ]
   },
@@ -8964,6 +10916,16 @@
         "book": "hfw",
         "id": "hfw:516",
         "num": "516"
+      },
+      {
+        "book": "phss",
+        "id": "phss:268",
+        "num": "268"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:227",
+        "num": "227"
       }
     ]
   },
@@ -9003,6 +10965,16 @@
         "book": "hfw",
         "id": "hfw:156",
         "num": "156"
+      },
+      {
+        "book": "phss",
+        "id": "phss:191",
+        "num": "191"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:506",
+        "num": "506"
       }
     ]
   },
@@ -9040,6 +11012,16 @@
         "book": "hfw",
         "id": "hfw:534",
         "num": "534"
+      },
+      {
+        "book": "phss",
+        "id": "phss:269",
+        "num": "269"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:505",
+        "num": "505"
       }
     ]
   },
@@ -9112,6 +11094,11 @@
         "book": "hfw",
         "id": "hfw:374",
         "num": "374"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:448",
+        "num": "448"
       }
     ]
   },
@@ -9149,6 +11136,16 @@
         "book": "hfw",
         "id": "hfw:94",
         "num": "94"
+      },
+      {
+        "book": "phss",
+        "id": "phss:388",
+        "num": "388"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:592",
+        "num": "592"
       }
     ]
   },
@@ -9216,6 +11213,16 @@
         "book": "hfw",
         "id": "hfw:183",
         "num": "183"
+      },
+      {
+        "book": "phss",
+        "id": "phss:222",
+        "num": "222"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:591",
+        "num": "591"
       }
     ]
   },
@@ -9248,6 +11255,16 @@
         "book": "hfw",
         "id": "hfw:171",
         "num": "171"
+      },
+      {
+        "book": "phss",
+        "id": "phss:352",
+        "num": "352"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:105",
+        "num": "105"
       }
     ]
   },
@@ -9275,6 +11292,11 @@
         "book": "pftl",
         "id": "615",
         "num": "615"
+      },
+      {
+        "book": "phss",
+        "id": "phss:356",
+        "num": "356"
       }
     ]
   },
@@ -9298,6 +11320,11 @@
         "book": "hfw",
         "id": "hfw:175",
         "num": "175"
+      },
+      {
+        "book": "phss",
+        "id": "phss:357",
+        "num": "357"
       }
     ]
   },
@@ -9350,6 +11377,16 @@
         "book": "hfw",
         "id": "hfw:108",
         "num": "108"
+      },
+      {
+        "book": "phss",
+        "id": "phss:607",
+        "num": "607"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:470",
+        "num": "470"
       }
     ]
   },
@@ -9411,6 +11448,16 @@
         "book": "hfw",
         "id": "hfw:162",
         "num": "162"
+      },
+      {
+        "book": "phss",
+        "id": "phss:220",
+        "num": "220"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:370",
+        "num": "370"
       }
     ]
   },
@@ -9448,6 +11495,16 @@
         "book": "hfw",
         "id": "hfw:152",
         "num": "152"
+      },
+      {
+        "book": "phss",
+        "id": "phss:354",
+        "num": "354"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:52",
+        "num": "52"
       }
     ]
   },
@@ -9480,6 +11537,11 @@
         "book": "hfw",
         "id": "hfw:163",
         "num": "163"
+      },
+      {
+        "book": "phss",
+        "id": "phss:362",
+        "num": "362"
       }
     ]
   },
@@ -9534,6 +11596,16 @@
         "book": "hfw",
         "id": "hfw:159",
         "num": "159"
+      },
+      {
+        "book": "phss",
+        "id": "phss:506",
+        "num": "506"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:634",
+        "num": "634"
       }
     ]
   },
@@ -9574,6 +11646,16 @@
         "book": "hfw",
         "id": "hfw:225",
         "num": "225"
+      },
+      {
+        "book": "phss",
+        "id": "phss:648",
+        "num": "648"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:275",
+        "num": "275"
       }
     ]
   },
@@ -9616,6 +11698,16 @@
         "book": "hfw",
         "id": "hfw:179",
         "num": "179"
+      },
+      {
+        "book": "phss",
+        "id": "phss:246",
+        "num": "246"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:682",
+        "num": "682"
       }
     ]
   },
@@ -9657,6 +11749,16 @@
         "book": "hfw",
         "id": "hfw:286",
         "num": "286"
+      },
+      {
+        "book": "phss",
+        "id": "phss:536",
+        "num": "536"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:358",
+        "num": "358"
       }
     ]
   },
@@ -9697,6 +11799,16 @@
         "book": "hfw",
         "id": "hfw:166",
         "num": "166"
+      },
+      {
+        "book": "phss",
+        "id": "phss:241",
+        "num": "241"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:720",
+        "num": "720"
       }
     ]
   },
@@ -9737,6 +11849,16 @@
         "book": "hfw",
         "id": "hfw:164",
         "num": "164"
+      },
+      {
+        "book": "phss",
+        "id": "phss:239",
+        "num": "239"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:411",
+        "num": "411"
       }
     ]
   },
@@ -9776,6 +11898,16 @@
         "book": "hfw",
         "id": "hfw:186",
         "num": "186"
+      },
+      {
+        "book": "phss",
+        "id": "phss:244",
+        "num": "244"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:114",
+        "num": "114"
       }
     ]
   },
@@ -9804,6 +11936,11 @@
         "book": "pftl",
         "id": "769",
         "num": "769"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:648",
+        "num": "648"
       }
     ]
   },
@@ -9861,6 +11998,16 @@
         "book": "hfw",
         "id": "hfw:160",
         "num": "160"
+      },
+      {
+        "book": "phss",
+        "id": "phss:192",
+        "num": "192"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:423",
+        "num": "423"
       }
     ]
   },
@@ -9878,7 +12025,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2019/07/17/they-watched-him-there/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2019/07/17/they-watched-him-there/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:188",
+        "num": "188"
+      }
+    ]
   },
   {
     "id": "ss:308",
@@ -9927,6 +12081,11 @@
         "book": "sfp",
         "id": "sfp:338",
         "num": "338"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:413",
+        "num": "413"
       }
     ]
   },
@@ -9976,6 +12135,16 @@
         "book": "hfw",
         "id": "hfw:170",
         "num": "170"
+      },
+      {
+        "book": "phss",
+        "id": "phss:221",
+        "num": "221"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:259",
+        "num": "259"
       }
     ]
   },
@@ -10032,6 +12201,16 @@
         "book": "hfw",
         "id": "hfw:167",
         "num": "167"
+      },
+      {
+        "book": "phss",
+        "id": "phss:197",
+        "num": "197"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:616",
+        "num": "616"
       }
     ]
   },
@@ -10065,7 +12244,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2025/03/22/the-blood-that-stained-the-old-rugged-cross/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2025/03/22/the-blood-that-stained-the-old-rugged-cross/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:413",
+        "num": "413"
+      }
+    ]
   },
   {
     "id": "ss:316",
@@ -10104,6 +12290,16 @@
         "book": "hfw",
         "id": "hfw:158",
         "num": "158"
+      },
+      {
+        "book": "phss",
+        "id": "phss:290",
+        "num": "290"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:390",
+        "num": "390"
       }
     ]
   },
@@ -10165,6 +12361,11 @@
         "book": "sfp",
         "id": "sfp:320",
         "num": "320"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:612",
+        "num": "612"
       }
     ]
   },
@@ -10203,6 +12404,11 @@
         "book": "hfw",
         "id": "hfw:290",
         "num": "290"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:116",
+        "num": "116"
       }
     ]
   },
@@ -10266,6 +12472,16 @@
         "book": "hfw",
         "id": "hfw:157",
         "num": "157"
+      },
+      {
+        "book": "phss",
+        "id": "phss:227",
+        "num": "227"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:6",
+        "num": "6"
       }
     ]
   },
@@ -10305,6 +12521,16 @@
         "book": "hfw",
         "id": "hfw:578",
         "num": "578"
+      },
+      {
+        "book": "phss",
+        "id": "phss:541",
+        "num": "541"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:536",
+        "num": "536"
       }
     ]
   },
@@ -10338,7 +12564,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/08/quotthe-cross-is-not-greaterquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/08/quotthe-cross-is-not-greaterquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:513",
+        "num": "513"
+      }
+    ]
   },
   {
     "id": "ss:325",
@@ -10360,6 +12593,11 @@
         "book": "sfp",
         "id": "sfp:866",
         "num": "866"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:566",
+        "num": "566"
       }
     ]
   },
@@ -10377,7 +12615,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/01/15/quotfrom-the-cross-to-the-crownquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/01/15/quotfrom-the-cross-to-the-crownquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:118",
+        "num": "118"
+      }
+    ]
   },
   {
     "id": "ss:327",
@@ -10413,6 +12658,11 @@
         "book": "hfw",
         "id": "hfw:502",
         "num": "502"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:594",
+        "num": "594"
       }
     ]
   },
@@ -10452,6 +12702,16 @@
         "book": "hfw",
         "id": "hfw:168",
         "num": "168"
+      },
+      {
+        "book": "phss",
+        "id": "phss:537",
+        "num": "537"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:38",
+        "num": "38"
       }
     ]
   },
@@ -10505,6 +12765,16 @@
         "book": "hfw",
         "id": "hfw:484",
         "num": "484"
+      },
+      {
+        "book": "phss",
+        "id": "phss:540",
+        "num": "540"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:251",
+        "num": "251"
       }
     ]
   },
@@ -10558,6 +12828,16 @@
         "book": "hfw",
         "id": "hfw:415",
         "num": "415"
+      },
+      {
+        "book": "phss",
+        "id": "phss:528",
+        "num": "528"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:589",
+        "num": "589"
       }
     ]
   },
@@ -10592,6 +12872,11 @@
         "book": "sfp",
         "id": "sfp:617",
         "num": "617"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:63",
+        "num": "63"
       }
     ]
   },
@@ -10630,6 +12915,11 @@
         "book": "hfw",
         "id": "hfw:285",
         "num": "285"
+      },
+      {
+        "book": "phss",
+        "id": "phss:644",
+        "num": "644"
       }
     ]
   },
@@ -10669,6 +12959,16 @@
         "book": "hfw",
         "id": "hfw:566",
         "num": "566"
+      },
+      {
+        "book": "phss",
+        "id": "phss:266",
+        "num": "266"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:265",
+        "num": "265"
       }
     ]
   },
@@ -10703,6 +13003,16 @@
         "book": "hfw",
         "id": "hfw:283",
         "num": "283"
+      },
+      {
+        "book": "phss",
+        "id": "phss:719",
+        "num": "719"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:361",
+        "num": "361"
       }
     ]
   },
@@ -10759,6 +13069,16 @@
         "book": "hfw",
         "id": "hfw:350",
         "num": "350"
+      },
+      {
+        "book": "phss",
+        "id": "phss:466",
+        "num": "466"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:237",
+        "num": "237"
       }
     ]
   },
@@ -10844,6 +13164,16 @@
         "book": "hfw",
         "id": "hfw:473",
         "num": "473"
+      },
+      {
+        "book": "phss",
+        "id": "phss:773",
+        "num": "773"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:599",
+        "num": "599"
       }
     ]
   },
@@ -10877,6 +13207,11 @@
         "book": "hfw",
         "id": "hfw:380",
         "num": "380"
+      },
+      {
+        "book": "phss",
+        "id": "phss:743",
+        "num": "743"
       }
     ]
   },
@@ -10932,6 +13267,16 @@
         "book": "hfw",
         "id": "hfw:522",
         "num": "522"
+      },
+      {
+        "book": "phss",
+        "id": "phss:753",
+        "num": "753"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:638",
+        "num": "638"
       }
     ]
   },
@@ -10970,6 +13315,16 @@
         "book": "hfw",
         "id": "hfw:463",
         "num": "463"
+      },
+      {
+        "book": "phss",
+        "id": "phss:312",
+        "num": "312"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:249",
+        "num": "249"
       }
     ]
   },
@@ -11014,6 +13369,16 @@
         "book": "pftl",
         "id": "231",
         "num": "231"
+      },
+      {
+        "book": "phss",
+        "id": "phss:711",
+        "num": "711"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:181",
+        "num": "181"
       }
     ]
   },
@@ -11062,6 +13427,16 @@
         "book": "sfp",
         "id": "sfp:721",
         "num": "721"
+      },
+      {
+        "book": "phss",
+        "id": "phss:707",
+        "num": "707"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:355",
+        "num": "355"
       }
     ]
   },
@@ -11095,6 +13470,11 @@
         "book": "hfw",
         "id": "hfw:588",
         "num": "588"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:272",
+        "num": "272"
       }
     ]
   },
@@ -11128,6 +13508,16 @@
         "book": "sfp",
         "id": "sfp:988",
         "num": "988"
+      },
+      {
+        "book": "phss",
+        "id": "phss:473",
+        "num": "473"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:240",
+        "num": "240"
       }
     ]
   },
@@ -11166,6 +13556,16 @@
         "book": "hfw",
         "id": "hfw:528",
         "num": "528"
+      },
+      {
+        "book": "phss",
+        "id": "phss:744",
+        "num": "744"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:269",
+        "num": "269"
       }
     ]
   },
@@ -11198,6 +13598,11 @@
         "book": "sfp",
         "id": "sfp:861",
         "num": "861"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:176",
+        "num": "176"
       }
     ]
   },
@@ -11235,6 +13640,16 @@
         "book": "hfw",
         "id": "hfw:191",
         "num": "191"
+      },
+      {
+        "book": "phss",
+        "id": "phss:738",
+        "num": "738"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:95",
+        "num": "95"
       }
     ]
   },
@@ -11272,6 +13687,16 @@
         "book": "hfw",
         "id": "hfw:192",
         "num": "192"
+      },
+      {
+        "book": "phss",
+        "id": "phss:755",
+        "num": "755"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:657",
+        "num": "657"
       }
     ]
   },
@@ -11309,6 +13734,16 @@
         "book": "hfw",
         "id": "hfw:196",
         "num": "196"
+      },
+      {
+        "book": "phss",
+        "id": "phss:730",
+        "num": "730"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:194",
+        "num": "194"
       }
     ]
   },
@@ -11347,6 +13782,16 @@
         "book": "hfw",
         "id": "hfw:194",
         "num": "194"
+      },
+      {
+        "book": "phss",
+        "id": "phss:717",
+        "num": "717"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:708",
+        "num": "708"
       }
     ]
   },
@@ -11379,6 +13824,16 @@
         "book": "hfw",
         "id": "hfw:206",
         "num": "206"
+      },
+      {
+        "book": "phss",
+        "id": "phss:758",
+        "num": "758"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:409",
+        "num": "409"
       }
     ]
   },
@@ -11436,6 +13891,16 @@
         "book": "hfw",
         "id": "hfw:230",
         "num": "230"
+      },
+      {
+        "book": "phss",
+        "id": "phss:715",
+        "num": "715"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:545",
+        "num": "545"
       }
     ]
   },
@@ -11459,6 +13924,11 @@
         "book": "hfw",
         "id": "hfw:200",
         "num": "200"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:260",
+        "num": "260"
       }
     ]
   },
@@ -11528,6 +13998,16 @@
         "book": "hfw",
         "id": "hfw:258",
         "num": "258"
+      },
+      {
+        "book": "phss",
+        "id": "phss:768",
+        "num": "768"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:191",
+        "num": "191"
       }
     ]
   },
@@ -11566,6 +14046,16 @@
         "book": "hfw",
         "id": "hfw:28",
         "num": "28"
+      },
+      {
+        "book": "phss",
+        "id": "phss:92",
+        "num": "92"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:192",
+        "num": "192"
       }
     ]
   },
@@ -11634,6 +14124,16 @@
         "book": "hfw",
         "id": "hfw:228",
         "num": "228"
+      },
+      {
+        "book": "phss",
+        "id": "phss:766",
+        "num": "766"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:510",
+        "num": "510"
       }
     ]
   },
@@ -11690,6 +14190,16 @@
         "book": "hfw",
         "id": "hfw:232",
         "num": "232"
+      },
+      {
+        "book": "phss",
+        "id": "phss:757",
+        "num": "757"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:632",
+        "num": "632"
       }
     ]
   },
@@ -11762,7 +14272,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/24/beautiful-home-somewhere/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/24/beautiful-home-somewhere/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:326",
+        "num": "326"
+      }
+    ]
   },
   {
     "id": "ss:376",
@@ -11797,6 +14314,16 @@
         "book": "hfw",
         "id": "hfw:197",
         "num": "197"
+      },
+      {
+        "book": "phss",
+        "id": "phss:772",
+        "num": "772"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:37",
+        "num": "37"
       }
     ]
   },
@@ -11835,6 +14362,16 @@
         "book": "hfw",
         "id": "hfw:261",
         "num": "261"
+      },
+      {
+        "book": "phss",
+        "id": "phss:735",
+        "num": "735"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:29",
+        "num": "29"
       }
     ]
   },
@@ -11898,6 +14435,16 @@
         "book": "hfw",
         "id": "hfw:399",
         "num": "399"
+      },
+      {
+        "book": "phss",
+        "id": "phss:739",
+        "num": "739"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:98",
+        "num": "98"
       }
     ]
   },
@@ -11921,6 +14468,11 @@
         "book": "hfw",
         "id": "hfw:250",
         "num": "250"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:652",
+        "num": "652"
       }
     ]
   },
@@ -11955,6 +14507,16 @@
         "book": "hfw",
         "id": "hfw:637",
         "num": "637"
+      },
+      {
+        "book": "phss",
+        "id": "phss:760",
+        "num": "760"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:650",
+        "num": "650"
       }
     ]
   },
@@ -11983,6 +14545,11 @@
         "book": "pftl",
         "id": "672",
         "num": "672"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:540",
+        "num": "540"
       }
     ]
   },
@@ -12030,6 +14597,16 @@
         "book": "hfw",
         "id": "hfw:204",
         "num": "204"
+      },
+      {
+        "book": "phss",
+        "id": "phss:763",
+        "num": "763"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:208",
+        "num": "208"
       }
     ]
   },
@@ -12062,6 +14639,16 @@
         "book": "hfw",
         "id": "hfw:236",
         "num": "236"
+      },
+      {
+        "book": "phss",
+        "id": "phss:763",
+        "num": "763"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:209",
+        "num": "209"
       }
     ]
   },
@@ -12115,6 +14702,16 @@
         "book": "hfw",
         "id": "hfw:202",
         "num": "202"
+      },
+      {
+        "book": "phss",
+        "id": "phss:774",
+        "num": "774"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:45",
+        "num": "45"
       }
     ]
   },
@@ -12132,7 +14729,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/25/784259/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/25/784259/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:552",
+        "num": "552"
+      }
+    ]
   },
   {
     "id": "ss:389",
@@ -12154,6 +14758,11 @@
         "book": "hfw",
         "id": "hfw:199",
         "num": "199"
+      },
+      {
+        "book": "phss",
+        "id": "phss:704",
+        "num": "704"
       }
     ]
   },
@@ -12218,6 +14827,16 @@
         "book": "hfw",
         "id": "hfw:198",
         "num": "198"
+      },
+      {
+        "book": "phss",
+        "id": "phss:741",
+        "num": "741"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:5",
+        "num": "5"
       }
     ]
   },
@@ -12246,6 +14865,11 @@
         "book": "sfp",
         "id": "sfp:881",
         "num": "881"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:350",
+        "num": "350"
       }
     ]
   },
@@ -12278,6 +14902,16 @@
         "book": "hfw",
         "id": "hfw:203",
         "num": "203"
+      },
+      {
+        "book": "phss",
+        "id": "phss:733",
+        "num": "733"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:17",
+        "num": "17"
       }
     ]
   },
@@ -12350,6 +14984,16 @@
         "book": "hfw",
         "id": "hfw:464",
         "num": "464"
+      },
+      {
+        "book": "phss",
+        "id": "phss:686",
+        "num": "686"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:213",
+        "num": "213"
       }
     ]
   },
@@ -12373,6 +15017,11 @@
         "book": "sfp",
         "id": "sfp:973",
         "num": "973"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:99",
+        "num": "99"
       }
     ]
   },
@@ -12410,6 +15059,16 @@
         "book": "hfw",
         "id": "hfw:212",
         "num": "212"
+      },
+      {
+        "book": "phss",
+        "id": "phss:729",
+        "num": "729"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:496",
+        "num": "496"
       }
     ]
   },
@@ -12464,6 +15123,16 @@
         "book": "hfw",
         "id": "hfw:213",
         "num": "213"
+      },
+      {
+        "book": "phss",
+        "id": "phss:673",
+        "num": "673"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:216",
+        "num": "216"
       }
     ]
   },
@@ -12496,6 +15165,16 @@
         "book": "hfw",
         "id": "hfw:238",
         "num": "238"
+      },
+      {
+        "book": "phss",
+        "id": "phss:742",
+        "num": "742"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:136",
+        "num": "136"
       }
     ]
   },
@@ -12533,6 +15212,16 @@
         "book": "hfw",
         "id": "hfw:214",
         "num": "214"
+      },
+      {
+        "book": "phss",
+        "id": "phss:747",
+        "num": "747"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:385",
+        "num": "385"
       }
     ]
   },
@@ -12565,7 +15254,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/28/784270/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/08/28/784270/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:367",
+        "num": "367"
+      }
+    ]
   },
   {
     "id": "ss:406",
@@ -12605,6 +15301,16 @@
         "book": "hfw",
         "id": "hfw:695",
         "num": "695"
+      },
+      {
+        "book": "phss",
+        "id": "phss:410",
+        "num": "410"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:457",
+        "num": "457"
       }
     ]
   },
@@ -12644,6 +15350,16 @@
         "book": "hfw",
         "id": "hfw:220",
         "num": "220"
+      },
+      {
+        "book": "phss",
+        "id": "phss:770",
+        "num": "770"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:262",
+        "num": "262"
       }
     ]
   },
@@ -12681,6 +15397,16 @@
         "book": "hfw",
         "id": "hfw:221",
         "num": "221"
+      },
+      {
+        "book": "phss",
+        "id": "phss:756",
+        "num": "756"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:402",
+        "num": "402"
       }
     ]
   },
@@ -12747,6 +15473,16 @@
         "book": "hfw",
         "id": "hfw:400",
         "num": "400"
+      },
+      {
+        "book": "phss",
+        "id": "phss:696",
+        "num": "696"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:548",
+        "num": "548"
       }
     ]
   },
@@ -12811,6 +15547,16 @@
         "book": "sfp",
         "id": "sfp:759",
         "num": "759"
+      },
+      {
+        "book": "phss",
+        "id": "phss:737",
+        "num": "737"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:471",
+        "num": "471"
       }
     ]
   },
@@ -12878,6 +15624,16 @@
         "book": "sfp",
         "id": "sfp:104",
         "num": "104"
+      },
+      {
+        "book": "phss",
+        "id": "phss:326",
+        "num": "326"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:115",
+        "num": "115"
       }
     ]
   },
@@ -12901,6 +15657,11 @@
         "book": "hfw",
         "id": "hfw:663",
         "num": "663"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:297",
+        "num": "297"
       }
     ]
   },
@@ -12924,6 +15685,11 @@
         "book": "hfw",
         "id": "hfw:691",
         "num": "691"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:264",
+        "num": "264"
       }
     ]
   },
@@ -12978,6 +15744,16 @@
         "book": "hfw",
         "id": "hfw:241",
         "num": "241"
+      },
+      {
+        "book": "phss",
+        "id": "phss:709",
+        "num": "709"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:646",
+        "num": "646"
       }
     ]
   },
@@ -13017,6 +15793,11 @@
         "book": "hfw",
         "id": "hfw:244",
         "num": "244"
+      },
+      {
+        "book": "phss",
+        "id": "phss:705",
+        "num": "705"
       }
     ]
   },
@@ -13049,6 +15830,16 @@
         "book": "hfw",
         "id": "hfw:226",
         "num": "226"
+      },
+      {
+        "book": "phss",
+        "id": "phss:731",
+        "num": "731"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:44",
+        "num": "44"
       }
     ]
   },
@@ -13081,6 +15872,16 @@
         "book": "hfw",
         "id": "hfw:195",
         "num": "195"
+      },
+      {
+        "book": "phss",
+        "id": "phss:732",
+        "num": "732"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:47",
+        "num": "47"
       }
     ]
   },
@@ -13169,6 +15970,16 @@
         "book": "hfw",
         "id": "hfw:216",
         "num": "216"
+      },
+      {
+        "book": "phss",
+        "id": "phss:764",
+        "num": "764"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:630",
+        "num": "630"
       }
     ]
   },
@@ -13203,6 +16014,11 @@
         "book": "hfw",
         "id": "hfw:242",
         "num": "242"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:417",
+        "num": "417"
       }
     ]
   },
@@ -13220,7 +16036,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/09/01/when-the-sun-goes-down/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/09/01/when-the-sun-goes-down/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:639",
+        "num": "639"
+      }
+    ]
   },
   {
     "id": "ss:432",
@@ -13256,6 +16079,16 @@
         "book": "hfw",
         "id": "hfw:245",
         "num": "245"
+      },
+      {
+        "book": "phss",
+        "id": "phss:706",
+        "num": "706"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:584",
+        "num": "584"
       }
     ]
   },
@@ -13304,6 +16137,16 @@
         "book": "hfw",
         "id": "hfw:530",
         "num": "530"
+      },
+      {
+        "book": "phss",
+        "id": "phss:628",
+        "num": "628"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:328",
+        "num": "328"
       }
     ]
   },
@@ -13359,6 +16202,16 @@
         "book": "hfw",
         "id": "hfw:688",
         "num": "688"
+      },
+      {
+        "book": "phss",
+        "id": "phss:759",
+        "num": "759"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:424",
+        "num": "424"
       }
     ]
   },
@@ -13387,6 +16240,16 @@
         "book": "pftl",
         "id": "745",
         "num": "745"
+      },
+      {
+        "book": "phss",
+        "id": "phss:427",
+        "num": "427"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:425",
+        "num": "425"
       }
     ]
   },
@@ -13404,7 +16267,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/24/quotwe-are-going-down-the-valleyquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/24/quotwe-are-going-down-the-valleyquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:613",
+        "num": "613"
+      }
+    ]
   },
   {
     "id": "ss:439",
@@ -13445,6 +16315,11 @@
         "book": "pftl",
         "id": "775",
         "num": "775"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:205",
+        "num": "205"
       }
     ]
   },
@@ -13472,6 +16347,11 @@
         "book": "pftl",
         "id": "431",
         "num": "431"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:349",
+        "num": "349"
       }
     ]
   },
@@ -13504,6 +16384,16 @@
         "book": "hfw",
         "id": "hfw:514",
         "num": "514"
+      },
+      {
+        "book": "phss",
+        "id": "phss:761",
+        "num": "761"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:22",
+        "num": "22"
       }
     ]
   },
@@ -13537,6 +16427,16 @@
         "book": "sfp",
         "id": "sfp:485",
         "num": "485"
+      },
+      {
+        "book": "phss",
+        "id": "phss:671",
+        "num": "671"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:201",
+        "num": "201"
       }
     ]
   },
@@ -13575,6 +16475,16 @@
         "book": "hfw",
         "id": "hfw:208",
         "num": "208"
+      },
+      {
+        "book": "phss",
+        "id": "phss:754",
+        "num": "754"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:474",
+        "num": "474"
       }
     ]
   },
@@ -13612,6 +16522,16 @@
         "book": "hfw",
         "id": "hfw:227",
         "num": "227"
+      },
+      {
+        "book": "phss",
+        "id": "phss:749",
+        "num": "749"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:559",
+        "num": "559"
       }
     ]
   },
@@ -13645,7 +16565,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/27/quotthe-riches-of-lovequot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/27/quotthe-riches-of-lovequot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:551",
+        "num": "551"
+      }
+    ]
   },
   {
     "id": "ss:448",
@@ -13661,7 +16588,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/23/quotunsearchable-richesquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/23/quotunsearchable-richesquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:606",
+        "num": "606"
+      }
+    ]
   },
   {
     "id": "ss:449",
@@ -13713,6 +16647,16 @@
         "book": "hfw",
         "id": "hfw:210",
         "num": "210"
+      },
+      {
+        "book": "phss",
+        "id": "phss:457",
+        "num": "457"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:603",
+        "num": "603"
       }
     ]
   },
@@ -13751,6 +16695,16 @@
         "book": "hfw",
         "id": "hfw:641",
         "num": "641"
+      },
+      {
+        "book": "phss",
+        "id": "phss:627",
+        "num": "627"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:562",
+        "num": "562"
       }
     ]
   },
@@ -13789,6 +16743,11 @@
         "book": "hfw",
         "id": "hfw:638",
         "num": "638"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:651",
+        "num": "651"
       }
     ]
   },
@@ -13822,6 +16781,11 @@
         "book": "sfp",
         "id": "sfp:592",
         "num": "592"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:490",
+        "num": "490"
       }
     ]
   },
@@ -13861,6 +16825,16 @@
         "book": "hfw",
         "id": "hfw:474",
         "num": "474"
+      },
+      {
+        "book": "phss",
+        "id": "phss:447",
+        "num": "447"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:146",
+        "num": "146"
       }
     ]
   },
@@ -13898,6 +16872,16 @@
         "book": "hfw",
         "id": "hfw:662",
         "num": "662"
+      },
+      {
+        "book": "phss",
+        "id": "phss:702",
+        "num": "702"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:248",
+        "num": "248"
       }
     ]
   },
@@ -13945,6 +16929,16 @@
         "book": "hfw",
         "id": "hfw:218",
         "num": "218"
+      },
+      {
+        "book": "phss",
+        "id": "phss:765",
+        "num": "765"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:303",
+        "num": "303"
       }
     ]
   },
@@ -14000,6 +16994,16 @@
         "book": "hfw",
         "id": "hfw:574",
         "num": "574"
+      },
+      {
+        "book": "phss",
+        "id": "phss:687",
+        "num": "687"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:514",
+        "num": "514"
       }
     ]
   },
@@ -14027,6 +17031,11 @@
         "book": "pftl",
         "id": "307",
         "num": "307"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:309",
+        "num": "309"
       }
     ]
   },
@@ -14065,6 +17074,16 @@
         "book": "hfw",
         "id": "hfw:193",
         "num": "193"
+      },
+      {
+        "book": "phss",
+        "id": "phss:698",
+        "num": "698"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:198",
+        "num": "198"
       }
     ]
   },
@@ -14102,6 +17121,16 @@
         "book": "hfw",
         "id": "hfw:60",
         "num": "60"
+      },
+      {
+        "book": "phss",
+        "id": "phss:399",
+        "num": "399"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:315",
+        "num": "315"
       }
     ]
   },
@@ -14137,6 +17166,11 @@
         "book": "hfw",
         "id": "hfw:682",
         "num": "682"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:533",
+        "num": "533"
       }
     ]
   },
@@ -14190,6 +17224,16 @@
         "book": "hfw",
         "id": "hfw:418",
         "num": "418"
+      },
+      {
+        "book": "phss",
+        "id": "phss:471",
+        "num": "471"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:497",
+        "num": "497"
       }
     ]
   },
@@ -14218,6 +17262,11 @@
         "book": "pftl",
         "id": "135",
         "num": "135"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:101",
+        "num": "101"
       }
     ]
   },
@@ -14278,6 +17327,11 @@
         "book": "sfp",
         "id": "sfp:499",
         "num": "499"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:172",
+        "num": "172"
       }
     ]
   },
@@ -14399,6 +17453,11 @@
         "book": "sfp",
         "id": "sfp:753",
         "num": "753"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:119",
+        "num": "119"
       }
     ]
   },
@@ -14459,6 +17518,16 @@
         "book": "hfw",
         "id": "hfw:419",
         "num": "419"
+      },
+      {
+        "book": "phss",
+        "id": "phss:438",
+        "num": "438"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:582",
+        "num": "582"
       }
     ]
   },
@@ -14499,6 +17568,16 @@
         "book": "hfw",
         "id": "hfw:558",
         "num": "558"
+      },
+      {
+        "book": "phss",
+        "id": "phss:446",
+        "num": "446"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:498",
+        "num": "498"
       }
     ]
   },
@@ -14538,6 +17617,16 @@
         "book": "hfw",
         "id": "hfw:4",
         "num": "4"
+      },
+      {
+        "book": "phss",
+        "id": "phss:454",
+        "num": "454"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:43",
+        "num": "43"
       }
     ]
   },
@@ -14561,6 +17650,11 @@
         "book": "hfw",
         "id": "hfw:357",
         "num": "357"
+      },
+      {
+        "book": "phss",
+        "id": "phss:413",
+        "num": "413"
       }
     ]
   },
@@ -14593,6 +17687,11 @@
         "book": "hfw",
         "id": "hfw:432",
         "num": "432"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:223",
+        "num": "223"
       }
     ]
   },
@@ -14626,6 +17725,11 @@
         "book": "hfw",
         "id": "hfw:266",
         "num": "266"
+      },
+      {
+        "book": "phss",
+        "id": "phss:827",
+        "num": "827"
       }
     ]
   },
@@ -14659,6 +17763,11 @@
         "book": "hfw",
         "id": "hfw:582",
         "num": "582"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:273",
+        "num": "273"
       }
     ]
   },
@@ -14708,6 +17817,16 @@
         "book": "hfw",
         "id": "hfw:222",
         "num": "222"
+      },
+      {
+        "book": "phss",
+        "id": "phss:734",
+        "num": "734"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:1",
+        "num": "1"
       }
     ]
   },
@@ -14736,6 +17855,11 @@
         "book": "sfp",
         "id": "sfp:985",
         "num": "985"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:637",
+        "num": "637"
       }
     ]
   },
@@ -14776,6 +17900,16 @@
         "book": "hfw",
         "id": "hfw:466",
         "num": "466"
+      },
+      {
+        "book": "phss",
+        "id": "phss:376",
+        "num": "376"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:665",
+        "num": "665"
       }
     ]
   },
@@ -14872,6 +18006,11 @@
         "book": "hfw",
         "id": "hfw:417",
         "num": "417"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:729",
+        "num": "729"
       }
     ]
   },
@@ -14957,6 +18096,16 @@
         "book": "hfw",
         "id": "hfw:137",
         "num": "137"
+      },
+      {
+        "book": "phss",
+        "id": "phss:745",
+        "num": "745"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:452",
+        "num": "452"
       }
     ]
   },
@@ -14994,6 +18143,16 @@
         "book": "hfw",
         "id": "hfw:496",
         "num": "496"
+      },
+      {
+        "book": "phss",
+        "id": "phss:460",
+        "num": "460"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:614",
+        "num": "614"
       }
     ]
   },
@@ -15026,6 +18185,16 @@
         "book": "hfw",
         "id": "hfw:365",
         "num": "365"
+      },
+      {
+        "book": "phss",
+        "id": "phss:469",
+        "num": "469"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:523",
+        "num": "523"
       }
     ]
   },
@@ -15064,6 +18233,16 @@
         "book": "hfw",
         "id": "hfw:366",
         "num": "366"
+      },
+      {
+        "book": "phss",
+        "id": "phss:790",
+        "num": "790"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:439",
+        "num": "439"
       }
     ]
   },
@@ -15091,6 +18270,11 @@
         "book": "sfp",
         "id": "sfp:633",
         "num": "633"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:311",
+        "num": "311"
       }
     ]
   },
@@ -15125,6 +18309,16 @@
         "book": "hfw",
         "id": "hfw:279",
         "num": "279"
+      },
+      {
+        "book": "phss",
+        "id": "phss:386",
+        "num": "386"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:171",
+        "num": "171"
       }
     ]
   },
@@ -15179,6 +18373,16 @@
         "book": "hfw",
         "id": "hfw:500",
         "num": "500"
+      },
+      {
+        "book": "phss",
+        "id": "phss:280",
+        "num": "280"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:120",
+        "num": "120"
       }
     ]
   },
@@ -15195,7 +18399,14 @@
     "topics": [],
     "scriptures": [],
     "scan_urls": [],
-    "has_scan": false
+    "has_scan": false,
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:416",
+        "num": "416"
+      }
+    ]
   },
   {
     "id": "ss:503",
@@ -15243,6 +18454,16 @@
         "book": "sfp",
         "id": "sfp:13",
         "num": "13"
+      },
+      {
+        "book": "phss",
+        "id": "phss:135",
+        "num": "135"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:79",
+        "num": "79"
       }
     ]
   },
@@ -15276,7 +18497,19 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/05/16/quotscattering-precious-seedquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/05/16/quotscattering-precious-seedquot/",
+    "also_in": [
+      {
+        "book": "phss",
+        "id": "phss:782",
+        "num": "782"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:460",
+        "num": "460"
+      }
+    ]
   },
   {
     "id": "ss:507",
@@ -15313,6 +18546,16 @@
         "book": "hfw",
         "id": "hfw:85",
         "num": "85"
+      },
+      {
+        "book": "phss",
+        "id": "phss:783",
+        "num": "783"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:479",
+        "num": "479"
       }
     ]
   },
@@ -15399,6 +18642,11 @@
         "book": "hfw",
         "id": "hfw:404",
         "num": "404"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:156",
+        "num": "156"
       }
     ]
   },
@@ -15429,6 +18677,11 @@
         "book": "hfw",
         "id": "hfw:460",
         "num": "460"
+      },
+      {
+        "book": "phss",
+        "id": "phss:788",
+        "num": "788"
       }
     ]
   },
@@ -15483,6 +18736,16 @@
         "book": "hfw",
         "id": "hfw:41",
         "num": "41"
+      },
+      {
+        "book": "phss",
+        "id": "phss:116",
+        "num": "116"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:102",
+        "num": "102"
       }
     ]
   },
@@ -15532,6 +18795,16 @@
         "book": "sfp",
         "id": "sfp:917",
         "num": "917"
+      },
+      {
+        "book": "phss",
+        "id": "phss:479",
+        "num": "479"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:220",
+        "num": "220"
       }
     ]
   },
@@ -15638,6 +18911,16 @@
         "book": "hfw",
         "id": "hfw:273",
         "num": "273"
+      },
+      {
+        "book": "phss",
+        "id": "phss:530",
+        "num": "530"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:256",
+        "num": "256"
       }
     ]
   },
@@ -15677,6 +18960,16 @@
         "book": "hfw",
         "id": "hfw:422",
         "num": "422"
+      },
+      {
+        "book": "phss",
+        "id": "phss:777",
+        "num": "777"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:615",
+        "num": "615"
       }
     ]
   },
@@ -15726,7 +19019,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/06/29/too-late/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/06/29/too-late/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:695",
+        "num": "695"
+      }
+    ]
   },
   {
     "id": "ss:526",
@@ -15742,7 +19042,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2025/11/29/drifting-along/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2025/11/29/drifting-along/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:91",
+        "num": "91"
+      }
+    ]
   },
   {
     "id": "ss:527",
@@ -15779,6 +19086,16 @@
         "book": "hfw",
         "id": "hfw:237",
         "num": "237"
+      },
+      {
+        "book": "phss",
+        "id": "phss:798",
+        "num": "798"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:312",
+        "num": "312"
       }
     ]
   },
@@ -15816,6 +19133,16 @@
         "book": "hfw",
         "id": "hfw:520",
         "num": "520"
+      },
+      {
+        "book": "phss",
+        "id": "phss:785",
+        "num": "785"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:461",
+        "num": "461"
       }
     ]
   },
@@ -15848,6 +19175,16 @@
         "book": "sfp",
         "id": "sfp:880",
         "num": "880"
+      },
+      {
+        "book": "phss",
+        "id": "phss:787",
+        "num": "787"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:165",
+        "num": "165"
       }
     ]
   },
@@ -15893,7 +19230,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/11/23/quotnothing-betweenquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/11/23/quotnothing-betweenquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:372",
+        "num": "372"
+      }
+    ]
   },
   {
     "id": "ss:532",
@@ -15928,6 +19272,16 @@
         "book": "hfw",
         "id": "hfw:689",
         "num": "689"
+      },
+      {
+        "book": "phss",
+        "id": "phss:404",
+        "num": "404"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:346",
+        "num": "346"
       }
     ]
   },
@@ -15960,6 +19314,11 @@
         "book": "sfp",
         "id": "sfp:336",
         "num": "336"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:558",
+        "num": "558"
       }
     ]
   },
@@ -16036,6 +19395,16 @@
         "book": "hfw",
         "id": "hfw:383",
         "num": "383"
+      },
+      {
+        "book": "phss",
+        "id": "phss:461",
+        "num": "461"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:644",
+        "num": "644"
       }
     ]
   },
@@ -16077,6 +19446,16 @@
         "book": "hfw",
         "id": "hfw:83",
         "num": "83"
+      },
+      {
+        "book": "phss",
+        "id": "phss:411",
+        "num": "411"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:225",
+        "num": "225"
       }
     ]
   },
@@ -16094,7 +19473,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/17/quotthe-light-of-the-world-is-jesusquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/17/quotthe-light-of-the-world-is-jesusquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:527",
+        "num": "527"
+      }
+    ]
   },
   {
     "id": "ss:538",
@@ -16250,6 +19636,16 @@
         "book": "hfw",
         "id": "hfw:420",
         "num": "420"
+      },
+      {
+        "book": "phss",
+        "id": "phss:680",
+        "num": "680"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:405",
+        "num": "405"
       }
     ]
   },
@@ -16289,6 +19685,16 @@
         "book": "hfw",
         "id": "hfw:341",
         "num": "341"
+      },
+      {
+        "book": "phss",
+        "id": "phss:682",
+        "num": "682"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:228",
+        "num": "228"
       }
     ]
   },
@@ -16323,6 +19729,11 @@
         "book": "hfw",
         "id": "hfw:339",
         "num": "339"
+      },
+      {
+        "book": "phss",
+        "id": "phss:823",
+        "num": "823"
       }
     ]
   },
@@ -16376,6 +19787,16 @@
         "book": "hfw",
         "id": "hfw:427",
         "num": "427"
+      },
+      {
+        "book": "phss",
+        "id": "phss:477",
+        "num": "477"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:360",
+        "num": "360"
       }
     ]
   },
@@ -16410,6 +19831,16 @@
         "book": "hfw",
         "id": "hfw:524",
         "num": "524"
+      },
+      {
+        "book": "phss",
+        "id": "phss:582",
+        "num": "582"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:106",
+        "num": "106"
       }
     ]
   },
@@ -16442,6 +19873,16 @@
         "book": "hfw",
         "id": "hfw:416",
         "num": "416"
+      },
+      {
+        "book": "phss",
+        "id": "phss:626",
+        "num": "626"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:76",
+        "num": "76"
       }
     ]
   },
@@ -16516,6 +19957,16 @@
         "book": "hfw",
         "id": "hfw:421",
         "num": "421"
+      },
+      {
+        "book": "phss",
+        "id": "phss:414",
+        "num": "414"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:499",
+        "num": "499"
       }
     ]
   },
@@ -16549,6 +20000,11 @@
         "book": "sfp",
         "id": "sfp:654",
         "num": "654"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:87",
+        "num": "87"
       }
     ]
   },
@@ -16582,6 +20038,16 @@
         "book": "hfw",
         "id": "hfw:424",
         "num": "424"
+      },
+      {
+        "book": "phss",
+        "id": "phss:793",
+        "num": "793"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:88",
+        "num": "88"
       }
     ]
   },
@@ -16615,6 +20081,16 @@
         "book": "hfw",
         "id": "hfw:570",
         "num": "570"
+      },
+      {
+        "book": "phss",
+        "id": "phss:721",
+        "num": "721"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:27",
+        "num": "27"
       }
     ]
   },
@@ -16648,6 +20124,16 @@
         "book": "hfw",
         "id": "hfw:284",
         "num": "284"
+      },
+      {
+        "book": "phss",
+        "id": "phss:837",
+        "num": "837"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:714",
+        "num": "714"
       }
     ]
   },
@@ -16703,6 +20189,16 @@
         "book": "hfw",
         "id": "hfw:423",
         "num": "423"
+      },
+      {
+        "book": "phss",
+        "id": "phss:507",
+        "num": "507"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:587",
+        "num": "587"
       }
     ]
   },
@@ -16740,6 +20236,11 @@
         "book": "hfw",
         "id": "hfw:123",
         "num": "123"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:534",
+        "num": "534"
       }
     ]
   },
@@ -16781,6 +20282,16 @@
         "book": "hfw",
         "id": "hfw:626",
         "num": "626"
+      },
+      {
+        "book": "phss",
+        "id": "phss:409",
+        "num": "409"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:280",
+        "num": "280"
       }
     ]
   },
@@ -16834,6 +20345,16 @@
         "book": "hfw",
         "id": "hfw:544",
         "num": "544"
+      },
+      {
+        "book": "phss",
+        "id": "phss:786",
+        "num": "786"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:466",
+        "num": "466"
       }
     ]
   },
@@ -16861,6 +20382,11 @@
         "book": "pftl",
         "id": "721",
         "num": "721"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:607",
+        "num": "607"
       }
     ]
   },
@@ -16916,7 +20442,14 @@
     ],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/07/22/quotis-my-name-written-therequot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/07/22/quotis-my-name-written-therequot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:219",
+        "num": "219"
+      }
+    ]
   },
   {
     "id": "ss:568",
@@ -16992,6 +20525,16 @@
         "book": "pftl",
         "id": "84",
         "num": "84"
+      },
+      {
+        "book": "phss",
+        "id": "phss:778",
+        "num": "778"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:56",
+        "num": "56"
       }
     ]
   },
@@ -17030,6 +20573,16 @@
         "book": "hfw",
         "id": "hfw:209",
         "num": "209"
+      },
+      {
+        "book": "phss",
+        "id": "phss:776",
+        "num": "776"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:60",
+        "num": "60"
       }
     ]
   },
@@ -17104,6 +20657,16 @@
         "book": "hfw",
         "id": "hfw:426",
         "num": "426"
+      },
+      {
+        "book": "phss",
+        "id": "phss:296",
+        "num": "296"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:662",
+        "num": "662"
       }
     ]
   },
@@ -17167,6 +20730,11 @@
         "book": "hfw",
         "id": "hfw:429",
         "num": "429"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:494",
+        "num": "494"
       }
     ]
   },
@@ -17205,6 +20773,16 @@
         "book": "hfw",
         "id": "hfw:19",
         "num": "19"
+      },
+      {
+        "book": "phss",
+        "id": "phss:663",
+        "num": "663"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:168",
+        "num": "168"
       }
     ]
   },
@@ -17246,6 +20824,16 @@
         "book": "hfw",
         "id": "hfw:127",
         "num": "127"
+      },
+      {
+        "book": "phss",
+        "id": "phss:94",
+        "num": "94"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:580",
+        "num": "580"
       }
     ]
   },
@@ -17284,6 +20872,16 @@
         "book": "hfw",
         "id": "hfw:270",
         "num": "270"
+      },
+      {
+        "book": "phss",
+        "id": "phss:817",
+        "num": "817"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:126",
+        "num": "126"
       }
     ]
   },
@@ -17321,6 +20919,16 @@
         "book": "hfw",
         "id": "hfw:540",
         "num": "540"
+      },
+      {
+        "book": "phss",
+        "id": "phss:825",
+        "num": "825"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:69",
+        "num": "69"
       }
     ]
   },
@@ -17354,7 +20962,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/13/quotthe-heart-shall-reap-in-joyquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/06/13/quotthe-heart-shall-reap-in-joyquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:524",
+        "num": "524"
+      }
+    ]
   },
   {
     "id": "ss:583",
@@ -17495,6 +21110,16 @@
         "book": "hfw",
         "id": "hfw:115",
         "num": "115"
+      },
+      {
+        "book": "phss",
+        "id": "phss:669",
+        "num": "669"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:263",
+        "num": "263"
       }
     ]
   },
@@ -17532,6 +21157,16 @@
         "book": "hfw",
         "id": "hfw:487",
         "num": "487"
+      },
+      {
+        "book": "phss",
+        "id": "phss:617",
+        "num": "617"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:14",
+        "num": "14"
       }
     ]
   },
@@ -17559,6 +21194,11 @@
         "book": "pftl",
         "id": "85",
         "num": "85"
+      },
+      {
+        "book": "phss",
+        "id": "phss:617",
+        "num": "617"
       }
     ]
   },
@@ -17597,6 +21237,16 @@
         "book": "hfw",
         "id": "hfw:428",
         "num": "428"
+      },
+      {
+        "book": "phss",
+        "id": "phss:292",
+        "num": "292"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:386",
+        "num": "386"
       }
     ]
   },
@@ -17628,6 +21278,16 @@
         "book": "hfw",
         "id": "hfw:287",
         "num": "287"
+      },
+      {
+        "book": "phss",
+        "id": "phss:835",
+        "num": "835"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:696",
+        "num": "696"
       }
     ]
   },
@@ -17661,6 +21321,16 @@
         "book": "hfw",
         "id": "hfw:333",
         "num": "333"
+      },
+      {
+        "book": "phss",
+        "id": "phss:831",
+        "num": "831"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:715",
+        "num": "715"
       }
     ]
   },
@@ -17684,6 +21354,11 @@
         "book": "hfw",
         "id": "hfw:489",
         "num": "489"
+      },
+      {
+        "book": "phss",
+        "id": "phss:612",
+        "num": "612"
       }
     ]
   },
@@ -17717,6 +21392,16 @@
         "book": "hfw",
         "id": "hfw:278",
         "num": "278"
+      },
+      {
+        "book": "phss",
+        "id": "phss:822",
+        "num": "822"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:673",
+        "num": "673"
       }
     ]
   },
@@ -17740,6 +21425,11 @@
         "book": "hfw",
         "id": "hfw:329",
         "num": "329"
+      },
+      {
+        "book": "phss",
+        "id": "phss:820",
+        "num": "820"
       }
     ]
   },
@@ -17777,6 +21467,16 @@
         "book": "hfw",
         "id": "hfw:288",
         "num": "288"
+      },
+      {
+        "book": "phss",
+        "id": "phss:842",
+        "num": "842"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:685",
+        "num": "685"
       }
     ]
   },
@@ -17810,6 +21510,16 @@
         "book": "hfw",
         "id": "hfw:293",
         "num": "293"
+      },
+      {
+        "book": "phss",
+        "id": "phss:808",
+        "num": "808"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:668",
+        "num": "668"
       }
     ]
   },
@@ -17846,6 +21556,16 @@
         "book": "hfw",
         "id": "hfw:294",
         "num": "294"
+      },
+      {
+        "book": "phss",
+        "id": "phss:821",
+        "num": "821"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:143",
+        "num": "143"
       }
     ]
   },
@@ -17873,6 +21593,16 @@
         "book": "pftl",
         "id": "347",
         "num": "347"
+      },
+      {
+        "book": "phss",
+        "id": "phss:824",
+        "num": "824"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:278",
+        "num": "278"
       }
     ]
   },
@@ -17906,6 +21636,16 @@
         "book": "hfw",
         "id": "hfw:264",
         "num": "264"
+      },
+      {
+        "book": "phss",
+        "id": "phss:797",
+        "num": "797"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:719",
+        "num": "719"
       }
     ]
   },
@@ -17944,6 +21684,16 @@
         "book": "hfw",
         "id": "hfw:321",
         "num": "321"
+      },
+      {
+        "book": "phss",
+        "id": "phss:839",
+        "num": "839"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:689",
+        "num": "689"
       }
     ]
   },
@@ -17984,6 +21734,16 @@
         "book": "hfw",
         "id": "hfw:300",
         "num": "300"
+      },
+      {
+        "book": "phss",
+        "id": "phss:811",
+        "num": "811"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:677",
+        "num": "677"
       }
     ]
   },
@@ -18023,6 +21783,16 @@
         "book": "hfw",
         "id": "hfw:330",
         "num": "330"
+      },
+      {
+        "book": "phss",
+        "id": "phss:813",
+        "num": "813"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:681",
+        "num": "681"
       }
     ]
   },
@@ -18063,6 +21833,16 @@
         "book": "hfw",
         "id": "hfw:488",
         "num": "488"
+      },
+      {
+        "book": "phss",
+        "id": "phss:284",
+        "num": "284"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:289",
+        "num": "289"
       }
     ]
   },
@@ -18096,6 +21876,16 @@
         "book": "hfw",
         "id": "hfw:317",
         "num": "317"
+      },
+      {
+        "book": "phss",
+        "id": "phss:812",
+        "num": "812"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:671",
+        "num": "671"
       }
     ]
   },
@@ -18129,7 +21919,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/01/10/quotdon039t-you-want-to-be-readyquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/01/10/quotdon039t-you-want-to-be-readyquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:672",
+        "num": "672"
+      }
+    ]
   },
   {
     "id": "ss:610",
@@ -18165,6 +21962,16 @@
         "book": "hfw",
         "id": "hfw:346",
         "num": "346"
+      },
+      {
+        "book": "phss",
+        "id": "phss:633",
+        "num": "633"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:463",
+        "num": "463"
       }
     ]
   },
@@ -18204,6 +22011,16 @@
         "book": "hfw",
         "id": "hfw:313",
         "num": "313"
+      },
+      {
+        "book": "phss",
+        "id": "phss:801",
+        "num": "801"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:583",
+        "num": "583"
       }
     ]
   },
@@ -18240,6 +22057,16 @@
         "book": "hfw",
         "id": "hfw:303",
         "num": "303"
+      },
+      {
+        "book": "phss",
+        "id": "phss:806",
+        "num": "806"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:698",
+        "num": "698"
       }
     ]
   },
@@ -18282,6 +22109,16 @@
         "book": "hfw",
         "id": "hfw:307",
         "num": "307"
+      },
+      {
+        "book": "phss",
+        "id": "phss:814",
+        "num": "814"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:674",
+        "num": "674"
       }
     ]
   },
@@ -18350,6 +22187,16 @@
         "book": "hfw",
         "id": "hfw:338",
         "num": "338"
+      },
+      {
+        "book": "phss",
+        "id": "phss:800",
+        "num": "800"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:516",
+        "num": "516"
       }
     ]
   },
@@ -18387,6 +22234,16 @@
         "book": "hfw",
         "id": "hfw:305",
         "num": "305"
+      },
+      {
+        "book": "phss",
+        "id": "phss:816",
+        "num": "816"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:700",
+        "num": "700"
       }
     ]
   },
@@ -18436,6 +22293,11 @@
         "book": "sfp",
         "id": "sfp:946",
         "num": "946"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:684",
+        "num": "684"
       }
     ]
   },
@@ -18538,6 +22400,16 @@
         "book": "hfw",
         "id": "hfw:301",
         "num": "301"
+      },
+      {
+        "book": "phss",
+        "id": "phss:819",
+        "num": "819"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:572",
+        "num": "572"
       }
     ]
   },
@@ -18570,6 +22442,16 @@
         "book": "hfw",
         "id": "hfw:304",
         "num": "304"
+      },
+      {
+        "book": "phss",
+        "id": "phss:832",
+        "num": "832"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:706",
+        "num": "706"
       }
     ]
   },
@@ -18607,6 +22489,16 @@
         "book": "hfw",
         "id": "hfw:310",
         "num": "310"
+      },
+      {
+        "book": "phss",
+        "id": "phss:830",
+        "num": "830"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:707",
+        "num": "707"
       }
     ]
   },
@@ -18639,6 +22531,16 @@
         "book": "hfw",
         "id": "hfw:311",
         "num": "311"
+      },
+      {
+        "book": "phss",
+        "id": "phss:847",
+        "num": "847"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:709",
+        "num": "709"
       }
     ]
   },
@@ -18676,7 +22578,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/09/27/would-you-believe/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2020/09/27/would-you-believe/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:660",
+        "num": "660"
+      }
+    ]
   },
   {
     "id": "ss:628",
@@ -18707,6 +22616,16 @@
         "book": "hfw",
         "id": "hfw:312",
         "num": "312"
+      },
+      {
+        "book": "phss",
+        "id": "phss:845",
+        "num": "845"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:667",
+        "num": "667"
       }
     ]
   },
@@ -18744,6 +22663,16 @@
         "book": "hfw",
         "id": "hfw:315",
         "num": "315"
+      },
+      {
+        "book": "phss",
+        "id": "phss:805",
+        "num": "805"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:686",
+        "num": "686"
       }
     ]
   },
@@ -18801,6 +22730,16 @@
         "book": "hfw",
         "id": "hfw:316",
         "num": "316"
+      },
+      {
+        "book": "phss",
+        "id": "phss:287",
+        "num": "287"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:645",
+        "num": "645"
       }
     ]
   },
@@ -18818,7 +22757,14 @@
     "scriptures": [],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/18/quottime-enough-yetquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2009/07/18/quottime-enough-yetquot/",
+    "also_in": [
+      {
+        "book": "sotc",
+        "id": "sotc:699",
+        "num": "699"
+      }
+    ]
   },
   {
     "id": "ss:633",
@@ -18851,6 +22797,16 @@
         "book": "hfw",
         "id": "hfw:297",
         "num": "297"
+      },
+      {
+        "book": "phss",
+        "id": "phss:829",
+        "num": "829"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:690",
+        "num": "690"
       }
     ]
   },
@@ -18904,6 +22860,11 @@
         "book": "pftl",
         "id": "259",
         "num": "259"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:676",
+        "num": "676"
       }
     ]
   },
@@ -18941,6 +22902,16 @@
         "book": "hfw",
         "id": "hfw:319",
         "num": "319"
+      },
+      {
+        "book": "phss",
+        "id": "phss:844",
+        "num": "844"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:687",
+        "num": "687"
       }
     ]
   },
@@ -18975,6 +22946,16 @@
         "book": "hfw",
         "id": "hfw:320",
         "num": "320"
+      },
+      {
+        "book": "phss",
+        "id": "phss:508",
+        "num": "508"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:721",
+        "num": "721"
       }
     ]
   },
@@ -19029,6 +23010,16 @@
         "book": "hfw",
         "id": "hfw:334",
         "num": "334"
+      },
+      {
+        "book": "phss",
+        "id": "phss:652",
+        "num": "652"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:710",
+        "num": "710"
       }
     ]
   },
@@ -19067,6 +23058,16 @@
         "book": "hfw",
         "id": "hfw:274",
         "num": "274"
+      },
+      {
+        "book": "phss",
+        "id": "phss:849",
+        "num": "849"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:692",
+        "num": "692"
       }
     ]
   },
@@ -19132,6 +23133,16 @@
         "book": "hfw",
         "id": "hfw:325",
         "num": "325"
+      },
+      {
+        "book": "phss",
+        "id": "phss:818",
+        "num": "818"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:675",
+        "num": "675"
       }
     ]
   },
@@ -19167,6 +23178,16 @@
         "book": "hfw",
         "id": "hfw:295",
         "num": "295"
+      },
+      {
+        "book": "phss",
+        "id": "phss:843",
+        "num": "843"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:691",
+        "num": "691"
       }
     ]
   },
@@ -19203,6 +23224,16 @@
         "book": "hfw",
         "id": "hfw:326",
         "num": "326"
+      },
+      {
+        "book": "phss",
+        "id": "phss:505",
+        "num": "505"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:702",
+        "num": "702"
       }
     ]
   },
@@ -19241,6 +23272,11 @@
         "book": "sfp",
         "id": "sfp:959",
         "num": "959"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:298",
+        "num": "298"
       }
     ]
   },
@@ -19275,6 +23311,16 @@
         "book": "hfw",
         "id": "hfw:348",
         "num": "348"
+      },
+      {
+        "book": "phss",
+        "id": "phss:810",
+        "num": "810"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:21",
+        "num": "21"
       }
     ]
   },
@@ -19308,6 +23354,11 @@
         "book": "hfw",
         "id": "hfw:666",
         "num": "666"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:158",
+        "num": "158"
       }
     ]
   },
@@ -19349,6 +23400,16 @@
         "book": "hfw",
         "id": "hfw:340",
         "num": "340"
+      },
+      {
+        "book": "phss",
+        "id": "phss:235",
+        "num": "235"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:159",
+        "num": "159"
       }
     ]
   },
@@ -19377,6 +23438,11 @@
         "book": "hfw",
         "id": "hfw:686",
         "num": "686"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:456",
+        "num": "456"
       }
     ]
   },
@@ -19415,7 +23481,19 @@
     ],
     "scan_urls": [],
     "has_scan": false,
-    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/06/25/quothow-sweet-how-heavenly-is-the-sightquot/"
+    "hymnstudies_url": "https://hymnstudiesblog.wordpress.com/2008/06/25/quothow-sweet-how-heavenly-is-the-sightquot/",
+    "also_in": [
+      {
+        "book": "phss",
+        "id": "phss:334",
+        "num": "334"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:195",
+        "num": "195"
+      }
+    ]
   },
   {
     "id": "ss:653",
@@ -19447,6 +23525,16 @@
         "book": "hfw",
         "id": "hfw:683",
         "num": "683"
+      },
+      {
+        "book": "phss",
+        "id": "phss:597",
+        "num": "597"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:472",
+        "num": "472"
       }
     ]
   },
@@ -19485,6 +23573,16 @@
         "book": "hfw",
         "id": "hfw:74",
         "num": "74"
+      },
+      {
+        "book": "phss",
+        "id": "phss:308",
+        "num": "308"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:19",
+        "num": "19"
       }
     ]
   },
@@ -19523,6 +23621,16 @@
         "book": "hfw",
         "id": "hfw:512",
         "num": "512"
+      },
+      {
+        "book": "phss",
+        "id": "phss:363",
+        "num": "363"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:127",
+        "num": "127"
       }
     ]
   },
@@ -19564,6 +23672,16 @@
         "book": "hfw",
         "id": "hfw:302",
         "num": "302"
+      },
+      {
+        "book": "phss",
+        "id": "phss:337",
+        "num": "337"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:46",
+        "num": "46"
       }
     ]
   },
@@ -19608,6 +23726,16 @@
         "book": "hfw",
         "id": "hfw:462",
         "num": "462"
+      },
+      {
+        "book": "phss",
+        "id": "phss:379",
+        "num": "379"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:31",
+        "num": "31"
       }
     ]
   },
@@ -19643,6 +23771,16 @@
         "book": "hfw",
         "id": "hfw:131",
         "num": "131"
+      },
+      {
+        "book": "phss",
+        "id": "phss:545",
+        "num": "545"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:279",
+        "num": "279"
       }
     ]
   },
@@ -19681,6 +23819,16 @@
         "book": "hfw",
         "id": "hfw:122",
         "num": "122"
+      },
+      {
+        "book": "phss",
+        "id": "phss:322",
+        "num": "322"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:377",
+        "num": "377"
       }
     ]
   },
@@ -19717,6 +23865,16 @@
         "book": "hfw",
         "id": "hfw:84",
         "num": "84"
+      },
+      {
+        "book": "phss",
+        "id": "phss:323",
+        "num": "323"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:541",
+        "num": "541"
       }
     ]
   },
@@ -19755,6 +23913,16 @@
         "book": "hfw",
         "id": "hfw:430",
         "num": "430"
+      },
+      {
+        "book": "phss",
+        "id": "phss:329",
+        "num": "329"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:500",
+        "num": "500"
       }
     ]
   },
@@ -19824,6 +23992,16 @@
         "book": "hfw",
         "id": "hfw:48",
         "num": "48"
+      },
+      {
+        "book": "phss",
+        "id": "phss:722",
+        "num": "722"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:414",
+        "num": "414"
       }
     ]
   },
@@ -19854,6 +24032,11 @@
         "book": "hfw",
         "id": "hfw:678",
         "num": "678"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:239",
+        "num": "239"
       }
     ]
   },
@@ -19892,6 +24075,11 @@
         "book": "hfw",
         "id": "hfw:386",
         "num": "386"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:342",
+        "num": "342"
       }
     ]
   },
@@ -19926,6 +24114,16 @@
         "book": "hfw",
         "id": "hfw:377",
         "num": "377"
+      },
+      {
+        "book": "phss",
+        "id": "phss:501",
+        "num": "501"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:75",
+        "num": "75"
       }
     ]
   },
@@ -19965,6 +24163,16 @@
         "book": "hfw",
         "id": "hfw:9",
         "num": "9"
+      },
+      {
+        "book": "phss",
+        "id": "phss:85",
+        "num": "85"
+      },
+      {
+        "book": "sotc",
+        "id": "sotc:728b",
+        "num": "728b"
       }
     ]
   }
