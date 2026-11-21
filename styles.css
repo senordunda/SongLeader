@@ -2181,13 +2181,19 @@ body {
 }
 
 .btn-quick-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--border-strong);
   background: var(--bg-surface);
   color: var(--ink-primary);
   border-radius: var(--radius-sm);
+  min-height: 30px;
   padding: 5px 10px;
+  font-family: inherit;
   font-size: 0.79rem;
   font-weight: 600;
+  line-height: 1.2;
   cursor: pointer;
 }
 
@@ -3386,8 +3392,6 @@ html[data-readability="large"] #fsZoomResetBtn {
 }
 
 .btn-quick-link {
-  display: inline-flex;
-  align-items: center;
   text-decoration: none;
   color: var(--accent);
 }
