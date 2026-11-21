@@ -549,6 +549,7 @@
     detailFirstLine: document.getElementById("detailFirstLine"),
     detailAddSetlistBtn: document.getElementById("detailAddSetlistBtn"),
     detailMarkSungBtn: document.getElementById("detailMarkSungBtn"),
+    detailListenBtn: document.getElementById("detailListenBtn"),
     detailHymnStudyLink: document.getElementById("detailHymnStudyLink"),
     detailLastSungBadge: document.getElementById("detailLastSungBadge"),
 
@@ -656,6 +657,12 @@
     elementPickerModal: document.getElementById("elementPickerModal"),
     closeElementPickerBtn: document.getElementById("closeElementPickerBtn"),
     elementPickerList: document.getElementById("elementPickerList"),
+    listenModal: document.getElementById("listenModal"),
+    listenModalTitle: document.getElementById("listenModalTitle"),
+    closeListenModalBtn: document.getElementById("closeListenModalBtn"),
+    doneListenModalBtn: document.getElementById("doneListenModalBtn"),
+    listenVideoFrame: document.getElementById("listenVideoFrame"),
+    listenExternalLink: document.getElementById("listenExternalLink"),
     appToast: document.getElementById("appToast"),
   };
 
@@ -1080,6 +1087,33 @@
       return `https://www.bible.com/search/bible?q=${encodeURIComponent(ref)}`;
     }
     return `https://www.bible.com/bible/${cfg.versionId}/${bookCode}.${chapter}${verses}.${ver}`;
+  }
+
+  function extractYouTubeId(url) {
+    if (!url) return "";
+    const m = String(url).match(/(?:[?&]v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : "";
+  }
+
+  function openListenModal(hymn) {
+    if (!hymn || !hymn.youtube_url || !el.listenModal) return;
+    const vid = extractYouTubeId(hymn.youtube_url);
+    if (!vid) {
+      window.open(hymn.youtube_url, "_blank", "noopener,noreferrer");
+      return;
+    }
+    pitchPipe.stopSustained();
+    pitchPipe.stopArpeggio();
+    el.listenModalTitle.textContent = `#${hymn.number_str} · ${hymn.title}`;
+    el.listenExternalLink.href = hymn.youtube_url;
+    el.listenVideoFrame.src = `https://www.youtube-nocookie.com/embed/${vid}?rel=0`;
+    el.listenModal.classList.remove("hidden");
+  }
+
+  function closeListenModal() {
+    if (!el.listenModal) return;
+    el.listenModal.classList.add("hidden");
+    if (el.listenVideoFrame) el.listenVideoFrame.src = "";
   }
 
   function closeScriptureModal() {
@@ -3187,6 +3221,10 @@ Add it to this setlist anyway?`
     el.detailKeyBadge.textContent = baseKeyStr ? formatKeyBadge(baseKeyStr) : "No Key";
     el.detailHymnaryLink.href = hymn.hymnary_url || "#";
 
+    if (el.detailListenBtn) {
+      el.detailListenBtn.classList.toggle("hidden", !hymn.youtube_url);
+    }
+
     if (el.detailHymnStudyLink) {
       if (hymn.hymnstudies_url) {
         el.detailHymnStudyLink.href = hymn.hymnstudies_url;
@@ -4115,6 +4153,21 @@ Add it to this setlist anyway?`
       if (state.selectedId) openMarkSungModal(state.selectedId);
     });
 
+    if (el.detailListenBtn) {
+      el.detailListenBtn.addEventListener("click", () => {
+        if (!state.selectedId) return;
+        const h = state.hymnMap.get(state.selectedId);
+        if (h && h.youtube_url) openListenModal(h);
+      });
+    }
+    if (el.closeListenModalBtn) el.closeListenModalBtn.addEventListener("click", closeListenModal);
+    if (el.doneListenModalBtn) el.doneListenModalBtn.addEventListener("click", closeListenModal);
+    if (el.listenModal) {
+      el.listenModal.addEventListener("click", (e) => {
+        if (e.target === el.listenModal) closeListenModal();
+      });
+    }
+
     // Add to Setlist Modal
     el.targetSetlistSelect.addEventListener("change", () => {
       el.inlineNewSetlistFields.classList.toggle("hidden", el.targetSetlistSelect.value !== "__new__");
@@ -4492,6 +4545,7 @@ Add it to this setlist anyway?`
         else if (!el.songPickerModal.classList.contains("hidden")) closeSongPicker();
         else if (!el.markSungModal.classList.contains("hidden")) closeMarkSungModal();
         else if (el.elementPickerModal && !el.elementPickerModal.classList.contains("hidden")) closeElementPickerModal();
+        else if (el.listenModal && !el.listenModal.classList.contains("hidden")) closeListenModal();
         else if (state.isFullscreen) closeFullscreen();
       }
     });
@@ -4622,6 +4676,11 @@ Add it to this setlist anyway?`
       }
       if (el.elementPickerModal && !el.elementPickerModal.classList.contains("hidden")) {
         closeElementPickerModal();
+        armBackGuard();
+        return;
+      }
+      if (el.listenModal && !el.listenModal.classList.contains("hidden")) {
+        closeListenModal();
         armBackGuard();
         return;
       }
