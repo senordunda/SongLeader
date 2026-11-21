@@ -28,22 +28,23 @@
     ENABLED_HYMNALS: "pftl_enabled_hymnals_v1",
     MANUAL_KEYS: "pftl_manual_keys_v1",
     START_NOTES: "pftl_start_notes_v1",
+    START_NOTE_DISPLAY: "pftl_start_note_display_v1",
     WAKE_LOCK: "pftl_wake_lock_v1",
     ONBOARDED: "pftl_onboarded_v1",
   };
 
   const START_NOTE_DEFS = {
-    "low-5": { label: "Sol,", majorOffset: -5, minorOffset: -5 },
-    "low-6": { label: "La,",  majorOffset: -3, minorOffset: -4 },
-    "low-7": { label: "Ti,",  majorOffset: -1, minorOffset: -2 },
-    "1":     { label: "Do",   majorOffset: 0,  minorOffset: 0 },
-    "2":     { label: "Re",   majorOffset: 2,  minorOffset: 2 },
-    "3":     { label: "Mi",   majorOffset: 4,  minorOffset: 3 },
-    "4":     { label: "Fa",   majorOffset: 5,  minorOffset: 5 },
-    "5":     { label: "Sol",  majorOffset: 7,  minorOffset: 7 },
-    "6":     { label: "La",   majorOffset: 9,  minorOffset: 8 },
-    "7":     { label: "Ti",   majorOffset: 11, minorOffset: 10 },
-    "8":     { label: "Do'",  majorOffset: 12, minorOffset: 12 },
+    "low-5": { label: "Sol,", numLabel: "5,", majorOffset: -5, minorOffset: -5 },
+    "low-6": { label: "La,",  numLabel: "6,", majorOffset: -3, minorOffset: -4 },
+    "low-7": { label: "Ti,",  numLabel: "7,", majorOffset: -1, minorOffset: -2 },
+    "1":     { label: "Do",   numLabel: "1",  majorOffset: 0,  minorOffset: 0 },
+    "2":     { label: "Re",   numLabel: "2",  majorOffset: 2,  minorOffset: 2 },
+    "3":     { label: "Mi",   numLabel: "3",  majorOffset: 4,  minorOffset: 3 },
+    "4":     { label: "Fa",   numLabel: "4",  majorOffset: 5,  minorOffset: 5 },
+    "5":     { label: "Sol",  numLabel: "5",  majorOffset: 7,  minorOffset: 7 },
+    "6":     { label: "La",   numLabel: "6",  majorOffset: 9,  minorOffset: 8 },
+    "7":     { label: "Ti",   numLabel: "7",  majorOffset: 11, minorOffset: 10 },
+    "8":     { label: "Do'",  numLabel: "8",  majorOffset: 12, minorOffset: 12 },
   };
 
   const BIBLE_BOOK_ORDER = [
@@ -349,6 +350,7 @@
     wakeLockSentinel: null,
     bibleVersion: normalizeBibleVersion(localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "KJV"),
     readability: localStorage.getItem(STORAGE_KEYS.READABILITY) === "large" ? "large" : "small",
+    startNoteDisplay: localStorage.getItem(STORAGE_KEYS.START_NOTE_DISPLAY) === "numbers" ? "numbers" : "solfege",
     activeTab: "hymnal",
     selectedId: null,
 
@@ -453,6 +455,7 @@
     darkModeToggle: document.getElementById("darkModeToggle"),
     wakeLockToggle: document.getElementById("wakeLockToggle"),
     readabilitySelect: document.getElementById("readabilitySelect"),
+    startNoteDisplaySelect: document.getElementById("startNoteDisplaySelect"),
     bibleVersionSelect: document.getElementById("bibleVersionSelect"),
     showSupplementRow: document.getElementById("showSupplementRow"),
     showSupplementToggle: document.getElementById("showSupplementToggle"),
@@ -2964,6 +2967,7 @@ Add it to this setlist anyway?`
         transpositions: state.transpositions,
         manualKeys: state.manualKeys,
         startNotes: state.startNotes,
+        startNoteDisplay: state.startNoteDisplay,
         keepAwake: state.keepAwake,
         setlists: state.setlists,
         history: state.history,
@@ -3054,6 +3058,11 @@ Add it to this setlist anyway?`
           state.readability = d.readability;
           localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
           applyReadability();
+        }
+        if (d.startNoteDisplay === "numbers" || d.startNoteDisplay === "solfege") {
+          state.startNoteDisplay = d.startNoteDisplay;
+          if (el.startNoteDisplaySelect) el.startNoteDisplaySelect.value = state.startNoteDisplay;
+          localStorage.setItem(STORAGE_KEYS.START_NOTE_DISPLAY, state.startNoteDisplay);
         }
         if (typeof d.bibleVersion === "string" && d.bibleVersion.trim()) {
           state.bibleVersion = normalizeBibleVersion(d.bibleVersion);
@@ -3193,7 +3202,8 @@ Add it to this setlist anyway?`
     [el.startNoteBtn, el.fsStartNoteBtn].forEach((btn) => {
       if (!btn) return;
       if (snDef) {
-        btn.textContent = `♪ ${snDef.label}`;
+        const snLabel = state.startNoteDisplay === "numbers" ? snDef.numLabel : snDef.label;
+        btn.textContent = `♪ ${snLabel}`;
         btn.classList.remove("hidden");
       } else {
         btn.classList.add("hidden");
@@ -3636,6 +3646,17 @@ Add it to this setlist anyway?`
         applyCenteredZoom(el.sheetViewport, el.sheetPages, el.zoomResetBtn, state.zoomLevel, false);
       }
     });
+
+    if (el.startNoteDisplaySelect) {
+      el.startNoteDisplaySelect.value = state.startNoteDisplay;
+      el.startNoteDisplaySelect.addEventListener("change", () => {
+        state.startNoteDisplay = el.startNoteDisplaySelect.value === "numbers" ? "numbers" : "solfege";
+        try {
+          localStorage.setItem(STORAGE_KEYS.START_NOTE_DISPLAY, state.startNoteDisplay);
+        } catch (_) {}
+        updatePitchUI();
+      });
+    }
 
     el.bibleVersionSelect.value = state.bibleVersion;
     el.bibleVersionSelect.addEventListener("change", () => {
