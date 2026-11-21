@@ -3370,3 +3370,17 @@ html[data-readability="large"] .scripture-modal-body {
   font-size: 1.1rem;
   line-height: 1.68;
 }
+
+/* Constant width for zoom reset ("Fit" / "115%") buttons to prevent layout shift */
+#zoomResetBtn,
+#fsZoomResetBtn {
+  width: 52px;
+  padding: 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+html[data-readability="large"] #zoomResetBtn,
+html[data-readability="large"] #fsZoomResetBtn {
+  width: 58px;
+  padding: 0 4px;
+}
