@@ -283,7 +283,7 @@
     activeCustomTag: "",
     showSupplement: localStorage.getItem(STORAGE_KEYS.SHOW_SUPPLEMENT) === "true",
     darkMode: localStorage.getItem(STORAGE_KEYS.DARK_MODE) === "true",
-    bibleVersion: normalizeBibleVersion(localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "NKJV"),
+    bibleVersion: normalizeBibleVersion(localStorage.getItem(STORAGE_KEYS.BIBLE_VERSION) || "KJV"),
     readability: localStorage.getItem(STORAGE_KEYS.READABILITY) === "large" ? "large" : "small",
     activeTab: "hymnal",
     selectedId: null,
@@ -532,9 +532,9 @@
   // Helpers & Date Formatting
   // =========================================================================
   function normalizeBibleVersion(ver) {
-    const v = String(ver || "NKJV").trim().toUpperCase();
+    const v = String(ver || "KJV").trim().toUpperCase();
     if (v === "NASV") return "NASB";
-    return Object.prototype.hasOwnProperty.call(BIBLE_TRANSLATIONS, v) ? v : "NKJV";
+    return Object.prototype.hasOwnProperty.call(BIBLE_TRANSLATIONS, v) ? v : "KJV";
   }
 
   function loadJSON(key, fallback) {
@@ -897,7 +897,7 @@
   function buildBibleComUrl(scriptureRef, versionKey = state.bibleVersion) {
     const ref = String(scriptureRef || "").trim();
     const ver = normalizeBibleVersion(versionKey);
-    const cfg = BIBLE_TRANSLATIONS[ver] || BIBLE_TRANSLATIONS.NKJV;
+    const cfg = BIBLE_TRANSLATIONS[ver] || BIBLE_TRANSLATIONS.KJV;
     const match = ref.match(/^([1-3]?\s*[a-zA-Z.\s]+?)\s+(\d+)(?::([\d\-,\s]+))?$/);
     if (!match) {
       return `https://www.bible.com/search/bible?q=${encodeURIComponent(ref)}`;
@@ -2516,7 +2516,7 @@ Add it to this setlist anyway?`
 
     if (hymn.scriptures.length > 0) {
       el.scripturesGroup.classList.remove("hidden");
-      const verCfg = BIBLE_TRANSLATIONS[normalizeBibleVersion(state.bibleVersion)] || BIBLE_TRANSLATIONS.NKJV;
+      const verCfg = BIBLE_TRANSLATIONS[normalizeBibleVersion(state.bibleVersion)] || BIBLE_TRANSLATIONS.KJV;
       const isInline = verCfg.mode === "inline";
 
       hymn.scriptures.forEach((s) => {
