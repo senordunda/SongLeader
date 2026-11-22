@@ -3104,7 +3104,7 @@ Add it to this setlist anyway?`
     el.dontSingBannerReason.textContent =
       isDS && dsEntry.reason ? ` — ${dsEntry.reason}` : "";
 
-    if (el.startNoteSelect) el.startNoteSelect.value = state.startNotes[hymn.id] || "";
+    if (el.startNoteSelect) el.startNoteSelect.value = state.startNotes[hymn.id] || hymn.start_note || "";
     el.songNotesInput.value = state.notes[hymn.id] || "";
 
     el.detailCustomTags.innerHTML = "";
@@ -4495,7 +4495,8 @@ Add it to this setlist anyway?`
 
     const triggerStartNote = (btn) => {
       if (!state.selectedId) return;
-      const snKey = state.startNotes[state.selectedId];
+      const currentHymn = state.hymnMap.get(state.selectedId);
+      const snKey = state.startNotes[state.selectedId] || (currentHymn && currentHymn.start_note) || "";
       const def = START_NOTE_DEFS[snKey];
       if (!def) return;
       const info = getActivePitchInfo();
