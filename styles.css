@@ -4068,3 +4068,106 @@ html[data-theme="dark"] .btn-quick-sung {
   height: 100%;
   border: none;
 }
+
+/* ==========================================================================
+   Song Page Icon Actions, Bottom Resources, External Link Icons & About Contact
+   ========================================================================== */
+.about-contact {
+  margin-top: 8px !important;
+}
+
+.about-email-link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.ext-link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ext-link-icon {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Borderless Icon-Only + Setlist & Mark Sung Buttons */
+.btn-icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-icon-action:active {
+  background: var(--bg-subtle);
+}
+
+.btn-icon-setlist {
+  color: var(--accent);
+}
+
+html[data-theme="dark"] .btn-icon-setlist {
+  color: #E26D7C;
+}
+
+/* Flat Rounded-Square Green Checkmark (Light & Dark inverted versions) */
+.btn-icon-sung .sung-box {
+  fill: #2A6B42;
+}
+
+.btn-icon-sung .sung-check {
+  stroke: #FFFFFF;
+}
+
+html[data-theme="dark"] .btn-icon-sung .sung-box {
+  fill: #78C693;
+}
+
+html[data-theme="dark"] .btn-icon-sung .sung-check {
+  stroke: #161413;
+}
+
+html[data-readability="large"] .btn-icon-action {
+  width: 40px;
+  height: 40px;
+}
+
+html[data-readability="large"] .btn-icon-action svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Bottom Listen on YouTube & Hymn Studies Blog Row */
+.song-bottom-resources {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.song-bottom-resources .btn-quick-action {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+html[data-readability="large"] .song-bottom-resources .btn-quick-action {
+  font-size: 0.9rem;
+}
+
+.scripture-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+}

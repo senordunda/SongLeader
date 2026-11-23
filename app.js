@@ -551,6 +551,7 @@
     detailMarkSungBtn: document.getElementById("detailMarkSungBtn"),
     detailListenBtn: document.getElementById("detailListenBtn"),
     detailHymnStudyLink: document.getElementById("detailHymnStudyLink"),
+    songResourcesGroup: document.getElementById("songResourcesGroup"),
     detailLastSungBadge: document.getElementById("detailLastSungBadge"),
 
     sheetSection: document.getElementById("sheetSection"),
@@ -3232,6 +3233,10 @@ Add it to this setlist anyway?`
       }
     }
 
+    if (el.songResourcesGroup) {
+             el.songResourcesGroup.classList.toggle("hidden", !hymn.youtube_url && !hymn.hymnstudies_url);
+           }
+
     el.supplementBanner.classList.toggle("hidden", !isSupplement(hymn));
 
     el.detailTitle.textContent = hymn.title;
@@ -3482,7 +3487,7 @@ Add it to this setlist anyway?`
           const arr = document.createElement("span");
           arr.className = "scripture-link-arrow";
           arr.setAttribute("aria-hidden", "true");
-          arr.textContent = "↗";
+          arr.innerHTML = '<svg class="ext-link-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
           link.appendChild(txt);
           link.appendChild(arr);
@@ -3770,7 +3775,8 @@ Add it to this setlist anyway?`
       btn.classList.toggle("active", val === info.shift);
     });
 
-    const snKey = state.selectedId ? (state.startNotes[state.selectedId] || "") : "";
+    const currentHymn = state.selectedId ? state.hymnMap.get(state.selectedId) : null;
+    const snKey = state.selectedId ? (state.startNotes[state.selectedId] || (currentHymn && currentHymn.start_note) || "") : "";
     const snDef = START_NOTE_DEFS[snKey];
     [el.startNoteBtn, el.fsStartNoteBtn].forEach((btn) => {
       if (!btn) return;
