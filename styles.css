@@ -4171,3 +4171,115 @@ html[data-readability="large"] .song-bottom-resources .btn-quick-action {
   align-items: center;
   opacity: 0.85;
 }
+
+/* ==========================================================================
+   Header Centering, High-Res / Full Swap, Larger Icons, & Single-Line Links
+   ========================================================================== */
+
+/* Keep < #450 > centered and [Key] [☆] right-aligned on both mobile & desktop */
+.detail-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.detail-header .btn-back {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.detail-header-title {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.detail-header-actions {
+  grid-column: 3;
+  justify-self: end;
+}
+
+/* Swap High-Res (neutral) and Full (red accent) button color schemes */
+.btn-highres {
+  border-color: var(--ink-secondary);
+  color: var(--ink-primary);
+}
+
+.btn-highres.loaded {
+  background: var(--bg-subtle);
+  color: var(--ink-secondary);
+}
+
+.btn-fullscreen {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Larger Add-to-Setlist & Mark-Sung icons with extra horizontal spacing, no extra vertical bulk */
+.song-title-block {
+  margin-bottom: 6px;
+}
+
+.song-quick-actions {
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.btn-icon-action {
+  width: auto;
+  height: 32px;
+  padding: 0 10px;
+}
+
+.btn-icon-setlist svg {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-icon-sung svg {
+  width: 26px;
+  height: 26px;
+}
+
+html[data-readability="large"] .btn-icon-action {
+  width: auto;
+  height: 36px;
+  padding: 0 12px;
+}
+
+html[data-readability="large"] .btn-icon-setlist svg {
+  width: 31px;
+  height: 31px;
+}
+
+html[data-readability="large"] .btn-icon-sung svg {
+  width: 29px;
+  height: 29px;
+}
+
+/* Bottom Resource Buttons (fit 3 on 1 line on mobile in standard readability) */
+.song-bottom-resources {
+  gap: 5px;
+}
+
+.song-bottom-resources .btn-quick-action {
+  padding: 5px 8px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.song-bottom-resources .btn-quick-link {
+  color: #000000;
+}
+
+html[data-theme="dark"] .song-bottom-resources .btn-quick-link {
+  color: #FFFFFF;
+}
+
+html[data-readability="large"] .song-bottom-resources {
+  gap: 8px;
+}
+
+html[data-readability="large"] .song-bottom-resources .btn-quick-action {
+  padding: 7px 12px;
+  font-size: 0.88rem;
+}

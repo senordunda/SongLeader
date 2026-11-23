@@ -3219,6 +3219,16 @@ Add it to this setlist anyway?`
     el.detailKeyBadge.textContent = baseKeyStr ? formatKeyBadge(baseKeyStr) : "No Key";
     el.detailHymnaryLink.href = hymn.hymnary_url || "#";
 
+    if (el.detailHymnaryLink) {
+      if (hymn.hymnary_url) {
+        el.detailHymnaryLink.href = hymn.hymnary_url;
+        el.detailHymnaryLink.classList.remove("hidden");
+      } else {
+        el.detailHymnaryLink.href = "#";
+        el.detailHymnaryLink.classList.add("hidden");
+      }
+    }
+
     if (el.detailListenBtn) {
       el.detailListenBtn.classList.toggle("hidden", !hymn.youtube_url);
     }
@@ -3234,8 +3244,8 @@ Add it to this setlist anyway?`
     }
 
     if (el.songResourcesGroup) {
-             el.songResourcesGroup.classList.toggle("hidden", !hymn.youtube_url && !hymn.hymnstudies_url);
-           }
+      el.songResourcesGroup.classList.toggle("hidden", !hymn.youtube_url && !hymn.hymnstudies_url && !hymn.hymnary_url);
+    }
 
     el.supplementBanner.classList.toggle("hidden", !isSupplement(hymn));
 

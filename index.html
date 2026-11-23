@@ -515,21 +515,13 @@
             <div class="detail-header-title">
               <button type="button" id="prevHymnBtn" class="btn-hymn-nav" aria-label="Previous hymn by number" title="Previous hymn (&lt;)">&lsaquo;</button>
               <span id="detailBookBadge" class="book-badge hidden">PFTL</span><span id="detailNumber" class="detail-num">#009</span>
-              <span id="detailKeyBadge" class="detail-key">D</span>
               <button type="button" id="nextHymnBtn" class="btn-hymn-nav" aria-label="Next hymn by number" title="Next hymn (&gt;)">&rsaquo;</button>
             </div>
             <div class="detail-header-actions">
+              <span id="detailKeyBadge" class="detail-key">D</span>
               <button type="button" id="detailFavBtn" class="btn-fav-header" aria-pressed="false" title="Toggle Favorite">
                 ☆
               </button>
-              <a id="detailHymnaryLink" class="btn-text-link ext-link-inline" href="#" target="_blank" rel="noopener noreferrer">
-                <span>Hymnary</span>
-                <svg class="ext-link-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                  <polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                  <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
             </div>
           </div>
 
@@ -638,26 +630,6 @@
 
             <!-- Personal Organization Section -->
             <div class="personal-section">
-              <div class="meta-group start-note-group">
-                <div class="start-note-row">
-                  <label for="startNoteSelect" class="meta-heading" style="margin:0;">Starting Melody Note</label>
-                  <select id="startNoteSelect" class="form-select form-select-sm start-note-select">
-                    <option value="">— (None)</option>
-                    <option value="low-5">Low Sol (5,)</option>
-                    <option value="low-6">Low La (6,)</option>
-                    <option value="low-7">Low Ti (7,)</option>
-                    <option value="1">Do (1)</option>
-                    <option value="2">Re (2)</option>
-                    <option value="3">Mi (3)</option>
-                    <option value="4">Fa (4)</option>
-                    <option value="5">Sol (5)</option>
-                    <option value="6">La (6)</option>
-                    <option value="7">Ti (7)</option>
-                    <option value="8">High Do (8)</option>
-                  </select>
-                </div>
-              </div>
-
               <div class="meta-group">
                 <h3 class="meta-heading">Custom Tags</h3>
                 <div id="detailCustomTags" class="meta-tags custom-tags-list"></div>
@@ -691,7 +663,7 @@
               </div>
             </div>
 
-            <!-- Built-in Metadata, Resources, Also In, & Don't Sing -->
+            <!-- Built-in Metadata, Resources, Starting Note, Also In, & Don't Sing -->
             <div class="meta-section" id="metaSection">
               <div class="meta-group" id="topicsGroup">
                 <h3 class="meta-heading">Topics</h3>
@@ -708,12 +680,40 @@
                 </button>
                 <a id="detailHymnStudyLink" class="btn-quick-action btn-quick-link ext-link-inline hidden" href="#" target="_blank" rel="noopener noreferrer" title="Read hymn history &amp; study on HymnStudiesBlog">
                   <span>Hymn Studies Blog</span>
-                  <svg class="ext-link-icon" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+                  <svg class="ext-link-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
                     <polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
                     <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </a>
+                <a id="detailHymnaryLink" class="btn-quick-action btn-quick-link ext-link-inline hidden" href="#" target="_blank" rel="noopener noreferrer" title="View hymn page on Hymnary.org">
+                  <span>Hymnary</span>
+                  <svg class="ext-link-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <polyline points="15 3 21 3 21 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              <div class="meta-group start-note-group">
+                <div class="start-note-row">
+                  <label for="startNoteSelect" class="meta-heading" style="margin:0;">Starting Melody Note</label>
+                  <select id="startNoteSelect" class="form-select form-select-sm start-note-select">
+                    <option value="">— (None)</option>
+                    <option value="low-5">Low Sol (5,)</option>
+                    <option value="low-6">Low La (6,)</option>
+                    <option value="low-7">Low Ti (7,)</option>
+                    <option value="1">Do (1)</option>
+                    <option value="2">Re (2)</option>
+                    <option value="3">Mi (3)</option>
+                    <option value="4">Fa (4)</option>
+                    <option value="5">Sol (5)</option>
+                    <option value="6">La (6)</option>
+                    <option value="7">Ti (7)</option>
+                    <option value="8">High Do (8)</option>
+                  </select>
+                </div>
               </div>
 
               <div class="meta-group hidden" id="alsoInGroup">
@@ -735,6 +735,7 @@
                 />
               </div>
             </div>
+          </div>
 
           <!-- Ultra-Condensed Single-Line Bottom Pitch Pipe Bar -->
           <div class="pitch-bar" id="pitchBar" aria-label="Pitch pipe controls">
