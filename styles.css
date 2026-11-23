@@ -1346,7 +1346,7 @@ body {
     font-size: 0.9rem;
   }
 
-  .btn-back {
+  .detail-header .btn-back {
     display: none;
   }
 
