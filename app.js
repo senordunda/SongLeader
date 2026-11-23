@@ -867,14 +867,14 @@
     // Update top header title
     if (el.brandTitle) {
       if (multi) {
-        el.brandTitle.textContent = "SongLeader";
+        el.brandTitle.textContent = "Song Leader";
       } else {
         const b = HYMNALS[activeIds[0]] || HYMNALS.pftl;
         el.brandTitle.textContent = b.name;
       }
       requestAnimationFrame(fitBrandTitle);
-    }
-    document.title = multi ? "SongLeader" : `${(HYMNALS[activeIds[0]] || HYMNALS.pftl).name} — SongLeader`;
+      }
+      document.title = multi ? "Song Leader" : `${(HYMNALS[activeIds[0]] || HYMNALS.pftl).name} — Song Leader`;
 
     // Update Book Filter dropdown on home screen
     if (multi) {

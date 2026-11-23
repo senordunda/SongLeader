@@ -1,4 +1,4 @@
-const CACHE_NAME = 'songleader-core-v3';
+const CACHE_NAME = 'songleader-core-v4';
 const SHEET_MUSIC_CACHE = 'songleader-sheets-v1';
 
 // 1. Add the exact relative paths to all your JSON data files here
