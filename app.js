@@ -1566,6 +1566,7 @@
   function saveSetlists() {
     saveJSON(STORAGE_KEYS.SETLISTS, state.setlists);
     refreshTagSelectorsAndStats();
+    notifyCloudDataChanged();
   }
 
   function getSetlistById(id) {
@@ -1792,6 +1793,7 @@ Add it to this setlist anyway?`
     syncRoleDropdowns();
     syncSetlistFooterElementsUI();
     if (state.activeSetlistId) renderSetlistEditor();
+    notifyCloudDataChanged();
   }
 
   function openSetlistSettings() {
@@ -2691,6 +2693,7 @@ Add it to this setlist anyway?`
       return (b.createdAt || 0) - (a.createdAt || 0);
     });
     saveJSON(STORAGE_KEYS.HISTORY, state.history);
+    notifyCloudDataChanged();
     rebuildLastSungMap();
     refreshTagSelectorsAndStats();
     renderHymnList();
@@ -3139,6 +3142,7 @@ Add it to this setlist anyway?`
       state.favorites.add(hymnId);
     }
     saveJSON(STORAGE_KEYS.FAVORITES, Array.from(state.favorites));
+    notifyCloudDataChanged();
 
     const hymn = state.hymnMap.get(hymnId);
     if (hymn && state.selectedId === hymnId) {
@@ -3158,6 +3162,7 @@ Add it to this setlist anyway?`
       current.push(tag);
       state.customTags[hymnId] = current;
       saveJSON(STORAGE_KEYS.CUSTOM_TAGS, state.customTags);
+      notifyCloudDataChanged();
     }
 
     const hymn = state.hymnMap.get(hymnId);
@@ -3177,6 +3182,7 @@ Add it to this setlist anyway?`
       delete state.customTags[hymnId];
     }
     saveJSON(STORAGE_KEYS.CUSTOM_TAGS, state.customTags);
+    notifyCloudDataChanged();
 
     const hymn = state.hymnMap.get(hymnId);
     if (hymn && state.selectedId === hymnId) {
@@ -3517,8 +3523,14 @@ Add it to this setlist anyway?`
     el.backupStatusMsg.classList.remove("hidden");
   }
 
-  function exportBackup() {
-    const payload = {
+  function notifyCloudDataChanged() {
+    if (window.SongLeaderCloud && typeof window.SongLeaderCloud.notifyDataChanged === "function") {
+      window.SongLeaderCloud.notifyDataChanged();
+    }
+  }
+
+  function buildBackupPayload() {
+    return {
       app: "pftl-song-leader",
       version: 2,
       exportedAt: new Date().toISOString(),
@@ -3546,7 +3558,124 @@ Add it to this setlist anyway?`
         hiddenDefaultRoles: state.hiddenDefaultRoles,
       },
     };
+  }
 
+  function applyBackupData(d, options = {}) {
+    const shouldNotifyCloud = options.notifyCloud !== false;
+    if (!d || typeof d !== "object") throw new Error("Invalid backup structure");
+
+    if (Array.isArray(d.favorites)) {
+      state.favorites = new Set(d.favorites.map(String));
+      saveJSON(STORAGE_KEYS.FAVORITES, Array.from(state.favorites));
+    }
+    if (d.customTags && typeof d.customTags === "object") {
+      state.customTags = d.customTags;
+      saveJSON(STORAGE_KEYS.CUSTOM_TAGS, state.customTags);
+    }
+    if (d.dontSing && typeof d.dontSing === "object") {
+      state.dontSing = d.dontSing;
+      saveJSON(STORAGE_KEYS.DONT_SING, state.dontSing);
+    }
+    if (d.notes && typeof d.notes === "object") {
+      state.notes = d.notes;
+      saveJSON(STORAGE_KEYS.NOTES, state.notes);
+    }
+    if (d.transpositions && typeof d.transpositions === "object") {
+      state.transpositions = d.transpositions;
+      saveJSON(STORAGE_KEYS.TRANSPOSITIONS, state.transpositions);
+    }
+    if (d.manualKeys && typeof d.manualKeys === "object") {
+      state.manualKeys = d.manualKeys;
+      saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
+    }
+    if (d.startNotes && typeof d.startNotes === "object") {
+      state.startNotes = d.startNotes;
+      saveJSON(STORAGE_KEYS.START_NOTES, state.startNotes);
+    }
+    if (typeof d.keepAwake === "boolean") {
+      state.keepAwake = d.keepAwake;
+      if (el.wakeLockToggle) el.wakeLockToggle.checked = state.keepAwake;
+      localStorage.setItem(STORAGE_KEYS.WAKE_LOCK, String(state.keepAwake));
+    }
+    if (Array.isArray(d.setlists)) {
+      state.setlists = d.setlists;
+      saveJSON(STORAGE_KEYS.SETLISTS, state.setlists);
+    }
+    if (Array.isArray(d.history)) {
+      state.history = d.history;
+      saveJSON(STORAGE_KEYS.HISTORY, state.history);
+    }
+    if (typeof d.showSupplement === "boolean") {
+      state.showSupplement = d.showSupplement;
+      if (el.showSupplementToggle) el.showSupplementToggle.checked = state.showSupplement;
+      localStorage.setItem(STORAGE_KEYS.SHOW_SUPPLEMENT, String(state.showSupplement));
+    }
+    if (typeof d.darkMode === "boolean") {
+      state.darkMode = d.darkMode;
+      localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
+      applyTheme();
+    }
+    if (d.readability === "large" || d.readability === "small") {
+      state.readability = d.readability;
+      localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
+      applyReadability();
+    }
+    if (d.startNoteDisplay === "numbers" || d.startNoteDisplay === "solfege") {
+      state.startNoteDisplay = d.startNoteDisplay;
+      if (el.startNoteDisplaySelect) el.startNoteDisplaySelect.value = state.startNoteDisplay;
+      localStorage.setItem(STORAGE_KEYS.START_NOTE_DISPLAY, state.startNoteDisplay);
+    }
+    if (typeof d.bibleVersion === "string" && d.bibleVersion.trim()) {
+      state.bibleVersion = normalizeBibleVersion(d.bibleVersion);
+      if (el.bibleVersionSelect) el.bibleVersionSelect.value = state.bibleVersion;
+      localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
+    }
+    if (typeof d.primaryHymnal === "string" && HYMNALS[d.primaryHymnal]) {
+      state.primaryHymnal = d.primaryHymnal;
+      localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, state.primaryHymnal);
+    }
+    if (typeof d.multiBookMode === "boolean") {
+      state.multiBookMode = d.multiBookMode;
+      localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, String(state.multiBookMode));
+    }
+    if (Array.isArray(d.enabledHymnals) && d.enabledHymnals.length > 0) {
+      state.enabledHymnals = d.enabledHymnals.filter((id) => Boolean(HYMNALS[id]));
+      saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
+    }
+    if (typeof d.worshipElementsEnabled === "boolean") {
+      state.worshipElementsEnabled = d.worshipElementsEnabled;
+      localStorage.setItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED, String(state.worshipElementsEnabled));
+    }
+    if (Array.isArray(d.customSongRoles)) {
+      state.customSongRoles = d.customSongRoles.filter((r) => typeof r === "string" && r.trim()).slice(0, MAX_CUSTOM_ROLES);
+      saveJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, state.customSongRoles);
+    }
+    if (Array.isArray(d.hiddenDefaultRoles)) {
+      state.hiddenDefaultRoles = d.hiddenDefaultRoles.filter((r) => typeof r === "string");
+      saveJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, state.hiddenDefaultRoles);
+    }
+    syncRoleDropdowns();
+    syncSetlistFooterElementsUI();
+
+    rebuildLastSungMap();
+    updateHeaderSubtitle();
+    refreshTagSelectorsAndStats();
+    renderHymnList();
+    renderSetlistsHome();
+    renderHistoryTab();
+    if (state.activeSetlistId) renderSetlistEditor();
+    if (state.selectedId && state.hymnMap.has(state.selectedId)) {
+      renderPersonalUI(state.hymnMap.get(state.selectedId));
+      updatePitchUI();
+    }
+
+    if (shouldNotifyCloud) {
+      notifyCloudDataChanged();
+    }
+  }
+
+  function exportBackup() {
+    const payload = buildBackupPayload();
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const dateStr = getTodayISO();
@@ -3567,113 +3696,7 @@ Add it to this setlist anyway?`
       try {
         const parsed = JSON.parse(String(reader.result));
         const d = parsed && parsed.data ? parsed.data : parsed;
-        if (!d || typeof d !== "object") throw new Error("Invalid backup structure");
-
-        if (Array.isArray(d.favorites)) {
-          state.favorites = new Set(d.favorites.map(String));
-          saveJSON(STORAGE_KEYS.FAVORITES, Array.from(state.favorites));
-        }
-        if (d.customTags && typeof d.customTags === "object") {
-          state.customTags = d.customTags;
-          saveJSON(STORAGE_KEYS.CUSTOM_TAGS, state.customTags);
-        }
-        if (d.dontSing && typeof d.dontSing === "object") {
-          state.dontSing = d.dontSing;
-          saveJSON(STORAGE_KEYS.DONT_SING, state.dontSing);
-        }
-        if (d.notes && typeof d.notes === "object") {
-          state.notes = d.notes;
-          saveJSON(STORAGE_KEYS.NOTES, state.notes);
-        }
-        if (d.transpositions && typeof d.transpositions === "object") {
-          state.transpositions = d.transpositions;
-          saveJSON(STORAGE_KEYS.TRANSPOSITIONS, state.transpositions);
-        }
-        if (d.manualKeys && typeof d.manualKeys === "object") {
-          state.manualKeys = d.manualKeys;
-          saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
-        }
-        if (d.startNotes && typeof d.startNotes === "object") {
-          state.startNotes = d.startNotes;
-          saveJSON(STORAGE_KEYS.START_NOTES, state.startNotes);
-        }
-        if (typeof d.keepAwake === "boolean") {
-          state.keepAwake = d.keepAwake;
-          if (el.wakeLockToggle) el.wakeLockToggle.checked = state.keepAwake;
-          localStorage.setItem(STORAGE_KEYS.WAKE_LOCK, String(state.keepAwake));
-        }
-        if (Array.isArray(d.setlists)) {
-          state.setlists = d.setlists;
-          saveJSON(STORAGE_KEYS.SETLISTS, state.setlists);
-        }
-        if (Array.isArray(d.history)) {
-          state.history = d.history;
-          saveJSON(STORAGE_KEYS.HISTORY, state.history);
-        }
-        if (typeof d.showSupplement === "boolean") {
-          state.showSupplement = d.showSupplement;
-          el.showSupplementToggle.checked = state.showSupplement;
-          localStorage.setItem(STORAGE_KEYS.SHOW_SUPPLEMENT, String(state.showSupplement));
-        }
-        if (typeof d.darkMode === "boolean") {
-          state.darkMode = d.darkMode;
-          localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
-          applyTheme();
-        }
-        if (d.readability === "large" || d.readability === "small") {
-          state.readability = d.readability;
-          localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
-          applyReadability();
-        }
-        if (d.startNoteDisplay === "numbers" || d.startNoteDisplay === "solfege") {
-          state.startNoteDisplay = d.startNoteDisplay;
-          if (el.startNoteDisplaySelect) el.startNoteDisplaySelect.value = state.startNoteDisplay;
-          localStorage.setItem(STORAGE_KEYS.START_NOTE_DISPLAY, state.startNoteDisplay);
-        }
-        if (typeof d.bibleVersion === "string" && d.bibleVersion.trim()) {
-          state.bibleVersion = normalizeBibleVersion(d.bibleVersion);
-          el.bibleVersionSelect.value = state.bibleVersion;
-          localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
-        }
-        if (typeof d.primaryHymnal === "string" && HYMNALS[d.primaryHymnal]) {
-          state.primaryHymnal = d.primaryHymnal;
-          localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, state.primaryHymnal);
-        }
-        if (typeof d.multiBookMode === "boolean") {
-          state.multiBookMode = d.multiBookMode;
-          localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, String(state.multiBookMode));
-        }
-        if (Array.isArray(d.enabledHymnals) && d.enabledHymnals.length > 0) {
-          state.enabledHymnals = d.enabledHymnals.filter((id) => Boolean(HYMNALS[id]));
-          saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
-        }
-        if (typeof d.worshipElementsEnabled === "boolean") {
-          state.worshipElementsEnabled = d.worshipElementsEnabled;
-          localStorage.setItem(STORAGE_KEYS.WORSHIP_ELEMENTS_ENABLED, String(state.worshipElementsEnabled));
-        }
-        if (Array.isArray(d.customSongRoles)) {
-          state.customSongRoles = d.customSongRoles.filter((r) => typeof r === "string" && r.trim()).slice(0, MAX_CUSTOM_ROLES);
-          saveJSON(STORAGE_KEYS.CUSTOM_SONG_ROLES, state.customSongRoles);
-        }
-        if (Array.isArray(d.hiddenDefaultRoles)) {
-          state.hiddenDefaultRoles = d.hiddenDefaultRoles.filter((r) => typeof r === "string");
-          saveJSON(STORAGE_KEYS.HIDDEN_DEFAULT_ROLES, state.hiddenDefaultRoles);
-        }
-        syncRoleDropdowns();
-        syncSetlistFooterElementsUI();
-
-        rebuildLastSungMap();
-        updateHeaderSubtitle();
-        refreshTagSelectorsAndStats();
-        renderHymnList();
-        renderSetlistsHome();
-        renderHistoryTab();
-        if (state.activeSetlistId) renderSetlistEditor();
-        if (state.selectedId && state.hymnMap.has(state.selectedId)) {
-          renderPersonalUI(state.hymnMap.get(state.selectedId));
-          updatePitchUI();
-        }
-
+        applyBackupData(d, { notifyCloud: true });
         showBackupStatus("Backup restored successfully!");
       } catch (err) {
         showBackupStatus("Import failed: " + err.message);
@@ -4226,6 +4249,7 @@ Add it to this setlist anyway?`
       state.primaryHymnal = el.primaryHymnalSelect.value;
       try {
         localStorage.setItem(STORAGE_KEYS.PRIMARY_HYMNAL, state.primaryHymnal);
+        notifyCloudDataChanged();
       } catch (_) {}
       syncActiveBooks();
     });
@@ -4238,6 +4262,7 @@ Add it to this setlist anyway?`
       }
       try {
         localStorage.setItem(STORAGE_KEYS.MULTI_BOOK, String(state.multiBookMode));
+        notifyCloudDataChanged();
       } catch (_) {}
       syncActiveBooks();
     });
@@ -4252,6 +4277,7 @@ Add it to this setlist anyway?`
         }
         state.enabledHymnals = checked;
         saveJSON(STORAGE_KEYS.ENABLED_HYMNALS, state.enabledHymnals);
+        notifyCloudDataChanged();
         syncActiveBooks();
       });
     });
@@ -4267,6 +4293,7 @@ Add it to this setlist anyway?`
       state.darkMode = el.darkModeToggle.checked;
       try {
         localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
+        notifyCloudDataChanged();
       } catch (_) {}
       applyTheme();
     });
@@ -4277,6 +4304,7 @@ Add it to this setlist anyway?`
         state.keepAwake = el.wakeLockToggle.checked;
         try {
           localStorage.setItem(STORAGE_KEYS.WAKE_LOCK, String(state.keepAwake));
+          notifyCloudDataChanged();
         } catch (_) {}
         syncWakeLock();
       });
@@ -4288,6 +4316,7 @@ Add it to this setlist anyway?`
       state.readability = el.readabilitySelect.value === "large" ? "large" : "small";
       try {
         localStorage.setItem(STORAGE_KEYS.READABILITY, state.readability);
+        notifyCloudDataChanged();
       } catch (_) {}
       applyReadability();
       if (state.selectedId && !el.sheetPages.classList.contains("hidden")) {
@@ -4301,6 +4330,7 @@ Add it to this setlist anyway?`
         state.startNoteDisplay = el.startNoteDisplaySelect.value === "numbers" ? "numbers" : "solfege";
         try {
           localStorage.setItem(STORAGE_KEYS.START_NOTE_DISPLAY, state.startNoteDisplay);
+          notifyCloudDataChanged();
         } catch (_) {}
         updatePitchUI();
       });
@@ -4311,6 +4341,7 @@ Add it to this setlist anyway?`
       state.bibleVersion = normalizeBibleVersion(el.bibleVersionSelect.value);
       try {
         localStorage.setItem(STORAGE_KEYS.BIBLE_VERSION, state.bibleVersion);
+        notifyCloudDataChanged();
       } catch (_) {}
       if (state.selectedId && state.hymnMap.has(state.selectedId)) {
         renderMetadata(state.hymnMap.get(state.selectedId));
@@ -4322,6 +4353,7 @@ Add it to this setlist anyway?`
       state.showSupplement = el.showSupplementToggle.checked;
       try {
         localStorage.setItem(STORAGE_KEYS.SHOW_SUPPLEMENT, String(state.showSupplement));
+        notifyCloudDataChanged();
       } catch (_) {}
       updateHeaderSubtitle();
       renderHymnList();
@@ -4367,6 +4399,7 @@ Add it to this setlist anyway?`
       if (val) state.startNotes[state.selectedId] = val;
       else delete state.startNotes[state.selectedId];
       saveJSON(STORAGE_KEYS.START_NOTES, state.startNotes);
+      notifyCloudDataChanged();
       updatePitchUI();
     });
 
@@ -4379,6 +4412,7 @@ Add it to this setlist anyway?`
         delete state.notes[state.selectedId];
       }
       saveJSON(STORAGE_KEYS.NOTES, state.notes);
+      notifyCloudDataChanged();
       refreshTagSelectorsAndStats();
     });
 
@@ -4394,6 +4428,7 @@ Add it to this setlist anyway?`
         el.dontSingReasonInput.value = "";
       }
       saveJSON(STORAGE_KEYS.DONT_SING, state.dontSing);
+      notifyCloudDataChanged();
       renderPersonalUI(state.hymnMap.get(state.selectedId));
       refreshTagSelectorsAndStats();
       renderHymnList();
@@ -4403,6 +4438,7 @@ Add it to this setlist anyway?`
       if (!state.selectedId || !el.dontSingCheckbox.checked) return;
       state.dontSing[state.selectedId] = { reason: el.dontSingReasonInput.value.trim() };
       saveJSON(STORAGE_KEYS.DONT_SING, state.dontSing);
+      notifyCloudDataChanged();
       el.dontSingBannerReason.textContent =
         el.dontSingReasonInput.value.trim() ? ` — ${el.dontSingReasonInput.value.trim()}` : "";
       renderHymnList();
@@ -4468,6 +4504,7 @@ Add it to this setlist anyway?`
           state.transpositions[state.selectedId] = shift;
         }
         saveJSON(STORAGE_KEYS.TRANSPOSITIONS, state.transpositions);
+        notifyCloudDataChanged();
         updatePitchUI();
         if (state.activeSetlistId) renderSetlistEditor();
       });
@@ -4483,6 +4520,7 @@ Add it to this setlist anyway?`
           delete state.manualKeys[state.selectedId];
         }
         saveJSON(STORAGE_KEYS.MANUAL_KEYS, state.manualKeys);
+        notifyCloudDataChanged();
         const hymn = state.hymnMap.get(state.selectedId);
         if (hymn) {
           const baseKeyStr = getSongBaseKey(hymn);
@@ -4781,6 +4819,21 @@ Add it to this setlist anyway?`
     if (el.landingScreen) el.landingScreen.classList.add("hidden");
     await syncActiveBooks();
   }
+
+  window.SongLeaderCloudBridge = {
+      getBackupPayload: () => buildBackupPayload(),
+      hasMeaningfulLocalData: () =>
+        state.favorites.size > 0 ||
+        Object.keys(state.customTags).length > 0 ||
+        Object.keys(state.dontSing).length > 0 ||
+        Object.keys(state.notes).length > 0 ||
+        state.setlists.length > 0 ||
+        state.history.length > 0,
+      applyBackupData: async (d) => {
+        applyBackupData(d, { notifyCloud: false });
+        await syncActiveBooks();
+      },
+    };
 
   async function init() {
     applyTheme();

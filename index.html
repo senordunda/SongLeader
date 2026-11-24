@@ -462,6 +462,27 @@
             </div>
           </div>
 
+          <div class="settings-section" id="cloudSyncSection">
+            <h3 class="settings-subheading">Cloud Backup &amp; Sync</h3>
+            <p class="setting-desc" style="margin-bottom: 10px;">
+              Optional — sign in with Google to automatically sync your setlists, singing history, favorites, tags, and notes across devices.
+            </p>
+
+            <div id="cloudSignedOutBox">
+              <button type="button" id="cloudSignInBtn" class="btn-secondary">Sign in with Google</button>
+            </div>
+
+            <div id="cloudSignedInBox" class="hidden">
+              <p id="cloudAccountLabel" class="setting-desc" style="margin-bottom: 4px;"></p>
+              <p id="cloudSyncStatus" class="backup-status" style="margin-top: 0 !important; margin-bottom: 10px !important;" aria-live="polite"></p>
+              <div class="backup-actions">
+                <button type="button" id="cloudSyncNowBtn" class="btn-primary btn-sm">Sync Now</button>
+                <button type="button" id="cloudSignOutBtn" class="btn-secondary btn-sm">Sign Out</button>
+                <button type="button" id="cloudDeleteBtn" class="btn-danger-outline">Delete Cloud Data</button>
+              </div>
+            </div>
+          </div>
+
           <div class="settings-section">
             <h3 class="settings-subheading">Backup &amp; Restore</h3>
             <p class="setting-desc" style="margin-bottom: 10px;">
@@ -1077,5 +1098,6 @@
   <div id="appToast" class="app-toast hidden" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
+  <script type="module" src="cloud-sync.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'songleader-core-v7';
+const CACHE_NAME = 'songleader-core-v8';
 const SHEET_MUSIC_CACHE = 'songleader-sheets-v1';
 
 // 1. Add the exact relative paths to all your JSON data files here
@@ -15,9 +15,8 @@ const CORE_ASSETS = [
   './phss_hymns.json',
   './sfp_hymns.json',
   './sotc_hymns.json',
-  './ss_hymns.json'
-  // Example: './data/hymns_main.json',
-  // Example: './data/hymn_studies.json'
+  './ss_hymns.json',
+  './cloud-sync.js'
 ];
 
 // Install: Cache core app shell and JSON data
