@@ -1,0 +1,15 @@
+# Song Leader
+
+> A free, offline-capable progressive web app (PWA) for Church of Christ a cappella song leaders featuring a searchable multi-hymnal directory, public-domain sheet music viewer, pitch pipe, worship setlist planner, and congregation singing history tracker.
+
+## Key Features
+- **Multi-Hymnal Index:** Search by hymn number, title, alternate title, first line, scripture reference, or topic across *Praise for the Lord*, *Songs of Faith and Praise*, *Hymns for Worship*, *Sacred Selections*, *Psalms, Hymns, and Spiritual Songs*, and *Songs of the Church*.
+- **Pitch Pipe & Transposition:** Sustained pitch hold, 1-3-5-1 arpeggio, half-step transposition (-2 to +2), and tonic-to-starting-melody-note playback (solfege or scale degrees).
+- **Sheet Music Viewer:** Zoomable, fullscreen public-domain hymn scans with offline pre-caching.
+- **Worship Setlist Planner & Podium Mode:** Organize service slots, view key progressions, include custom worship elements, and step through services live at the podium.
+- **Singing History & Rotation Tracking:** Track when hymns were last sung and filter by songs due for rotation (60+ or 90+ days).
+- **Optional Cloud Backup:** Cross-device sync via Google Sign-In or local JSON export/import.
+
+## Links
+- [Launch Song Leader](https://songleaderapp.com/)
+- [Privacy Policy](https://songleaderapp.com/privacy.html)

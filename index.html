@@ -11,6 +11,36 @@
   <meta property="og:description" content="Digital hymnal directory, pitch pipe, and worship planner for church song leaders." />
   <meta property="og:url" content="https://songleaderapp.com/" />
   <link rel="canonical" href="https://songleaderapp.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Song Leader",
+    "url": "https://songleaderapp.com/",
+    "applicationCategory": "MusicApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Works offline as a Progressive Web App.",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free offline-capable digital hymnal, pitch pipe, sheet music viewer, worship setlist planner, and singing history tracker for a cappella Church of Christ song leaders. Supports Praise for the Lord, Songs of Faith and Praise, Hymns for Worship, Sacred Selections, Psalms, Hymns, and Spiritual Songs, and Songs of the Church.",
+    "featureList": [
+      "Searchable multi-hymnal directory by number, title, alternate title, first line, scripture reference, or topic",
+      "Built-in treble pitch pipe with sustained hold, 1-3-5-1 arpeggio, half-step transposition, and starting melody note playback",
+      "Zoomable public-domain sheet music scans with offline pre-caching",
+      "Worship service setlist planner with key progression strip and live podium runner mode",
+      "Congregation singing history log and rotation tracking",
+      "Optional Google Sign-In cloud backup and JSON export/import"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Zack Dunda"
+    }
+  }
+  </script>
   <link rel="manifest" href="./manifest.json" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -69,17 +99,7 @@
     </header>
 
     <!-- Main Workspace (Split-pane on tablet/desktop, stacked on phone) -->
-    <main class="workspace" id="workspace">
-      
-      <div id="crawlerOverview" class="crawler-overview">
-          <h2>Song Leader - Digital Hymnal, Pitch Pipe &amp; Worship Setlist Planner</h2>
-          <p>
-            Song Leader is a free, non-commercial web application designed for church song leaders to browse hymnal details, view public-domain sheet music scans, play starting pitches with a built-in pitch pipe, organize worship service setlists, and track congregation singing history.
-          </p>
-          <p>
-            Optional Google Sign-In allows users to securely back up and synchronize their own setlists, favorites, custom tags, and notes across devices. Read our <a href="./privacy.html">Privacy Policy</a> for full details on how user data is handled.
-          </p>
-        </div>      
+    <main class="workspace" id="workspace">     
 
       <!-- LEFT PANE 1: Hymnal Browser -->
       <section id="view-hymnal" class="pane pane-list active-tab" aria-label="Hymnal directory">
@@ -166,6 +186,19 @@
         <div id="resultsSummary" class="results-summary" aria-live="polite"></div>
 
         <ul id="hymnList" class="hymn-list" role="list"></ul>
+        
+        <div id="crawlerOverview" class="crawler-overview">
+          <h2>Song Leader — Digital Hymnal, Pitch Pipe &amp; Worship Setlist Planner</h2>
+          <p>
+            Song Leader is a free, non-commercial Progressive Web App (PWA) created for Church of Christ song leaders to search hymnals, view public-domain sheet music scans, sound starting pitches with a built-in pitch pipe, plan worship service setlists, and track congregation singing history.
+          </p>
+          <p>
+            Supported hymnals include <em>Praise for the Lord</em>, <em>Songs of Faith and Praise</em>, <em>Hymns for Worship</em>, <em>Sacred Selections</em>, <em>Psalms, Hymns, and Spiritual Songs</em>, and <em>Songs of the Church</em>.
+          </p>
+          <p>
+            All personal notes, favorites, custom tags, setlists, and singing history work offline on your device, with optional Google Sign-In cloud backup and sync. Review our <a href="./privacy.html">Privacy Policy</a> for details on data handling and security.
+          </p>
+        </div>
 
         <div id="emptyState" class="empty-state hidden">
           <p class="empty-title">No matching hymns</p>
