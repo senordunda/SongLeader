@@ -23,9 +23,10 @@
   <div id="landingScreen" class="landing-screen hidden" role="dialog" aria-modal="true" aria-labelledby="landingTitle">
     <div class="landing-inner">
       <div class="landing-header">
-        <p class="landing-kicker">SongLeader</p>
+        <p class="landing-kicker">Song Leader</p>
+      
+        <p class="landing-subtitle">Song Leader is a digital hymnal directory, pitch pipe, and worship planning tool for a cappella song leaders in the church.</p>
         <h1 id="landingTitle" class="landing-title">Choose Your Hymnal</h1>
-        <p class="landing-subtitle">Digital hymnal directory, pitch pipe, and worship planner for a cappella song leaders in the church.</p>
       </div>
       <div class="landing-books" role="list">
         <button type="button" class="landing-book-btn" data-book="hfw">
@@ -48,7 +49,7 @@
         </button>
       </div>
       <p class="landing-footnote">
-     You can switch hymnals or enable multiple books anytime in Settings. · <a href="./privacy.html" style="color: inherit;">Privacy Policy</a>
+     You can switch hymnals or enable multiple books anytime in Settings.<br /><a href="./privacy.html" style="color: inherit;">Privacy Policy</a>
    </p>
     </div>
   </div>
@@ -437,6 +438,15 @@
               </div>
               <input type="checkbox" id="showSupplementToggle" class="toggle-checkbox" />
             </label>
+
+            <label class="setting-row setting-toggle-row" for="hideSearchFooterToggle">
+              <div class="setting-text">
+                <strong>Hide Search Footer Bar</strong>
+                <p class="setting-desc">Hide the description and Privacy Policy bar at the bottom of the hymn search list.</p>
+              </div>
+              <input type="checkbox" id="hideSearchFooterToggle" class="toggle-checkbox" />
+            </label>
+
           </div>
 
           <div class="settings-section">

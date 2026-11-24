@@ -4301,3 +4301,7 @@ html[data-readability="large"] .song-bottom-resources .btn-quick-action {
   text-decoration: underline;
   white-space: nowrap;
 }
+
+.list-legal-footer.is-hidden-footer {
+  display: none;
+}

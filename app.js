@@ -34,6 +34,7 @@
     WORSHIP_ELEMENTS_ENABLED: "pftl_worship_elements_v1",
     CUSTOM_SONG_ROLES: "pftl_custom_song_roles_v1",
     HIDDEN_DEFAULT_ROLES: "pftl_hidden_default_roles_v1",
+    HIDE_SEARCH_FOOTER: "pftl_hide_search_footer_v1",
   };
 
   const START_NOTE_DEFS = {
@@ -372,6 +373,7 @@
     startNoteDisplay: localStorage.getItem(STORAGE_KEYS.START_NOTE_DISPLAY) === "numbers" ? "numbers" : "solfege",
     activeTab: "hymnal",
     selectedId: null,
+    hideSearchFooter: localStorage.getItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER) === "true",
 
     // Persisted user data
     transpositions: loadJSON(STORAGE_KEYS.TRANSPOSITIONS, {}),
@@ -440,6 +442,8 @@
     emptyState: document.getElementById("emptyState"),
     loadErrorBanner: document.getElementById("loadErrorBanner"),
     manualJsonInput: document.getElementById("manualJsonInput"),
+    listLegalFooter: document.querySelector(".list-legal-footer"),
+hideSearchFooterToggle: document.getElementById("hideSearchFooterToggle"),
 
     // Setlists tab
     setlistsHome: document.getElementById("setlistsHome"),
@@ -1184,6 +1188,15 @@
         '<p class="scripture-error">Could not load this passage inline. Use the link below to read it on Bible.com.</p>';
     }
   }
+
+  function applySearchFooterVisibility() {
+  if (el.listLegalFooter) {
+    el.listLegalFooter.classList.toggle("is-hidden-footer", state.hideSearchFooter);
+  }
+  if (el.hideSearchFooterToggle) {
+    el.hideSearchFooterToggle.checked = state.hideSearchFooter;
+  }
+}
 
   function updateHeaderSubtitle() {
     // Header subtitle removed for a cleaner, larger title
@@ -3556,6 +3569,7 @@ Add it to this setlist anyway?`
         worshipElementsEnabled: state.worshipElementsEnabled,
         customSongRoles: state.customSongRoles,
         hiddenDefaultRoles: state.hiddenDefaultRoles,
+        hideSearchFooter: state.hideSearchFooter,
       },
     };
   }
@@ -3563,6 +3577,12 @@ Add it to this setlist anyway?`
   function applyBackupData(d, options = {}) {
     const shouldNotifyCloud = options.notifyCloud !== false;
     if (!d || typeof d !== "object") throw new Error("Invalid backup structure");
+
+    if (typeof d.hideSearchFooter === "boolean") {
+             state.hideSearchFooter = d.hideSearchFooter;
+             localStorage.setItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER, String(state.hideSearchFooter));
+             applySearchFooterVisibility();
+           }
 
     if (Array.isArray(d.favorites)) {
       state.favorites = new Set(d.favorites.map(String));
@@ -4618,6 +4638,18 @@ Add it to this setlist anyway?`
       };
       reader.readAsText(file);
     });
+
+    if (el.hideSearchFooterToggle) {
+  el.hideSearchFooterToggle.checked = state.hideSearchFooter;
+  el.hideSearchFooterToggle.addEventListener("change", () => {
+    state.hideSearchFooter = el.hideSearchFooterToggle.checked;
+    try {
+      localStorage.setItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER, String(state.hideSearchFooter));
+    } catch (_) {}
+    applySearchFooterVisibility();
+    notifyCloudDataChanged();
+  });
+}
   }
 
   // =========================================================================
@@ -4838,6 +4870,7 @@ Add it to this setlist anyway?`
   async function init() {
     applyTheme();
     applyReadability();
+    applySearchFooterVisibility();
     syncRoleDropdowns();
     syncSetlistFooterElementsUI();
     bindEvents();
