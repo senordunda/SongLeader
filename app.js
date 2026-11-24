@@ -4870,6 +4870,8 @@ Add it to this setlist anyway?`
   async function init() {
     applyTheme();
     applyReadability();
+    const crawlerEl = document.getElementById("crawlerOverview");
+    if (crawlerEl) crawlerEl.classList.add("hidden");
     applySearchFooterVisibility();
     syncRoleDropdowns();
     syncSetlistFooterElementsUI();
