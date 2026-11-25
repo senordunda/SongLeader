@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#7A1F2B" />
-  <title>Song Leader - Hymn Setlist Planning & Tracking</title>
+  <title>Song Leader - Hymn Planning, Tracking, & Learning</title>
   <meta name="description" content="Song Leader is a digital hymnal directory, pitch pipe, and worship planner for a cappella song leaders in the church." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Song Leader - Hymn Setlist Planning & Tracking" />
+  <meta property="og:title" content="Song Leader - Hymn Planning, Tracking, & Learning" />
   <meta property="og:description" content="Digital hymnal directory, pitch pipe, and worship planner for church song leaders." />
   <meta property="og:url" content="https://songleaderapp.com/" />
   <meta property="og:image" content="https://songleaderapp.com/logo-wide.png" />
@@ -30,12 +30,12 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Free offline-capable digital hymnal, pitch pipe, sheet music viewer, worship setlist planner, and singing history tracker for a cappella Church of Christ song leaders. Supports Praise for the Lord, Songs of Faith and Praise, Hymns for Worship, Sacred Selections, Psalms, Hymns, and Spiritual Songs, and Songs of the Church.",
+    "description": "Free offline-capable digital hymnal, pitch pipe, sheet music viewer, worship songlist planner, and singing history tracker for a cappella Church of Christ song leaders. Supports Praise for the Lord, Songs of Faith and Praise, Hymns for Worship, Sacred Selections, Psalms, Hymns, and Spiritual Songs, and Songs of the Church.",
     "featureList": [
       "Searchable multi-hymnal directory by number, title, alternate title, first line, scripture reference, or topic",
       "Built-in treble pitch pipe with sustained hold, 1-3-5-1 arpeggio, half-step transposition, and starting melody note playback",
       "Zoomable public-domain sheet music scans with offline pre-caching",
-      "Worship service setlist planner with key progression strip and live podium runner mode",
+      "Worship service songlist planner with key progression strip and live podium runner mode",
       "Congregation singing history log and rotation tracking",
       "Optional Google Sign-In cloud backup and JSON export/import"
     ],
@@ -192,15 +192,15 @@
         <ul id="hymnList" class="hymn-list" role="list"></ul>
         
         <div id="crawlerOverview" class="crawler-overview">
-          <h2>Song Leader — Digital Hymnal, Pitch Pipe &amp; Worship Setlist Planner</h2>
+          <h2>Song Leader — Digital Hymnal, Pitch Pipe &amp; Worship Songlist Planner</h2>
           <p>
-            Song Leader is a free, non-commercial Progressive Web App (PWA) created for Church of Christ song leaders to search hymnals, view public-domain sheet music scans, sound starting pitches with a built-in pitch pipe, plan worship service setlists, and track congregation singing history.
+            Song Leader is a free, non-commercial Progressive Web App (PWA) created for Church of Christ song leaders to search hymnals, view public-domain sheet music scans, sound starting pitches with a built-in pitch pipe, plan worship service songlists, and track congregation singing history.
           </p>
           <p>
             Supported hymnals include <em>Praise for the Lord</em>, <em>Songs of Faith and Praise</em>, <em>Hymns for Worship</em>, <em>Sacred Selections</em>, <em>Psalms, Hymns, and Spiritual Songs</em>, and <em>Songs of the Church</em>.
           </p>
           <p>
-            All personal notes, favorites, custom tags, setlists, and singing history work offline on your device, with optional Google Sign-In cloud backup and sync. Review our <a href="./privacy.html">Privacy Policy</a> for details on data handling and security.
+            All personal notes, favorites, custom tags, songlists, and singing history work offline on your device, with optional Google Sign-In cloud backup and sync. Review our <a href="./privacy.html">Privacy Policy</a> for details on data handling and security.
           </p>
         </div>
 
@@ -215,13 +215,13 @@
       </section>
 
       <!-- LEFT PANE 2: Worship Setlists (Stage 4) -->
-      <section id="view-setlists" class="pane pane-setlists" aria-label="Worship setlists">
+      <section id="view-setlists" class="pane pane-setlists" aria-label="Worship songlists">
         <!-- Setlists Directory View -->
         <div id="setlistsHome" class="subpane">
           <div class="subpane-header">
-            <h2>Worship Setlists</h2>
+            <h2>Worship Songlists</h2>
             <div class="subpane-header-actions">
-              <button type="button" id="setlistSettingsBtn" class="btn-icon-subtle" aria-label="Setlist Settings" title="Setlist Settings">
+              <button type="button" id="setlistSettingsBtn" class="btn-icon-subtle" aria-label="Songlist Settings" title="Songlist Settings">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                   <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 .92-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51.92H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
@@ -232,7 +232,7 @@
           </div>
           <div id="setlistsList" class="setlists-list"></div>
           <div id="setlistsEmpty" class="empty-state hidden">
-            <p class="empty-title">No setlists yet</p>
+            <p class="empty-title">No songlists yet</p>
             <p class="empty-subtitle">Create a service plan for Sunday AM, Sunday PM, or Wednesday night.</p>
           </div>
         </div>
@@ -244,10 +244,10 @@
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span>Setlists</span>
+              <span>Songlists</span>
             </button>
             <div class="subpane-header-actions">
-              <button type="button" id="copySetlistBtn" class="btn-secondary btn-sm" title="Copy formatted setlist for slides or bulletin">Copy</button>
+              <button type="button" id="copySetlistBtn" class="btn-secondary btn-sm" title="Copy formatted songlist for slides or bulletin">Copy</button>
               <button type="button" id="startPodiumBtn" class="btn-primary btn-sm">Lead Service</button>
             </div>
           </div>
@@ -275,7 +275,7 @@
             </div>
 
             <div id="setlistFooterActions" class="setlist-footer-actions">
-              <button type="button" id="precacheHighResBtn" class="btn-highres btn-precache" title="Pre-load high-resolution sheet music for all songs in this setlist">Pre-Cache High-Res</button>
+              <button type="button" id="precacheHighResBtn" class="btn-highres btn-precache" title="Pre-load high-resolution sheet music for all songs in this songlist">Pre-Cache High-Res</button>
               <button type="button" id="addSongToSetlistBtn" class="btn-secondary btn-add-song">+ Add Song</button>
               <button type="button" id="logSetlistSungBtn" class="btn-primary btn-log-full">Log Service as Sung</button>
               <button type="button" id="addElementToSetlistBtn" class="btn-secondary btn-add-element hidden">+ Add Element</button>
@@ -284,21 +284,21 @@
             <p id="setlistStatusMsg" class="setlist-status-msg hidden" aria-live="polite"></p>
 
             <div class="setlist-danger-zone">
-              <button type="button" id="deleteSetlistBtn" class="btn-danger-outline">Delete Setlist</button>
+              <button type="button" id="deleteSetlistBtn" class="btn-danger-outline">Delete Songlist</button>
             </div>
           </div>
         </div>
 
         <!-- Setlist Settings Subpane -->
-        <div id="setlistSettings" class="subpane hidden" aria-label="Setlist Settings">
+        <div id="setlistSettings" class="subpane hidden" aria-label="Songlist Settings">
           <div class="subpane-header">
             <button type="button" id="backFromSetlistSettingsBtn" class="btn-back">
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span>Setlists</span>
+              <span>Songlists</span>
             </button>
-            <h2>Setlist Settings</h2>
+            <h2>Songlist Settings</h2>
             <div style="width: 48px;" aria-hidden="true"></div>
           </div>
 
@@ -307,7 +307,7 @@
               <label class="setting-row setting-toggle-row" for="enableWorshipElementsToggle" style="padding: 2px 0;">
                 <div class="setting-text">
                   <strong>Enable Worship Elements</strong>
-                  <p class="setting-desc">Show the <strong>+ Add Element</strong> button in setlists to include Announcements, Prayer, Scripture, Lesson, Lord's Supper, Offering, and Other.</p>
+                  <p class="setting-desc">Show the <strong>+ Add Element</strong> button in songlists to include Announcements, Prayer, Scripture, Lesson, Lord's Supper, Offering, and Other.</p>
                 </div>
                 <input type="checkbox" id="enableWorshipElementsToggle" class="toggle-checkbox" />
               </label>
@@ -318,7 +318,7 @@
                 <h3 class="settings-subheading" style="margin: 0;">Custom Song Roles</h3>
                 <span id="customRolesCount" class="custom-roles-count">0 / 6</span>
               </div>
-              <p class="setting-desc" style="margin: 4px 0 10px;">Create up to 6 custom song roles to appear in your setlist role menus.</p>
+              <p class="setting-desc" style="margin: 4px 0 10px;">Create up to 6 custom song roles to appear in your songlist role menus.</p>
               <form id="addCustomRoleForm" class="add-tag-form">
                 <input
                   type="text"
@@ -336,7 +336,7 @@
 
             <div class="setlist-settings-card">
               <h3 class="settings-subheading" style="margin: 0 0 4px;">Hide Default Song Roles</h3>
-              <p class="setting-desc" style="margin: 0 0 10px;">Select any built-in role below to hide it from the setlist role selection list.</p>
+              <p class="setting-desc" style="margin: 0 0 10px;">Select any built-in role below to hide it from the songlist role selection list.</p>
               <div id="defaultRolesToggleList" class="default-roles-list" role="group" aria-label="Hide default song roles"></div>
             </div>
           </div>
@@ -367,7 +367,7 @@
 
         <div id="historyEmpty" class="empty-state hidden">
           <p class="empty-title">No singing history yet</p>
-          <p class="empty-subtitle">Mark hymns as sung from any song page or log an entire service from Setlists.</p>
+          <p class="empty-subtitle">Mark hymns as sung from any song page or log an entire service from Songlists.</p>
         </div>
       </section>
 
@@ -395,7 +395,7 @@
             <label class="setting-row setting-toggle-row" for="multiBookToggle">
               <div class="setting-text">
                 <strong>Enable Multiple Hymnals</strong>
-                <p class="setting-desc">Search and build setlists across more than one hymn book at the same time.</p>
+                <p class="setting-desc">Search and build songlists across more than one hymn book at the same time.</p>
               </div>
               <input type="checkbox" id="multiBookToggle" class="toggle-checkbox" />
             </label>
@@ -514,7 +514,7 @@
               </div>
               <div class="stat-box">
                 <strong id="statSetlistsCount">0</strong>
-                <span>Setlists</span>
+                <span>Songlists</span>
               </div>
               <div class="stat-box">
                 <strong id="statHistoryCount">0</strong>
@@ -530,7 +530,7 @@
           <div class="settings-section" id="cloudSyncSection">
             <h3 class="settings-subheading">Cloud Backup &amp; Sync</h3>
             <p class="setting-desc" style="margin-bottom: 10px;">
-              Optional — sign in with Google to automatically sync your setlists, singing history, favorites, tags, and notes across devices.
+              Optional — sign in with Google to automatically sync your songlists, singing history, favorites, tags, and notes across devices.
             </p>
 
             <div id="cloudSignedOutBox">
@@ -551,7 +551,7 @@
           <div class="settings-section">
             <h3 class="settings-subheading">Backup &amp; Restore</h3>
             <p class="setting-desc" style="margin-bottom: 10px;">
-              Your favorites, custom tags, "Don't Sing" flags, notes, transpositions, setlists, and singing history are stored privately on this device. Export a JSON backup anytime to transfer to another device or keep a safe copy.
+              Your favorites, custom tags, "Don't Sing" flags, notes, transpositions, songlists, and singing history are stored privately on this device. Export a JSON backup anytime to transfer to another device or keep a safe copy.
             </p>
             <div class="backup-actions">
               <button type="button" id="exportBackupBtn" class="btn-primary">Export Backup (.json)</button>
@@ -613,13 +613,13 @@
 
           <!-- Podium / Setlist Runner Bar (shown when stepping through a service) -->
           <div id="setlistRunnerBar" class="runner-bar hidden">
-            <button type="button" id="runnerPrevBtn" class="btn-runner" aria-label="Previous item in setlist">← Prev</button>
+            <button type="button" id="runnerPrevBtn" class="btn-runner" aria-label="Previous item in songlist">← Prev</button>
             <div class="runner-center">
               <strong id="runnerSlotLabel">Opening</strong>
               <span id="runnerPosLabel">1 of 5 · Sunday AM</span>
             </div>
-            <button type="button" id="runnerNextBtn" class="btn-runner" aria-label="Next item in setlist">Next →</button>
-            <button type="button" id="runnerCloseBtn" class="btn-runner-close" aria-label="Exit setlist mode" title="Exit setlist mode">&times;</button>
+            <button type="button" id="runnerNextBtn" class="btn-runner" aria-label="Next item in songlist">Next →</button>
+            <button type="button" id="runnerCloseBtn" class="btn-runner-close" aria-label="Exit songlist mode" title="Exit songlist mode">&times;</button>
           </div>
 
           <!-- Worship Element Podium View (shown in Lead Service mode when stepping onto a non-song element) -->
@@ -657,7 +657,7 @@
                 </div>
               </div>
               <div class="song-quick-actions">
-                <button type="button" id="detailAddSetlistBtn" class="btn-icon-action btn-icon-setlist" aria-label="Add to Setlist" title="Add to Setlist">
+                <button type="button" id="detailAddSetlistBtn" class="btn-icon-action btn-icon-setlist" aria-label="Add to Songlist" title="Add to Songlist">
                   <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
                     <line x1="3" y1="6" x2="17" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
                     <line x1="3" y1="12" x2="14" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
@@ -890,7 +890,7 @@
           <circle cx="4.5" cy="12" r="1.2" fill="currentColor" />
           <circle cx="4.5" cy="18" r="1.2" fill="currentColor" />
         </svg>
-        <span>Setlists</span>
+        <span>Songlists</span>
       </button>
       <button type="button" class="nav-item" data-tab="history">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -968,14 +968,14 @@
   <div id="addToSetlistModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="addToSetlistTitle">
     <div class="modal-dialog modal-wide">
       <div class="modal-header">
-        <h2 id="addToSetlistTitle">Add to Setlist</h2>
+        <h2 id="addToSetlistTitle">Add to Songlist</h2>
         <button type="button" id="closeAddToSetlistBtn" class="modal-close" aria-label="Close">&times;</button>
       </div>
       <form id="addToSetlistForm" class="modal-body-form">
         <p id="addToSetlistSongLabel" class="modal-song-ref"></p>
 
         <div class="form-field">
-          <label for="targetSetlistSelect">Service Setlist</label>
+          <label for="targetSetlistSelect">Service Songlist</label>
           <select id="targetSetlistSelect" class="form-select"></select>
         </div>
 
