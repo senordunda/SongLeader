@@ -1680,12 +1680,6 @@ body {
   color: var(--ink-muted);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-}
-
 .stat-box {
   background: var(--bg-paper);
   border: 1px solid var(--border-hairline);
@@ -2273,10 +2267,11 @@ body {
 }
 
 .history-date-group {
+  flex: 0 0 auto;
   background: var(--bg-surface);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .history-date-heading {
@@ -2294,8 +2289,10 @@ body {
 }
 
 .history-entry-row {
+  flex: 0 0 auto;
+  min-height: 40px;
   display: grid;
-  grid-template-columns: 44px 1fr auto;
+  grid-template-columns: minmax(44px, auto) minmax(0, 1fr) auto;
   gap: 8px;
   align-items: center;
   padding: 8px 10px;
