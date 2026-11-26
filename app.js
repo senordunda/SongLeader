@@ -2,7 +2,7 @@
    Praise for the Lord — Stage 4 Complete Application Logic
    - Hymnal Search, Quick Topics (Inv / LS), Favorites, Custom Tags, With Scans
    - "Don't Sing" Flag + Reason, Personal Notes, 901+ Supplement Toggle
-   - Worship Songlist Planner, Key Progression Strip, & Sunday Podium Runner Mode
+   - Worship Setlist Planner, Key Progression Strip, & Sunday Podium Runner Mode
    - Singing History Log & Automatic "Last Sung" Recency Indicators
    - Top-Center Anchored Zoom (50%–250%), Drag Pan, Fullscreen, Treble Pitch Pipe
    - Complete LocalStorage Persistence + One-Tap JSON Backup / Restore
@@ -35,8 +35,6 @@
     CUSTOM_SONG_ROLES: "pftl_custom_song_roles_v1",
     HIDDEN_DEFAULT_ROLES: "pftl_hidden_default_roles_v1",
     HIDE_SEARCH_FOOTER: "pftl_hide_search_footer_v1",
-    HIDE_DONT_SING: "pftl_hide_dont_sing_v1",
-    HIDE_TOPIC_FILTERS: "pftl_hide_topic_filters_v1",
   };
 
   const START_NOTE_DEFS = {
@@ -376,8 +374,6 @@
     activeTab: "hymnal",
     selectedId: null,
     hideSearchFooter: localStorage.getItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER) === "true",
-    hideDontSing: localStorage.getItem(STORAGE_KEYS.HIDE_DONT_SING) === "true",
-    hideTopicFilters: localStorage.getItem(STORAGE_KEYS.HIDE_TOPIC_FILTERS) === "true",
 
     // Persisted user data
     transpositions: loadJSON(STORAGE_KEYS.TRANSPOSITIONS, {}),
@@ -447,9 +443,7 @@
     loadErrorBanner: document.getElementById("loadErrorBanner"),
     manualJsonInput: document.getElementById("manualJsonInput"),
     listLegalFooter: document.querySelector(".list-legal-footer"),
-    hideSearchFooterToggle: document.getElementById("hideSearchFooterToggle"),
-    hideDontSingToggle: document.getElementById("hideDontSingToggle"),
-    hideTopicFiltersToggle: document.getElementById("hideTopicFiltersToggle"),
+hideSearchFooterToggle: document.getElementById("hideSearchFooterToggle"),
 
     // Setlists tab
     setlistsHome: document.getElementById("setlistsHome"),
@@ -1043,11 +1037,7 @@
   }
 
   function getBrowsableHymns() {
-    return state.hymns.filter((h) => {
-      if (!state.showSupplement && isSupplement(h)) return false;
-      if (state.hideDontSing && state.dontSing[h.id]) return false;
-      return true;
-    });
+    return state.showSupplement ? state.hymns : state.hymns.filter((h) => !isSupplement(h));
   }
 
   function updateHymnNavButtons() {
@@ -1208,21 +1198,6 @@
   }
 }
 
-  function applyHideTopicFilters() {
-    document.documentElement.dataset.hideTopicFilters = state.hideTopicFilters ? "true" : "false";
-    if (el.hideTopicFiltersToggle) {
-      el.hideTopicFiltersToggle.checked = state.hideTopicFilters;
-    }
-    if (state.hideTopicFilters && state.topicCategory !== "all") {
-      state.topicCategory = "all";
-      el.topicTabs.forEach((tab) => {
-        const active = tab.dataset.category === "all";
-        tab.classList.toggle("active", active);
-        tab.setAttribute("aria-selected", String(active));
-      });
-    }
-  }
-
   function updateHeaderSubtitle() {
     // Header subtitle removed for a cleaner, larger title
   }
@@ -1343,55 +1318,6 @@
     syncActiveBooks();
   }
 
-  function attachLongPressFavorite(rowEl, hymn) {
-  let timer = null;
-  let startX = 0;
-  let startY = 0;
-  let longPressed = false;
-
-  const clearTimer = () => {
-    if (timer) {
-      clearTimeout(timer);
-      timer = null;
-    }
-  };
-
-  rowEl.addEventListener("pointerdown", (e) => {
-    if (e.button !== 0 && e.pointerType === "mouse") return;
-    longPressed = false;
-    startX = e.clientX;
-    startY = e.clientY;
-    clearTimer();
-    timer = setTimeout(() => {
-      longPressed = true;
-      timer = null;
-      toggleFavorite(hymn.id); // your existing favorite toggle + save + re-render helper
-      if (navigator.vibrate) navigator.vibrate(25);
-      const nowFav = state.favorites.has(String(hymn.id));
-      showToast(nowFav ? `Added #${hymn.number_str} to Favorites` : `Removed #${hymn.number_str} from Favorites`);
-    }, 480);
-  });
-
-  rowEl.addEventListener("pointermove", (e) => {
-    if (!timer) return;
-    if (Math.abs(e.clientX - startX) > 8 || Math.abs(e.clientY - startY) > 8) {
-      clearTimer();
-    }
-  });
-
-  rowEl.addEventListener("pointerup", clearTimer);
-  rowEl.addEventListener("pointercancel", clearTimer);
-
-  // Capture-phase click blocker so releasing a long-press doesn't open the song
-  rowEl.addEventListener("click", (e) => {
-    if (longPressed) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      longPressed = false;
-    }
-  }, true);
-}
-
   // =========================================================================
   // Filtering & Ranked Instant Search
   // =========================================================================
@@ -1429,7 +1355,6 @@
     for (const h of state.hymns) {
       if (isMultiBookActive() && state.activeBookFilter !== "all" && h.bookId !== state.activeBookFilter) continue;
       if (!state.showSupplement && isSupplement(h)) continue;
-      if (state.hideDontSing && state.dontSing[h.id]) continue;
       if (state.onlyFavorites && !state.favorites.has(h.id)) continue;
       if (state.onlyWithScans && !h.has_scan) continue;
       if (!matchesTopicCategory(h, state.topicCategory)) continue;
@@ -1524,16 +1449,6 @@
       btn.type = "button";
       btn.className = "hymn-row";
       btn.dataset.id = h.id;
-
-      const li = document.createElement("li");
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "hymn-row";
-      btn.dataset.id = h.id;
-
-      attachLongPressFavorite(btn, h);
-
-      if (isSupplement(h)) btn.classList.add("is-supplement");
 
       if (isSupplement(h)) btn.classList.add("is-supplement");
       if (dsEntry) btn.classList.add("is-dontsing");
@@ -1690,7 +1605,7 @@
       const ok = window.confirm(
         `#${hymn.number_str} "${hymn.title}" is in the 901+ Expanded Supplement and is NOT in our church's 1–900 hymnal.
 
-Add it to this songlist anyway?`
+Add it to this setlist anyway?`
       );
       if (!ok) return false;
     }
@@ -1700,7 +1615,7 @@ Add it to this songlist anyway?`
       const ok = window.confirm(
         `#${hymn.number_str} "${hymn.title}" is marked "Don't Sing"${reasonTxt}.
 
-Add it to this songlist anyway?`
+Add it to this setlist anyway?`
       );
       if (!ok) return false;
     }
@@ -2378,7 +2293,7 @@ Add it to this songlist anyway?`
       rmBtn.type = "button";
       rmBtn.className = "btn-slot-remove";
       rmBtn.textContent = "×";
-      rmBtn.title = "Remove from songlist";
+      rmBtn.title = "Remove from setlist";
       rmBtn.addEventListener("click", () => {
         sl.items.splice(idx, 1);
         saveSetlists();
@@ -2967,7 +2882,7 @@ Add it to this songlist anyway?`
 
     const newOpt = document.createElement("option");
     newOpt.value = "__new__";
-    newOpt.textContent = "+ Create New Service Songlist…";
+    newOpt.textContent = "+ Create New Service Setlist…";
     el.targetSetlistSelect.appendChild(newOpt);
 
     if (sorted.length === 0) {
@@ -3655,8 +3570,6 @@ Add it to this songlist anyway?`
         customSongRoles: state.customSongRoles,
         hiddenDefaultRoles: state.hiddenDefaultRoles,
         hideSearchFooter: state.hideSearchFooter,
-        hideDontSing: state.hideDontSing,
-                   hideTopicFilters: state.hideTopicFilters,
       },
     };
   }
@@ -3670,16 +3583,6 @@ Add it to this songlist anyway?`
              localStorage.setItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER, String(state.hideSearchFooter));
              applySearchFooterVisibility();
            }
-    if (typeof d.hideDontSing === "boolean") {
-      state.hideDontSing = d.hideDontSing;
-      localStorage.setItem(STORAGE_KEYS.HIDE_DONT_SING, String(state.hideDontSing));
-      if (el.hideDontSingToggle) el.hideDontSingToggle.checked = state.hideDontSing;
-    }
-    if (typeof d.hideTopicFilters === "boolean") {
-      state.hideTopicFilters = d.hideTopicFilters;
-      localStorage.setItem(STORAGE_KEYS.HIDE_TOPIC_FILTERS, String(state.hideTopicFilters));
-      applyHideTopicFilters();
-    }
 
     if (Array.isArray(d.favorites)) {
       state.favorites = new Set(d.favorites.map(String));
@@ -3727,11 +3630,6 @@ Add it to this songlist anyway?`
       if (el.showSupplementToggle) el.showSupplementToggle.checked = state.showSupplement;
       localStorage.setItem(STORAGE_KEYS.SHOW_SUPPLEMENT, String(state.showSupplement));
     }
-    if (typeof d.hideDontSing === "boolean") {
-             state.hideDontSing = d.hideDontSing;
-             localStorage.setItem(STORAGE_KEYS.HIDE_DONT_SING, String(state.hideDontSing));
-             if (el.hideDontSingToggle) el.hideDontSingToggle.checked = state.hideDontSing;
-          }
     if (typeof d.darkMode === "boolean") {
       state.darkMode = d.darkMode;
       localStorage.setItem(STORAGE_KEYS.DARK_MODE, String(state.darkMode));
@@ -3829,7 +3727,7 @@ Add it to this songlist anyway?`
 
   function resetAllPersonalData() {
     const ok = window.confirm(
-      "Clear all Favorites, Custom Tags, Don't Sing flags, Personal Notes, Transpositions, Songlists, and Singing History on this device? This cannot be undone unless you exported a backup."
+      "Clear all Favorites, Custom Tags, Don't Sing flags, Personal Notes, Transpositions, Setlists, and Singing History on this device? This cannot be undone unless you exported a backup."
     );
     if (!ok) return;
 
@@ -4752,31 +4650,6 @@ Add it to this songlist anyway?`
     notifyCloudDataChanged();
   });
 }
-    if (el.hideDontSingToggle) {
-      el.hideDontSingToggle.checked = state.hideDontSing;
-      el.hideDontSingToggle.addEventListener("change", () => {
-        state.hideDontSing = el.hideDontSingToggle.checked;
-        try {
-          localStorage.setItem(STORAGE_KEYS.HIDE_DONT_SING, String(state.hideDontSing));
-        } catch (_) {}
-        renderHymnList();
-        updateHymnNavButtons();
-        notifyCloudDataChanged();
-      });
-    }
-
-       if (el.hideTopicFiltersToggle) {
-      el.hideTopicFiltersToggle.checked = state.hideTopicFilters;
-      el.hideTopicFiltersToggle.addEventListener("change", () => {
-        state.hideTopicFilters = el.hideTopicFiltersToggle.checked;
-        try {
-          localStorage.setItem(STORAGE_KEYS.HIDE_TOPIC_FILTERS, String(state.hideTopicFilters));
-        } catch (_) {}
-        applyHideTopicFilters();
-        renderHymnList();
-        notifyCloudDataChanged();
-      });
-    }
   }
 
   // =========================================================================
@@ -5000,7 +4873,6 @@ Add it to this songlist anyway?`
     const crawlerEl = document.getElementById("crawlerOverview");
     if (crawlerEl) crawlerEl.classList.add("hidden");
     applySearchFooterVisibility();
-    applyHideTopicFilters();
     syncRoleDropdowns();
     syncSetlistFooterElementsUI();
     bindEvents();

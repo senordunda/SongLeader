@@ -4302,15 +4302,3 @@ html[data-readability="large"] .song-bottom-resources .btn-quick-action {
 .list-legal-footer.is-hidden-footer {
   display: none;
 }
-
-/* Hide Invitation & Lord's Supper filter buttons when enabled in Settings */
-html[data-hide-topic-filters="true"] .topic-filter-group {
-  display: none;
-}
-
-/* Prevent native text-selection callout during long-press-to-favorite on hymn rows */
-.hymn-row {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-}
