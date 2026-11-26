@@ -1627,6 +1627,15 @@ body {
   background: #FFFFFF;
 }
 
+#importFavText {
+  margin-top: 8px;
+  min-height: 68px;
+}
+
+#importFavStatus {
+  margin-top: 8px !important;
+}
+
 .dontsing-card {
   display: flex;
   flex-direction: column;

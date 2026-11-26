@@ -573,6 +573,26 @@
             <p class="setting-desc" style="margin-bottom: 10px;">
               Your favorites, custom tags, "Don't Sing" flags, notes, transpositions, songlists, and singing history are stored privately on this device. Export a JSON backup anytime to transfer to another device or keep a safe copy.
             </p>
+            <!-- INSERT INSIDE #view-settings (near .backup-actions) -->
+<div class="settings-section">
+  <h3 class="settings-subheading">Import Favorites</h3>
+  <p class="setting-desc">Paste hymn numbers (e.g., 12, 45, 274A or pftl:12) or upload a CSV file to add favorites in bulk.</p>
+
+  <textarea
+    id="importFavText"
+    class="notes-textarea"
+    rows="3"
+    placeholder="Example: 12, 45, 108, 274A"
+  ></textarea>
+
+  <div class="backup-actions" style="margin-top: 8px;">
+    <button type="button" id="importFavTextBtn" class="btn-secondary btn-sm">Import Pasted Numbers</button>
+    <label for="importFavCsvInput" class="btn-secondary btn-sm">Upload CSV</label>
+    <input type="file" id="importFavCsvInput" accept=".csv,.txt,text/csv,text/plain" class="hidden" />
+  </div>
+
+  <p id="importFavStatus" class="backup-status hidden"></p>
+</div>
             <div class="backup-actions">
               <button type="button" id="exportBackupBtn" class="btn-primary">Export Backup (.json)</button>
               <label class="btn-secondary file-picker-label">
