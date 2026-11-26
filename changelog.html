@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog &amp; Updates — Song Leader</title>
+  <meta name="description" content="Release history, new features, and improvements for the Song Leader digital hymnal directory, pitch pipe, and worship planning web app." />
+  <link rel="canonical" href="https://songleaderapp.com/changelog.html" />
+  <style>
+    :root {
+      --bg-paper: #FAF7F2;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F3EEE6;
+      --ink-primary: #1F1D1A;
+      --ink-secondary: #5A544C;
+      --ink-muted: #8A8277;
+      --border-hairline: #E2DBD0;
+      --border-strong: #CFC6B8;
+      --accent: #7A1F2B;
+      --accent-dark: #5C151F;
+      --accent-tint: #F7ECEE;
+      --font-serif: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg-paper);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+    }
+    header {
+      background: var(--accent);
+      color: #FAF7F2;
+      border-bottom: 1px solid var(--accent-dark);
+      padding: 14px 18px;
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-link {
+      color: #FAF7F2;
+      text-decoration: none;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .back-app {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 11px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 3px;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 18px 48px;
+    }
+    .kicker {
+      margin: 0 0 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+    .intro {
+      margin: 0 0 24px;
+      color: var(--ink-secondary);
+      font-size: 0.95rem;
+    }
+    .release {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: 4px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+    .release-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .release-title {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+    }
+    time {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink-secondary);
+      font-size: 0.92rem;
+    }
+    li { margin-bottom: 5px; }
+    li:last-child { margin-bottom: 0; }
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 18px 28px;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="brand-link">Song Leader</a>
+      <a href="/" class="back-app">Open App</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="kicker">Product Updates</p>
+    <h1>Changelog</h1>
+    <p class="intro">Recent enhancements, hymnal database updates, and usability improvements for Song Leader.</p>
+
+    <article class="release">
+      <div class="release-head">
+        <h2 class="release-title">Songlist Naming, Search Customization &amp; Quick Favorites</h2>
+        <time datetime="2026-11-26">November 26, 2026</time>
+      </div>
+      <ul>
+        <li>Renamed worship planning lists from <em>Setlists</em> to <em>Songlists</em> across the interface for clearer church song-leading terminology.</li>
+        <li>Added a setting to completely hide hymns flagged as <em>Don't Sing</em> from the directory and Prev/Next song navigation.</li>
+        <li>Added a setting to hide the <em>Invitation</em> and <em>Lord's Supper</em> quick-filter tabs on the main hymnal search bar.</li>
+        <li>Added press-and-hold (long-press) on any hymn row in the search list to toggle Favorites immediately.</li>
+      </ul>
+    </article>
+
+    <article class="release">
+      <div class="release-head">
+        <h2 class="release-title">Six-Hymnal Library, Cross-References &amp; Cloud Sync</h2>
+        <time datetime="2026-11-24">November 24, 2026</time>
+      </div>
+      <ul>
+        <li>Expanded directory support to six a cappella hymnals: <em>Praise for the Lord</em>, <em>Songs of Faith and Praise</em>, <em>Hymns for Worship</em>, <em>Sacred Selections</em>, <em>Praise, Hymns and Spiritual Songs</em>, and <em>Songs of the Church</em>.</li>
+        <li>Added cross-hymnal number matching, starting melody note pitch pipe controls, and YouTube listening links.</li>
+        <li>Added optional Google Sign-In cloud sync for Favorites, Songlists, Singing History, custom tags, and personal notes.</li>
+        <li>Improved Singing History date grouping layout and mobile readability sizing options.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <span>Song Leader — Digital Hymnal Directory &amp; Pitch Pipe</span>
+    <span><a href="/">App</a> &middot; <a href="/privacy.html">Privacy Policy</a></span>
+  </footer>
+</body>
+</html>
