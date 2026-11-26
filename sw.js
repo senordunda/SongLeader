@@ -1,4 +1,4 @@
-const CACHE_NAME = 'songleader-core-v16';
+const CACHE_NAME = 'songleader-core-v17';
 const SHEET_MUSIC_CACHE = 'songleader-sheets-v1';
 
 // 1. Add the exact relative paths to all your JSON data files here
@@ -72,7 +72,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Strategy B: Cache-first for local app files & JSON data
+  // Strategy B1: Network-first for public changelog so updates surface promptly
+  if (url.origin === self.location.origin && url.pathname === '/changelog.html') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Strategy B2: Cache-first for local app files & JSON data
   if (url.origin === self.location.origin) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
