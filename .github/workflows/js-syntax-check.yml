@@ -1,0 +1,25 @@
+name: Check JavaScript syntax
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check JavaScript syntax
+        run: |
+          for f in $(find . -name '*.js' -not -path './node_modules/*'); do
+            echo "Checking $f"
+            node --check "$f" || exit 1
+          done
+      - name: Validate JSON files
+        run: |
+          for f in $(find . -name '*.json' -not -path './node_modules/*'); do
+            echo "Validating $f"
+            python3 -m json.tool "$f" > /dev/null || exit 1
+          done
