@@ -514,6 +514,11 @@
     statNotesCount: document.getElementById("statNotesCount"),
     exportBackupBtn: document.getElementById("exportBackupBtn"),
     importBackupInput: document.getElementById("importBackupInput"),
+    
+    importFavText: document.getElementById("importFavText"),
+    importFavTextBtn: document.getElementById("importFavTextBtn"),
+    importFavCsvInput: document.getElementById("importFavCsvInput"),
+    importFavStatus: document.getElementById("importFavStatus"),
     backupStatusMsg: document.getElementById("backupStatusMsg"),
     clearDataBtn: document.getElementById("clearDataBtn"),
 
@@ -3790,6 +3795,98 @@ Add it to this songlist anyway?`
     }
   }
 
+  function showImportFavStatus(msg) {
+    if (!el.importFavStatus) return;
+    el.importFavStatus.textContent = msg;
+    el.importFavStatus.classList.remove("hidden");
+  }
+
+  function resolveHymnFromToken(rawToken) {
+    const cleaned = String(rawToken || "").trim().replace(/^["']+|["']+$/g, "");
+    if (!cleaned) return null;
+
+    // Support explicit book:number tokens like "pftl:12" or "ss:274A"
+    const colonIdx = cleaned.indexOf(":");
+    if (colonIdx > 0) {
+      const prefix = cleaned.slice(0, colonIdx).trim().toLowerCase();
+      const numPart = cleaned.slice(colonIdx + 1).trim().toLowerCase();
+      if (HYMNALS[prefix] && numPart) {
+        const bookList = state.bookCache.get(prefix) || [];
+        const byId = bookList.find((h) => String(h.id).toLowerCase() === cleaned.toLowerCase());
+        if (byId) return byId;
+        const byNum = bookList.find((h) => h._numStr === numPart);
+        if (byNum) return byNum;
+      }
+    }
+
+    const tokenLower = cleaned.toLowerCase().replace(/^#/, "");
+    const activeIds = getActiveBookIds();
+    const candidatePool = isMultiBookActive()
+      ? state.hymns.filter((h) => activeIds.includes(h.bookId))
+      : (state.bookCache.get(state.primaryHymnal) || state.hymns);
+
+    const exact = candidatePool.find((h) => h._numStr === tokenLower);
+    if (exact) return exact;
+
+    if (/^\d+$/.test(tokenLower)) {
+      const parsedNum = String(parseInt(tokenLower, 10));
+      const numMatch = candidatePool.find((h) => h._numStr === parsedNum);
+      if (numMatch) return numMatch;
+    }
+
+    return null;
+  }
+
+  function importFavoritesFromRawText(rawText) {
+    // Split on commas, semicolons, newlines, or whitespace
+    const tokens = String(rawText || "")
+      .split(/[\s,;]+/)
+      .map((t) => t.trim())
+      .filter(Boolean);
+
+    if (tokens.length === 0) {
+      showImportFavStatus("Enter or upload at least one hymn number to import.");
+      return;
+    }
+
+    let addedCount = 0;
+    let alreadyFavCount = 0;
+    const unmatched = [];
+
+    tokens.forEach((tok) => {
+      const hymn = resolveHymnFromToken(tok);
+      if (!hymn) {
+        unmatched.push(tok);
+        return;
+      }
+      if (state.favorites.has(hymn.id)) {
+        alreadyFavCount++;
+      } else {
+        state.favorites.add(hymn.id);
+        addedCount++;
+      }
+    });
+
+    if (addedCount > 0) {
+      saveJSON(STORAGE_KEYS.FAVORITES, Array.from(state.favorites));
+      notifyCloudDataChanged();
+      refreshTagSelectorsAndStats();
+      renderHymnList();
+      if (state.selectedId && state.hymnMap.has(state.selectedId)) {
+        renderPersonalUI(state.hymnMap.get(state.selectedId));
+      }
+    }
+
+    const summaryParts = [`Added ${addedCount} favorite${addedCount === 1 ? "" : "s"}`];
+    if (alreadyFavCount > 0) summaryParts.push(`${alreadyFavCount} already favorited`);
+    if (unmatched.length > 0) {
+      const shown = unmatched.slice(0, 8).join(", ");
+      const extra = unmatched.length > 8 ? ` (+${unmatched.length - 8} more)` : "";
+      summaryParts.push(`not found: ${shown}${extra}`);
+    }
+    showImportFavStatus(summaryParts.join(" · ") + ".");
+  }
+
   function exportBackup() {
     const payload = buildBackupPayload();
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -4482,6 +4579,27 @@ Add it to this songlist anyway?`
       if (file) importBackupFile(file);
       e.target.value = "";
     });
+
+    if (el.importFavTextBtn && el.importFavText) {
+      el.importFavTextBtn.addEventListener("click", () => {
+        importFavoritesFromRawText(el.importFavText.value);
+      });
+    }
+
+    if (el.importFavCsvInput) {
+      el.importFavCsvInput.addEventListener("change", (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const text = String(reader.result || "");
+          if (el.importFavText) el.importFavText.value = text;
+          importFavoritesFromRawText(text);
+        };
+        reader.readAsText(file);
+        e.target.value = "";
+      });
+    }
     el.clearDataBtn.addEventListener("click", resetAllPersonalData);
 
     // List click delegation
