@@ -4555,3 +4555,55 @@ html[data-hide-topic-filters="true"] .topic-filter-group {
   height: 13px;
   background: rgba(255, 255, 255, 0.55);
 }
+
+/* ==========================================================================
+   Uniform Pitch Toolbar Button Heights & Mobile Treble Clef Alignment
+   ========================================================================== */
+
+.pitch-bar,
+.pitch-toolbar {
+  align-items: center;
+}
+
+/* Lock all pitch toolbar controls to the exact same height */
+.btn-pitch-pipe,
+#holdPitchBtn,
+#startNoteBtn,
+#arpeggioBtn,
+.pitch-bar > *:has(.btn-step),
+.pitch-toolbar > *:has(.btn-step) {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+/* Make transposition buttons fill their container top-to-bottom */
+.pitch-bar .btn-step,
+.pitch-toolbar .btn-step {
+  height: 100%;
+  min-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep the treble clef and "Pipe" label neatly inside the 40px button on mobile */
+.btn-pitch-pipe {
+  padding: 2px 6px;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.btn-pitch-pipe .pipe-clef {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+.btn-pitch-pipe span:last-child {
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.05;
+}
