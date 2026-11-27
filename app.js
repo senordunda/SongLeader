@@ -4046,19 +4046,19 @@ let subLabel = "";
     });
   }
   const CHROMATIC_PIPE_NOTES = [
-    { label: "F",  display: "F",       sub: "Low F",  semitone: 5,  octaveOffset: 0, accidental: false },
-    { label: "♯|♭", display: "F♯ / G♭", sub: "F♯ · G♭", semitone: 6,  octaveOffset: 0, accidental: true },
-    { label: "G",  display: "G",       sub: "Natural", semitone: 7,  octaveOffset: 0, accidental: false },
-    { label: "♯|♭", display: "G♯ / A♭", sub: "G♯ · A♭", semitone: 8,  octaveOffset: 0, accidental: true },
-    { label: "A",  display: "A",       sub: "Natural", semitone: 9,  octaveOffset: 0, accidental: false },
-    { label: "♯|♭", display: "A♯ / B♭", sub: "A♯ · B♭", semitone: 10, octaveOffset: 0, accidental: true },
-    { label: "B",  display: "B",       sub: "Natural", semitone: 11, octaveOffset: 0, accidental: false },
-    { label: "C",  display: "C",       sub: "Middle C", semitone: 0, octaveOffset: 0, accidental: false },
-    { label: "♯|♭", display: "C♯ / D♭", sub: "C♯ · D♭", semitone: 1,  octaveOffset: 0, accidental: true },
-    { label: "D",  display: "D",       sub: "Natural", semitone: 2,  octaveOffset: 0, accidental: false },
-    { label: "♯|♭", display: "D♯ / E♭", sub: "D♯ · E♭", semitone: 3,  octaveOffset: 0, accidental: true },
-    { label: "E",  display: "E",       sub: "Natural", semitone: 4,  octaveOffset: 0, accidental: false },
-    { label: "F'", display: "F'",      sub: "High F",  semitone: 5,  octaveOffset: 1, accidental: false },
+    { label: "C",   display: "C",       sub: "Low C",   semitone: 0,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "C♯ / D♭", sub: "",        semitone: 1,  octaveOffset: 0, accidental: true },
+    { label: "D",   display: "D",       sub: "Natural", semitone: 2,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "D♯ / E♭", sub: "",        semitone: 3,  octaveOffset: 0, accidental: true },
+    { label: "E",   display: "E",       sub: "Natural", semitone: 4,  octaveOffset: 0, accidental: false },
+    { label: "F",   display: "F",       sub: "Natural", semitone: 5,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "F♯ / G♭", sub: "",        semitone: 6,  octaveOffset: 0, accidental: true },
+    { label: "G",   display: "G",       sub: "Natural", semitone: 7,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "G♯ / A♭", sub: "",        semitone: 8,  octaveOffset: 0, accidental: true },
+    { label: "A",   display: "A",       sub: "Natural", semitone: 9,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "A♯ / B♭", sub: "",        semitone: 10, octaveOffset: 0, accidental: true },
+    { label: "B",   display: "B",       sub: "Natural", semitone: 11, octaveOffset: 0, accidental: false },
+    { label: "C'",  display: "C'",      sub: "High C",  semitone: 0,  octaveOffset: 1, accidental: false },
   ];
 
   function buildPitchPipeDial() {
@@ -4068,9 +4068,9 @@ let subLabel = "";
     const total = CHROMATIC_PIPE_NOTES.length;
     const centerPct = 50;
     const radiusPct = 39.5;
-    // Start Low F at ~10:30 position (-135 deg) and go clockwise around to High F
-    const startAngleDeg = -135;
     const stepDeg = 360 / total;
+    // Split 12 o'clock (-90 deg) evenly between High C' (left) and Low C (right)
+    const startAngleDeg = -90 + stepDeg / 2;
 
     CHROMATIC_PIPE_NOTES.forEach((note, idx) => {
       const angleRad = ((startAngleDeg + idx * stepDeg) * Math.PI) / 180;
