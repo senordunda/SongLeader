@@ -891,6 +891,10 @@
             </div>
 
             <div class="pitch-single-row">
+<button type="button" id="openPitchPipeBtn" class="btn-pitch-pipe" title="Open chromatic F–F pitch pipe" aria-label="Open chromatic pitch pipe">
+  <span class="pipe-clef" aria-hidden="true">&#119070;</span>
+  <span>Pipe</span>
+</button> 
               <button type="button" id="holdPitchBtn" class="btn-pitch-hold" title="Hold to play starting pitch">
                 <span id="holdPitchKey" class="pitch-btn-key">D</span>
                 <span id="holdPitchSub" class="pitch-btn-sub">Original</span>
@@ -1210,5 +1214,23 @@
 
   <script src="app.js"></script>
   <script type="module" src="cloud-sync.js"></script>
+  <!-- Chromatic F–F Pitch Pipe Modal -->
+<div id="pitchPipeModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="pitchPipeModalTitle">
+  <div class="pitch-pipe-modal-card">
+    <div class="pitch-pipe-modal-top">
+      <h3 id="pitchPipeModalTitle" class="pitch-pipe-modal-title">Chromatic Pitch Pipe (F–F)</h3>
+      <button type="button" id="closePitchPipeModalBtn" class="btn-icon-close" aria-label="Close pitch pipe">&times;</button>
+    </div>
+
+    <div class="master-key-dial" id="masterKeyDial" aria-label="Circular chromatic pitch pipe from low F to high F">
+      <div class="master-key-ring-text" aria-hidden="true">MASTER-KEY &middot; CHROMATIC PITCH</div>
+      <div class="master-key-hub">
+        <span id="pitchPipeActiveNote" class="master-key-active-note">—</span>
+        <span id="pitchPipeActiveSub" class="master-key-active-sub">Hold any note</span>
+      </div>
+      <!-- 13 chromatic buttons injected cleanly by app.js -->
+    </div>
+  </div>
+</div>
 </body>
 </html>
