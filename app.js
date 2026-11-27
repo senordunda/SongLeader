@@ -253,13 +253,14 @@
       return { osc1, osc2, masterGain };
     }
 
-    startSustained(semitone) {
+    startSustained(semitone, octaveOffset = 0) {
       this.stopSustained();
       this.stopArpeggio();
 
       const ctx = this.ensureContext();
       const now = ctx.currentTime;
-      const freq = this.midiToFreq(this.semitoneToMidi(semitone));
+      const midi = this.semitoneToMidi(semitone) + octaveOffset * 12;
+      const freq = this.midiToFreq(midi);
       this.activeNodes = this.createVoice(ctx, freq, now, 0.26);
     }
 
@@ -607,6 +608,13 @@
     holdPitchSub: document.getElementById("holdPitchSub"),
     startNoteBtn: document.getElementById("startNoteBtn"),
     arpeggioBtn: document.getElementById("arpeggioBtn"),
+
+    openPitchPipeBtn: document.getElementById("openPitchPipeBtn"),
+    pitchPipeModal: document.getElementById("pitchPipeModal"),
+    closePitchPipeModalBtn: document.getElementById("closePitchPipeModalBtn"),
+    masterKeyDial: document.getElementById("masterKeyDial"),
+    pitchPipeActiveNote: document.getElementById("pitchPipeActiveNote"),
+    pitchPipeActiveSub: document.getElementById("pitchPipeActiveSub"),
 
     fsOverlay: document.getElementById("fullscreenOverlay"),
     fsPrevHymnBtn: document.getElementById("fsPrevHymnBtn"),
@@ -3999,7 +4007,7 @@ Add it to this songlist anyway?`
       el.manualKeySelect.value = info.hasSavedManualKey ? info.savedManualKey : "";
     }
 
-    let subLabel = "Original";
+let subLabel = "";
     if (!info.hasListedKey) {
       if (info.shift !== 0) {
         subLabel = info.shift > 0 ? `+${info.shift}` : `${info.shift}`;
@@ -4012,9 +4020,11 @@ Add it to this songlist anyway?`
 
     el.holdPitchKey.textContent = info.displayKey;
     el.holdPitchSub.textContent = subLabel;
+    el.holdPitchSub.classList.toggle("hidden", !subLabel);
 
     el.fsPitchKey.textContent = info.displayKey;
-    el.fsPitchSub.textContent = subLabel === "Original" ? "Orig" : subLabel;
+    el.fsPitchSub.textContent = subLabel;
+    el.fsPitchSub.classList.toggle("hidden", !subLabel);
 
     el.stepButtons.forEach((btn) => {
       const val = Number(btn.dataset.shift);
@@ -4034,6 +4044,93 @@ Add it to this songlist anyway?`
         btn.classList.add("hidden");
       }
     });
+  }
+  const CHROMATIC_PIPE_NOTES = [
+    { label: "F",  display: "F",       sub: "Low F",  semitone: 5,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "F♯ / G♭", sub: "F♯ · G♭", semitone: 6,  octaveOffset: 0, accidental: true },
+    { label: "G",  display: "G",       sub: "Natural", semitone: 7,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "G♯ / A♭", sub: "G♯ · A♭", semitone: 8,  octaveOffset: 0, accidental: true },
+    { label: "A",  display: "A",       sub: "Natural", semitone: 9,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "A♯ / B♭", sub: "A♯ · B♭", semitone: 10, octaveOffset: 0, accidental: true },
+    { label: "B",  display: "B",       sub: "Natural", semitone: 11, octaveOffset: 0, accidental: false },
+    { label: "C",  display: "C",       sub: "Middle C", semitone: 0, octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "C♯ / D♭", sub: "C♯ · D♭", semitone: 1,  octaveOffset: 0, accidental: true },
+    { label: "D",  display: "D",       sub: "Natural", semitone: 2,  octaveOffset: 0, accidental: false },
+    { label: "♯|♭", display: "D♯ / E♭", sub: "D♯ · E♭", semitone: 3,  octaveOffset: 0, accidental: true },
+    { label: "E",  display: "E",       sub: "Natural", semitone: 4,  octaveOffset: 0, accidental: false },
+    { label: "F'", display: "F'",      sub: "High F",  semitone: 5,  octaveOffset: 1, accidental: false },
+  ];
+
+  function buildPitchPipeDial() {
+    if (!el.masterKeyDial || el.masterKeyDial.dataset.built === "true") return;
+    el.masterKeyDial.dataset.built = "true";
+
+    const total = CHROMATIC_PIPE_NOTES.length;
+    const centerPct = 50;
+    const radiusPct = 39.5;
+    // Start Low F at ~10:30 position (-135 deg) and go clockwise around to High F
+    const startAngleDeg = -135;
+    const stepDeg = 360 / total;
+
+    CHROMATIC_PIPE_NOTES.forEach((note, idx) => {
+      const angleRad = ((startAngleDeg + idx * stepDeg) * Math.PI) / 180;
+      const left = centerPct + radiusPct * Math.cos(angleRad);
+      const top = centerPct + radiusPct * Math.sin(angleRad);
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "mk-note-btn" + (note.accidental ? " is-accidental" : "");
+      btn.style.left = `${left.toFixed(2)}%`;
+      btn.style.top = `${top.toFixed(2)}%`;
+      btn.setAttribute("aria-label", note.display);
+
+      if (note.accidental) {
+        btn.innerHTML = `<span class="mk-acc-split"><span>♯</span><span class="mk-acc-divider"></span><span>♭</span></span>`;
+      } else {
+        btn.textContent = note.label;
+      }
+
+      const startNote = (e) => {
+        e.preventDefault();
+        el.masterKeyDial.querySelectorAll(".mk-note-btn.is-playing").forEach((b) => b.classList.remove("is-playing"));
+        btn.classList.add("is-playing");
+        if (el.pitchPipeActiveNote) el.pitchPipeActiveNote.textContent = note.display;
+        if (el.pitchPipeActiveSub) el.pitchPipeActiveSub.textContent = note.sub;
+        pitchPipe.startSustained(note.semitone, note.octaveOffset);
+      };
+
+      const stopNote = () => {
+        if (!btn.classList.contains("is-playing")) return;
+        btn.classList.remove("is-playing");
+        pitchPipe.stopSustained();
+      };
+
+      btn.addEventListener("pointerdown", startNote);
+      btn.addEventListener("pointerup", stopNote);
+      btn.addEventListener("pointercancel", stopNote);
+      btn.addEventListener("pointerleave", stopNote);
+      btn.addEventListener("contextmenu", (e) => e.preventDefault());
+      window.addEventListener("pointerup", stopNote);
+
+      el.masterKeyDial.appendChild(btn);
+    });
+  }
+
+  function openPitchPipeModal() {
+    if (!el.pitchPipeModal) return;
+    buildPitchPipeDial();
+    pitchPipe.stopSustained();
+    pitchPipe.stopArpeggio();
+    if (el.pitchPipeActiveNote) el.pitchPipeActiveNote.textContent = "—";
+    if (el.pitchPipeActiveSub) el.pitchPipeActiveSub.textContent = "Hold any note";
+    el.pitchPipeModal.classList.remove("hidden");
+  }
+
+  function closePitchPipeModal() {
+    if (!el.pitchPipeModal) return;
+    pitchPipe.stopSustained();
+    el.masterKeyDial?.querySelectorAll(".mk-note-btn.is-playing").forEach((b) => b.classList.remove("is-playing"));
+    el.pitchPipeModal.classList.add("hidden");
   }
 
   // =========================================================================
@@ -4771,6 +4868,18 @@ Add it to this songlist anyway?`
     bindHoldButton(el.holdPitchBtn);
     bindHoldButton(el.fsHoldPitchBtn);
 
+    if (el.openPitchPipeBtn) {
+      el.openPitchPipeBtn.addEventListener("click", openPitchPipeModal);
+    }
+    if (el.closePitchPipeModalBtn) {
+      el.closePitchPipeModalBtn.addEventListener("click", closePitchPipeModal);
+    }
+    if (el.pitchPipeModal) {
+      el.pitchPipeModal.addEventListener("click", (e) => {
+        if (e.target === el.pitchPipeModal) closePitchPipeModal();
+      });
+    }
+
     const triggerArp = (btn) => {
       const info = getActivePitchInfo();
       btn.classList.add("playing");
@@ -4832,6 +4941,7 @@ Add it to this songlist anyway?`
         else if (el.elementPickerModal && !el.elementPickerModal.classList.contains("hidden")) closeElementPickerModal();
         else if (el.listenModal && !el.listenModal.classList.contains("hidden")) closeListenModal();
         else if (state.isFullscreen) closeFullscreen();
+        else if (el.pitchPipeModal && !el.pitchPipeModal.classList.contains("hidden")) closePitchPipeModal();
       }
     });
 
@@ -5006,6 +5116,11 @@ Add it to this songlist anyway?`
         armBackGuard();
         return;
       }
+      if (el.pitchPipeModal && !el.pitchPipeModal.classList.contains("hidden")) {
+                closePitchPipeModal();
+                armBackGuard();
+                return;
+              }
 
       // 2. Exit Fullscreen sheet music overlay
       if (state.isFullscreen) {
