@@ -449,6 +449,7 @@
     manualJsonInput: document.getElementById("manualJsonInput"),
     listLegalFooter: document.querySelector(".list-legal-footer"),
     hideSearchFooterToggle: document.getElementById("hideSearchFooterToggle"),
+    hideSearchFooterBtn: document.getElementById("hideSearchFooterBtn"),
     hideDontSingToggle: document.getElementById("hideDontSingToggle"),
     hideTopicFiltersToggle: document.getElementById("hideTopicFiltersToggle"),
 
@@ -4974,6 +4975,17 @@ let subLabel = "";
     notifyCloudDataChanged();
   });
 }
+    if (el.hideSearchFooterBtn) {
+      el.hideSearchFooterBtn.addEventListener("click", () => {
+        state.hideSearchFooter = true;
+        try {
+          localStorage.setItem(STORAGE_KEYS.HIDE_SEARCH_FOOTER, "true");
+        } catch (_) {}
+        applySearchFooterVisibility();
+        notifyCloudDataChanged();
+        showToast("Footer hidden. Re-enable anytime in Settings.", 2400);
+      });
+    }
     if (el.hideDontSingToggle) {
       el.hideDontSingToggle.checked = state.hideDontSing;
       el.hideDontSingToggle.addEventListener("change", () => {
