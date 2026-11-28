@@ -4325,10 +4325,53 @@ html[data-readability="large"] .song-bottom-resources .btn-quick-action {
   background: var(--bg-paper);
   border-top: 1px solid var(--border-hairline);
 }
-.list-legal-footer a {
-  color: var(--accent);
+
+.list-legal-desc {
+  min-width: 0;
+}
+
+.list-legal-footer .list-legal-privacy {
+  color: var(--ink-secondary);
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.list-legal-footer .list-legal-privacy:hover {
+  color: var(--ink-primary);
+}
+
+[data-theme="dark"] .list-legal-footer .list-legal-privacy {
+  color: #B8B0A4;
+}
+
+[data-theme="dark"] .list-legal-footer .list-legal-privacy:hover {
+  color: #D8D1C6;
+}
+
+.list-legal-hide-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #B3263A;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.list-legal-hide-btn:hover {
+  color: #8F1B2B;
+}
+
+[data-theme="dark"] .list-legal-hide-btn {
+  color: #E05A6D;
+}
+
+[data-theme="dark"] .list-legal-hide-btn:hover {
+  color: #F07A8A;
 }
 
 .list-legal-footer.is-hidden-footer {
